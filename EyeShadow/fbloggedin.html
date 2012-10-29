@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authenticating User with facebook</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+        String.format = function (text) {
+            //check if there are two arguments in the arguments list
+            if (arguments.length <= 1) {
+                //if there are not 2 or more arguments there's nothing to replace
+                //just return the original text
+                return text;
+            }
+            //decrement to move to the second argument in the array
+            var tokenCount = arguments.length - 2;
+            for (var token = 0; token <= tokenCount; token++) {
+                //iterate through the tokens and replace their placeholders from the original text in order
+                text = text.replace(new RegExp("\\{" + token + "\\}", "gi"),
+                                                arguments[token + 1]);
+            }
+            return text;
+        };
+        $(function () {
+            FreshPin = {
+                constants: {
+                    cdn: 'http://freshpin.com/cdn/'
+                },
+                blockUI: function () {
+                    var msk = this._mask = $('<div  />');
+                    msk.css({
+                        "-moz-opacity": "0.9",
+                        "opacity": "0.9",
+                        "filter": "alpha(opacity=90)",
+                        "width": "100%",
+                        "background-color": "#FFFFFF",
+                        "height": "100%",
+                        "z-index": "4",
+                        "top": "0",
+                        "left": "0",
+                        "position": "fixed"
+                    });
+                    var ld = $(String.format('<img src="{0}img/dots64.gif"  />', FreshPin.constants.cdn));
+                    ld.css({
+                        "z-index": "10",
+                        "position": "fixed",
+                        "top": "48%",
+                        "left": "48%",
+                        "background-repeat": "no-repeat"
+                    });
+                    msk.append(ld).appendTo(document.body);
+                }
+            }
+            var hs = (function (a) {
+                if (a == "") return {};
+                var b = {};
+                for (var i = 0; i < a.length; ++i) {
+                    var p = a[i].split('=');
+                    if (p.length != 2) continue;
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+                }
+                return b;
+            })(window.location.hash.substr(1).split('&'));
+            FreshPin.blockUI();
+            var token = hs.access_token;
+            if(token)
+            $.post('POST.ashx?t=fblogin', { token: hs.access_token }, function (data, res) {
+                $(window.location).attr('href', '.');
+            }, 'json');
+            else
+                $(window.location).attr('href', 'login');
+        });
+    </script>
+</head>
+<body>
+    <div id="fb-root">
+    </div>
+</body>
+</html>

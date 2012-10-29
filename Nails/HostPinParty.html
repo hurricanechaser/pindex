@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FreshPin / Host a Pin Party</title>
+
+
+        <!--[if (gt IE 6)&(lt IE 9)]><link rel="stylesheet" href="ie7-and-up_fa603afa.css" type="text/css" media="all" /><![endif]-->
+    <link rel="icon" href="img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="font.css" />
+    <link href="popup.css" rel="stylesheet" type="text/css" />
+    <!--<link href="build/files/home.css" rel="stylesheet" type="text/css" />-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        var $j = jQuery.noConflict();
+    </script>
+    <script src="scripts/jquery.easing.1.3.js" type="text/javascript"></script> 
+    <script src="freshpin.js" type="text/javascript"></script>
+    <script src="freshpinpinparty.js" type="text/javascript"></script>    
+    
+
+
+
+    <link rel="stylesheet" type="text/css" href="CreateDetails.css" />   
+   
+    <link rel="stylesheet" href="copyright.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="about_dc0f3cd9.css" type="text/css" media="all">
+    <style type="text/css">
+            img#user_image { width: 24px; height: 24px; -webkit-border-radius: 2px; -moz-border-radius: 2px; -o-border-radius: 2px; -ms-border-radius: 2px; border-radius: 2px; float: left; margin-right: 10px; }
+            .loggedinuser { margin-top: 4px; font-size: 14px; float: left; }
+            .logout { font-size: 14px; }
+            .ContactForm { overflow: hidden; width: 500px; padding: 0 10px; margin: 0 -10px; }
+            .ContactForm li.contact_user { width: 375px; overflow: hidden; }
+            .ContactButton { float: right; margin-top: -8px; }
+            .faq_topic { display: none; opacity: 0; }
+            .visible { display: block; }
+            #CategoryPicker .ProblemList { height: auto; }
+            #CategoryPicker .ProblemList ul { margin-bottom: 0; }
+            #CategoryPicker .ProblemList li { margin-bottom: 0; }
+            .success { font-size: 18px; color: green; font-weight: 300; text-align: left; }
+            .error { margin-bottom: 10px; }
+            h2#tips { font-size: 24px; margin-bottom: 0; margin-top: 30px; opacity: 0; }
+    </style>
+    
+
+</head>
+<body>
+    <div id="Header" >
+        <div class="FixedContainer HeaderContainer">
+            <div class="freshpinlogo">
+                <div class="freshpinlogoText">
+                    <a href=".">FreshPin</a></div>
+                <div class="freshpinlogoTagline">
+                    450 Sources, Fresh Daily, Original Sources - Pin On!</div>
+            </div>
+            <ul id="Navigation">
+                <li><a href="about" class="nav">About<span></span></a>
+                    <ul>
+                        <li><a href="help">Help</a></li>
+                        <li class="beforeDivider"><a href="#">Copyright</a></li>
+                        <li class="divider"><a href="#">Careers</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="nav LoginNav">Login</a></li>
+            </ul>
+            <div id="Search">
+                <form action="/search/" method="get" class="text">
+                <input type="text" id="query" name="q" size="27" value="Search over 500,000 Pins" />
+                <a id="query_button" href="#" class="lg">
+                    <img src="img/search.gif" alt="" /></a>
+                </form>
+            </div>
+        </div>
+                <div class="line2">
+            <div class="menu3">
+                <li id="mlevel1"><a href="nails">Articles</a><span class="bgNone"></span></li>
+                <li id="mlevel2" class="menu"><a href="nails">Look Book Styles</a><span></span></li>
+                <li id="mlevel3" class="menu"><a href="rank">Top Tens</a> <span class="bgNone"></span>
+                </li>
+                <li id="mlevel4" class="menu"><a href="javascript:void(0)">Pin Rewards</a> <span
+                    class="bgNone"></span></li>
+                <li id="mlevel5" class="menu"><a href="javascript:void(0)">Pin Party</a> <span></span>
+                </li>
+            </div>
+        </div>
+        <div class="submenu" id="submenu2" style="display: none">
+            <div>
+                <a class="none" href="javascript:rcat('Color');"><strong>Color</strong></a><br />
+                <a href="javascript:rcat('Multi (3+)');">Multi (3+)</a> <a href="javascript:rcat('Two-Tone');">
+                    Two-Tone</a> <a href="javascript:rcat('Metallic');">Metallic</a> <a href="javascript:rcat('Red');">
+                        Red</a> <a href="javascript:rcat('Orange');">Orange</a> <a href="javascript:rcat('Yellow');">
+                            Yellow</a> <a href="javascript:rcat('Green');">Green</a> <a href="javascript:rcat('Teal');">
+                                Teal</a> <a href="javascript:rcat('Blue');">Blue</a> <a href="javascript:rcat('Purple');">
+                                    Purple</a> <a href="javascript:rcat('Pink');">Pink</a> <a href="javascript:rcat('White');">
+                                        White</a> <a href="javascript:rcat('Gray');">Gray</a> <a href="javascript:rcat('Black');">
+                                            Black</a> <a href="javascript:rcat('Brown');">Brown</a>
+                <br />
+                <a class="none" href="javascript:rcat('Finish');"><strong>Finish</strong></a><br />
+                <a href="javascript:rcat('Shiny');">Shiny</a> <a href="javascript:rcat('Matte');">Matte</a>
+                <a href="javascript:rcat('Glitter');">Glitter</a>
+                <br />
+                <a class="none" href="javascript:rcat('Difficulty');"><strong>Difficulty</strong></a><br />
+                <a href="javascript:rcat('Simple');">Simple</a> <a href="javascript:rcat('Medium');">
+                    Medium</a> <a href="javascript:rcat('Hard');">Hard</a> <a href="javascript:rcat('Crazy');">
+                        Crazy</a>
+                <br />
+                <a class="none" href="javascript:rcat('Style');"><strong>Style</strong></a><br />
+                <a href="javascript:rcat('Pattern');">Pattern</a> <a href="javascript:rcat('Picture');">
+                    Picture</a> <a href="javascript:rcat('Gradient');">Gradient</a> <a href="javascript:rcat('3D');">
+                        3D</a> <a href="javascript:rcat('Airbrush');">Airbrush</a> <a href="javascript:rcat('FreeStyle');">
+                            FreeStyle</a> <a href="javascript:rcat('Stamp');">Stamp</a> <a href="javascript:rcat('Stilleto');">
+                                Stilleto</a>
+                <br />
+                <a class="none" href="javascript:rcat('With People');"><strong>With People</strong></a><br />
+                <a href="javascript:rcat('Face');">Face</a> <a href="javascript:rcat('Outfit');">Outfit</a>
+                <a href="javascript:rcat('Celebrities');">Celebrities</a> <a href="javascript:rcat('Pedicures');">
+                    Pedicures</a> <a href="javascript:rcat('Accessories');">Accessories</a>
+                <br />
+                <a class="none" href="javascript:rcat('How-To');"><strong>How-To</strong></a><br />
+                <a href="javascript:rcat('HowToGallery');">How To Gallery</a>
+                <br />
+                <a class="none" href="javascript:rcat('Products');"><strong>Products</strong></a><br />
+                <a href="javascript:rcat('Nail Polish');">Nail Polish</a> <a href="javascript:rcat('Pattern Tools');">
+                    Pattern Tools</a> <a href="javascript:rcat('Manicure');">Manicure</a> <a href="javascript:rcat('Other');">
+                        Other</a>
+                <br />
+            </div>
+        </div>
+        <div class="submenu" id="submenu3" style="display: none;width:160px;">
+            <div>
+                <a class="none" href="HostPinParty">Host a Pin Party</a><br />
+                <a class="none" href="experience">The Experience</a><br />
+                <a class="none" href="FAQs">FAQs</a><br />
+                 <a class="none" href="DoItNow">Do It Now</a><br />
+            </div>
+        </div>
+    </div>
+    <div id="PinPartyWrap">
+        <div class="Padd">
+        <div class="HostLeft">
+            <h1>
+                Host a Pin Party</h1>
+            <h2>
+                The ultimate manicure experience</h2>
+            <p style=" padding:0 0 20px;">
+                We give you the best manicure kits and choice of colors to help you throw a great
+                Pin Party. Our manicure stylists will help you and your friends master new techniques
+                and styles at your Pin Party.
+            </p>
+             <p style=" padding:0 0 20px;">
+                Give your friends a reason to party. What better girly fun than to get together
+                for a creative and fun manicure party! Try different looks and styles the fun way!
+                It's casual, no pressure and, most importantly, fun. What's not to love?</p>
+            <p>
+                Want to get a head start on your Pin Party? Share Look Books and your own Mini Look
+                Books with your friends, colleagues and acquaintances.. They’ll love the creative
+                ideas that’ll make your party a smashing success!</p>
+</div>
+<div class="HostRight">
+    <img src="img/Host-a-Pin-Party.jpg" />
+</div>
+        </div>
+    </div>
+</body>
+</html>

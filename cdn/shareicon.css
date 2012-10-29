@@ -1,0 +1,75 @@
+.shr-bookmarks{ width:150px!important;}
+div.shr-bookmarks {
+	margin:0 0 0 15px;
+	clear:both !important
+}
+div.shr-bookmarks ul.socials li {
+	background-image:url('img/shr-custom-sprite.png') !important;
+	background-repeat:no-repeat !important;
+}
+div.shr-bookmarks ul.socials {
+	width:100% !important;
+	margin:0 !important;
+	padding:0 !important;
+	float:left !important
+}
+div.shr-bookmarks ul.socials {
+	background:transparent none !important;
+	border:0 none !important;
+	outline:0 none !important
+}
+div.shr-bookmarks ul.socials li {
+	display:inline !important;
+	float:left !important;
+	list-style-type:none !important;
+	padding:0 !important;
+	height:40px !important;
+	width:75px !important;
+	cursor:pointer !important;
+	margin:3px 0 10px 0 !important;
+	background-color:transparent !important;
+	border:0 none !important;
+	outline:0 none !important;
+	clear:none !important
+}
+div.shr-bookmarks ul.socials li:before, div.shr-bookmarks ul.socials li:after, div.shr-bookmarks ul.socials li a:before, div.shr-bookmarks ul.socials li a:after {
+	content:'' !important;
+}
+div.shr-bookmarks ul.socials a, div.shr-bookmarks ul.socials a:hover {
+	display:block !important;
+	width:75px !important;
+	height:40px !important;
+	text-indent:-9999px !important;
+	background-color:transparent !important;
+	text-decoration:none !important;
+	border:0 none !important
+}
+div.shr-bookmarks ul.socials a:hover, div.shr-bookmarks ul.socials li:hover {
+	background-color:transparent !important;
+	border:0 none !important;
+	outline:0 none !important
+}
+li.shr-pinterest {
+	background-position:0px bottom !important
+}
+li.shr-pinterest:hover {
+	background-position:0px top !important
+}
+li.shr-lockers {
+	background-position:-75px bottom !important
+}
+li.shr-lockers:hover {
+	background-position:-75px top !important
+}
+li.shr-twitter {
+	background-position:-147px bottom !important
+}
+li.shr-twitter:hover {
+	background-position:-147px top !important
+}
+li.shr-flicker {
+	background-position:-220px bottom !important
+}
+li.shr-flicker:hover {
+	background-position:-220px top !important
+}

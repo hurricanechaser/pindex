@@ -1,0 +1,1203 @@
+﻿
+/* CSS Document */
+
+.add
+{
+   
+    width: 548px;
+    height: 295px;   
+}
+.add .modal .yellowStripe
+{
+    height: 38px;
+    background-color: #fffbcc;
+    line-height: 38px;
+    text-align: center;
+    border-bottom: 1px solid #d5d2c1;
+    font-size: 13px;
+}
+.add .modal .yellowStripe a:link
+{
+    color: #211922;
+    text-decoration: none;
+    font-weight: bold;
+}
+.add .modal .yellowStripe a:hover
+{
+    color: #cb2027;
+}
+.add .modal .openlink
+{
+}
+.add .modal .openlink .cell1
+{
+    color: #524D4D;
+    float: left;
+    font-size: 18px;
+    height: 160px;
+    padding: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    width: 142px;
+}
+.add .modal .openlink .cell1:hover
+{
+    background-color: #e1dfdf;
+}
+.add .modal .openlink .cell1 .icon
+{
+    background-image: url(img/AddIcons.png);
+    height: 81px;
+    margin: 15px auto 30px;
+    width: 66px;
+}
+.add .modal .openlink .cell1 .pin
+{
+    background-position: 0 0;
+}
+.add .modal .openlink .cell1 .arrow
+{
+    background-position: -66px 0;
+}
+.add .modal .openlink .cell1 .board
+{
+    background-position: -132px 0;
+}
+.addPin
+{
+    width: 612px;   
+}
+.addPin .modal .cont .pinIt
+{
+    width: 180px;
+    display: inline-block;
+    float: left;
+    margin: 20px 0 0 20px;
+}
+.addPin .modal .cont .pinIt .loading
+{
+    width: 170px;
+    margin: 25px auto 0 auto;
+    text-align: center;
+}
+.addPin .modal .cont .findImage
+{
+    width: 565px;
+    margin: 0 auto;
+    padding: 20px 30px 20px 20px;
+    display: inline-block;
+    border-bottom: 1px solid #D9D4D4;
+    position: relative;
+}
+.addPin .modal .cont .findImage .loaderImg
+{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 29px;
+    right: 193px;
+    display: block;
+}
+.addPin .modal .cont .findImage input
+{
+    border: 1px solid #A4A2A2;
+    box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+    border-radius: 6px 6px 6px 6px;
+    width: 405px;
+    height: 36px;
+    float: left;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 0 5px;
+    margin: 0 6px 0 0;
+}
+.addPin .modal .cont .findImage span
+{
+    width: 108px;
+    float: left;
+}
+.addPin .modal .cont .findImage span a.whiteBut
+{
+    display: inline-block;
+    clear: both;
+    background: url(img/white_Btn_Lft.gif) no-repeat left top;
+    line-height: 36px;
+    padding: 0 0 0 20px;
+    font-size: 18px;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(34, 25, 25, 0.5);
+    color: #524D4D;
+    font-weight: bold;
+    font-family: "helvetica neue" ,arial,sans-serif;
+    margin: 0;
+}
+.addPin .modal .cont .findImage span a.whiteBut span
+{
+    display: block;
+    clear: both;
+    background: url(img/white_Btn_Rgt.gif) no-repeat right top;
+    line-height: 36px;
+    padding: 0 20px 0 0;
+}
+
+.addPin .modal .cont .uploadCont
+{
+    width: 170px;
+    margin: 0 auto 14px auto;
+    position: relative;
+}
+.addPin .modal .cont .uploadCont .uploadImages
+{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    background-color: #FFFFFF;
+    padding: 4px;
+}
+.addPin .modal .cont .uploadCont .uploadImages img
+{
+    height: 75px;
+    width: 162px;
+}
+.addPin .modal .cont .uploadCont .prevNext
+{
+    background-color: #ddd9d9;
+    display: inline-block;
+    width: 170px;
+}
+.addPin .modal .cont .uploadCont .prevNext .prev
+{
+    line-height: 24px;
+    float: left;
+    color: #221919;
+    width: 68px;
+    border: 1px solid #e1dfdf;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    background: url(img/prevArrow.gif) 2px 10px no-repeat;
+}
+.addPin .modal .cont .uploadCont .prevNext .prev a:link, .addPin .modal .cont .uploadCont .prevNext .prev a:active, .addPin .modal .cont .uploadCont .prevNext .prev a:visited
+{
+    line-height: 24px;
+    display: block;
+    text-decoration: none;
+    color: #221919;
+}
+.addPin .modal .cont .uploadCont .prevNext .prev a:hover
+{
+    background: url(img/prevArrowHover.gif) 2px 10px no-repeat #eeeeee;
+    color: #cb2027;
+}
+.addPin .modal .cont .uploadCont .prevNext .next
+{
+    line-height: 24px;
+    float: right;
+    color: #221919;
+    width: 68px;
+    border: 1px solid #e1dfdf;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    background: url(img/nextArrow.gif) 52px 10px no-repeat;
+}
+.addPin .modal .cont .uploadCont .prevNext .next a:link, .addPin .modal .cont .uploadCont .prevNext .next a:active, .addPin .modal .cont .uploadCont .prevNext .next a:visited
+{
+    line-height: 24px;
+    display: block;
+    text-decoration: none;
+    color: #221919;
+}
+.addPin .modal .cont .uploadCont .prevNext .next a:hover
+{
+    background: url(img/nextArrowHover.gif) 52px 10px no-repeat #eeeeee;
+    color: #cb2027;
+}
+
+.addPin .modal .cont .pinIt textarea
+{
+    width: 306px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+    border: 1px solid #A4A2A2;
+    margin: 13px 0 0 0;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 5px 0 0 0;
+    font-family: "helvetica neue" ,arial,sans-serif;
+}
+.addPin .modal .cont .addPinRightPane
+{
+    width: 377px;
+    float: left;
+    margin: 0 0 0 14px;
+    padding: 13px 0 13px 0;
+    color: #524D4D;
+    position: relative;
+}
+.addPin .modal .cont .addPinRightPane textarea
+{
+    width: 375px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+    border: 1px solid #A4A2A2;
+    margin: 13px 0 0 0;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 5px 0 0 0;
+    font-family: "helvetica neue" ,arial,sans-serif;
+}
+.addPin .modal .cont .addPinRightPane span
+{
+    float: left;
+}
+.addPin .modal .cont .addPinRightPane span a.redButton
+{
+    display: inline-block;
+    clear: both;
+    background: url(img/blue_Btn_Lft.gif) no-repeat left top;
+    line-height: 48px;
+    padding: 0 0 0 20px;
+    font-size: 24px;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(34, 25, 25, 0.5);
+    color: #FCF9F9;
+    font-weight: bold;
+    font-family: "helvetica neue" ,arial,sans-serif;
+    margin: 6px 0 0 0;
+}
+.addPin .modal .cont .addPinRightPane span a.redButton span
+{
+    display: block;
+    clear: both;
+    background: url(img/blue_Btn_Rgt.gif) no-repeat right top;
+    line-height: 48px;
+    padding: 0 20px 0 0;
+}
+.addPin .modal .cont .addPinRightPane label
+{
+    float: left;
+    padding: 10px;
+    font-size: 18px;
+    color: #8c7e7e;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+
+.selectBox
+{
+    width: 375px;
+    height: 36px;
+    background: url(img/selectBoxBg.gif) no-repeat;
+    position: relative;
+    font-family: "helvetica neue" ,arial,sans-serif;
+}
+.selectBox .title
+{
+    display: block;
+    line-height: 36px;
+    padding: 0 0 0 15px;
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #8C7E7E;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    cursor: move;
+}
+.selectBox .rightArrow
+{
+    background: url("img/downArrow.png") no-repeat scroll center top transparent;
+    height: 9px;
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    width: 11px;
+}
+.selectBox .dropDownBox
+{
+    z-index: 5;
+    display: none;
+    width: 374px;
+    height: 300px;
+    border: 1px solid #aaaaaa;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    left: 0;
+    background: #ffffff;
+    top: 0;
+    box-shadow: 0 0 17px #BBBBBB;
+}
+.selectBox .dropDownBox ul
+{
+    padding: 0;
+    margin: 0;
+}
+.selectBox .dropDownBox ul li
+{
+    border-bottom: 1px solid #e8e7e7;
+    color: #524D4D;
+    font-size: 18px;
+    list-style: none;
+    padding: 5px 0 5px 10px;
+}
+.selectBox .dropDownBox ul li a:link, .selectBox .dropDownBox ul li a:visited, .selectBox .dropDownBox ul li a:active
+{
+    color: #524D4D;
+    line-height: 32px;
+    display: block;
+    text-decoration: none;
+    padding: 0 0 0 8px;
+}
+.selectBox .dropDownBox ul li a:hover
+{
+    background-color: #d2d2d0;
+}
+.selectBox .subBox
+{
+    width: 654px;
+    height: 230px;
+    position: absolute;
+    background: #fff;
+    left: 375px;
+    top: 0px;
+    border: 1px solid #AAAAAA;
+    border-radius: 8px;
+    box-shadow: 0 0 17px #BBBBBB;
+    font-weight: 300;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 0;
+    display: block;
+}
+.selectBox .subBox .subNav
+{
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.selectBox .subBox .subNav li
+{
+    line-height: 25px;
+    list-style: none;
+    font-size: 16px;
+    border-bottom: 1px solid #AAAAAA;
+    border-right: 1px solid #AAAAAA;
+}
+.selectBox .subBox .subNav li a strong
+{
+    color: #000000;
+}
+.selectBox .subBox .subNav li a:link, .selectBox .subBox .subNav li a:visited, .selectBox .subBox .subNav li a:active
+{
+    color: #8c7e7e;
+    line-height: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 15px;
+    display: block;
+}
+.selectBox .subBox .subNav li a:hover
+{
+    background-color: #d2d2d0;
+}
+.uploadPin
+{   
+    width: 608px;
+}
+.uploadPin .modal .cont .pinIt
+{
+    width: 180px;
+    display: inline-block;
+    float: left;
+    margin: 20px 0 0 20px;
+}
+
+.uploadPin .modal .cont .findImage
+{
+    width: 565px;
+    margin: 0 auto;
+    padding: 20px 30px 20px 20px;
+    display: inline-block;
+    border-bottom: 1px solid #D9D4D4;
+}
+.uploadPin .modal .cont .findImage .loaderImg
+{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 88px;
+    left: 188px;
+    display: block;
+}
+.uploadPin .modal .cont .findImage input
+{
+    border: 1px solid #A4A2A2;
+    box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+    border-radius: 6px 6px 6px 6px;
+    width: 405px;
+    height: 36px;
+    float: left;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 0 5px;
+    margin: 0 6px 0 0;
+}
+.uploadPin .modal .cont .findImage span
+{
+    width: 108px;
+    float: left;
+}
+.uploadPin .modal .cont .findImage span a.whiteBut
+{
+    display: inline-block;
+    clear: both;
+    background: url(img/white_Btn_Lft.gif) no-repeat left top;
+    line-height: 36px;
+    padding: 0 0 0 20px;
+    font-size: 18px;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(34, 25, 25, 0.5);
+    color: #524D4D;
+    font-weight: bold;
+    font-family: "helvetica neue" ,arial,sans-serif;
+    margin: 0;
+}
+.uploadPin .modal .cont .findImage span a.whiteBut span
+{
+    display: block;
+    clear: both;
+    background: url(img/white_Btn_Rgt.gif) no-repeat right top;
+    line-height: 36px;
+    padding: 0 20px 0 0;
+}
+
+.uploadPin .modal .cont .uploadCont
+{
+    width: 170px;
+    margin: 0 auto 14px auto;
+    position: relative;
+}
+.uploadPin .modal .cont .uploadCont .uploadImages
+{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    background: url(img/noimg.jpg) no-repeat right top #fff;
+    padding: 4px;
+    height: 100px;
+}
+.uploadPin .modal .cont .uploadCont .uploadImages img
+{
+    height: 75px;
+    width: 162px;
+}
+.uploadPin .modal .cont .uploadCont .prevNext
+{
+    background-color: #ddd9d9;
+    display: inline-block;
+    width: 170px;
+}
+.uploadPin .modal .cont .uploadCont .prevNext .prev
+{
+    line-height: 24px;
+    float: left;
+    color: #221919;
+    width: 68px;
+    border: 1px solid #e1dfdf;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    background: url(img/prevArrow.gif) 2px 10px no-repeat;
+}
+.uploadPin .modal .cont .uploadCont .prevNext .prev a:link, .addPin .modal .cont .uploadCont .prevNext .prev a:active, .addPin .modal .cont .uploadCont .prevNext .prev a:visited
+{
+    line-height: 24px;
+    display: block;
+    text-decoration: none;
+    color: #221919;
+}
+.uploadPin .modal .cont .uploadCont .prevNext .prev a:hover
+{
+    background: url(img/prevArrowHover.gif) 2px 10px no-repeat #eeeeee;
+    color: #cb2027;
+}
+.uploadPin .modal .cont .uploadCont .prevNext .next
+{
+    line-height: 24px;
+    float: right;
+    color: #221919;
+    width: 68px;
+    border: 1px solid #e1dfdf;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    background: url(img/nextArrow.gif) 52px 10px no-repeat;
+}
+.uploadPin .modal .cont .uploadCont .prevNext .next a:link, .addPin .modal .cont .uploadCont .prevNext .next a:active, .addPin .modal .cont .uploadCont .prevNext .next a:visited
+{
+    line-height: 24px;
+    display: block;
+    text-decoration: none;
+    color: #221919;
+}
+.uploadPin .modal .cont .uploadCont .prevNext .next a:hover
+{
+    background: url(img/nextArrowHover.gif) 52px 10px no-repeat #eeeeee;
+    color: #cb2027;
+}
+
+.uploadPin .modal .cont .pinIt textarea
+{
+    width: 306px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+    border: 1px solid #A4A2A2;
+    margin: 13px 0 0 0;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 5px 0 0 0;
+    font-family: "helvetica neue" ,arial,sans-serif;
+}
+.uploadPin .modal .cont .addPinRightPane
+{
+    width: 377px;
+    float: left;
+    margin: 0 0 0 14px;
+    padding: 13px 0 13px 0;
+    color: #524D4D;
+    position: relative;
+}
+.uploadPin .modal .cont .addPinRightPane textarea
+{
+    width: 375px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+    border: 1px solid #A4A2A2;
+    margin: 13px 0 0 0;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 5px 0 0 0;
+    font-family: "helvetica neue" ,arial,sans-serif;
+}
+.uploadPin .modal .cont .addPinRightPane span
+{
+    float: left;
+}
+.uploadPin .modal .cont .addPinRightPane span a.redButton
+{
+    display: inline-block;
+    clear: both;
+    background: url(img/blue_Btn_Lft.gif) no-repeat left top;
+    line-height: 48px;
+    padding: 0 0 0 20px;
+    font-size: 24px;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(34, 25, 25, 0.5);
+    color: #FCF9F9;
+    font-weight: bold;
+    font-family: "helvetica neue" ,arial,sans-serif;
+    margin: 6px 0 0 0;
+}
+.uploadPin .modal .cont .addPinRightPane span a.redButton span
+{
+    display: block;
+    clear: both;
+    background: url(img/blue_Btn_Rgt.gif) no-repeat right top;
+    line-height: 48px;
+    padding: 0 20px 0 0;
+}
+.uploadPin .modal .cont .addPinRightPane label
+{
+    float: left;
+    padding: 10px;
+    font-size: 18px;
+    color: #8c7e7e;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+.CreateBoard
+{
+       width: 612px;
+    height: 295px; 
+}
+.CreateBoard .modal .cont .pinIt
+{
+    width: 276px;
+    display: inline-block;
+    float: left;
+}
+.CreateBoard .modal .cont .pinIt label
+{
+    font-size: 18px;
+    line-height: 1.4em;
+    color: #8C7E7E;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    font-family: "helvetica neue" ,arial,sans-serif;
+    margin: 5px 23px 5px 0;
+    float: left;
+}
+.CreateBoard .modal .cont .pinIt input
+{
+    background: url(img/pinjimu/boardNameInputBg.gif) 0 0 no-repeat;
+    width: 62px;
+    height: 20px;
+    border: 0;
+    float: left;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 0 0 0 5px;
+    margin: 5px 0;
+}
+.CreateBoard .modal .cont .pinIt label input
+{
+    float: left;
+    width: 13px;
+    margin: 7px 5px 0 0;
+    height: 13px;
+}
+.CreateBoard .modal .cont .pinIt label span
+{
+    background: url(img/collaborative-icons.gif) no-repeat scroll 0 0 transparent;
+    height: 19px;
+    float: left;
+}
+.CreateBoard .modal .cont .pinIt .whoCanpin
+{
+    display: none;
+}
+.CreateBoard .modal .cont .pinIt .whoCanpin input
+{
+    background: url(img/whoCanPinInputBg.gif) 0 0 no-repeat;
+    width: 194px;
+    height: 36px;
+    border: 0;
+    float: left;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 0 0 0 5px;
+    margin: 5px 0;
+    float: left;
+}
+.CreateBoard .modal .cont .pinIt .whoCanpin span
+{
+    float: left;
+    margin: 5px 0;
+}
+.CreateBoard .modal .cont .pinIt .whoCanpin span a.whiteBut
+{
+    display: inline-block;
+    clear: both;
+    background: url(img/white_Btn_Lft.gif) no-repeat left top;
+    line-height: 36px;
+    padding: 0 0 0 20px;
+    font-size: 18px;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(34, 25, 25, 0.5);
+    color: #524D4D;
+    font-weight: bold;
+    font-family: "helvetica neue" ,arial,sans-serif;
+    margin: 0 0 0 2px;
+}
+.CreateBoard .modal .cont .pinIt .whoCanpin span a.whiteBut span
+{
+    display: block;
+    clear: both;
+    background: url(img/white_Btn_Rgt.gif) no-repeat right top;
+    line-height: 36px;
+    padding: 0 20px 0 0;
+    margin: 0;
+}
+.CreateBoard .modal .cont .pinIt a.redButton
+{
+    display: inline-block;
+    clear: both;
+    background: url(img/blue_Btn_Lft.gif) no-repeat left top;
+    line-height: 48px;
+    padding: 0 0 0 20px;
+    font-size: 24px;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(34, 25, 25, 0.5);
+    color: #FCF9F9;
+    font-weight: bold;
+    font-family: "helvetica neue" ,arial,sans-serif;
+    margin: 6px 0 0 0;
+}
+.CreateBoard .modal .cont .pinIt a.redButton span
+{
+    display: block;
+    clear: both;
+    background: url(img/blue_Btn_Rgt.gif) no-repeat right top;
+    line-height: 48px;
+    padding: 0 20px 0 0;
+}
+.CreateBoard .modal .cont .pinIt .labelBox
+{
+    width: 272px;
+    height: 23px;
+    font-size: 15px;
+    text-align: center;
+    padding: 6px 0 0 0;
+    border: 1px solid #999;
+    margin: 10px 0 0 0;
+}
+
+.CreateBoard .modal .cont .category
+{
+    width: 244px;
+    float: left;
+    margin: 0 0 0 14px;
+    border: 1px solid #cccaca;
+    padding: 13px 13px 13px 0;
+    color: #524D4D;
+    position: relative;
+}
+.CreateBoard .modal .cont .category h2
+{
+    padding: 0 0 0 13px;
+    margin: 0;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+}
+.CreateBoard .modal .cont .category .scroll
+{
+    height: 277px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+.CreateBoard .modal .cont .category .scroll li
+{
+    list-style: none;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: bold;
+}
+.CreateBoard .modal .cont .category .scroll li a:link, .uploadPin .modal .cont .category li a:active, .uploadPin .modal .cont .category li a:visited
+{
+    color: #524D4D;
+    text-decoration: none;
+    display: block;
+    padding: 0 0 0 13px;
+}
+.CreateBoard .modal .cont .category .scroll li a:hover
+{
+    background-color: #e7e6e6;
+}
+
+.CreateBoard .modal .cont .category label
+{
+    background: url(img/BrowseInputBoxBg.gif) 0 0 no-repeat;
+    width: 193px;
+    height: 28px;
+    position: absolute;
+    left: -93px;
+    top: 232px;
+    font-size: 18px;
+    text-align: center;
+    padding: 8px 0 0 0;
+}
+.CreateBoard .modal .cont .category .subBox
+{
+    width: 430px;
+    height: 347px;
+    position: absolute;
+    background: #fff;
+    left: 227px;
+    top: -1px;
+    border: 1px solid #AAAAAA;
+    font-weight: 300;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 0;
+    display: block;
+}
+.CreateBoard .modal .cont .category .subBox .subNav
+{
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.CreateBoard .modal .cont .category .subBox .subNav li
+{
+    line-height: 25px;
+    list-style: none;
+    font-size: 16px;
+    border-bottom: 1px solid #AAAAAA;
+    border-right: 1px solid #AAAAAA;
+}
+.CreateBoard .modal .cont .category .subBox .subNav li a strong
+{
+    color: #000000;
+}
+.CreateBoard .modal .cont .category .subBox .subNav li a:link, .selectBox .subBox .subNav li a:visited, .selectBox .subBox .subNav li a:active
+{
+    color: #8c7e7e;
+    line-height: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 15px;
+    display: block;
+}
+.CreateBoard .modal .cont .category .subBox .subNav li a:hover
+{
+    background-color: #d2d2d0;
+}
+
+.editboard
+{
+    width: 900px;
+}
+.editboard .modal .cont .category
+{
+    width: 244px;
+    float: left;
+    margin: 0 0 0 14px;
+    border: 1px solid #cccaca;
+    padding: 13px 13px 13px 0;
+    color: #524D4D;
+    position: relative;
+}
+.editboard .modal .cont .category h2
+{
+    padding: 0 0 0 13px;
+    margin: 0;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+}
+.editboard .modal .cont .category .scroll
+{
+    height: 277px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+.editboard .modal .cont .category .scroll li
+{
+    list-style: none;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: bold;
+}
+.editboard .modal .cont .category .scroll li a:link, .uploadPin .modal .cont .category li a:active, .uploadPin .modal .cont .category li a:visited
+{
+    color: #524D4D;
+    text-decoration: none;
+    display: block;
+    padding: 0 0 0 13px;
+}
+.editboard .modal .cont .category .scroll li a:hover
+{
+    background-color: #e7e6e6;
+}
+.editboard .modal .cont .category label
+{
+    background: url(img/BrowseInputBoxBg.gif) 0 0 no-repeat;
+    width: 193px;
+    height: 28px;
+    position: absolute;
+    left: -93px;
+    top: 232px;
+    font-size: 18px;
+    text-align: center;
+    padding: 8px 0 0 0;
+}
+.editboard .modal .cont .category .subBox
+{
+    width: 430px;
+    height: 347px;
+    position: absolute;
+    background: #fff;
+    left: 227px;
+    top: -1px;
+    border: 1px solid #AAAAAA;
+    font-weight: 300;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 0;
+    display: block;
+}
+.editboard .modal .cont .category .subBox .subNav
+{
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.editboard .modal .cont .category .subBox .subNav li
+{
+    line-height: 25px;
+    list-style: none;
+    font-size: 16px;
+    border-bottom: 1px solid #AAAAAA;
+    border-right: 1px solid #AAAAAA;
+}
+.editboard .modal .cont .category .subBox .subNav li a strong
+{
+    color: #000000;
+}
+.editboard .modal .cont .category .subBox .subNav li a:link, .selectBox .subBox .subNav li a:visited, .selectBox .subBox .subNav li a:active
+{
+    color: #8c7e7e;
+    line-height: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 15px;
+    display: block;
+}
+.editboard .modal .cont .category .subBox .subNav li a:hover
+{
+    background-color: #d2d2d0;
+}
+
+.Repin
+{    
+    width: 608px;
+}
+.Repin .modal .cont
+{
+    display: inline-block;
+}
+.Repin .modal .cont .pinIt
+{
+    width: 180px;
+    display: inline-block;
+    float: left;
+    margin: 20px 0 0 20px;
+}
+.Repin .modal .cont .uploadCont
+{
+    width: 170px;
+    margin: 0 auto 14px auto;
+    position: relative;
+}
+.Repin .modal .cont .uploadCont .uploadImages
+{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    height: 90px;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    background-color: #FFFFFF;
+    padding: 4px;
+}
+.Repin .modal .cont .uploadCont .uploadImages img
+{
+    height: 75px;
+    width: 162px;
+}
+
+.Repin .modal .cont .pinIt textarea
+{
+    width: 306px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+    border: 1px solid #A4A2A2;
+    margin: 13px 0 0 0;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 5px 0 0 0;
+    font-family: "helvetica neue" ,arial,sans-serif;
+}
+.Repin .modal .cont .addPinRightPane
+{
+    width: 377px;
+    float: left;
+    margin: 0 0 0 14px;
+    padding: 13px 0 13px 0;
+    color: #524D4D;
+    position: relative;
+}
+.Repin .modal .cont .addPinRightPane textarea
+{
+    width: 375px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+    border: 1px solid #A4A2A2;
+    margin: 13px 0 0 0;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 5px 0 0 0;
+    font-family: "helvetica neue" ,arial,sans-serif;
+}
+.Repin .modal .cont .addPinRightPane span
+{
+    float: left;
+}
+.Repin .modal .cont .addPinRightPane span a.redButton
+{
+    display: inline-block;
+    clear: both;
+    background: url(img/blue_Btn_Lft.gif) no-repeat left top;
+    line-height: 48px;
+    padding: 0 0 0 20px;
+    font-size: 24px;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(34, 25, 25, 0.5);
+    color: #FCF9F9;
+    font-weight: bold;
+    font-family: "helvetica neue" ,arial,sans-serif;
+    margin: 6px 0 0 0;
+}
+.Repin .modal .cont .addPinRightPane span a.redButton span
+{
+    display: block;
+    clear: both;
+    background: url(img/blue_Btn_Rgt.gif) no-repeat right top;
+    line-height: 48px;
+    padding: 0 20px 0 0;
+}
+.Repin .modal .cont .addPinRightPane label
+{
+    float: left;
+    padding: 10px;
+    font-size: 18px;
+    color: #8c7e7e;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+.comment
+{    
+    width: 608px;
+}
+.comment .modal .cont
+{
+    display: inline-block;
+}
+.comment .modal .cont .pinIt
+{
+    width: 180px;
+    display: inline-block;
+    float: left;
+    margin: 20px 0 0 20px;
+    border:1px solid red;
+}
+.comment .modal .cont .uploadCont
+{
+    width: 170px;
+    margin: 0 auto 14px auto;
+    position: relative;
+}
+.comment .modal .cont .uploadCont .uploadImages
+{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    height: 90px;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    background-color: #FFFFFF;
+    padding: 4px;
+}
+.comment .modal .cont .uploadCont .uploadImages img
+{
+    height: 75px;
+    width: 162px;
+}
+
+.comment .modal .cont .pinIt textarea
+{
+    width: 306px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+    border: 1px solid #A4A2A2;
+    margin: 13px 0 0 0;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 5px 0 0 0;
+    font-family: "helvetica neue" ,arial,sans-serif;
+}
+.comment .modal .cont .addPinRightPane
+{
+    width: 377px;
+    float: left;
+    margin: 0 0 0 14px;
+    padding: 13px 0 13px 0;
+    color: #524D4D;
+    position: relative;
+}
+.comment .modal .cont .addPinRightPane textarea
+{
+    width: 375px;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+    border: 1px solid #A4A2A2;
+    margin: 13px 0 0 0;
+    font-size: 18px;
+    color: #8C7E7E;
+    padding: 5px 0 0 0;
+    font-family: "helvetica neue" ,arial,sans-serif;
+}
+.comment .modal .cont .addPinRightPane span
+{
+    float: left;
+}
+.comment .modal .cont .addPinRightPane span a.redButton
+{
+    display: inline-block;
+    clear: both;
+    background: url(img/blue_Btn_Lft.gif) no-repeat left top;
+    line-height: 48px;
+    padding: 0 0 0 20px;
+    font-size: 24px;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(34, 25, 25, 0.5);
+    color: #FCF9F9;
+    font-weight: bold;
+    font-family: "helvetica neue" ,arial,sans-serif;
+    margin: 6px 0 0 0;
+}
+.comment .modal .cont .addPinRightPane span a.redButton span
+{
+    display: block;
+    clear: both;
+    background: url(img/blue_Btn_Rgt.gif) no-repeat right top;
+    line-height: 48px;
+    padding: 0 20px 0 0;
+}
+.comment .modal .cont .addPinRightPane label
+{
+    float: left;
+    padding: 10px;
+    font-size: 18px;
+    color: #8c7e7e;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+}
+.jqHandle {
+   background: red;
+   height:15px;
+}
+
+.jqDrag {
+  width: 100%;
+  cursor: move;
+}
+
+.jqResize {
+   width: 15px;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   cursor: se-resize;
+}
+
+.jqDnR {
+    z-index: 3;
+    position: relative;    
+    width: 180px;
+    font-size: 0.77em;
+    color: #618d5e;
+    margin: 5px 10px 10px 10px;
+    padding: 8px;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}
+

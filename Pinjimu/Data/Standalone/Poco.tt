@@ -1,0 +1,80 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#"    #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Linq" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="C:\inetpub\wwwroot\pindex\Pinjimu\lib\Dapper.dll" #>
+
+<#@ assembly name="C:\inetpub\wwwroot\pindex\Pinjimu\lib\DapperExtensions.dll" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="Dapper" #>
+
+<#@ output extension=".cs" #>
+
+<#
+    string connectionstringname="DataConnectionString";
+    string rp = Host.ResolvePath(".").Replace(@"\Data\Standalone\","");
+    string webconfig=System.IO.Path.Combine(rp,"web.config");
+    Dictionary<string,string> connKeyStore = new Dictionary<string,string>();
+    var elements= XDocument.Load(webconfig)
+        .Descendants("connectionStrings")
+        .Elements("add");
+    foreach (var el in elements){
+        string name= el.Attribute("name").Value;
+        string connectionString=el.Attribute("connectionString").Value;
+        connKeyStore.Add(name,connectionString);       
+    }   
+   string cs=connKeyStore[connectionstringname];
+    SqlConnection conn=new SqlConnection(cs);
+    conn.Open();  
+    System.Func<bool,string,string> infer=(nullable,type)=>{
+        switch(type){
+            case "numeric":
+                return nullable?"long?":"long";
+            case "datetime":
+                return nullable?"DateTime?":"DateTime";
+             case "int":
+                return nullable?"int?":"int";
+             case "smallint":
+                return nullable?"short?":"short";
+             case "tinyint":
+                return nullable?"short?":"short";
+             case "bit":
+                return nullable?"bool?":"bool";
+            default:
+                return "string";
+        }
+        };
+   WriteLine("using System;");
+   DataTable tables = conn.GetSchema("Tables");
+    StringBuilder sb=new StringBuilder();
+   sb.Append("namespace Pinjimu.Data.Standalone {");  
+   sb.AppendLine().AppendLine();
+   foreach (DataRow row in tables.Rows)
+     {
+        string tablename=row[2].ToString();
+        sb.AppendFormat("public class {0} $S$",tablename);       
+        sb.AppendLine().AppendLine();
+        DataTable columns = conn.GetSchema("Columns", new[] { "Pinjimu", null, tablename });
+        foreach (DataRow row1 in columns.Rows)
+        {           
+            bool nullable=row1[6].ToString()=="YES";
+            sb.AppendFormat("public {0} {1} $S$ get;set; $E$",infer(nullable,row1[7].ToString()),row1[3].ToString());
+            sb.AppendLine();
+        }
+        sb.Append("$E$");
+     }
+     sb.Append("$E$");
+    conn.Close();
+    Write(sb.Replace("$S$","{").Replace("$E$","}").ToString());
+ #>
+
+

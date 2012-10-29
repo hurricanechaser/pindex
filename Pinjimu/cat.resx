@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Accessories_and_Decor" xml:space="preserve">
+    <value>Accessories and Decor</value>
+  </data>
+  <data name="Bedroom_Products" xml:space="preserve">
+    <value>Bedroom Products</value>
+  </data>
+  <data name="Floors" xml:space="preserve">
+    <value>Floors</value>
+  </data>
+  <data name="Furniture" xml:space="preserve">
+    <value>Furniture</value>
+  </data>
+  <data name="Hardware" xml:space="preserve">
+    <value>Hardware</value>
+  </data>
+  <data name="Home_Office_Products" xml:space="preserve">
+    <value>Home Office Products</value>
+  </data>
+  <data name="Kids_Products" xml:space="preserve">
+    <value>Kids Products</value>
+  </data>
+  <data name="Kitchen_Products" xml:space="preserve">
+    <value>Kitchen Products</value>
+  </data>
+  <data name="Lighting" xml:space="preserve">
+    <value>Lighting</value>
+  </data>
+  <data name="Outdoor_Products" xml:space="preserve">
+    <value>Outdoor Products</value>
+  </data>
+  <data name="Storage_and_Organization" xml:space="preserve">
+    <value>Storage and Organization</value>
+  </data>
+  <data name="Tabletop" xml:space="preserve">
+    <value>Tabletop</value>
+  </data>
+  <data name="Window_Treatment" xml:space="preserve">
+    <value>Window Treatment</value>
+  </data>
+  <data name="Windows_and_Doors" xml:space="preserve">
+    <value>Windows and Doors</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Spaces" xml:space="preserve">
+    <value>Spaces</value>
+  </data>
+  <data name="Lightining" xml:space="preserve">
+    <value>Lightining</value>
+  </data>
+  <data name="Bedroom" xml:space="preserve">
+    <value>Bedroom</value>
+  </data>
+  <data name="Contemporary" xml:space="preserve">
+    <value>Contemporary</value>
+  </data>
+  <data name="Eclectic" xml:space="preserve">
+    <value>Eclectic</value>
+  </data>
+  <data name="Mediterranean" xml:space="preserve">
+    <value>Mediterranean</value>
+  </data>
+  <data name="Modern" xml:space="preserve">
+    <value>Modern</value>
+  </data>
+  <data name="Traditional" xml:space="preserve">
+    <value>Traditional</value>
+  </data>
+  <data name="Tropical" xml:space="preserve">
+    <value>Tropical</value>
+  </data>
+  <data name="Asian" xml:space="preserve">
+    <value>Asian</value>
+  </data>
+  <data name="Style" xml:space="preserve">
+    <value>Style</value>
+  </data>
+  <data name="Basement" xml:space="preserve">
+    <value>Basement</value>
+  </data>
+  <data name="Bathroom" xml:space="preserve">
+    <value>Bathroom</value>
+  </data>
+  <data name="Closet" xml:space="preserve">
+    <value>Closet</value>
+  </data>
+  <data name="Dining_Room" xml:space="preserve">
+    <value>Dining Room</value>
+  </data>
+  <data name="Entry" xml:space="preserve">
+    <value>Entry</value>
+  </data>
+  <data name="Exterior" xml:space="preserve">
+    <value>Exterior</value>
+  </data>
+  <data name="Family_Room" xml:space="preserve">
+    <value>Family Room</value>
+  </data>
+  <data name="Garage_and_Shed" xml:space="preserve">
+    <value>Garage and Shed</value>
+  </data>
+  <data name="Hall" xml:space="preserve">
+    <value>Hall</value>
+  </data>
+  <data name="Home_Gym" xml:space="preserve">
+    <value>Home Gym</value>
+  </data>
+  <data name="Home_Office" xml:space="preserve">
+    <value>Home Office</value>
+  </data>
+  <data name="Kitchen" xml:space="preserve">
+    <value>Kitchen</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Landscape</value>
+  </data>
+  <data name="Laundry_Room" xml:space="preserve">
+    <value>Laundry Room</value>
+  </data>
+  <data name="Living_Room" xml:space="preserve">
+    <value>Living Room</value>
+  </data>
+  <data name="Media_Room" xml:space="preserve">
+    <value>Media Room</value>
+  </data>
+  <data name="Patio" xml:space="preserve">
+    <value>Patio</value>
+  </data>
+  <data name="Pool" xml:space="preserve">
+    <value>Pool</value>
+  </data>
+  <data name="Porch" xml:space="preserve">
+    <value>Porch</value>
+  </data>
+  <data name="Powder_Room" xml:space="preserve">
+    <value>Powder Room</value>
+  </data>
+  <data name="Staircase" xml:space="preserve">
+    <value>Staircase</value>
+  </data>
+  <data name="Wine_Cellar" xml:space="preserve">
+    <value>Wine Cellar</value>
+  </data>
+  <data name="Bath_Products" xml:space="preserve">
+    <value>Bath Products</value>
+  </data>
+  <data name="Fabric" xml:space="preserve">
+    <value>Fabric</value>
+  </data>
+  <data name="Housekeeping" xml:space="preserve">
+    <value>Housekeeping</value>
+  </data>
+  <data name="Artwork" xml:space="preserve">
+    <value>Artwork</value>
+  </data>
+  <data name="Books" xml:space="preserve">
+    <value>Books</value>
+  </data>
+  <data name="Candle_and_Candle_Holders" xml:space="preserve">
+    <value>Candle and Candle Holders</value>
+  </data>
+  <data name="Clocks" xml:space="preserve">
+    <value>Clocks</value>
+  </data>
+  <data name="Decals" xml:space="preserve">
+    <value>Decals</value>
+  </data>
+  <data name="Fireplace_Accessories" xml:space="preserve">
+    <value>Fireplace Accessories</value>
+  </data>
+  <data name="Fireplaces" xml:space="preserve">
+    <value>Fireplaces</value>
+  </data>
+  <data name="cleaning_supplies" xml:space="preserve">
+    <value>cleaning supplies</value>
+  </data>
+  <data name="Frames" xml:space="preserve">
+    <value>Frames</value>
+  </data>
+  <data name="Holiday_Decorations" xml:space="preserve">
+    <value>Holiday Decorations</value>
+  </data>
+  <data name="ladders_and_step_stools" xml:space="preserve">
+    <value>ladders and step stools</value>
+  </data>
+  <data name="Home_Electronics" xml:space="preserve">
+    <value>Home Electronics</value>
+  </data>
+  <data name="Home_Fragrance" xml:space="preserve">
+    <value>Home Fragrance</value>
+  </data>
+  <data name="Indoor_Fountains" xml:space="preserve">
+    <value>Indoor Fountains</value>
+  </data>
+  <data name="Laundry_products" xml:space="preserve">
+    <value>Laundry products</value>
+  </data>
+  <data name="Indoor_Pots_and_Planters" xml:space="preserve">
+    <value>Indoor Pots and Planters</value>
+  </data>
+  <data name="Magazine_Racks" xml:space="preserve">
+    <value>Magazine Racks</value>
+  </data>
+  <data name="Mirrors" xml:space="preserve">
+    <value>Mirrors</value>
+  </data>
+  <data name="Clothesline" xml:space="preserve">
+    <value>Clothesline</value>
+  </data>
+  <data name="Paints_Stains_and_Glazes" xml:space="preserve">
+    <value>Paints Stains and Glazes</value>
+  </data>
+  <data name="dryer_racks" xml:space="preserve">
+    <value>dryer racks</value>
+  </data>
+  <data name="Pet_Accessories" xml:space="preserve">
+    <value>Pet Accessories</value>
+  </data>
+  <data name="Pillows" xml:space="preserve">
+    <value>Pillows</value>
+  </data>
+  <data name="Ironing_boards" xml:space="preserve">
+    <value>Ironing boards</value>
+  </data>
+  <data name="Plants" xml:space="preserve">
+    <value>Plants</value>
+  </data>
+  <data name="Irons" xml:space="preserve">
+    <value>Irons</value>
+  </data>
+  <data name="Rugs" xml:space="preserve">
+    <value>Rugs</value>
+  </data>
+  <data name="Screens_and_Wall_Dividers" xml:space="preserve">
+    <value>Screens and Wall Dividers</value>
+  </data>
+  <data name="Stencils" xml:space="preserve">
+    <value>Stencils</value>
+  </data>
+  <data name="Throws" xml:space="preserve">
+    <value>Throws</value>
+  </data>
+  <data name="Laundry_Room_appliances" xml:space="preserve">
+    <value>Laundry Room appliances</value>
+  </data>
+  <data name="Vases" xml:space="preserve">
+    <value>Vases</value>
+  </data>
+  <data name="Utility_Tubs" xml:space="preserve">
+    <value>Utility Tubs</value>
+  </data>
+  <data name="Wallpaper" xml:space="preserve">
+    <value>Wallpaper</value>
+  </data>
+  <data name="Waste_Baskets" xml:space="preserve">
+    <value>Waste Baskets</value>
+  </data>
+  <data name="Mops_brooms_and_Dustpans" xml:space="preserve">
+    <value>Mops brooms and Dustpans</value>
+  </data>
+  <data name="Vacuum_cleaners" xml:space="preserve">
+    <value>Vacuum cleaners</value>
+  </data>
+  <data name="Bath_and_Spa_Accessories" xml:space="preserve">
+    <value>Bath and Spa Accessories</value>
+  </data>
+  <data name="Bath_Mats" xml:space="preserve">
+    <value>Bath Mats</value>
+  </data>
+  <data name="Bathroom_Countertops" xml:space="preserve">
+    <value>Bathroom Countertops</value>
+  </data>
+  <data name="Bathroom_Faucets" xml:space="preserve">
+    <value>Bathroom Faucets</value>
+  </data>
+  <data name="Bathroom_Mirrors" xml:space="preserve">
+    <value>Bathroom Mirrors</value>
+  </data>
+  <data name="Bathroom_Sinks" xml:space="preserve">
+    <value>Bathroom Sinks</value>
+  </data>
+  <data name="Bathroom_Storage" xml:space="preserve">
+    <value>Bathroom Storage</value>
+  </data>
+  <data name="Bathroom_Tile" xml:space="preserve">
+    <value>Bathroom Tile</value>
+  </data>
+  <data name="Bathroom_Vanities_and_Sink_Consoles" xml:space="preserve">
+    <value>Bathroom Vanities and Sink Consoles</value>
+  </data>
+  <data name="Bathtubs" xml:space="preserve">
+    <value>Bathtubs</value>
+  </data>
+  <data name="Shower_Caddies" xml:space="preserve">
+    <value>Shower Caddies</value>
+  </data>
+  <data name="Shower_Curtains" xml:space="preserve">
+    <value>Shower Curtains</value>
+  </data>
+  <data name="Showers" xml:space="preserve">
+    <value>Showers</value>
+  </data>
+  <data name="Toilet_Accessories" xml:space="preserve">
+    <value>Toilet Accessories</value>
+  </data>
+  <data name="Toilets" xml:space="preserve">
+    <value>Toilets</value>
+  </data>
+  <data name="Towel_Bars_and_Hooks" xml:space="preserve">
+    <value>Towel Bars and Hooks</value>
+  </data>
+  <data name="Towels" xml:space="preserve">
+    <value>Towels</value>
+  </data>
+  <data name="Bedding" xml:space="preserve">
+    <value>Bedding</value>
+  </data>
+  <data name="Bedroom_Benches" xml:space="preserve">
+    <value>Bedroom Benches</value>
+  </data>
+  <data name="Beds" xml:space="preserve">
+    <value>Beds</value>
+  </data>
+  <data name="Dressers_Chests_and_Bedroom_Armoires" xml:space="preserve">
+    <value>Dressers Chests and Bedroom Armoires</value>
+  </data>
+  <data name="Headboards" xml:space="preserve">
+    <value>Headboards</value>
+  </data>
+  <data name="Makeup_Mirrors" xml:space="preserve">
+    <value>Makeup Mirrors</value>
+  </data>
+  <data name="Nightstands_and_Beside_Tables" xml:space="preserve">
+    <value>Nightstands and Beside Tables</value>
+  </data>
+  <data name="Sofa_Beds" xml:space="preserve">
+    <value>Sofa Beds</value>
+  </data>
+  <data name="Outdoor_Fabric" xml:space="preserve">
+    <value>Outdoor Fabric</value>
+  </data>
+  <data name="Upholstery_Fabric" xml:space="preserve">
+    <value>Upholstery Fabric</value>
+  </data>
+  <data name="Baby_Bedding" xml:space="preserve">
+    <value>Baby Bedding</value>
+  </data>
+  <data name="Baby_Swings_And_Bouncers" xml:space="preserve">
+    <value>Baby Swings And Bouncers</value>
+  </data>
+  <data name="Carpet_Flooring" xml:space="preserve">
+    <value>Carpet Flooring</value>
+  </data>
+  <data name="Baby_Toys" xml:space="preserve">
+    <value>Baby Toys</value>
+  </data>
+  <data name="Floor_Tiles" xml:space="preserve">
+    <value>Floor Tiles</value>
+  </data>
+  <data name="Laminate_Florring" xml:space="preserve">
+    <value>Laminate Florring</value>
+  </data>
+  <data name="Vinyl_Flooring" xml:space="preserve">
+    <value>Vinyl Flooring</value>
+  </data>
+  <data name="Wood_Flooring" xml:space="preserve">
+    <value>Wood Flooring</value>
+  </data>
+  <data name="Changing_Tables" xml:space="preserve">
+    <value>Changing Tables</value>
+  </data>
+  <data name="ArmChairs" xml:space="preserve">
+    <value>ArmChairs</value>
+  </data>
+  <data name="Bar_Carts" xml:space="preserve">
+    <value>Bar Carts</value>
+  </data>
+  <data name="Children_Lighting" xml:space="preserve">
+    <value>Children Lighting</value>
+  </data>
+  <data name="Crib_Accessories" xml:space="preserve">
+    <value>Crib Accessories</value>
+  </data>
+  <data name="Cribs" xml:space="preserve">
+    <value>Cribs</value>
+  </data>
+  <data name="Bar_Tables" xml:space="preserve">
+    <value>Bar Tables</value>
+  </data>
+  <data name="Benches" xml:space="preserve">
+    <value>Benches</value>
+  </data>
+  <data name="Highchairs" xml:space="preserve">
+    <value>Highchairs</value>
+  </data>
+  <data name="Buffets_and_Sideboards" xml:space="preserve">
+    <value>Buffets and Sideboards</value>
+  </data>
+  <data name="Chairs" xml:space="preserve">
+    <value>Chairs</value>
+  </data>
+  <data name="Kids_Bedding" xml:space="preserve">
+    <value>Kids Bedding</value>
+  </data>
+  <data name="Coffee_Tables" xml:space="preserve">
+    <value>Coffee Tables</value>
+  </data>
+  <data name="Kids_Beds" xml:space="preserve">
+    <value>Kids Beds</value>
+  </data>
+  <data name="Day_Beds_and_Chaises" xml:space="preserve">
+    <value>Day Beds and Chaises</value>
+  </data>
+  <data name="Kids_Chairs" xml:space="preserve">
+    <value>Kids Chairs</value>
+  </data>
+  <data name="Kids_Decor" xml:space="preserve">
+    <value>Kids Decor</value>
+  </data>
+  <data name="Dining_Chair_Cushions" xml:space="preserve">
+    <value>Dining Chair Cushions</value>
+  </data>
+  <data name="Kids_Dressers" xml:space="preserve">
+    <value>Kids Dressers</value>
+  </data>
+  <data name="Dining_Chairs_and_Benches" xml:space="preserve">
+    <value>Dining Chairs and Benches</value>
+  </data>
+  <data name="Dining_Tables" xml:space="preserve">
+    <value>Dining Tables</value>
+  </data>
+  <data name="Love_Seats" xml:space="preserve">
+    <value>Love Seats</value>
+  </data>
+  <data name="Kids_Rugs" xml:space="preserve">
+    <value>Kids Rugs</value>
+  </data>
+  <data name="Ottomans_and_Cubes" xml:space="preserve">
+    <value>Ottomans and Cubes</value>
+  </data>
+  <data name="Kids_Tables" xml:space="preserve">
+    <value>Kids Tables</value>
+  </data>
+  <data name="Rocking_Chairs" xml:space="preserve">
+    <value>Rocking Chairs</value>
+  </data>
+  <data name="Sectional_Sofas" xml:space="preserve">
+    <value>Sectional Sofas</value>
+  </data>
+  <data name="Mobiles" xml:space="preserve">
+    <value>Mobiles</value>
+  </data>
+  <data name="Side_Tables_and_Accent_Tables" xml:space="preserve">
+    <value>Side Tables and Accent Tables</value>
+  </data>
+  <data name="Sofas" xml:space="preserve">
+    <value>Sofas</value>
+  </data>
+  <data name="Nursery_Decor" xml:space="preserve">
+    <value>Nursery Decor</value>
+  </data>
+  <data name="Brackets" xml:space="preserve">
+    <value>Brackets</value>
+  </data>
+  <data name="Kids_Toys" xml:space="preserve">
+    <value>Kids Toys</value>
+  </data>
+  <data name="Handles" xml:space="preserve">
+    <value>Handles</value>
+  </data>
+  <data name="Knobs" xml:space="preserve">
+    <value>Knobs</value>
+  </data>
+  <data name="Pulls" xml:space="preserve">
+    <value>Pulls</value>
+  </data>
+  <data name="Switchplates" xml:space="preserve">
+    <value>Switchplates</value>
+  </data>
+  <data name="Rocking_Chairs_And_Gliders" xml:space="preserve">
+    <value>Rocking Chairs And Gliders</value>
+  </data>
+  <data name="Bulletin_Board" xml:space="preserve">
+    <value>Bulletin Board</value>
+  </data>
+  <data name="Cable_Management" xml:space="preserve">
+    <value>Cable Management</value>
+  </data>
+  <data name="Desk_Accessories" xml:space="preserve">
+    <value>Desk Accessories</value>
+  </data>
+  <data name="Desks" xml:space="preserve">
+    <value>Desks</value>
+  </data>
+  <data name="Filing_Cabinets_and_Carts" xml:space="preserve">
+    <value>Filing Cabinets and Carts</value>
+  </data>
+  <data name="Toy_Storage" xml:space="preserve">
+    <value>Toy Storage</value>
+  </data>
+  <data name="Aprons" xml:space="preserve">
+    <value>Aprons</value>
+  </data>
+  <data name="Bars__Stools_and_Counter_Stools" xml:space="preserve">
+    <value>Bars  Stools and Counter Stools</value>
+  </data>
+  <data name="Cabinet_And_Drawer_Organizers" xml:space="preserve">
+    <value>Cabinet And Drawer Organizers</value>
+  </data>
+  <data name="CookWare_And_BakeWare" xml:space="preserve">
+    <value>CookWare And BakeWare</value>
+  </data>
+  <data name="Dish_Racks" xml:space="preserve">
+    <value>Dish Racks</value>
+  </data>
+  <data name="Dishtowels" xml:space="preserve">
+    <value>Dishtowels</value>
+  </data>
+  <data name="Food_Containers_And_Storage" xml:space="preserve">
+    <value>Food Containers And Storage</value>
+  </data>
+  <data name="kitchen_Cabinets" xml:space="preserve">
+    <value>kitchen Cabinets</value>
+  </data>
+  <data name="Task_Chairs" xml:space="preserve">
+    <value>Task Chairs</value>
+  </data>
+  <data name="Kitchen_Countertops" xml:space="preserve">
+    <value>Kitchen Countertops</value>
+  </data>
+  <data name="Front_Doors" xml:space="preserve">
+    <value>Front Doors</value>
+  </data>
+  <data name="Kitchen_Faucets" xml:space="preserve">
+    <value>Kitchen Faucets</value>
+  </data>
+  <data name="Garage_Doors" xml:space="preserve">
+    <value>Garage Doors</value>
+  </data>
+  <data name="Interior_Doors" xml:space="preserve">
+    <value>Interior Doors</value>
+  </data>
+  <data name="Screen_Doors" xml:space="preserve">
+    <value>Screen Doors</value>
+  </data>
+  <data name="Skylights" xml:space="preserve">
+    <value>Skylights</value>
+  </data>
+  <data name="Windows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="Kitchen_Islands_and_Kitchen_Crafts" xml:space="preserve">
+    <value>Kitchen Islands and Kitchen Crafts</value>
+  </data>
+  <data name="Cellular_Shades" xml:space="preserve">
+    <value>Cellular Shades</value>
+  </data>
+  <data name="Kitchen_Sinks" xml:space="preserve">
+    <value>Kitchen Sinks</value>
+  </data>
+  <data name="Curtain_Poles" xml:space="preserve">
+    <value>Curtain Poles</value>
+  </data>
+  <data name="Curtains" xml:space="preserve">
+    <value>Curtains</value>
+  </data>
+  <data name="Roller_Blinds" xml:space="preserve">
+    <value>Roller Blinds</value>
+  </data>
+  <data name="Kitchen_Tile" xml:space="preserve">
+    <value>Kitchen Tile</value>
+  </data>
+  <data name="Roman_Blinds" xml:space="preserve">
+    <value>Roman Blinds</value>
+  </data>
+  <data name="Venetian_Blinds" xml:space="preserve">
+    <value>Venetian Blinds</value>
+  </data>
+  <data name="Kitchen_Tools" xml:space="preserve">
+    <value>Kitchen Tools</value>
+  </data>
+  <data name="Vertical_Blinds" xml:space="preserve">
+    <value>Vertical Blinds</value>
+  </data>
+  <data name="Window_Blinds" xml:space="preserve">
+    <value>Window Blinds</value>
+  </data>
+  <data name="Kitchen_Trash_Cans" xml:space="preserve">
+    <value>Kitchen Trash Cans</value>
+  </data>
+  <data name="Barware" xml:space="preserve">
+    <value>Barware</value>
+  </data>
+  <data name="Dinnerware" xml:space="preserve">
+    <value>Dinnerware</value>
+  </data>
+  <data name="Flateware" xml:space="preserve">
+    <value>Flateware</value>
+  </data>
+  <data name="Knives_and_Chopping_Boards" xml:space="preserve">
+    <value>Knives and Chopping Boards</value>
+  </data>
+  <data name="Glassware" xml:space="preserve">
+    <value>Glassware</value>
+  </data>
+  <data name="Napkin_Rings" xml:space="preserve">
+    <value>Napkin Rings</value>
+  </data>
+  <data name="Serveware" xml:space="preserve">
+    <value>Serveware</value>
+  </data>
+  <data name="Table_Linens" xml:space="preserve">
+    <value>Table Linens</value>
+  </data>
+  <data name="Major_Kitchen_Appliances" xml:space="preserve">
+    <value>Major Kitchen Appliances</value>
+  </data>
+  <data name="Oven_Mits_And_Pot_Holders" xml:space="preserve">
+    <value>Oven Mits And Pot Holders</value>
+  </data>
+  <data name="Panty" xml:space="preserve">
+    <value>Panty</value>
+  </data>
+  <data name="Pot_Racks" xml:space="preserve">
+    <value>Pot Racks</value>
+  </data>
+  <data name="Small_Kitchen_Appliances" xml:space="preserve">
+    <value>Small Kitchen Appliances</value>
+  </data>
+  <data name="Wine_Racks" xml:space="preserve">
+    <value>Wine Racks</value>
+  </data>
+  <data name="Baskets" xml:space="preserve">
+    <value>Baskets</value>
+  </data>
+  <data name="Bookcases_Cabinets_and_Computer_Armoires" xml:space="preserve">
+    <value>Bookcases Cabinets and Computer Armoires</value>
+  </data>
+  <data name="Closet_Organizers" xml:space="preserve">
+    <value>Closet Organizers</value>
+  </data>
+  <data name="Clothes_and_Shoes_Organizers" xml:space="preserve">
+    <value>Clothes and Shoes Organizers</value>
+  </data>
+  <data name="Clothes_Racks" xml:space="preserve">
+    <value>Clothes Racks</value>
+  </data>
+  <data name="Bath_Room_Lighting_and_Vanity_Lighting" xml:space="preserve">
+    <value>Bath Room Lighting and Vanity Lighting</value>
+  </data>
+  <data name="Coat_Stands_and_Umbrella" xml:space="preserve">
+    <value>Coat Stands and Umbrella</value>
+  </data>
+  <data name="Celling_Fans" xml:space="preserve">
+    <value>Celling Fans</value>
+  </data>
+  <data name="Hall_Trees" xml:space="preserve">
+    <value>Hall Trees</value>
+  </data>
+  <data name="Hooks_and_Hangers" xml:space="preserve">
+    <value>Hooks and Hangers</value>
+  </data>
+  <data name="Celling_Lighting" xml:space="preserve">
+    <value>Celling Lighting</value>
+  </data>
+  <data name="Media_Storage" xml:space="preserve">
+    <value>Media Storage</value>
+  </data>
+  <data name="Medicine_Cabinets" xml:space="preserve">
+    <value>Medicine Cabinets</value>
+  </data>
+  <data name="Chandeliers" xml:space="preserve">
+    <value>Chandeliers</value>
+  </data>
+  <data name="Shoeracks" xml:space="preserve">
+    <value>Shoeracks</value>
+  </data>
+  <data name="Floor_Lamps" xml:space="preserve">
+    <value>Floor Lamps</value>
+  </data>
+  <data name="Storage_Boxes" xml:space="preserve">
+    <value>Storage Boxes</value>
+  </data>
+  <data name="Wall_Shelves" xml:space="preserve">
+    <value>Wall Shelves</value>
+  </data>
+  <data name="Kitchen_Lighting_And_Cabinet_Lighting" xml:space="preserve">
+    <value>Kitchen Lighting And Cabinet Lighting</value>
+  </data>
+  <data name="Lamp_Shades" xml:space="preserve">
+    <value>Lamp Shades</value>
+  </data>
+  <data name="Light_Bulbs" xml:space="preserve">
+    <value>Light Bulbs</value>
+  </data>
+  <data name="pendent_Lighting" xml:space="preserve">
+    <value>pendent Lighting</value>
+  </data>
+  <data name="Recessed_Lighting" xml:space="preserve">
+    <value>Recessed Lighting</value>
+  </data>
+  <data name="Table_Lamps" xml:space="preserve">
+    <value>Table Lamps</value>
+  </data>
+  <data name="Track_Lighting" xml:space="preserve">
+    <value>Track Lighting</value>
+  </data>
+  <data name="Wall_Sconces" xml:space="preserve">
+    <value>Wall Sconces</value>
+  </data>
+  <data name="Fencing" xml:space="preserve">
+    <value>Fencing</value>
+  </data>
+  <data name="Firepits" xml:space="preserve">
+    <value>Firepits</value>
+  </data>
+  <data name="Granding_Tools" xml:space="preserve">
+    <value>Granding Tools</value>
+  </data>
+  <data name="Gazebos" xml:space="preserve">
+    <value>Gazebos</value>
+  </data>
+  <data name="Greenhouses" xml:space="preserve">
+    <value>Greenhouses</value>
+  </data>
+  <data name="Grills" xml:space="preserve">
+    <value>Grills</value>
+  </data>
+  <data name="Hammocks" xml:space="preserve">
+    <value>Hammocks</value>
+  </data>
+  <data name="Irrigation_Equipment" xml:space="preserve">
+    <value>Irrigation Equipment</value>
+  </data>
+  <data name="Outdoor_Decor" xml:space="preserve">
+    <value>Outdoor Decor</value>
+  </data>
+  <data name="Outdoor_Lighting" xml:space="preserve">
+    <value>Outdoor Lighting</value>
+  </data>
+  <data name="Outdoor_Pillows" xml:space="preserve">
+    <value>Outdoor Pillows</value>
+  </data>
+  <data name="Outdoor_Playsets" xml:space="preserve">
+    <value>Outdoor Playsets</value>
+  </data>
+  <data name="Outdoor_Rugs" xml:space="preserve">
+    <value>Outdoor Rugs</value>
+  </data>
+  <data name="Outdoor_Swingsets" xml:space="preserve">
+    <value>Outdoor Swingsets</value>
+  </data>
+  <data name="Outdoor_Umbrellas" xml:space="preserve">
+    <value>Outdoor Umbrellas</value>
+  </data>
+  <data name="Patio_Furniture_and_Outdoor_Furniture" xml:space="preserve">
+    <value>Patio Furniture and Outdoor Furniture</value>
+  </data>
+  <data name="Prefab_Studios" xml:space="preserve">
+    <value>Prefab Studios</value>
+  </data>
+  <data name="Retainer_Walls" xml:space="preserve">
+    <value>Retainer Walls</value>
+  </data>
+  <data name="Sheds" xml:space="preserve">
+    <value>Sheds</value>
+  </data>
+  <data name="Following" xml:space="preserve">
+    <value>Following</value>
+  </data>
+  <data name="Popular" xml:space="preserve">
+    <value>Popular</value>
+  </data>
+  <data name="Kids" xml:space="preserve">
+    <value>Kids</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Trends" xml:space="preserve">
+    <value>Trends</value>
+  </data>
+</root>

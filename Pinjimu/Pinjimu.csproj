@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3DD1C1FE-79AB-4FEA-8A1A-A1E1161F52A4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pinjimu</RootNamespace>
+    <AssemblyName>Pinjimu</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="blowery.Web.HttpCompress, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\blowery.Web.HttpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Users\Administrator\Documents\Visual Studio 2010\Projects\photogallery\packages\Dapper.1.8\lib\net40\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Rainbow, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Dapper.Rainbow.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SqlBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Dapper.SqlBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="DapperExtensions, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\DapperExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="EmailSender, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\EmailSender.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="HashLib, Version=2.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\HashLib.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer, Version=3.2.4.698, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Plugins.DiskCache, Version=3.2.4.698, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\ImageResizer.Plugins.DiskCache.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.0.5.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLinq">
+      <HintPath>..\..\..\..\Users\Administrator\Documents\Visual Studio 2010\Projects\photogallery\packages\SQLinq.2.0\lib\net\SQLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLinq.Dapper">
+      <HintPath>..\..\..\..\Users\Administrator\Documents\Visual Studio 2010\Projects\photogallery\packages\SQLinq.Dapper.1.2\lib\net\SQLinq.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="SubSonic.Core, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.60829.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="changePassword.aspx" />
+    <Content Include="changePassword.html" />
+    <Content Include="details-page-HTML\details-page.html" />
+    <Content Include="details-page-HTML\flexcroll.js" />
+    <Content Include="details-page-HTML\images\basebarcaps_verticalbarbody.png" />
+    <Content Include="details-page-HTML\images\bg-rp-wrapper-header.jpg" />
+    <Content Include="details-page-HTML\images\header.jpg" />
+    <Content Include="details-page-HTML\images\horizontalbarbody_cornerjog.png" />
+    <Content Include="details-page-HTML\images\left-triangle.png" />
+    <Content Include="details-page-HTML\images\left-user-triangle.png" />
+    <Content Include="details-page-HTML\images\markPinkerton-globe.jpg" />
+    <Content Include="details-page-HTML\images\markPinkerton-photograph.jpg" />
+    <Content Include="details-page-HTML\images\markPinkerton.jpg" />
+    <Content Include="details-page-HTML\images\photograph-like-share.png" />
+    <Content Include="details-page-HTML\images\user-image1.jpg" />
+    <Content Include="details-page-HTML\images\user-image2.jpg" />
+    <Content Include="details-page-HTML\images\user-image3.jpg" />
+    <Content Include="details-page-HTML\images\user-image4.jpg" />
+    <Content Include="details-page-HTML\style.css" />
+    <Content Include="img\C-Icon.jpg" />
+    <Content Include="img\D-icon.jpg" />
+    <Content Include="img\M-Icon.jpg" />
+    <Content Include="img\prof-Contractor-icon.jpg" />
+    <Content Include="img\prof-designer-icon.jpg" />
+    <Content Include="img\prof-FurnManu-icon.jpg" />
+    <Content Include="Pin.ascx" />
+    <Content Include="Professional-Users\img\bottom.jpg" />
+    <Content Include="Professional-Users\img\C-Icon.jpg" />
+    <Content Include="Professional-Users\img\D-icon.jpg" />
+    <Content Include="Professional-Users\img\default_thumbnail.jpg" />
+    <Content Include="Professional-Users\img\down-arrow.png" />
+    <Content Include="Professional-Users\img\edit-profile-btn.jpg" />
+    <Content Include="Professional-Users\img\followall-PJ.jpg" />
+    <Content Include="Professional-Users\img\header-bg.png" />
+    <Content Include="Professional-Users\img\ideadboard-icon-PJ.jpg" />
+    <Content Include="Professional-Users\img\Like-icon-PJ.jpg" />
+    <Content Include="Professional-Users\img\logo-pinjimu.png" />
+    <Content Include="Professional-Users\img\M-Icon.jpg" />
+    <Content Include="Professional-Users\img\Normal-Profile-head.jpg" />
+    <Content Include="Professional-Users\img\pin-icon-PJ.jpg" />
+    <Content Include="Professional-Users\img\pinjimu-menubg.png" />
+    <Content Include="Professional-Users\img\prof-Contractor-icon.jpg" />
+    <Content Include="Professional-Users\img\prof-designer-icon.jpg" />
+    <Content Include="Professional-Users\img\prof-FurnManu-icon.jpg" />
+    <Content Include="Professional-Users\img\profile-2row-bg.jpg" />
+    <Content Include="Professional-Users\img\profile-paper-bg.jpg" />
+    <Content Include="Professional-Users\img\profile-thumb.jpg" />
+    <Content Include="Professional-Users\Mockups\Professional-Profile-C.jpg" />
+    <Content Include="Professional-Users\Mockups\Professional-Profile-D.jpg" />
+    <Content Include="Professional-Users\Mockups\Professional-Profile-M.jpg" />
+    <Content Include="Professional-Users\pinjimu.css" />
+    <Content Include="Professional-Users\prof-contractor.html" />
+    <Content Include="Professional-Users\prof-designer.htm" />
+    <Content Include="Professional-Users\prof-FurnManufacturer.html" />
+    <Content Include="ProfileCont.ascx" />
+    <Content Include="signup.aspx" />
+    <Content Include="img\logo-login.png" />
+    <Content Include="Data\menu.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>menu.tt</DependentUpon>
+    </Content>
+    <Content Include="Home.ascx" />
+    <Content Include="img\default_thumbnail.jpg" />
+    <Content Include="lib\DatabaseSchemaReader.dll" />
+    <Content Include="lib\DatabaseSchemaReader.pdb" />
+    <Content Include="lib\DatabaseSchemaReader.xml" />
+    <Content Include="style_select\images\bg_select.gif" />
+    <Content Include="style_select\images\select.png" />
+    <Content Include="style_select\images\_notes\dwsync.xml" />
+    <Content Include="style_select\jquery.js" />
+    <Content Include="style_select\select-box.html" />
+    <Content Include="User.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="editboard.aspx" />
+    <Content Include="editpin.html" />
+    <Content Include="experience.html" />
+    <Content Include="FAQs.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="fbloggedin.html" />
+    <Content Include="freshpin.js" />
+    <Content Include="freshpinboardthumbs.js" />
+    <Content Include="freshpinchangepassword.js" />
+    <Content Include="freshpinhome.js" />
+    <Content Include="freshpinloggedin.js" />
+    <Content Include="freshpinpinparty.js" />
+    <Content Include="freshpinrank.js" />
+    <Content Include="freshpinsettings.js" />
+    <Content Include="freshpinuser.js" />
+    <Content Include="home.html" />
+    <Content Include="HostPinParty.html" />
+    <Content Include="img\European_roulette_wheel.svg" />
+    <Content Include="img\lottery-wheel.png" />
+    <Content Include="img\stock-illustration-4968974-trophy-icon-on-button-with-metallic-border.jpg" />
+    <Content Include="lib\blowery.Web.HttpCompress.dll" />
+    <Content Include="lib\blowery.Web.HttpCompress.pdb" />
+    <Content Include="lib\blowery.Web.HttpCompress.xml" />
+    <Content Include="lib\Dapper.dll" />
+    <Content Include="lib\Dapper.pdb" />
+    <Content Include="lib\Dapper.Rainbow.dll" />
+    <Content Include="lib\Dapper.Rainbow.pdb" />
+    <Content Include="lib\Dapper.SqlBuilder.dll" />
+    <Content Include="lib\Dapper.SqlBuilder.pdb" />
+    <Content Include="lib\DapperExtensions.dll" />
+    <Content Include="lib\DapperExtensions.pdb" />
+    <Content Include="lib\DotNetOpenAuth.dll" />
+    <Content Include="lib\DotNetOpenAuth.pdb" />
+    <Content Include="lib\DotNetOpenAuth.xml" />
+    <Content Include="lib\EFExtensions.dll" />
+    <Content Include="lib\EmailSender.dll" />
+    <Content Include="lib\EmailSender.pdb" />
+    <Content Include="lib\EntityFramework.dll" />
+    <Content Include="lib\EntityFramework.xml" />
+    <Content Include="lib\Facebook.dll" />
+    <Content Include="lib\Facebook.pdb" />
+    <Content Include="lib\Facebook.xml" />
+    <Content Include="lib\HashLib.dll" />
+    <Content Include="lib\HashLib.pdb" />
+    <Content Include="lib\HtmlAgilityPack.dll" />
+    <Content Include="lib\HtmlAgilityPack.pdb" />
+    <Content Include="lib\HtmlAgilityPack.XML" />
+    <Content Include="lib\ImageResizer.dll" />
+    <Content Include="lib\ImageResizer.pdb" />
+    <Content Include="lib\ImageResizer.Plugins.DiskCache.dll" />
+    <Content Include="lib\ImageResizer.Plugins.DiskCache.pdb" />
+    <Content Include="lib\ImageResizer.Plugins.DiskCache.XML" />
+    <Content Include="lib\ImageResizer.xml" />
+    <Content Include="lib\Intelligencia.UrlRewriter.dll" />
+    <Content Include="lib\Intelligencia.UrlRewriter.xml" />
+    <Content Include="lib\Ionic.Zip.Reduced.dll" />
+    <Content Include="lib\LinqKit.dll" />
+    <Content Include="lib\Newtonsoft.Json.dll" />
+    <Content Include="lib\Newtonsoft.Json.pdb" />
+    <Content Include="lib\Newtonsoft.Json.xml" />
+    <Content Include="lib\SmartThreadPool.dll" />
+    <Content Include="lib\SmartThreadPool.pdb" />
+    <Content Include="lib\SQLinq.Dapper.dll" />
+    <Content Include="lib\SQLinq.dll" />
+    <Content Include="lib\SubSonic.Core.dll" />
+    <Content Include="lib\UrlRewritingNet.UrlRewriter.dll" />
+    <Content Include="LoggedIn.ascx" />
+    <Content Include="login.html" />
+    <Content Include="logo-login.png" />
+    <Content Include="logo.png" />
+    <Content Include="Data\dbml\sqlmetal.txt" />
+    <Content Include="Pin.aspx" />
+    <Content Include="rank.html" />
+    <Content Include="resetpasstmpl.html" />
+    <Content Include="settings.aspx" />
+    <Content Include="signupnew.html" />
+    <Content Include="signuptmpl.html" />
+    <Content Include="tagging\boards.css" />
+    <Content Include="tagging\boards.html" />
+    <Content Include="tagging\dedupe.css" />
+    <Content Include="tagging\dedupe.html" />
+    <Content Include="tagging\home.html" />
+    <Content Include="tagging\jpaginate.css" />
+    <Content Include="tagging\jquery.checkbox.css" />
+    <Content Include="tagging\jquery.safari-checkbox.css" />
+    <Content Include="tagging\login.html" />
+    <Content Include="tagging\loginboards.html" />
+    <Content Include="tagging\login\css\style.css" />
+    <Content Include="tagging\login\images\freshPinLogo.jpg" />
+    <Content Include="tagging\login\images\logo.jpg" />
+    <Content Include="tagging\login\images\magnify.png" />
+    <Content Include="tagging\login\images\rounded.gif" />
+    <Content Include="tagging\style.css" />
+    <Content Include="tagging\tagframe.html" />
+    <Content Include="User.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cat.resx</DependentUpon>
+    </Compile>
+    <Compile Include="cat.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cat.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="CookieUtil.cs" />
+    <Compile Include="signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Standalone\Poco.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Poco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="misc.zh-CN.Designer.cs">
+      <DependentUpon>misc.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="misc.Designer.cs">
+      <DependentUpon>misc.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Data\petapoco\DB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SubSonic\ActiveRecord\ActiveRecord.cs">
+      <DependentUpon>ActiveRecord.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Data\SubSonic\ActiveRecord\Context.cs">
+      <DependentUpon>Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Data\SubSonic\ActiveRecord\StoredProcedures.cs">
+      <DependentUpon>StoredProcedures.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Data\SubSonic\ActiveRecord\Structs.cs">
+      <DependentUpon>Structs.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Data\SubSonic\LinqTemplates\Classes.cs">
+      <DependentUpon>Classes.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Data\SubSonic\LinqTemplates\Context.cs">
+      <DependentUpon>Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Data\SubSonic\LinqTemplates\StoredProcedures.cs">
+      <DependentUpon>StoredProcedures.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Data\SubSonic\LinqTemplates\Structs.cs">
+      <DependentUpon>Structs.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="editboard.aspx.cs">
+      <DependentUpon>editboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editboard.aspx.designer.cs">
+      <DependentUpon>editboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GET.ashx.cs">
+      <DependentUpon>GET.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="home.ashx.cs">
+      <DependentUpon>home.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HttpHandlerBase.cs" />
+    <Compile Include="Data\dbml\DB.cs" />
+    <Compile Include="PageHandlerBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pin.aspx.cs">
+      <DependentUpon>Pin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pin.aspx.designer.cs">
+      <DependentUpon>Pin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="POST.ashx.cs">
+      <DependentUpon>POST.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="settings.aspx.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settings.aspx.designer.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="strings.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>strings.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="T4Configuration.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4Configuration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnmanagedHttpModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GET.ashx" />
+    <None Include="Data\petapoco\DB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DB.cs</LastGenOutput>
+    </None>
+    <None Include="Data\petapoco\PetaPoco.Core.ttinclude" />
+    <None Include="Data\petapoco\PetaPoco.Generator.ttinclude" />
+    <Content Include="packages.config" />
+    <Content Include="POST.ashx" />
+    <None Include="Data\Standalone\Poco.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Poco.cs</LastGenOutput>
+    </None>
+    <None Include="Data\SubSonic\ActiveRecord\ActiveRecord.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ActiveRecord.cs</LastGenOutput>
+    </None>
+    <None Include="Data\SubSonic\ActiveRecord\Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Context.cs</LastGenOutput>
+    </None>
+    <None Include="Data\SubSonic\ActiveRecord\StoredProcedures.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StoredProcedures.cs</LastGenOutput>
+    </None>
+    <None Include="Data\SubSonic\ActiveRecord\Structs.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Structs.cs</LastGenOutput>
+    </None>
+    <None Include="Data\SubSonic\ActiveRecord\Settings.ttinclude" />
+    <None Include="Data\SubSonic\ActiveRecord\SQLServer.ttinclude" />
+    <None Include="Data\SubSonic\LinqTemplates\Classes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Classes.cs</LastGenOutput>
+    </None>
+    <None Include="Data\SubSonic\LinqTemplates\Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Context.cs</LastGenOutput>
+    </None>
+    <None Include="Data\SubSonic\LinqTemplates\StoredProcedures.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StoredProcedures.cs</LastGenOutput>
+    </None>
+    <None Include="Data\SubSonic\LinqTemplates\Structs.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Structs.cs</LastGenOutput>
+    </None>
+    <None Include="Data\SubSonic\LinqTemplates\Settings.ttinclude" />
+    <None Include="Data\SubSonic\LinqTemplates\SQLServer.ttinclude" />
+    <Content Include="home.ashx" />
+    <None Include="Data\menu.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>menu.txt</LastGenOutput>
+    </None>
+    <Content Include="details-page-HTML\images\Thumbs.db" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="style_select\images\Thumbs.db" />
+    <None Include="T4Configuration.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4Configuration.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Users\Administrator\Documents\Visual Studio 2010\Projects\Utilities\Utilities.csproj">
+      <Project>{67A8634E-E1DF-469A-9450-BB03C5411827}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cat.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>cat.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cat.zh-CN.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>cat.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="misc.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>misc.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="misc.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>misc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="strings.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="strings.zh-CN.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>strings.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\SQLinq\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>41375</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://freshpindev.botcodelocal.com/Pinjimu</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

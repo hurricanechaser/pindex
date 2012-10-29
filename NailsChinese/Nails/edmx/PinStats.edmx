@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PinStatsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="PinStatsModelStoreContainer">
+          <EntitySet Name="people" EntityType="PinStatsModel.Store.people" store:Type="Tables" store:Schema="dbo" store:Name="people">
+            <DefiningQuery>SELECT 
+      [people].[PinURL] AS [PinURL], 
+      [people].[ImagePath] AS [ImagePath], 
+      [people].[ImageURL] AS [ImageURL], 
+      [people].[Followers] AS [Followers], 
+      [people].[Likes] AS [Likes], 
+      [people].[Pins] AS [Pins], 
+      [people].[Following] AS [Following], 
+      [people].[Board] AS [Board], 
+      [people].[BoardURL] AS [BoardURL], 
+      [people].[Name] AS [Name], 
+      [people].[BoardTitle] AS [BoardTitle], 
+      [people].[BoardFollowers] AS [BoardFollowers], 
+      [people].[BoardPins] AS [BoardPins], 
+      [people].[Id] AS [Id]
+      FROM [dbo].[people] AS [people]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_people" EntityType="PinStatsModel.Store.vw_people" store:Type="Views" store:Schema="dbo" store:Name="vw_people">
+            <DefiningQuery>SELECT 
+      [vw_people].[PinURL] AS [PinURL], 
+      [vw_people].[ImagePath] AS [ImagePath], 
+      [vw_people].[ImageURL] AS [ImageURL], 
+      [vw_people].[Followers] AS [Followers], 
+      [vw_people].[Likes] AS [Likes], 
+      [vw_people].[Pins] AS [Pins], 
+      [vw_people].[Following] AS [Following], 
+      [vw_people].[Board] AS [Board], 
+      [vw_people].[BoardURL] AS [BoardURL], 
+      [vw_people].[Name] AS [Name], 
+      [vw_people].[BoardTitle] AS [BoardTitle], 
+      [vw_people].[BoardFollowers] AS [BoardFollowers], 
+      [vw_people].[BoardPins] AS [BoardPins], 
+      [vw_people].[Id] AS [Id]
+      FROM [dbo].[vw_people] AS [vw_people]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PinStats.dbo.people' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="people">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="PinURL" Type="varchar" MaxLength="2048" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="2048" />
+          <Property Name="ImageURL" Type="varchar" MaxLength="2048" />
+          <Property Name="Followers" Type="int" />
+          <Property Name="Likes" Type="int" />
+          <Property Name="Pins" Type="int" />
+          <Property Name="Following" Type="int" />
+          <Property Name="Board" Type="varchar" MaxLength="2048" />
+          <Property Name="BoardURL" Type="varchar" MaxLength="2048" />
+          <Property Name="Name" Type="varchar" MaxLength="2048" />
+          <Property Name="BoardTitle" Type="varchar" MaxLength="2048" />
+          <Property Name="BoardFollowers" Type="int" />
+          <Property Name="BoardPins" Type="int" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PinStats.dbo.vw_people' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_people">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="PinURL" Type="varchar" MaxLength="2048" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="2048" />
+          <Property Name="ImageURL" Type="varchar" MaxLength="2048" />
+          <Property Name="Followers" Type="varchar" MaxLength="2048" />
+          <Property Name="Likes" Type="int" />
+          <Property Name="Pins" Type="int" />
+          <Property Name="Following" Type="int" />
+          <Property Name="Board" Type="int" />
+          <Property Name="BoardURL" Type="varchar" MaxLength="2048" />
+          <Property Name="Name" Type="varchar" MaxLength="2048" />
+          <Property Name="BoardTitle" Type="varchar" MaxLength="2048" />
+          <Property Name="BoardFollowers" Type="int" />
+          <Property Name="BoardPins" Type="int" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <Function Name="udf_GetNumeric" ReturnType="varchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="strAlphaNumeric" Type="varchar" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PinStatsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="PinStatsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="people" EntityType="PinStatsModel.people" />
+          <EntitySet Name="vw_people" EntityType="PinStatsModel.vw_people" />
+        </EntityContainer>
+        <EntityType Name="people">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="PinURL" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="ImageURL" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Followers" Type="Int32" />
+          <Property Name="Likes" Type="Int32" />
+          <Property Name="Pins" Type="Int32" />
+          <Property Name="Following" Type="Int32" />
+          <Property Name="Board" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="BoardURL" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="BoardTitle" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="BoardFollowers" Type="Int32" />
+          <Property Name="BoardPins" Type="Int32" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_people">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="PinURL" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="ImageURL" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Followers" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Likes" Type="Int32" />
+          <Property Name="Pins" Type="Int32" />
+          <Property Name="Following" Type="Int32" />
+          <Property Name="Board" Type="Int32" />
+          <Property Name="BoardURL" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="BoardTitle" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="BoardFollowers" Type="Int32" />
+          <Property Name="BoardPins" Type="Int32" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PinStatsModelStoreContainer" CdmEntityContainer="PinStatsEntities">
+          <EntitySetMapping Name="people"><EntityTypeMapping TypeName="PinStatsModel.people"><MappingFragment StoreEntitySet="people">
+            <ScalarProperty Name="PinURL" ColumnName="PinURL" />
+            <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+            <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+            <ScalarProperty Name="Followers" ColumnName="Followers" />
+            <ScalarProperty Name="Likes" ColumnName="Likes" />
+            <ScalarProperty Name="Pins" ColumnName="Pins" />
+            <ScalarProperty Name="Following" ColumnName="Following" />
+            <ScalarProperty Name="Board" ColumnName="Board" />
+            <ScalarProperty Name="BoardURL" ColumnName="BoardURL" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="BoardTitle" ColumnName="BoardTitle" />
+            <ScalarProperty Name="BoardFollowers" ColumnName="BoardFollowers" />
+            <ScalarProperty Name="BoardPins" ColumnName="BoardPins" />
+            <ScalarProperty Name="Id" ColumnName="Id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vw_people"><EntityTypeMapping TypeName="PinStatsModel.vw_people"><MappingFragment StoreEntitySet="vw_people">
+            <ScalarProperty Name="PinURL" ColumnName="PinURL" />
+            <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+            <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+            <ScalarProperty Name="Followers" ColumnName="Followers" />
+            <ScalarProperty Name="Likes" ColumnName="Likes" />
+            <ScalarProperty Name="Pins" ColumnName="Pins" />
+            <ScalarProperty Name="Following" ColumnName="Following" />
+            <ScalarProperty Name="Board" ColumnName="Board" />
+            <ScalarProperty Name="BoardURL" ColumnName="BoardURL" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="BoardTitle" ColumnName="BoardTitle" />
+            <ScalarProperty Name="BoardFollowers" ColumnName="BoardFollowers" />
+            <ScalarProperty Name="BoardPins" ColumnName="BoardPins" />
+            <ScalarProperty Name="Id" ColumnName="Id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="PinStats" ZoomLevel="75">
+        <EntityTypeShape EntityType="PinStatsModel.people" Width="1.5" PointX="0.75" PointY="0.75" Height="3.7109993489583326" IsExpanded="true" />
+        <EntityTypeShape EntityType="PinStatsModel.vw_people" Width="1.5" PointX="2.75" PointY="0.75" Height="3.7109993489583326" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

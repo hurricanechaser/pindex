@@ -1,0 +1,25 @@
+﻿
+
+  <li><a href="javascript:void(0);" catid="41"  name="sellist"><% =cat.Basement %></a></li>
+  <li><a href="javascript:void(0);" catid="42"  name="sellist"><% =cat.Bathroom %></a></li>
+  <li><a href="javascript:void(0);" catid="24"  name="sellist"><% =cat.Bedroom %></a></li>
+  <li><a href="javascript:void(0);" catid="43"  name="sellist"><% =cat.Closet %></a></li>
+  <li><a href="javascript:void(0);" catid="44"  name="sellist"><% =cat.Dining_Room %></a></li>
+  <li><a href="javascript:void(0);" catid="45"  name="sellist"><% =cat.Entry %></a></li>
+  <li><a href="javascript:void(0);" catid="46"  name="sellist"><% =cat.Exterior %></a></li>
+  <li><a href="javascript:void(0);" catid="47"  name="sellist"><% =cat.Family_Room %></a></li>
+  <li><a href="javascript:void(0);" catid="48"  name="sellist"><% =cat.Garage_and_Shed %></a></li>
+  <li><a href="javascript:void(0);" catid="49"  name="sellist"><% =cat.Hall %></a></li>
+  <li><a href="javascript:void(0);" catid="50"  name="sellist"><% =cat.Home_Gym %></a></li>
+  <li><a href="javascript:void(0);" catid="51"  name="sellist"><% =cat.Home_Office %></a></li>
+  <li><a href="javascript:void(0);" catid="52"  name="sellist"><% =cat.Kitchen %></a></li>
+  <li><a href="javascript:void(0);" catid="12"  name="sellist"><% =cat.Landscape %></a></li>
+  <li><a href="javascript:void(0);" catid="54"  name="sellist"><% =cat.Laundry_Room %></a></li>
+  <li><a href="javascript:void(0);" catid="55"  name="sellist"><% =cat.Living_Room %></a></li>
+  <li><a href="javascript:void(0);" catid="56"  name="sellist"><% =cat.Media_Room %></a></li>
+  <li><a href="javascript:void(0);" catid="57"  name="sellist"><% =cat.Patio %></a></li>
+  <li><a href="javascript:void(0);" catid="58"  name="sellist"><% =cat.Pool %></a></li>
+  <li><a href="javascript:void(0);" catid="59"  name="sellist"><% =cat.Porch %></a></li>
+  <li><a href="javascript:void(0);" catid="60"  name="sellist"><% =cat.Powder_Room %></a></li>
+  <li><a href="javascript:void(0);" catid="15"  name="sellist"><% =cat.Staircase %></a></li>
+  <li><a href="javascript:void(0);" catid="62"  name="sellist"><% =cat.Wine_Cellar %></a></li>

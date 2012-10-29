@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>"jQuery checkbox v.1.3.0 Beta 1" demo</title>
+		<link rel="stylesheet" href="jquery.checkbox.css" />
+		<link rel="stylesheet" href="jquery.safari-checkbox.css" />
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jquery.checkbox.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('input:checkbox:not([safari])').checkbox();
+				$('input[safari]:checkbox').checkbox({cls:'jquery-safari-checkbox'});
+				$('input:radio').checkbox();
+			});
+
+			displayForm = function (elementId)
+			{
+				var content = [];
+				$('#' + elementId + ' input').each(function(){
+					var el = $(this);
+					if ( (el.attr('type').toLowerCase() == 'radio'))
+					{
+						if ( this.checked )
+							content.push([
+								'"', el.attr('name'), '": ',
+								'value="', ( this.value ), '"',
+								( this.disabled ? ', disabled' : '' )
+							].join(''));
+					}
+					else
+						content.push([
+							'"', el.attr('name'), '": ',
+							( this.checked ? 'checked' : 'not checked' ), 
+							( this.disabled ? ', disabled' : '' )
+						].join(''));
+				});
+				alert(content.join('\n'));
+			}
+			
+			changeStyle = function(skin)
+			{
+				jQuery('#myform :checkbox').checkbox((skin ? {cls: skin} : {}));
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		<input  type="checkbox" checked>
+	</body>
+</html>

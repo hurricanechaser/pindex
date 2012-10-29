@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="About_1" xml:space="preserve">
+    <value>Pin Leader</value>
+  </data>
+  <data name="About_2" xml:space="preserve">
+    <value>Seeing the latest content can help you chose inspiring things that others in your community may not have seen. New content is a great way to contribute to your community</value>
+  </data>
+  <data name="About_3" xml:space="preserve">
+    <value>Shop-Pin</value>
+  </data>
+  <data name="About_4" xml:space="preserve">
+    <value>Our showrooms only show products that have been crowd sourced, so it helps you find high quality products quickly. These are usually the most fashionable items that the stores carry</value>
+  </data>
+  <data name="About_5" xml:space="preserve">
+    <value>Pinpact</value>
+  </data>
+  <data name="About_6" xml:space="preserve">
+    <value>Choose a mini-cause to support and promote. Your group of friends can all chip in and make a difference. Caring matters</value>
+  </data>
+  <data name="About_7" xml:space="preserve">
+    <value>Our Mission</value>
+  </data>
+  <data name="About_8" xml:space="preserve">
+    <value>Umm.... Our mission is to make it easier to create inspiring pinboards! Ok, nobody is going to make a movie about how we went about shapin the world. We do not know where this hobby will lead, so let's have fun along the way</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Banner" xml:space="preserve">
+    <value>450 Sources, Fresh Daily, Original Sources - Pin On!</value>
+  </data>
+  <data name="Board" xml:space="preserve">
+    <value>Board</value>
+  </data>
+  <data name="Boards" xml:space="preserve">
+    <value>Boards</value>
+  </data>
+  <data name="Board_1" xml:space="preserve">
+    <value>Create a Board</value>
+  </data>
+  <data name="Board_2" xml:space="preserve">
+    <value>Board Name</value>
+  </data>
+  <data name="Board_3" xml:space="preserve">
+    <value>Edit Board</value>
+  </data>
+  <data name="Board_4" xml:space="preserve">
+    <value>Delete Board</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="Cat" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Cat_1" xml:space="preserve">
+    <value>Click to select Category</value>
+  </data>
+  <data name="Cat_2" xml:space="preserve">
+    <value>Choose a Category from</value>
+  </data>
+  <data name="Cat_3" xml:space="preserve">
+    <value>Selected Category</value>
+  </data>
+  <data name="Change_Password" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="Chinese" xml:space="preserve">
+    <value>中国的</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Contributors</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
+  <data name="Del" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Desc" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Edit_Profile" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="First_Name" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="Forgot_Pass" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Help_1" xml:space="preserve">
+    <value>What is SiteName</value>
+  </data>
+  <data name="Help_10" xml:space="preserve">
+    <value>What is a pin</value>
+  </data>
+  <data name="Help_11" xml:space="preserve">
+    <value>A pin is an image that someone has added in any one of the source sites. You can browse through these images and quickly find new content for your own style or pinboard. To see the source of the pin, you can just mouse over the image</value>
+  </data>
+  <data name="Help_12" xml:space="preserve">
+    <value>Why do you have the icons when you mouse over the image</value>
+  </data>
+  <data name="Help_13" xml:space="preserve">
+    <value>SiteName bring you the most recent images from over 450 sources that you can use to create your own boards on SiteName or on any of your favorite virtual boards. If you see an image you like, just click on the icon and you'll be able to pin the image to your board in Pinterest, Tumblr, Lockerz or Flickr</value>
+  </data>
+  <data name="Help_14" xml:space="preserve">
+    <value>What are the two links displayed when you mouse over the image</value>
+  </data>
+  <data name="Help_15" xml:space="preserve">
+    <value>When you mouse over any image in SiteName, you will see two links. The first link is the source the image is from. Clicking on this link will take you to the image in the source site. The second link is the category the image has been placed under in SiteName. Clicking on this will take you to the SiteName board for that category</value>
+  </data>
+  <data name="Help_2" xml:space="preserve">
+    <value>Pin Practices</value>
+  </data>
+  <data name="Help_3" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="Help_4" xml:space="preserve">
+    <value>What Can You Do Differently with SiteName</value>
+  </data>
+  <data name="Help_5" xml:space="preserve">
+    <value>Terms Of Use</value>
+  </data>
+  <data name="Help_6" xml:space="preserve">
+    <value>SiteName is a stream of images from over 450 curated sites. It is a simple and convenient way to find new content for your stylebook or pinboard</value>
+  </data>
+  <data name="Help_7" xml:space="preserve">
+    <value>We started SiteName because we wanted an easier way to get new ideas onto our pinboards</value>
+  </data>
+  <data name="Help_8" xml:space="preserve">
+    <value>We simply wanted fresh content from original sources. So we built SiteName</value>
+  </data>
+  <data name="Help_9" xml:space="preserve">
+    <value>With SiteName you only browse unique images, filtered and sorted the way you want them. We try to eliminate all duplicates to save your time. Since most of our content comes from the original source it is easy to trace back. SiteName is a fun way to quickly discover new things</value>
+  </data>
+  <data name="Help_CopyRight" xml:space="preserve">
+    <value>&lt;h1&gt;
+                    COPYRIGHT&lt;/h1&gt;
+                &lt;p&gt;
+                    SiteName ("SiteName") respects the intellectual property rights of others and expects its users to do the same. It is SiteName policy, in appropriate circumstances and at its discretion, to disable and/or terminate the accounts of users who repeatedly infringe or are repeatedly charged with infringing the copyrights or other intellectual property rights of others.&lt;/p&gt;
+                &lt;p&gt;
+                    In accordance with the Digital Millennium Copyright Act of 1998, the text of which may be found on the U.S. Copyright Office website at &lt;a href="http://www.copyright.gov/legislation/dmca.pdf"&gt; http://www.copyright.gov/legislation/dmca.pdf&lt;/a&gt;, SiteName will respond expeditiously to claims of copyright infringement committed using the SiteName website (the "Site") that are reported to SiteName’s Designated Copyright Agent, identified in the sample notice below.&lt;/p&gt;
+                &lt;p&gt;
+                    If you are a copyright owner, or are authorized to act on behalf of one, or authorized to act under any exclusive right under copyright, please report alleged copyright infringements taking place on or through the Site by completing the following DMCA Notice of Alleged Infringement and delivering it to SiteName’s Designated Copyright Agent. Upon receipt of the Notice as described below, SiteName will take whatever action, in its sole discretion, it deems appropriate, including removal of the challenged material from the Site. DMCA Notice of Alleged Infringement ("Notice")&lt;/p&gt;
+                &lt;p&gt;
+                    Identify the copyrighted work that you claim has been infringed, or - if multiple copyrighted works are covered by this Notice - you may provide a representative list of the copyrighted works that you claim have been infringed.&lt;/p&gt;
+                &lt;p&gt;
+                    Identify (i) the material that you claim is infringing (or to be the subject of infringing activity) and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate the material, including at a minimum, if applicable, the URL of the link shown on the Site where such material may be found, and (ii) the reference or link, to the material or activity that you claim to be infringing, that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate that reference or link, including at a minimum, if applicable, the URL of the link shown on the Site where such reference or link may be found.&lt;/p&gt;
+                &lt;p&gt;
+                    Provide your mailing address, telephone number, and, if available, email address.&lt;/p&gt;
+                &lt;p&gt;
+                    Include both of the following statements in the body of the Notice:&lt;/p&gt;
+                &lt;p&gt;
+                    "I hereby state that I have a good faith belief that the disputed use of the copyrighted material or reference or link to such material is not authorized by the copyright owner, its agent, or the law (e.g., as a fair use)."&lt;/p&gt;
+                &lt;p&gt;
+                    Deliver this Notice, with all items completed, to SiteName’s Designated Copyright Agent:&lt;/p&gt;
+                &lt;p&gt;
+                    SiteName Copyright Agent
+                    &lt;br&gt;
+                    340 S LEMON AVE
+                    &lt;br&gt;
+                    #7725 WALNUT, CA 91789
+                    &lt;br&gt;
+                    copyright@freshpin.com
+                    &lt;br&gt;
+                    650 - 681 - 4160
+                &lt;/p&gt;</value>
+  </data>
+  <data name="Help_Pin_Practices" xml:space="preserve">
+    <value>&lt;h1&gt;
+                    PIN PRACTICES&lt;/h1&gt;
+                &lt;p&gt;
+                    We curate SiteName to make sure all the pins are well categorized and of high quality.But the people who use SiteName make it so much more special with their contributions.
+                &lt;/p&gt;
+                &lt;p&gt;
+                    We've taken the collective input of SiteName users and have laid down these guidelines that will help us keep the SiteName community positive, useful and clean.
+                &lt;/p&gt;
+                &lt;ol&gt;
+                    &lt;li&gt;
+                        &lt;h3&gt;
+                            Be Respectful&lt;/h3&gt;
+                        &lt;p&gt;
+                            SiteName is used by communities of varied tastes. We know that individual tastes are personal, but please be respectful in your comments and conversations.&lt;/p&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;h3&gt;
+                            Be Authentic&lt;/h3&gt;
+                        &lt;p&gt;
+                            SiteName allows you to express who you are. By being authentic and using the service for the purpose it was built in a fair manner, you will help make SiteName a better place in the long run.&lt;/p&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;h3&gt;
+                            Credit Your Sources&lt;/h3&gt;
+                        &lt;p&gt;
+                            Pins are the most useful when they have links back to the original source. If you notice that a pin is not sourced correctly, leave a comment so the original pinner can update the source. Finding the original source is always preferable to a secondary source such as Image Search or a blog entry.&lt;/p&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;h3&gt;
+                            Report Objectionable Content&lt;/h3&gt;
+                        &lt;p&gt;
+                            We do not allow nudity, hateful content, or content that encourages people to hurt themselves. If you find content that violates our Terms of Service or Acceptable Use Policy, you can submit the content for review by emailing us at &lt;a href="mailto:content@freshpin.com"&gt;content@freshpin.com&lt;/a&gt;&lt;/p&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;h3&gt;
+                            Tell Us How to Make SiteName Better&lt;/h3&gt;
+                        &lt;p&gt;
+                            We're just getting started, so there are going to be bumps here and there. Let us know what's working, what's not. Even though we don't always have time to respond to each and every email, we take your input seriously. You can get in touch with us anytime at &lt;a href="mailto:help@freshpin.com"&gt;help@freshpin.com.&lt;/a&gt;&lt;/p&gt;
+                    &lt;/li&gt;
+                &lt;/ol&gt;</value>
+  </data>
+  <data name="Help_Privacy" xml:space="preserve">
+    <value>&lt;h1&gt;
+                    PRIVACY POLICY&lt;/h1&gt;
+                &lt;p&gt;
+                    SiteName ( " SiteName "," we ", "us", "our" provides a Website located at &lt;a href="http://freshpin.com"&gt; http://freshpin.com &lt;/a&gt;for users of the Website ( " Member(s)",
+                    &lt;br /&gt;
+                    " User(s) ", " you " ). This Privacy Policy explains our policies regarding information you provide and we collect and how we may use or disclose that information. We value your privacy and provide this Privacy Policy to help you make informed decisions about your use of the Website.&lt;/p&gt;
+                &lt;p&gt;
+                    The Privacy Policy is part of and subject to the Website's Terms of Use. By becoming a Member or using any part of the Website or its resources, features, functionality or services (hereafter referred to as the " Service " ), you agree that you, any personally identifiable information provided, and any other information provided or collected are subject to the Terms of Use and this Privacy Policy.
+                &lt;/p&gt;
+                &lt;h2&gt;
+                    INFORMATION WE RECEIVE, COLLECT AND USE&lt;/h2&gt;
+                &lt;h3&gt;
+                    Personally Identifiable Information&lt;/h3&gt;
+                &lt;p&gt;
+                    As a general matter, we do not collect personally identifiable information about you unless you provide us with such information via registration as a member ( " Member " ) or participation in or use of the Service, Member services or otherwise, including without limitation when you choose to connect or sign on to the Website through a third-party service, upload photos, post comments, collect and disclose videos, or take part in any promotions. We also may require you to provide additional personally identifiable information when utilizing Member services, registration, or features, such as name, email address, your phone number, billing, shipping and other credit card or payment processing information.&lt;/p&gt;
+                &lt;p&gt;
+                    &lt;strong&gt;Name and Contact Information You Provide.&lt;/strong&gt; During registration, you are required to give correct contact information such as your name, mailing address, email address and date of birth. We request and use this information for various Member-related purposes, including determining your eligibility to use the Website, maintaining and monitoring an account associated with your membership, targeted advertising, and determining eligibility for and/or availability of features or services. The name you enter as part of registration will be used in your publicly displayed and available profile. However, none of the other personally identifiable information you provide during registration will be visible in your public profile or disclosed or used except as described in this Privacy Policy.
+                &lt;/p&gt;
+                &lt;p&gt;
+                    Through the Website and Service, you may voluntarily upload photos, images, or other information that contain your likeness and/or that of others, post or share comments or reviews that may contain or disclose personally identifiable information, or disclose or collect video content that contains personally identifiable information. In doing so, you acknowledge and agree that all such information you post, collect, or otherwise make available on or through the Website or Service becomes a Submission under the Terms of Use and that such published content (1) no longer constitutes personally identifiable information subject to the Privacy Policy and (2) becomes publicly available such that it can be collected, viewed, redistributed, and used by others, including without limitation, on the Website and, more broadly, through the Internet and other media channels.&lt;/p&gt;
+                &lt;p&gt;
+                    &lt;strong&gt;Connecting through a Third Party.&lt;/strong&gt; We also may share, disclose, or otherwise use your personally identifiable information or likeness with your consent or authorization, including without limitation, such information collected through a third-party service which you have chosen to provide us by using that service to connect or sign on to the Website.&lt;/p&gt;
+                &lt;p&gt;
+                    &lt;strong&gt;Other Uses.&lt;/strong&gt; Finally, we do collect and use your information, including personally identifiable information, to personalize your experience, support your use and access to information regarding the Website and the Service (including in connection with Website-related maintenance, performance, design, backup and analysis, service updates, and your membership), analyze usage, respond to inquiries from you, notify or update you about features and promotions, fulfill your orders, provide customer service, address or prevent potentially prohibited and/or illegal activities, and determine compliance with and enforce the Terms of Use, including this Privacy Policy.
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    Non-Personally Identifiable Information&lt;/h3&gt;
+                &lt;p&gt;
+                    In addition to information you provide and we maintain, we may collect certain information by automatically recording your IP address, placing " cookies " on your computer(see below for more details), and/or creating log files or mechanisms. None of these methods collect personally identifiable information about you.
+                &lt;/p&gt;
+                &lt;p&gt;
+                    We use such non-personally identifiable information to help us recognize your browser, enable your use of certain Website functionality, diagnose problems with our server, administer and improve our Website, understand your preferences, tailor advertising or other information for you based on information derived from your IP address," cookies " or log files, and generally enhance your overall experience on the Website and/or with the Service.&lt;/p&gt;
+                &lt;p&gt;
+                    We gather for our use broad demographic information about our Members as well as specific information associated with your use of the Service or particular Website features (e.g. frequency of use and purchase and viewing history) and any other information you provide to us directly or via your use of the Website. However, we also may collect and report to third parties aggregate, non-personally identifiable information about you and other Members or Users (e.g., if half of our Members are women between the ages of 18 and 25, we may provide that general information to a content or service provider), your collective opinions (e.g., Members from a particular region prefer one product over another), and your collective Website usage and behavior.&lt;/p&gt;
+                &lt;p&gt;
+                    We may retain an archived copy of your information, including personally identifiable and non-personally identifiable information, Submissions, and other information you provided or we acquired as a result of your use of the Website or Services, as required by law or for legitimate business purposes.&lt;/p&gt;
+                &lt;h3&gt;
+                    Use of Cookies, Log Files and Web Beacons&lt;/h3&gt;
+                &lt;p&gt;
+                    &lt;strong&gt;Cookies.&lt;/strong&gt; When you visit the Website, we may send one or more cookies - a small text file containing a string of alphanumeric characters - to your computer that uniquely identifies your browser. We use cookies to store certain information and to track and target our Members' use of the Website and to enhance their experience on the Website.
+                &lt;/p&gt;
+                &lt;p&gt;
+                    We use both session cookies and persistent cookies. A persistent cookie remains after you close your browser. Your browser may use persistent cookies on subsequent visits to the Website. Persistent cookies can be removed by following your web browser help file directions. A session cookie is temporary and disappears after you close your browser.
+                &lt;/p&gt;
+                &lt;p&gt;
+                    You can reset your web browser to refuse all cookies or to notify you when a cookie is being sent so that you can accept or refuse it. However, please note that some features of the Website may not function properly or as intended if the ability to accept cookies is disabled. Also, if you change your computer, change your Internet browser (e.g. from Internet Explorer to Firefox), or delete all your cookies, you will need to renew your preferences.&lt;/p&gt;
+                &lt;p&gt;
+                    &lt;strong&gt;Log File Information.&lt;/strong&gt; When you use the Website, our servers automatically record certain information that your web browser sends whenever you visit any website. These server logs may include information such as your web request, Internet Protocol ("IP") address, browser type, browser language, referring/exit pages and URLs, platform type, number of clicks, domain names, landing pages, pages viewed and the order of those pages, the amount of time spent on particular pages, the date and time of your request, and one or more cookies that may uniquely identify your browser.&lt;/p&gt;
+                &lt;p&gt;
+                    &lt;strong&gt;Clear GIFs Information.&lt;/strong&gt; When you use the Website, we may employ " clear GIFs " (a.k.a. Web Beacons) which are used to anonymously track your online usage patterns (i.e., in a non-personally-identifiable manner). In addition, we may also use clear GIFs in HTML-based emails sent to you to track which emails are opened by recipients.&lt;/p&gt;
+                &lt;h3&gt;
+                    Use of Other Information&lt;/h3&gt;
+                &lt;p&gt;
+                    You may invite others to become members. If you do, we will ask you for your friend's email address. We automatically will send your friend an email inviting her or him to visit the Website and join. We will not resend this invitation unless you specifically request that we do so. We store the email information you have provided for the sole purpose of sending this email and assessing elements of the invitation program.
+                &lt;/p&gt;
+                &lt;h2&gt;
+                    INFORMATION THIRD PARTIES RECEIVE, COLLECT AND USE&lt;/h2&gt;
+                &lt;h3&gt;
+                    Advertising-Related Data Collection&lt;/h3&gt;
+                &lt;p&gt;
+                    We may share aggregate, non-personally identifiable information with third parties, including, as noted below, advertisers, advertising networks or advertising servers. However, we do not knowingly provide any personally identifiable information to any of these third parties without your consent or except as part of a specific program or feature for which you have the ability to opt-in or opt-out (see, e.g., the National Advertising Initiative ( " NAI " ) and the Digital Advertising Alliance ( " DAA " ) described below).
+                &lt;/p&gt;
+                &lt;p&gt;
+                    We also may allow advertisers, third party advertising networks and third-party advertising serving and other companies to serve or enable other sites to serve advertisements directly to you, and/or enable other services through the use of our Website, Service, and software. By serving these advertisements directly to you, these companies can set and trigger their own cookies, Web beacons and/or other technologies on your computer, which, in turn, may be used to tailor, report on, or analyze advertising seen on the Website and other websites. We do not have access to or control over these third-party cookies, beacons, or technologies. Nor are they covered by this Privacy Policy.
+                &lt;/p&gt;
+                &lt;p&gt;
+                    If you would like to contact the advertisers, third party advertising networks and third-party advertising serving companies or other companies with which we have relationships to learn more about their privacy policies and what options (if any) they offer to opt out of their data collection, please visit their web site(s).
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    Information for Commercial or Marketing Purposes&lt;/h3&gt;
+                &lt;p&gt;
+                    While any personally identifiable information that you have chosen to disclose publically (whether through a Submission, use of your profile name, or otherwise) is available to others for their use and is entirely outside of our control, we will not share your personally identifiable information with third-party companies for their commercial or marketing use without your consent or except as part of a specific program or feature for which you have an ability to opt-in or opt-out using a commercially reasonable means.
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    Demographic Data
+                &lt;/h3&gt;
+                &lt;p&gt;
+                    While we do not provide advertisers with personally identifiable information, except as permitted under this Privacy Policy, please note that if an advertiser has asked us to show an advertisement to a certain audience (e.g., women ages 18-25) or audience segment (e.g., members 18-25 who have viewed certain content on the Website) and if you respond to that advertisement, the advertiser or ad server may conclude that you fit the audience or audience segment specified. An advertiser also may use information (but not any personally identifiable information) regarding your use of the Website, such as the number of times you viewed an ad, to determine which additional ads to deliver to you.
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    External Links&lt;/h3&gt;
+                &lt;p&gt;
+                    Finally, this Website contains links to other third-party websites. This Privacy Policy does not apply to, and we do not necessarily endorse and are not responsible for the content or privacy practices of such " linked " websites, advertisers, ad networks or ad servers. You should familiarize yourself with their respective privacy policies prior to using any such third-party websites.&lt;/p&gt;
+                &lt;h3&gt;
+                    CHILDREN'S PRIVACY&lt;/h3&gt;
+                &lt;p&gt;
+                    Pursuant to the terms of the Children's Online Privacy Protection Act (COPPA), we do not knowingly collect personally - identifiable information from children under the age of thirteen (13). The Website and the Service are not directed at children under the age of thirteen (13), and by using the Website or Service and/or registering as a Member, you represent that you are not under the age of thirteen (13). Parents or legal guardians may not agree to the Terms of Use, this Privacy Policy, or the disclosure of such child's personally identifiable information on such child's behalf. If we learn that we unknowingly have collected personally identifiable information of persons less than thirteen (13) years of age, then we will take appropriate steps to delete this information.&lt;/p&gt;
+                &lt;h3&gt;
+                    SECURITY AND CONFIDENTIALITY&lt;/h3&gt;
+                &lt;p&gt;
+                    The security of your personally identifiable information is important to us, and so we take commercially reasonable steps to maintain the security of that information. Without being exhaustive, some of those steps include: When you want to make a payment to us, we do not take the payment processing information but instead direct you to a third party payment processor that encrypts that information using secure socket layer technology (SSL); we use measures to monitor and review account activity and behavior in an effort to detect fraudulent activity or other anomalies; we also allow you to choose privacy settings for certain social networking or other portions of the Website.&lt;/p&gt;
+                &lt;p&gt;
+                    Remember, no method of transmission over the Internet or method of electronic storage is perfect or 100% secure. Nor can we control the actions of other users or members with whom you share your information or to whom you make your information publicly available. Therefore, we cannot and do not guarantee or warrant the security of any information you provide through your use of this Website, including without limitation, no guarantee that only authorized people will view your information and that the information may not be disclosed, accessed, altered, become publicly available, or even destroyed. You agree that you provide information at your own risk and specifically release us from any liability related in any way to such information or breach of security.&lt;/p&gt;
+                &lt;p&gt;
+                    Likewise, we are not responsible for any third party violations or efforts to circumvent any privacy settings or security measures on the Website. Any user identification names or passwords you use (whether provided by you or us) shall be maintained by you as confidential and should not be shared with anyone not authorized to have access to your personally identifiable information. You are responsible for and should take steps to reduce the risk of disclosure of such identification names or passwords, including, without limitation, using different passwords than you use elsewhere, using strong passwords, and updating your antivirus software on a regular basis.&lt;/p&gt;
+                &lt;p&gt;
+                    We reserve the right to take any action with respect to information posted on the Website, including, but not limited to, taking down information or other materials and terminating your Membership and rights of use. However, we cannot, nor do we, review, edit and/or control the information provided by any Member, user, or other provider who makes information and content publicly available through the Website.&lt;/p&gt;
+                &lt;p&gt;
+                    We also use the account information to determine eligibility for or make certain features or services available to members. Therefore, if there are errors in the account information or your personally identifiable information changes or needs to be updated, you are responsible for making the needed corrections or updates and should do so through the My Account section of the Website.&lt;/p&gt;
+                &lt;p&gt;
+                    If you have any questions about information security or confidentiality on the Website, please let us know via the Contact Us link on the Website.
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    MEMBER PREFERENCES OR SETTINGS AND OPTING OUT&lt;/h3&gt;
+                &lt;p&gt;
+                    We will not sell, trade, rent or share your personally identifiable information with third parties other than as disclosed in this Privacy Policy and/or unless you consent to such disclosure (e.g., via direct agreement to such disclosure or your request to receive goods or services from a third party or otherwise participating in an activity on the Website).&lt;/p&gt;
+                &lt;p&gt;
+                    If you have opted to receive marketing information from such third parties, you may contact those parties to opt - out of receiving such communications from them.&lt;/p&gt;
+                &lt;p&gt;
+                    We reserve the right to disclose (on a confidential basis) and/or transfer your personally identifiable information to our affiliates, or to a third party in connection with the sale of all or substantially all of our stock or assets.&lt;/p&gt;
+                &lt;h3&gt;
+                    LEGALLY REQUIRED DISCLOSURES OR HARM PREVENTION&lt;/h3&gt;
+                &lt;p&gt;
+                    We may be required by applicable law, subpoena, court order or other legal process (including without limitation, rendering assistance to government enforcement agencies) to disclose or retain for some period your personally identifiable information and/or non-personally identifiable information. It is our policy to comply with any such requirements (including a good-faith belief that such requirement exists), and you agree we shall have no liability for any such disclosure or retention.&lt;/p&gt;
+                &lt;h3&gt;
+                    COMMUNICATIONS TO AND FROM US&lt;/h3&gt;
+                &lt;p&gt;
+                    Via the Contact Us link on the Website, you may choose to Submit a Request to the SiteName Help Desk. Fill out the required fields, and we will use this information to respond to your inquiry.&lt;/p&gt;
+                &lt;p&gt;
+                    By becoming a member, you also have agreed to receive various communications from SiteName. We may use personally identifiable information or other information you have provided in order to transmit those communications to you. Such communications include without limitation, a welcome email for new members, responses to your inquiries to us, messages via text, RSS, or other messaging technologies, our inquiries to you regarding your membership, account activity or your use of any feature or service on the Website, and notices of developments related to the Website (e.g., service or technical issues, current or new features or services, etc.). We will offer commercially reasonable means to permit you to opt - out of receiving certain such communications.&lt;/p&gt;
+                &lt;h3&gt;
+                    MODIFICATIONS&lt;/h3&gt;
+                &lt;p&gt;
+                    We may update this Privacy Policy from time to time as we modify or expand our Website by posting the updated Privacy Policy on our Website. We suggest that you check back from time to time in order to understand how we treat your information.&lt;/p&gt;
+                &lt;h3&gt;
+                    CONTACT US&lt;/h3&gt;
+                &lt;p&gt;
+                    If you have any questions about this Privacy Policy or the privacy practices of this Website, you may contact us by emailing us at &lt;a href="mailto:help@freshpin.com"&gt; help@freshpin.com&lt;/a&gt;.&lt;/p&gt;</value>
+  </data>
+  <data name="Help_Term" xml:space="preserve">
+    <value>&lt;h1&gt;
+                    TERMS OF USE&lt;/h1&gt;
+                &lt;p&gt;
+                    Please read carefully the following terms and conditions. These Terms govern your access to and use of the Site and Services and all Site Content (defined below), and constitute a binding legal agreement between you and SiteName.&lt;/p&gt;
+                &lt;h3&gt;
+                    Key Terms related to Content&lt;/h3&gt;
+                &lt;p&gt;
+                    " Content " means text, graphics, images, music, software, audio, video, information  or other materials.&lt;/p&gt;
+                &lt;p&gt;
+                    " SiteName Content " means all Content that SiteName makes available through the Site or Service, including any Content licensed from a third party, but excluding  Member Content.&lt;/p&gt;
+                &lt;p&gt;
+                    " Member " means a person that completes SiteName's account registration process, as described under " Account Registration " below.&lt;/p&gt;
+                &lt;p&gt;
+                    " Member Content " means all Content that a Member posts, uploads, publishes, submits or transmits to be made available through the Site or Services.&lt;/p&gt;
+                &lt;p&gt;
+                    " Site Content " means Member Content and SiteName Content.&lt;/p&gt;
+                &lt;p&gt;
+                    Certain areas of the Site (and your access to or use of certain Services or Site Content) may have different terms and conditions posted or may require you to agree  with and accept additional terms and conditions. If there is a conflict between these Terms and terms and conditions posted for a specific area of the Site, Services, Site Content, the latter terms and conditions will take precedence with respect to your use of or access to that area of the Site, Services or Site Content.&lt;/p&gt;
+                &lt;p&gt;
+                    YOU ACKNOWLEDGE AND AGREE THAT, BY ACCESSING OR USING THE SITE OR SERVICES OR BY POSTING ANY MEMBER CONTENT ON THE SITE OR THROUGH THE SERVICES, YOU ARE INDICATING THAT YOU HAVE READ, UNDERSTAND AND AGREE TO BE BOUND BY THESE TERMS, WHETHER OR NOT YOU HAVE REGISTERED WITH THE SITE. IF YOU DO NOT AGREE TO THESE TERMS, THEN YOU HAVE NO RIGHT TO ACCESS OR USE THE SITE, SERVICES OR SITE CONTENT. If you accept or agree to these Terms on behalf of a company or other legal entity, you represent and warrant that you have the authority to bind that company or other legal entity to these Terms and, in such event, " you " and " your " will refer and apply to that company or other legal entity.&lt;/p&gt;
+                &lt;h3&gt; Modification&lt;/h3&gt;
+                &lt;p&gt;
+                    SiteName reserves the right, at its sole discretion, to modify, discontinue or terminate the Site or Services or to modify these Terms, at any time and without prior notice. If we modify these Terms, we will post the modification on the Site or provide you with notice of the modification. By continuing to access or use the Site or Services after we have posted a modification on the Site or have provided you with notice of a modification, you are indicating that you agree to be bound by the modified Terms. If the modified Terms are not acceptable to you, your only recourse is to cease using the Site and the Services.&lt;/p&gt;
+                &lt;h3&gt;
+                    Eligibility&lt;/h3&gt;
+                &lt;p&gt;
+                    The Site and Services are intended solely for persons who are 13 or older. Any access to or use of the Site or Services by anyone under 13 is expressly prohibited. By accessing or using the Site or Services you represent and warrant that you are 13 or older.&lt;/p&gt;
+                &lt;h3&gt;
+                    Account Registration&lt;/h3&gt;
+                &lt;p&gt;
+                    In order to access certain features of the Site and Services and to post any Member Content on the Site or through the Services, you must register to create an account  ("Account"). You must register with SiteName through your account with certain third party social networking services, including, but not limited to, Facebook and Twitter (collectively, "SNS"). When you register through your SNS account, you will be asked to login to the Services using your SNS account credentials. Creating an Account for the first time via a SNS will prompt you to merge your SiteName and SNS accounts. By creating an Account via your account with an SNS, you are allowing SiteName to access your SNS account information and you are agreeing to abide by the applicable terms and conditions of your SNS in your use of the Services via such SNS. If you are not currently registered as a Member and you click to login with an SNS, you  will first be asked to enter your SNS credentials and then be given the option to register and join SiteName. Members can automatically post recent activity back to the applicable SNS, and Members also have the option to disable the connection between their SiteName Account and SNS account at any time by accessing the SNS account and disconnecting access to the Services.&lt;/p&gt;
+                &lt;p&gt;
+                    You agree to provide accurate, current and complete information during the registration process and to update such information to keep it accurate, current and complete. SiteName reserves the right to suspend or terminate your Account if any information provided during the registration process or thereafter proves to be inaccurate, not current or incomplete. You are responsible for safeguarding your password. You agree not to disclose your password to any third party and to take sole responsibility for any activities or actions under your Account, whether or not you have authorized such activities or actions. You will immediately notify SiteName of any unauthorized use of your Account.&lt;/p&gt;
+                &lt;h3&gt;
+                    Privacy&lt;/h3&gt;
+                &lt;p&gt;
+                    See our Privacy Policy at &lt;a href="about.aspx#privacy"&gt;http://freshpin.com/privacy&lt;/a&gt; for information and notices concerning SiteName's collection and use of your personal information.&lt;/p&gt;
+                &lt;h3&gt;
+                    SiteName Content and Member Content License&lt;/h3&gt;
+                &lt;p&gt;
+                    Subject to your compliance with the terms and conditions of these Terms, SiteName grants you a limited, non-exclusive, non-transferable license, without the right  to sublicense, to access, view, download and print any SiteName Content solely for your personal and non-commercial purposes. You will not use, copy, adapt, modify, prepare derivative works based upon, distribute, license, sell, transfer, publicly display, publicly perform, transmit, stream, broadcast or otherwise exploit the Site, Services, or Site Content except as expressly permitted in these Terms. No licenses or rights are granted to you by implication or otherwise under any intellectual property rights owned or controlled by SiteName or its censors, except for the licenses and rights expressly granted in these Terms.&lt;/p&gt;
+                &lt;h3&gt;
+                    Member Content&lt;/h3&gt;
+                &lt;p&gt;
+                    We may, in our sole discretion, permit Members to post, upload, publish, submit or transmit Member Content. By making available any Member Content through the Site or Services, you hereby grant to SiteName a worldwide, irrevocable, perpetual, non-exclusive, transferable, royalty-free license, with the right to sublicense, to use, copy, adapt, modify, distribute, license, sell, transfer, publicly display, publicly perform, transmit, stream, broadcast, access, view, and otherwise exploit such Member Content only on, through or by means of the Site or Services. SiteName does not claim any ownership rights in any such Member Content and nothing in these Terms will be deemed to restrict any rights that you may have to use and exploit any such Member Content.&lt;/p&gt;
+                &lt;p&gt;
+                    You acknowledge and agree that you are solely responsible for all Member Content that you make available through the Site and Services. Accordingly, you represent and warrant that: (i) you either are the sole and exclusive owner of all Member Content that you make available through the Site and Services or you have all rights, licenses, consents and releases that are necessary to grant to SiteName the rights in such Member Content, as contemplated under these Terms; and (ii) neither the Member Content nor your posting, uploading, publication, submission or transmittal of the Member Content or SiteName's use of the Member Content (or any portion thereof) on, through or by means of the Site and the Services will infringe, misappropriate or violate a third party's patent, copyright, trademark, trade secret, moral rights or other proprietary or intellectual property rights, or rights of publicity or privacy, or result in the violation of any applicable law or regulation.&lt;/p&gt;
+                &lt;h3&gt;
+                    Feedback&lt;/h3&gt;
+                &lt;p&gt;
+                    We welcome and encourage you to provide feedback, comments and suggestions for improvements to the Site and Services ("Feedback"). You may submit Feedback through the "Contact Us" section of the Site. You acknowledge and agree that all Feedback will be the sole and exclusive property of SiteName and you hereby irrevocably assign to SiteName and agree to irrevocably assign to SiteName all of your right, title, and interest in and to all Feedback, including without limitation all worldwide patent, copyright, trade secret, trademark, moral rights and other proprietary or intellectual property rights therein. At SiteName's request and expense, you will execute documents and take such further acts as SiteName may reasonably request to assist SiteName to acquire, perfect, and maintain its intellectual property rights and other legal protections for the Feedback.&lt;/p&gt;
+                &lt;h3&gt;
+                    General Prohibitions&lt;/h3&gt;
+                &lt;p&gt;
+                    You agree not to do any of the following:&lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Post, upload, publish, submit, provide access to or transmit any Content that: (i) infringes, misappropriates or violates a third party's patent, copyright, trademark, trade secret, moral rights or other intellectual property rights, or rights of publicity  or privacy; (ii) violates, or encourages any conduct that would violate, any applicable law or regulation or would give rise to civil liability; (iii) is fraudulent, false, misleading or deceptive; (iv) is defamatory, obscene, pornographic, vulgar or offensive;(v) promotes discrimination, bigotry, racism, hatred, harassment or harm against any individual or group; (vi) is violent or threatening or promotes violence or actions that are threatening to any other person; or (vii) promotes illegal or harmful activities or substances.&lt;/li&gt;
+                    &lt;li&gt;Use, display, mirror or frame the Site, or any individual element within the Site, the SiteName name, any SiteName trademark, logo or other proprietary information, or the layout and design of any page or form contained on a page, without our express written consent;&lt;/li&gt;
+                    &lt;li&gt;Access, tamper with, or use non-public areas of the Site, our computer systems, or the technical delivery systems of our providers;&lt;/li&gt;
+                    &lt;li&gt;Attempt to probe, scan, or test the vulnerability of any SiteName system or network or breach any security or authentication measures;&lt;/li&gt;
+                    &lt;li&gt;Avoid, bypass, remove, deactivate, impair, descramble or otherwise circumvent any technological measure implemented by SiteName or any of our providers or any other third party (including another user) to protect the Site or Site Content;&lt;/li&gt;
+                    &lt;li&gt;Attempt to access or search the Site, Site Content or download Site Content from the Site through the use of any engine, tool, agent, device or mechanism (including spiders, robots, crawlers, data mining tools or the like) other than the software and/or search agents provided by SiteName or other generally available third party web browsers;&lt;/li&gt;
+                    &lt;li&gt;Send any unsolicited or unauthorized advertising, promotional materials, email, junk mail, spam, chain letters or other form of solicitation;&lt;/li&gt;
+                    &lt;li&gt;Use any meta tags or other hidden text or metadata utilizing a SiteName or SiteName trademark, logo, URL or product name without SiteName's express written consent;&lt;/li&gt;
+                    &lt;li&gt;Use the Site or Site Content for any commercial purpose or the benefit of any third party or in any manner not permitted by these Terms;&lt;/li&gt;
+                    &lt;li&gt;Forge any TCP/IP packet header or any part of the header information in any email or newsgroup posting, or in any way use the Site or Site Content to send altered, deceptive or false source-identifying information;&lt;/li&gt;
+                    &lt;li&gt;Attempt to decipher, decompile, disassemble or reverse engineer any of the software used to provide the Site or Site Content.&lt;/li&gt;
+                    &lt;li&gt;Interfere with, or attempt to interfere with, the access of any user, host or network, including, without limitation, sending a virus, overloading, flooding, spamming, or mail-bombing the Site;&lt;/li&gt;
+                    &lt;li&gt;Collect or store any personally identifiable information from the Site from other users of the Site without their express permission;&lt;/li&gt;
+                    &lt;li&gt;Impersonate or misrepresent your affiliation with any person or entity;&lt;/li&gt;
+                    &lt;li&gt;Violate any applicable law or regulation; or&lt;/li&gt;
+                    &lt;li&gt;Encourage or enable any other individual to do any of the foregoing.&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;p&gt;
+                    SiteName will have the right to investigate and prosecute violations of any of the above to the fullest extent of the law. SiteName may involve and cooperate with law enforcement authorities in prosecuting users who violate these Terms. You acknowledge that SiteName has no obligation to monitor your access to or use of the Site, Services or Site Content or to review or edit any Site Content, but has the right to do so for the purpose of operating the Site and Services, to ensure your compliance with these Terms, or to comply with applicable law or the order or requirement of a court, administrative agency or other governmental body. SiteName reserves the right, at any time and without prior notice, to remove or disable access to any Site Content  that SiteName, at its sole discretion, considers to be objectionable for any reason, in violation of these Terms or otherwise harmful to the Site or Services.&lt;/p&gt;
+                &lt;h3&gt;
+                    Copyright Policy&lt;/h3&gt;
+                &lt;p&gt;
+                    SiteName has adopted and implemented a policy that provides for the termination in appropriate circumstances of registered users or other account holders who repeatedly infringe or are believed to be repeatedly infringing the rights of copyright hold&lt;/p&gt;
+                &lt;h3&gt;
+                    Links&lt;/h3&gt;
+                &lt;p&gt;
+                    The Site contains links to third-party websites or resources. You acknowledge and agree that SiteName is not responsible or liable for: (i) the availability or accuracy of such websites or resources; or (ii) the content, products, or services on or available from such websites or resources. Links to such websites or resources do not imply any endorsement by SiteName of such websites or resources or the content, products, or services available from such websites or resources. You acknowledge sole responsibility for and assume all risk arising from your use of any such websites or resources.&lt;/p&gt;
+                &lt;h3&gt;
+                    Termination&lt;/h3&gt;
+                &lt;p&gt;
+                    If you breach any of these Terms, SiteName will have the right to suspend or disable your Account or terminate these Terms, at its sole discretion and without prior notice to you. SiteName reserves the right to revoke your access to and use of the Site, Services and Content at any time, with or without cause.
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    Disclaimers&lt;/h3&gt;
+                &lt;p&gt;
+                    THE SITE, SERVICES AND SITE CONTENT ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED. WITHOUT LIMITING THE FOREGOING, SiteName EXPLICITLY DISCLAIMS ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE. SiteName MAKES NO WARRANTY THAT THE SITE, SERVICES OR SITE CONTENT WILL MEET YOUR REQUIREMENTS OR BE AVAILABLE ON AN UNINTERRUPTED, SECURE, OR ERROR-FREE BASIS. SiteName MAKES NO WARRANTY REGARDING THE QUALITY OF ANY PRODUCTS, SERVICE OR SITE CONTENT OBTAINED THROUGH THE SITE OR SERVICES OR THE ACCURACY, TIMELINESS, TRUTHFULNESS, COMPLETENESS OR RELIABILITY OF ANY SITE CONTENT OBTAINED THROUGH THE SITE OR SERVICES.&lt;/p&gt;
+                &lt;p&gt;
+                    ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED FROM SiteName OR THROUGH THE SITE, SERVICES, CONTENT OR MEMBER CONTENT, WILL NOT CREATE ANY WARRANTY NOT EXPRESSLY MADE HEREIN.&lt;/p&gt;
+                &lt;p&gt;
+                    YOU ARE SOLELY RESPONSIBLE FOR ALL OF YOUR COMMUNICATIONS AND INTERACTIONS WITH OTHER USERS OF THE SITE SERVICES AND WITH OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE SITE OR SERVICES. YOU UNDERSTAND THAT SiteName DOES NOT SCREEN OR INQUIRE INTO THE BACKGROUND OF ANY USERS OF THE SITE OR SERVICES, NOR DOES SiteName MAKE ANY ATTEMPT TO VERIFY THE STATEMENTS OF USERSOF THE SITE OR SERVICES. SiteName MAKES NO REPRESENTATIONS OR WARRANTIES AS TO THE CONDUCT OF USERS OF THE SITE OR SERVICES OR THEIR COMPATIBILITY WITH ANY CURRENTOR FUTURE USERS OF THE SITE OR SERVICES. YOU AGREE TO TAKE REASONABLE PRECAUTIONS IN ALL COMMUNICATIONS AND INTERACTIONS WITH OTHER USERS OF THE SITE OR SERVICE AND WITH OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE SITE OR SERVICES, PARTICULARLY IF YOU DECIDE TO MEET OFFLINE OR IN PERSON.
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    Indemnity&lt;/h3&gt;
+                &lt;p&gt;
+                    You agree to defend, indemnify, and hold SiteName, its officers, directors, employees and agents, harmless from and against any claims, liabilities, damages, losses, and expenses, including, without limitation, reasonable legal and accounting fees, arising out of or in any way connected with (i) your access to or use of the Site, Services or Site Content, (ii) your Member Content, or (iii) your violation of these Terms.&lt;/p&gt;
+                &lt;h3&gt;
+                    Limitation of Liability&lt;/h3&gt;
+                &lt;p&gt;
+                    YOU ACKNOWLEDGE AND AGREE THAT, TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE ENTIRE RISK ARISING OUT OF YOUR ACCESS TO AND USE OF THE SITE, SERVICES AND SITE CONTENT REMAINS WITH YOU. NEITHER SiteName NOR ANY OTHER PARTY INVOLVED IN CREATING, PRODUCING, OR DELIVERING THE SITE, SERVICES OR CONTENT WILL BE LIABLE FOR ANY INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, LOSS OF DATA OR LOSS OF GOODWILL, SERVICE INTERRUPTION, COMPUTER DAMAGE OR SYSTEM FAILURE OR THE COST OF SUBSTITUTE PRODUCTS OR SERVICES, OR FOR ANY DAMAGES FOR PERSONAL OR BODILY INJURY OR EMOTIONAL DISTRESS ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR FROM THE USE OF OR INABILITY TO USE THE SITE, SERVICES, SITE CONTENT , OR FROM ANY COMMUNICATIONS, INTERACTIONS OR MEETINGS WITH OTHER USERS OF THE SITE OR SERVICES OR OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE SITE OR SERVICES, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT SiteName HAS BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE, EVEN IF A LIMITED REMEDY SET FORTH HEREIN IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE.&lt;/p&gt;
+                &lt;p&gt;
+                    IN NO EVENT WILL SiteName'S AGGREGATE LIABILITY ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR FROM THE USE OF OR INABILITY TO USE THE SITE, SERVICES OR SITE CONTENT EXCEED ONE HUNDRED DOLLARS ($100). THE LIMITATIONS OF DAMAGES SET FORTH ABOVE ARE FUNDAMENTAL ELEMENTS OF THE BASIS OF THE BARGAIN BETWEEN SiteName AND YOU. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.&lt;/p&gt;
+                &lt;h3&gt;
+                    Proprietary Rights Notices&lt;/h3&gt;
+                &lt;p&gt;
+                    All trademarks, service marks, logos, trade names and any other proprietary designations of SiteName used herein are trademarks or registered trademarks of SiteName. Any other trademarks, service marks, logos, trade names and any other proprietary designations are the trademarks or registered trademarks of their respective parties.&lt;/p&gt;
+                &lt;h3&gt;
+                    Controlling Law and Jurisdiction&lt;/h3&gt;
+                &lt;p&gt;
+                    These Terms and any action related thereto will be governed by the laws of the State of California without regard to its conflict of laws provisions. The exclusive jurisdiction and venue of any action with respect to the subject matter of these Terms will be the state and federal courts located in the Northern District of California and each of the parties hereto waives any objection to jurisdiction and venue in such courts.&lt;/p&gt;
+                &lt;h3&gt;
+                    Entire Agreement&lt;/h3&gt;
+                &lt;p&gt;
+                    These Terms constitute the entire and exclusive understanding and agreement between SiteName and you regarding the Site, Services, Site Content, and Member Content and these Terms supersede and replace any and all prior oral or written understandings or agreements between SiteName and you regarding the Site, Services and Content.&lt;/p&gt;
+                &lt;h3&gt;
+                    Assignment&lt;/h3&gt;
+                &lt;p&gt;
+                    You may not assign or transfer these Terms, by operation of law or otherwise, without SiteName's prior written consent. Any attempt by you to assign or transfer these Terms, without such consent, will be null and of no effect. SiteName may assign or transfer these Terms, at its sole discretion, without restriction. Subject to the foregoing, these Terms will bind and inure to the benefit of the parties, their successors and permitted assigns.&lt;/p&gt;
+                &lt;h3&gt;
+                    Notices&lt;/h3&gt;
+                &lt;p&gt;
+                    Any notices or other communications permitted or required hereunder, including those regarding modifications to these Terms, will be in writing and given by SiteName (i) via email (in each case to the address that you provide) or (ii) by posting to the Site. For notices made by e-mail, the date of receipt will be deemed the date on which such notice is transmitted.&lt;/p&gt;
+                &lt;h3&gt;
+                    General&lt;/h3&gt;
+                &lt;p&gt;
+                    The failure of SiteName to enforce any right or provision of these Terms will not constitute a waiver of future enforcement of that right or provision. The waiver of any such right or provision will be effective only if in writing and signed by a duly authorized representative of SiteName. Except as expressly set forth in these Terms, the exercise by either party of any of its remedies under these Terms will be without prejudice to its other remedies under these Terms or otherwise. If for any reason a court of competent jurisdiction finds any provision of these Terms invalid or unenforceable, that provision will be enforced to the maximum extent permissible and the other provisions of these Terms will remain in full force and effect.&lt;/p&gt;
+                &lt;h3&gt;
+                    Contacting SiteName&lt;/h3&gt;
+                &lt;p&gt;
+                    If you have any questions about these Terms or any questions, complaints or claims with respect to the site, please contact us through the Contact Us form on the SiteName site.&lt;/p&gt;</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="Images_1" xml:space="preserve">
+    <value>Find Images</value>
+  </data>
+  <data name="Image_1" xml:space="preserve">
+    <value>Current profile picture</value>
+  </data>
+  <data name="Just_Me" xml:space="preserve">
+    <value>Just Me</value>
+  </data>
+  <data name="Like" xml:space="preserve">
+    <value>Like</value>
+  </data>
+  <data name="Link" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="Loc_Ex" xml:space="preserve">
+    <value>e.g. Palo Alto, CA</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Login_1" xml:space="preserve">
+    <value>to your account</value>
+  </data>
+  <data name="Log_Out" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="Me" xml:space="preserve">
+    <value>Me</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="New_1" xml:space="preserve">
+    <value>Be tricky</value>
+  </data>
+  <data name="New_2" xml:space="preserve">
+    <value>New, Again</value>
+  </data>
+  <data name="New_3" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Old" xml:space="preserve">
+    <value>Old</value>
+  </data>
+  <data name="Old_1" xml:space="preserve">
+    <value>Your current password</value>
+  </data>
+  <data name="Pass" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="FreshPin" xml:space="preserve">
+    <value>FreshPin</value>
+  </data>
+  <data name="Pins" xml:space="preserve">
+    <value>Pins</value>
+  </data>
+  <data name="Pin_1" xml:space="preserve">
+    <value>Pin images from any website as you browse the web with the</value>
+  </data>
+  <data name="Pin_2" xml:space="preserve">
+    <value>"Pin It" button</value>
+  </data>
+  <data name="Pin_3" xml:space="preserve">
+    <value>Add a Pin</value>
+  </data>
+  <data name="Pin_4" xml:space="preserve">
+    <value>Upload a Pin</value>
+  </data>
+  <data name="Pin_5" xml:space="preserve">
+    <value>Pin It</value>
+  </data>
+  <data name="Pin_6" xml:space="preserve">
+    <value>Who can pin</value>
+  </data>
+  <data name="Pin_7" xml:space="preserve">
+    <value>Edit Pin</value>
+  </data>
+  <data name="Pin_8" xml:space="preserve">
+    <value>Delete Pin</value>
+  </data>
+  <data name="Pin_9" xml:space="preserve">
+    <value>Save Pin</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="Prev" xml:space="preserve">
+    <value>Prev</value>
+  </data>
+  <data name="Repin" xml:space="preserve">
+    <value>Repin</value>
+  </data>
+  <data name="Request_an_Invite" xml:space="preserve">
+    <value>Request an Invite</value>
+  </data>
+  <data name="Request_Invitation" xml:space="preserve">
+    <value>Request Invitation</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save Settings</value>
+  </data>
+  <data name="Save_Profile" xml:space="preserve">
+    <value>Save Profile</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Set_1" xml:space="preserve">
+    <value>Not shown publicly</value>
+  </data>
+  <data name="Sign_Up" xml:space="preserve">
+    <value>Sign up for an invite to join</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+</root>

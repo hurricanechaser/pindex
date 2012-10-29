@@ -1,0 +1,263 @@
+body
+{
+    background-color: #f7f5f5;
+    margin: 0px;
+    padding: 0px;
+}
+.gallery
+{
+    position: relative;
+    margin: 0 auto;
+}
+.gallery .box
+{
+    border-style: solid;
+    border-width: thin;
+    background-color: #FFFFFF;
+    padding: 0px;
+    margin: 30px 0px 0px 0px;
+    width: 220px;
+    text-align: center;
+    -moz-box-shadow: 1px 1px 1px #888;
+    -webkit-box-shadow: 1px 1px 1px #888;
+    box-shadow: 1px 1px 1px #888;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.gallery .box .img
+{
+    padding: 20px 15px 0px 15px;
+    z-index: 1;
+    position: relative;
+    list-style-type: none;
+    border-color: #FFFFFF;
+}
+.gallery .box .img img
+{
+    width: 190px;
+}
+.gallery .box .name
+{
+    white-space: normal;
+    overflow: hidden;
+    list-style-type: none;
+    font-family: Calibri;
+    font-size: medium;
+    color: #000000;
+    font-weight: normal;
+}
+.gallery .box .cat
+{
+    border: thin solid #808080;
+    -moz-box-shadow: 1px 1px 1px #888;
+    -webkit-box-shadow: 1px 1px 1px #888;
+    box-shadow: 1px 1px 1px #888;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    z-index: 2;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    clear: both;
+    position: absolute;
+    display: none;
+    background-color: #FFFFFF;
+}
+.gallery .box .cat
+{
+    padding: 0px;
+    margin: 0px;
+    width: 400px;
+    display: none;
+    text-align: left;
+}
+.gallery .box .cat p
+{
+    padding: 0px 10px 0px 10px;
+    margin: 0px;
+    display: inline-block;
+}
+.gallery .box .catsel
+{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    text-align: left;
+}
+.gallery .box .catsel ul li
+{
+    font-size: medium;
+    font-weight: bold;
+    color: #993300;
+}
+
+.header
+{
+    background-color: #FFFFFF;
+    display: block;
+    text-align: center;
+}
+.header .line1
+{
+    border: thin solid #808080;
+    height: 60px;
+}
+.header .line1 .queryBox
+{
+    margin: 1% 0 1% 20px;
+    float: left;
+    height: 30px;
+}
+.header .line1 .queryBox .searchfield
+{
+    background: #fff;
+    padding: 5px 5px 5px 8px;
+    position: absolute;
+    width: 100px;
+    border: solid 1px #bcbbbb;
+    outline: none;
+}
+.header .line1 .queryBox .searchbutton
+{
+    background-position: center center;
+    border-style: solid;
+    border-width: 1px 1px 1px 0px;
+    border-color: #bcbbbb;
+    height: 27px;
+    width: 27px;
+    background-image: url('../img/magnify.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 100px;
+}
+.header .line1 .queryBox a
+{
+    height: 30px;
+    border-style: solid;
+    border-width: thin;
+}
+
+.header .line1 .logo
+{
+    height: 60px;
+    position: absolute;
+    left: 44%;
+}
+.header .line1 .login
+{
+    height: 60px;
+    position: absolute;
+    left: 85%;
+}
+.header .line1 .login a
+{
+    padding: 20px 0px 20px 0px;
+    width: 100px;
+    font-size: large;
+    text-decoration: none;
+    color: #808080;
+    position: absolute;
+}
+.header .line1 .login a:hover
+{
+    background-color: #C0C0C0;
+    color: #000000;
+}
+/***********************************************************************************Menu***********************************************************************************************/
+.header .line2
+{
+    border-color: #C0C0C0;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    -moz-box-shadow: 2px 2px 2px #888;
+    -webkit-box-shadow: 2px 2px 5px #888;
+    box-shadow: 2px 2px 2px #888;
+    height: 30px;
+    display: block;
+}
+.header .line2 .menu
+{
+    position: absolute;
+    left: 47%;
+}
+.header .line2 .menu a
+{
+    text-decoration: none;
+    font-size: large;
+    color: #808080;
+}
+.header .line2 .menu a:hover
+{
+}
+.header .line2 .menu a:active
+{
+}
+.header .submenu
+{
+    border-color: #C0C0C0;
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    -moz-box-shadow: 2px 2px 2px #888;
+    -webkit-box-shadow: 2px 2px 5px #888;
+    box-shadow: 2px 2px 2px #888;
+    position: absolute;
+    z-index: 2;
+    left: 46%;
+    display: none;
+    background-color: #FFFFFF;
+}
+.header .submenu div
+{
+    list-style: none;
+    text-align: left;
+}
+
+.header .submenu div a
+{
+    width: 200px;
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    font-size: large;
+    color: #808080;
+}
+.header .submenu div a:hover
+{
+    background-color: #CCCCCC;
+}
+/**************************************************************************************************************************************************************************************/
+/*********************************************************************************************Button*****************************************************************************/
+.button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6) );
+	background:-moz-linear-gradient( center top, #ffffff 5%, #f6f6f6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6');
+	background-color:#ffffff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#666666;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff) );
+	background:-moz-linear-gradient( center top, #f6f6f6 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff');
+	background-color:#f6f6f6;
+}.button:active {
+	position:relative;
+	top:1px;
+}
+/*********************************************************************************************************************************************************************************?

@@ -1,0 +1,361 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Photo Gallery - Gallery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-5">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var $ = jQuery.noConflict();
+    </script>
+    <script src="../freshpin.js" type="text/javascript"></script>
+    <script id="subCategories1" type="text/x-jquery-tmpl">  
+     <p style="font-size: small;font-weight: bold;display:inline;"><input name="cat" catid="${ID}" catname="${Name}"  type="checkbox" />${Name}</p>&nbsp;&nbsp;&nbsp;&nbsp;      
+    </script>
+    <script id="subCategories" type="text/x-jquery-tmpl">   
+    {{if SubCategories }} 
+    <div class="accordion" >
+			<div style="overflow: visible;height:SubCategories.lengthpx;">
+				<span>${Name}</span>	
+                <div>  {{tmpl(SubCategories) "#subCategories1"}}  </div>			
+		   </div>			
+	 </div>             
+     {{else ID}}
+      <p style="font-size: small;font-weight: bold;display:inline;"><input name="cat" catid="${ID}" catname="${Name}"  type="checkbox" />${Name}</p>&nbsp;&nbsp;&nbsp;&nbsp;
+     {{/if}}  
+    </script>
+    <script id="picTemplate" type="text/x-jquery-tmpl">       
+    <ul class="box" style="display: none">
+        <li class="img"><a href="${contenturl}/${file}" name="fb">
+            <img src="${contenturl}/${file}?width=190" style="height: ${height}px" /></a></li>
+        <li class="name">
+            <p class="name">
+                No Image Name</p>
+        </li>
+        <li class="catsel" name="${ID}">
+            <ul>
+                {{each cat}}
+                <li catid="${getVal($value,'CategoryID')}">${getVal($value,'Name')}</li>
+                {{/each}}
+            </ul>
+        <li class="buttons">          
+           <a  href="javascript:void(0)" imgsrc="${contenturl}/${file}" index="${index}"  class="button">Select Categories</a>
+        </li>      
+    </ul>    
+    </script>
+    <script id="categories" type="text/x-jquery-tmpl">
+    <div class="dialog">
+		<div class="tabs">
+			<ul>
+                {{each categories}}
+				<li><a href="#${ID}" style="font-size: x-small;font-weight: bold;">${Name}</a></li>
+				{{/each}}
+			</ul>
+            {{each categories}}
+			<div id="${ID}">
+            <img name="preview" style="float:right;" />
+            {{tmpl(SubCategories) "#subCategories"}}
+            </div>
+            {{/each}}		
+		</div>
+	</div>
+    </script>
+    <script type="text/javascript">
+        var data;FreshPin.constants.logoutUrl='login.html';       
+        function getVal(o, p) {
+            return o[p];
+        }        
+        function include(arr, obj) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].CategoryID == obj) return true;
+            }
+            return false;
+        }
+        function getCategoryName(arr, obj) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].CategoryID == obj) return arr[i].Name;
+            }
+            return false;
+        }
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+        }
+        function rcat(v) {
+            params = ['cat=' + escape(v)];
+            window.location.href = "http://" + window.location.host + window.location.pathname + '?' + params.join('&');
+        }
+        var onload=function () {       
+            if (!Cookie.get(FreshPin.constants.authcookie)) { location = 'login.html'; return; };
+            $('.searchfield').focus(function () { if ($(this).val() == 'Go To Page...') { $(this).val(''); } });
+            $('.searchfield').blur(function () { if ($(this).val() == '') { $(this).val('Go To Page...'); } });
+            var submenuhovered = false;
+            $('.menu a').hover(function () {
+                $('.submenu').slideDown(100);
+            }, function () {
+                setTimeout(function () { if (!submenuhovered) $('.submenu').slideUp(100); }, 300);
+            });
+            $('.submenu').hover(function () {
+                submenuhovered = true;
+            }, function () {
+                submenuhovered = false;
+                $(this).slideUp(100);
+            });
+            var masonryOpts = {
+                itemSelector: '.box',
+                columnWidth: 220,
+                gutterWidth: 30,
+                isAnimated: false,
+                isFitWidth: true
+            }, selectedimage, ps = 50,setUpChecBox=function(){
+                 $('input[name="cat"]').checkbox({
+                    cls: 'jquery-safari-checkbox',
+                    empty: FreshPin.constants.cdn+'/img/empty.png'
+                });
+                $('input[name="cat"]').change(this,function(e){
+                        var me=$(this);
+                        var checked = me.prop('checked');  
+                        var catid= me.attr('catid');
+                        var selectedimageid=selectedimage.ID;
+                        $.post('../POST.ashx?t=cat', {
+                                catid:catid,
+                                imageid: selectedimageid,
+                                checked: checked
+                            }, function (dt, res) {
+                                if (checked) {
+                                    $('.catsel[name="' + selectedimageid + '"] ul').append('<li catid="' + catid + '">' + me.attr('catname') + '</li>');
+                                    $(".gallery").masonry('reload');
+                                } else {
+                                    $('.catsel[name="' + selectedimageid + '"] ul li[catid="' + catid+ '"]').remove();
+                                    $(".gallery").masonry('reload');
+                                }
+                                var filtered = $.richArray.filter(selectedimage.catsel, function (o2) {
+                                    return o2.catid == catid;
+                                }, this);
+                                if (filtered.length > 0)
+                                    filtered[0].checked = checked;
+                                else{
+                                    if(!selectedimage.catsel)selectedimage.catsel=[]; 
+                                    selectedimage.catsel.push({ CategoryID: catid });   
+                                    }                            
+                            }, 'json');
+            });
+                }, rl,windowWidth=$(window).width(),windowHeight=$(window).height(), render = function (dt) {
+                $('.gallery').empty();
+               
+                var tmpl = $("#picTemplate").tmpl(dt);
+                tmpl.appendTo(".gallery");
+                if (rl) {
+                    $(".gallery").masonry('reload');
+                }
+                else {
+                    $(".gallery").masonry(masonryOpts);
+                    rl = true;
+                }
+                $('.box').css('display', 'inline');
+                $('a[name="fb"]').fancybox({
+                    openEffect: 'none',
+                    closeEffect: 'none'
+                });            
+                  $('.button').click(function () {                          
+                    $('input[name="cat"]').prop('checked',false);
+                    var index= Number($(this).attr('index'));
+                    selectedimage=data[index];
+                    var cat= selectedimage.cat.clone();     
+                    if(selectedimage.catsel)
+                    selectedimage.catsel.each(function(item){
+                    cat.push(item);
+                    });            
+                    for(var i=0;i<cat.length;i++){
+                      $('input[catid="'+cat[i].CategoryID+'"]').prop('checked',true);
+                    }                    
+                    var imgsrc=$(this).attr('imgsrc');
+                    $('img[name="preview"]').attr('src',imgsrc);
+                    $('div.dialog').dialog('open');
+                   
+                });       
+            }, get = function (page) {               
+                var cat=getQueryVariable('cat');
+                $.get('../GET.ashx?t=getimagesandcategoriespaged', { start: ps * (Number(page) - 1), page: ps,cat:cat }, function (dt, status, res) {
+                    data=dt;                                  
+                    render(data);
+                    $(window).scrollTop(0);
+                }, 'json');
+                return true;
+            };           
+            var cat=getQueryVariable('cat');
+            $.get('../GET.ashx?t=getpages', { ps: ps ,cat:cat}, function (dt, status, res) {
+                var goto = getQueryVariable('p');
+                if (dt.pages != 0) {
+                    var cp = goto || (dt.currentpage || 1);
+                    $(".paginate").paginate({
+                        count: dt.pages,
+                        start: cp,
+                        display: 50,
+                        border: false,
+                        text_color: '#888',
+                        background_color: '#EEE',
+                        text_hover_color: 'black',
+                        background_hover_color: '#CFCFCF',
+                        onChange: get
+                    });
+                    get(cp);
+                     var tmpl = $("#categories").tmpl(dt);
+                     tmpl.appendTo("div.categories");
+                     $('div.tabs').tabs({
+                select: function(event, ui) { 
+                 //$(ui.panel).children('div.accordion').accordion({ header: "span",collapsible: true,fillSpace:true });
+                 }
+                 });
+                $("div.accordion").accordion({ header: "span",collapsible: true, clearStyle: true,autoHeight: false });
+                   $('div.dialog').dialog({
+                    autoOpen: false,
+                    width:.7*windowWidth,
+                    height: .7*windowHeight,
+                });              
+               setUpChecBox();
+               FreshPin.emit('load');
+                }
+            }, 'json');  
+          
+            var search = function () {
+                var p = Number($('.searchfield').val());
+                if (!isNaN(p)) {
+                    var params = ['p=' + $('.searchfield').val()];
+                    if (p == 0)
+                        window.location.href = "http://" + window.location.host + window.location.pathname;
+                    else
+                        window.location.href = "http://" + window.location.host + window.location.pathname + '?' + params.join('&');
+                }
+            };
+            $('.searchbutton').click(this, search);
+            $('.searchfield').bind('keyup', 'return', search);
+        };
+        function f() {
+        FreshPin.loadCss("scripts/fancyapps-fancyBox-83bf93f/source/jquery.fancybox.css");
+    FreshPin.loadCss("scripts/jquery-checkbox.1.3.0b1/jquery.checkbox.css");
+    FreshPin.loadCss("scripts/jquery-checkbox.1.3.0b1/jquery.safari-checkbox.css");
+    FreshPin.loadCss("scripts/jPaginate/css/style.css");
+    FreshPin.loadCss("scripts/jquery-ui-1-1.8.18.custom/css/smoothness/jquery-ui-1.8.18.custom.css");
+            $LAB.script(FreshPin.constants.cdn + "scripts/jquery-jquery-tmpl/jquery.tmpl.js").
+    script(FreshPin.constants.cdn + "scripts/jquery-jquery-tmpl/jquery.tmplPlus.js").
+    script(FreshPin.constants.cdn + "scripts/desandro-masonry/jquery.masonry.js").
+    script(FreshPin.constants.cdn + "scripts/fancyapps-fancyBox-83bf93f/source/jquery.fancybox.pack.js").
+    script(FreshPin.constants.cdn + "scripts/prototype/src/prototype/prototype.js").
+    script(FreshPin.constants.cdn + "scripts/prototype/src/prototype/lang.js").
+        script(FreshPin.constants.cdn + "scripts/prototype/src/prototype/lang/enumerable.js").
+    script(FreshPin.constants.cdn + "scripts/prototype/src/prototype/lang/object.js").
+    script(FreshPin.constants.cdn + "scripts/prototype/src/prototype/lang/array.js").
+    script(FreshPin.constants.cdn + "scripts/jquery-checkbox.1.3.0b1/jquery.checkbox.js").
+    script(FreshPin.constants.cdn + "scripts/jPaginate/jquery.paginate.js").
+    script(FreshPin.constants.cdn + "scripts/rich-array-package-0.0.1/jquery.rich-array.js").
+    script(FreshPin.constants.cdn + "scripts/cookies.js").
+    script(FreshPin.constants.cdn + "scripts/jquery-ui-1-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js").
+    script(FreshPin.constants.cdn + "scripts/jeresig-jquery.hotkeys-0451de1/jquery.hotkeys.js").wait(onload);
+
+        };
+    </script>
+</head>
+<body>
+    <div class="categories">
+    </div>
+    <div class="header">
+        <div class="line1">
+            <div class="queryBox">
+                <input class="searchfield" type="text" value="Go To Page..." />
+                <input class="searchbutton" type="button" />
+            </div>
+            <img class="logo" src="login/images/freshPinLogo.jpg" />
+            <div class="login">
+                <a href="javascript:void(0)" id="logout">Logout</a>
+            </div>
+        </div>
+        <div class="line2">
+            <div class="menu3">
+                <li class="menu"><a href="home.html">Categories</a> </li>
+            </div>
+        </div>
+        <div class="submenu">
+            <div>
+                <a href="javascript:rcat('Architecture');">Architecture</a><a href="javascript:rcat('Kids');">
+                    Kids</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Art');">Art</a> <a href="javascript:rcat('My Life');">My Life</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Cars & Motorcycles');">Cars & Motorcycles</a> <a href="javascript:rcat('Women\'s Apparel');">
+                    Women's Apparel</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Design');">Design</a> <a href="javascript:rcat('Men\'s Apparel');">
+                    Men's Apparel</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('DIY & Crafts');">DIY & Crafts</a> <a href="javascript:rcat('Outdoors');">
+                    Outdoors</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Education');">Education</a> <a href="javascript:rcat('People');">
+                    People</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Film, Music & Books');">Film, Music & Books</a> <a href="javascript:rcat('Humor');">
+                    Humor</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Fitness');">Fitness</a> <a href="javascript:rcat('Pets');">
+                    Pets</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Food & Drink');">Food & Drink</a> <a href="javascript:rcat('Photography');">
+                    Photography</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Gardening');">Gardening</a> <a href="javascript:rcat('Print & Posters');">
+                    Print & Posters</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Geek');">Geek</a> <a href="javascript:rcat('Products');">Products</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Hair & Beauty');">Hair & Beauty</a> <a href="javascript:rcat('Science & Nature');">
+                    Science & Nature</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('History');">History</a> <a href="javascript:rcat('Sports');">
+                    Sports</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Holidays');">Holidays</a> <a href="javascript:rcat('Technology');">
+                    Technology</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('Home Decor');">Home Decor</a> <a href="javascript:rcat('Travel & Places');">
+                    Travel & Places</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('WORDS');">Words</a> <a href="javascript:rcat('Wedding & Events');">
+                    Wedding & Events</a>
+            </div>
+            <div>
+                <a href="javascript:rcat('LEAVES');">Leaves</a> <a href="javascript:rcat('Other');">
+                    Other</a>
+            </div>
+        </div>
+    </div>
+    <div class="gallery">
+    </div>
+    <div class="paginate">
+    </div>
+    <div id="alert" style="display: none">
+    </div>
+</body>
+</html>

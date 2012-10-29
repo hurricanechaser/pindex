@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {margin:0px; padding:0px;}
+
+.header-PJ {width:100%; height:104px; background-image:url(img/header-bg.png); background-repeat:repeat-x; float:left;  }
+
+.Profile-Container-PJ {width:100%; height:280px; background-image:url(img/profile-paper-bg.jpg); background-repeat:repeat; float:left; }
+
+.profile-Wrraper-PJ {width:980px; margin:0 auto; }
+
+.profile-info-designer {width:700px; height:265px;  float:left; background-color:#FFF; margin:5px; position:relative; border:4px #00ccff solid;}
+.profile-info-Cobtractor {width:700px; height:265px;  float:left; background-color:#FFF; margin:5px; position:relative; border:4px #669933 solid;}
+.profile-info-FurnManu {width:700px; height:265px;  float:left; background-color:#FFF; margin:5px; position:relative; border:4px #cc0099 solid;}
+
+.prof-lable {margin-top:15px; margin-left:20px; margin-right:10px; width:221px; height:45px; float:right;}
+
+.profile-pict  {width:116px; height:116px; float:left; margin: 20px;}
+
+.profile-name {font-family: 'Chivo', sans-serif;font-size:36px;font-weight:bold;color:#333333;float:left; margin:15px;}
+.edit-profile-btn {width:87px;height:24px;float:left;position:absolute;top:146px;left: 33px;}
+.profile-Desc {width:450px; height:auto; float: left; margin: 10px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; line-height:18px; }
+
+.profile-repins {width:220px; height:265px; float:left; broder:1px solid #333333;  background-color:#FFF; margin:10px}
+.repin-title {font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#0066cc; padding:15px;}
+
+.profile-row2 {width:100%; height:54px; float:left; background-image:url(img/profile-2row-bg.jpg); background-repeat:repeat-x;}
+.profile-row2-titles {font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:15px; color:#333;  float:left; padding-top:20px; margin-right:10px;}
+.row2-wrapper {width:980px; height:54px; margin:0 auto; border:0px solid red;}
+.profile-icon-PJ {width:48px; height:52px; float:left;}
+.Profile-icon-title {font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:15px; color:#333;  float:left; margin-right:40px; padding-top:20px;} 
+
+.profile-icon-count {font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:20px; color:#005ca3;  float:left; padding-top:15px; margin-right:5px;}
+
+.profile-followall-btn {width:103px; height:37px; float:left; padding-top:18px; margin-right:100px; }
+
+
+.repin-profile-thumb {width:50px; height:50px; background:#FFF; border:1px solid #ccc; float:left; margin:10px}
+.repin-profile-name {width:120px; height:30px; float:left; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:16px; color:#333; margin:10px }
+
+.clear{clear:left;}
+
+.profilerow3 {width:100%; height:463px; background-image:url(img/profile-paper-bg.jpg); float:left;}
+
+.profile-row3-image {width:948px; height:463px; margin:0 auto; background-image:url(img/bottom.jpg);}
+
+

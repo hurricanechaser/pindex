@@ -1,0 +1,1614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NailsProdModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="NailsProdModelStoreContainer">
+          <EntitySet Name="AppUsers" EntityType="NailsProdModel.Store.AppUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Articles" EntityType="NailsProdModel.Store.Articles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BoardContributor" EntityType="NailsProdModel.Store.BoardContributor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Boards" EntityType="NailsProdModel.Store.Boards" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BoardsImagesMapping" EntityType="NailsProdModel.Store.BoardsImagesMapping" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Category" EntityType="NailsProdModel.Store.Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CategoryImagesMapping" EntityType="NailsProdModel.Store.CategoryImagesMapping" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comments" EntityType="NailsProdModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Facebook" EntityType="NailsProdModel.Store.Facebook" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Images" EntityType="NailsProdModel.Store.Images" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Likes" EntityType="NailsProdModel.Store.Likes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rating" EntityType="NailsProdModel.Store.Rating" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Stores" EntityType="NailsProdModel.Store.Stores" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="NailsProdModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="NailsProdModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserBatchAssigned" EntityType="NailsProdModel.Store.UserBatchAssigned" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_BoardCategory" EntityType="NailsProdModel.Store.vw_BoardCategory" store:Type="Views" store:Schema="dbo" store:Name="vw_BoardCategory">
+            <DefiningQuery>SELECT 
+      [vw_BoardCategory].[ID] AS [ID], 
+      [vw_BoardCategory].[BoardID] AS [BoardID], 
+      [vw_BoardCategory].[Name] AS [Name], 
+      [vw_BoardCategory].[Source] AS [Source]
+      FROM [dbo].[vw_BoardCategory] AS [vw_BoardCategory]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_Cat" EntityType="NailsProdModel.Store.vw_Cat" store:Type="Views" store:Schema="dbo" store:Name="vw_Cat">
+            <DefiningQuery>SELECT 
+      [vw_Cat].[Name] AS [Name], 
+      [vw_Cat].[ID] AS [ID], 
+      [vw_Cat].[CategoryID] AS [CategoryID]
+      FROM [dbo].[vw_Cat] AS [vw_Cat]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_Images" EntityType="NailsProdModel.Store.vw_Images" store:Type="Views" store:Schema="dbo" store:Name="vw_Images">
+            <DefiningQuery>SELECT 
+      [vw_Images].[ID] AS [ID], 
+      [vw_Images].[Image_Height] AS [Image_Height], 
+      [vw_Images].[Image_Width] AS [Image_Width], 
+      [vw_Images].[RelativeImage_Path] AS [RelativeImage_Path], 
+      [vw_Images].[CRC64] AS [CRC64], 
+      [vw_Images].[FNV1a] AS [FNV1a], 
+      [vw_Images].[MURMUR2] AS [MURMUR2], 
+      [vw_Images].[Uploaded] AS [Uploaded], 
+      [vw_Images].[PinID] AS [PinID], 
+      [vw_Images].[Image_Title] AS [Image_Title], 
+      [vw_Images].[BoardName] AS [BoardName], 
+      [vw_Images].[UserID] AS [UserID], 
+      [vw_Images].[BoardUserID] AS [BoardUserID], 
+      [vw_Images].[BIMID] AS [BIMID], 
+      [vw_Images].[Comments] AS [Comments], 
+      [vw_Images].[Cats] AS [Cats], 
+      [vw_Images].[BoardID] AS [BoardID], 
+      [vw_Images].[Source] AS [Source], 
+      [vw_Images].[Rating] AS [Rating]
+      FROM [dbo].[vw_Images] AS [vw_Images]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_Images4Tagging" EntityType="NailsProdModel.Store.vw_Images4Tagging" store:Type="Views" store:Schema="dbo" store:Name="vw_Images4Tagging">
+            <DefiningQuery>SELECT 
+      [vw_Images4Tagging].[ID] AS [ID], 
+      [vw_Images4Tagging].[RelativeImage_Path] AS [RelativeImage_Path], 
+      [vw_Images4Tagging].[UserID] AS [UserID], 
+      [vw_Images4Tagging].[Tagged] AS [Tagged], 
+      [vw_Images4Tagging].[CRC64] AS [CRC64], 
+      [vw_Images4Tagging].[FNV1a] AS [FNV1a], 
+      [vw_Images4Tagging].[MURMUR2] AS [MURMUR2], 
+      [vw_Images4Tagging].[Image_Height] AS [Image_Height], 
+      [vw_Images4Tagging].[Image_Width] AS [Image_Width], 
+      [vw_Images4Tagging].[CategoryID] AS [CategoryID], 
+      [vw_Images4Tagging].[CategoryName] AS [CategoryName], 
+      [vw_Images4Tagging].[Image_Title] AS [Image_Title]
+      FROM [dbo].[vw_Images4Tagging] AS [vw_Images4Tagging]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_ImagesSNo" EntityType="NailsProdModel.Store.vw_ImagesSNo" store:Type="Views" store:Schema="dbo" store:Name="vw_ImagesSNo">
+            <DefiningQuery>SELECT 
+      [vw_ImagesSNo].[SNo] AS [SNo], 
+      [vw_ImagesSNo].[ID] AS [ID], 
+      [vw_ImagesSNo].[RelativeImage_Path] AS [RelativeImage_Path], 
+      [vw_ImagesSNo].[Tagged] AS [Tagged]
+      FROM [dbo].[vw_ImagesSNo] AS [vw_ImagesSNo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_ImgCategory" EntityType="NailsProdModel.Store.vw_ImgCategory" store:Type="Views" store:Schema="dbo" store:Name="vw_ImgCategory">
+            <DefiningQuery>SELECT 
+      [vw_ImgCategory].[ID] AS [ID], 
+      [vw_ImgCategory].[CategoryID] AS [CategoryID], 
+      [vw_ImgCategory].[Name] AS [Name], 
+      [vw_ImgCategory].[Parent] AS [Parent]
+      FROM [dbo].[vw_ImgCategory] AS [vw_ImgCategory]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_UserComments" EntityType="NailsProdModel.Store.vw_UserComments" store:Type="Views" store:Schema="dbo" store:Name="vw_UserComments">
+            <DefiningQuery>SELECT 
+      [vw_UserComments].[Comments] AS [Comments], 
+      [vw_UserComments].[Name] AS [Name], 
+      [vw_UserComments].[Avatar] AS [Avatar], 
+      [vw_UserComments].[UserID] AS [UserID], 
+      [vw_UserComments].[BoardsImagesMappingID] AS [BoardsImagesMappingID]
+      FROM [dbo].[vw_UserComments] AS [vw_UserComments]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AppUsers_Facebook" Association="NailsProdModel.Store.FK_AppUsers_Facebook">
+            <End Role="Facebook" EntitySet="Facebook" />
+            <End Role="AppUsers" EntitySet="AppUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoardContributor_AppUsers" Association="NailsProdModel.Store.FK_BoardContributor_AppUsers">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="BoardContributor" EntitySet="BoardContributor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoardContributor_Boards" Association="NailsProdModel.Store.FK_BoardContributor_Boards">
+            <End Role="Boards" EntitySet="Boards" />
+            <End Role="BoardContributor" EntitySet="BoardContributor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Boards_AppUsers" Association="NailsProdModel.Store.FK_Boards_AppUsers">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="Boards" EntitySet="Boards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Boards_Category" Association="NailsProdModel.Store.FK_Boards_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Boards" EntitySet="Boards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoardsImagesMapping_AppUsers" Association="NailsProdModel.Store.FK_BoardsImagesMapping_AppUsers">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="BoardsImagesMapping" EntitySet="BoardsImagesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoardsImagesMapping_Boards" Association="NailsProdModel.Store.FK_BoardsImagesMapping_Boards">
+            <End Role="Boards" EntitySet="Boards" />
+            <End Role="BoardsImagesMapping" EntitySet="BoardsImagesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoardsImagesMapping_Images" Association="NailsProdModel.Store.FK_BoardsImagesMapping_Images">
+            <End Role="Images" EntitySet="Images" />
+            <End Role="BoardsImagesMapping" EntitySet="BoardsImagesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryImagesMapping_Category" Association="NailsProdModel.Store.FK_CategoryImagesMapping_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="CategoryImagesMapping" EntitySet="CategoryImagesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryImagesMapping_Images" Association="NailsProdModel.Store.FK_CategoryImagesMapping_Images">
+            <End Role="Images" EntitySet="Images" />
+            <End Role="CategoryImagesMapping" EntitySet="CategoryImagesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comments_AppUsers" Association="NailsProdModel.Store.FK_Comments_AppUsers">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comments_BoardsImagesMapping" Association="NailsProdModel.Store.FK_Comments_BoardsImagesMapping">
+            <End Role="BoardsImagesMapping" EntitySet="BoardsImagesMapping" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Likes_AppUsers" Association="NailsProdModel.Store.FK_Likes_AppUsers">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="Likes" EntitySet="Likes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Likes_BoardsImagesMapping" Association="NailsProdModel.Store.FK_Likes_BoardsImagesMapping">
+            <End Role="BoardsImagesMapping" EntitySet="BoardsImagesMapping" />
+            <End Role="Likes" EntitySet="Likes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rating_Images" Association="NailsProdModel.Store.FK_Rating_Images">
+            <End Role="Images" EntitySet="Images" />
+            <End Role="Rating" EntitySet="Rating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserBatchAssigned_User" Association="NailsProdModel.Store.FK_UserBatchAssigned_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserBatchAssigned" EntitySet="UserBatchAssigned" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AppUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="64" />
+          <Property Name="Password" Type="varchar" MaxLength="1024" />
+          <Property Name="Email" Type="varchar" MaxLength="128" />
+          <Property Name="Avatar" Type="varchar" MaxLength="128" />
+          <Property Name="FirstName" Type="varchar" MaxLength="64" />
+          <Property Name="About" Type="varchar" MaxLength="512" />
+          <Property Name="Location" Type="varchar" MaxLength="128" />
+          <Property Name="Website" Type="varchar" MaxLength="2048" />
+          <Property Name="Invite" Type="varchar" MaxLength="2048" />
+          <Property Name="facebookid" Type="numeric" Precision="28" />
+        </EntityType>
+        <EntityType Name="Articles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Title" Type="varchar" MaxLength="255" />
+          <Property Name="RelImagePath" Type="varchar" MaxLength="1024" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Url" Type="varchar" MaxLength="2048" />
+          <Property Name="Image_Height" Type="smallint" />
+          <Property Name="Image_Width" Type="smallint" />
+          <Property Name="FNV1a" Type="numeric" Precision="28" />
+          <Property Name="MURMUR2" Type="numeric" Precision="28" />
+          <Property Name="CRC64" Type="numeric" Precision="28" />
+          <Property Name="ArticleContent" Type="varchar(max)" />
+          <Property Name="Description" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="BoardContributor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="BoardID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContributorID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Boards">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="64" />
+          <Property Name="CatID" Type="int" />
+          <Property Name="UserID" Type="int" />
+        </EntityType>
+        <EntityType Name="BoardsImagesMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="BoardID" Type="int" />
+          <Property Name="ImageID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Image_Title" Type="varchar" MaxLength="2048" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Source" Type="varchar" MaxLength="2048" />
+          <Property Name="Rating" Type="int" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="64" />
+          <Property Name="ParentID" Type="int" />
+        </EntityType>
+        <EntityType Name="CategoryImagesMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="ImageID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Comments" Type="varchar" MaxLength="512" />
+          <Property Name="BoardsImagesMappingID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Facebook">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="first_name" Type="varchar" MaxLength="128" />
+          <Property Name="gender" Type="varchar" MaxLength="8" />
+          <Property Name="id" Type="numeric" Nullable="false" Precision="28" />
+          <Property Name="last_name" Type="varchar" MaxLength="128" />
+          <Property Name="link" Type="varchar" MaxLength="2048" />
+          <Property Name="locale" Type="varchar" MaxLength="8" />
+          <Property Name="name" Type="varchar" MaxLength="256" />
+          <Property Name="timezone" Type="float" />
+          <Property Name="updated_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Images">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Image_Height" Type="smallint" />
+          <Property Name="Image_Width" Type="smallint" />
+          <Property Name="RelativeImage_Path" Type="varchar" MaxLength="2048" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Tagged" Type="bit" />
+          <Property Name="CRC64" Type="numeric" Precision="28" />
+          <Property Name="FNV1a" Type="numeric" Precision="28" />
+          <Property Name="MURMUR2" Type="numeric" Precision="28" />
+          <Property Name="Uploaded" Type="bit" />
+        </EntityType>
+        <EntityType Name="Likes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BoardsImagesMappingID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rating">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="int" Nullable="false" />
+          <Property Name="RePins" Type="int" />
+          <Property Name="Likes" Type="int" />
+          <Property Name="Rating" Type="int" />
+        </EntityType>
+        <EntityType Name="Stores">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Title" Type="varchar" MaxLength="255" />
+          <Property Name="RelImagePath" Type="varchar" MaxLength="1024" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Url" Type="varchar" MaxLength="2048" />
+          <Property Name="Image_Height" Type="smallint" />
+          <Property Name="Image_Width" Type="smallint" />
+          <Property Name="FNV1a" Type="numeric" Precision="28" />
+          <Property Name="MURMUR2" Type="numeric" Precision="28" />
+          <Property Name="CRC64" Type="numeric" Precision="28" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="64" />
+          <Property Name="Password" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="UserBatchAssigned">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="BatchStart" Type="int" Nullable="false" />
+          <Property Name="BatchEnd" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'NailsProd.dbo.vw_BoardCategory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_BoardCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="BoardID" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="64" />
+          <Property Name="Source" Type="varchar" MaxLength="2048" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'NailsProd.dbo.vw_Cat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_Cat">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="64" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'NailsProd.dbo.vw_Images' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_Images">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="BIMID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Image_Height" Type="smallint" />
+          <Property Name="Image_Width" Type="smallint" />
+          <Property Name="RelativeImage_Path" Type="varchar" MaxLength="2048" />
+          <Property Name="CRC64" Type="numeric" Precision="28" />
+          <Property Name="FNV1a" Type="numeric" Precision="28" />
+          <Property Name="MURMUR2" Type="numeric" Precision="28" />
+          <Property Name="Uploaded" Type="bit" />
+          <Property Name="PinID" Type="numeric" Precision="29" />
+          <Property Name="Image_Title" Type="varchar" MaxLength="2048" />
+          <Property Name="BoardName" Type="varchar" MaxLength="64" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="BoardUserID" Type="int" />
+          <Property Name="BIMID" Type="int" Nullable="false" />
+          <Property Name="Comments" Type="xml" />
+          <Property Name="Cats" Type="xml" />
+          <Property Name="BoardID" Type="int" />
+          <Property Name="Source" Type="varchar" MaxLength="2048" />
+          <Property Name="Rating" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'NailsProd.dbo.vw_Images4Tagging' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_Images4Tagging">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="RelativeImage_Path" Type="varchar" MaxLength="2048" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Tagged" Type="bit" />
+          <Property Name="CRC64" Type="numeric" Precision="28" />
+          <Property Name="FNV1a" Type="numeric" Precision="28" />
+          <Property Name="MURMUR2" Type="numeric" Precision="28" />
+          <Property Name="Image_Height" Type="smallint" />
+          <Property Name="Image_Width" Type="smallint" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="64" />
+          <Property Name="Image_Title" Type="varchar" MaxLength="2048" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'NailsProd.dbo.vw_ImagesSNo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_ImagesSNo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="SNo" Type="bigint" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RelativeImage_Path" Type="varchar" MaxLength="2048" />
+          <Property Name="Tagged" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'NailsProd.dbo.vw_ImgCategory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_ImgCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="64" />
+          <Property Name="Parent" Type="varchar" MaxLength="64" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'NailsProd.dbo.vw_UserComments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_UserComments">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="BoardsImagesMappingID" />
+          </Key>
+          <Property Name="Comments" Type="varchar" MaxLength="512" />
+          <Property Name="Name" Type="varchar" MaxLength="64" />
+          <Property Name="Avatar" Type="varchar" MaxLength="128" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="BoardsImagesMappingID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AppUsers_Facebook">
+          <End Role="Facebook" Type="NailsProdModel.Store.Facebook" Multiplicity="0..1" />
+          <End Role="AppUsers" Type="NailsProdModel.Store.AppUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facebook">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AppUsers">
+              <PropertyRef Name="facebookid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoardContributor_AppUsers">
+          <End Role="AppUsers" Type="NailsProdModel.Store.AppUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BoardContributor" Type="NailsProdModel.Store.BoardContributor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BoardContributor">
+              <PropertyRef Name="ContributorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoardContributor_Boards">
+          <End Role="Boards" Type="NailsProdModel.Store.Boards" Multiplicity="1" />
+          <End Role="BoardContributor" Type="NailsProdModel.Store.BoardContributor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Boards">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BoardContributor">
+              <PropertyRef Name="BoardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Boards_AppUsers">
+          <End Role="AppUsers" Type="NailsProdModel.Store.AppUsers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Boards" Type="NailsProdModel.Store.Boards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Boards">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Boards_Category">
+          <End Role="Category" Type="NailsProdModel.Store.Category" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Boards" Type="NailsProdModel.Store.Boards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Boards">
+              <PropertyRef Name="CatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoardsImagesMapping_AppUsers">
+          <End Role="AppUsers" Type="NailsProdModel.Store.AppUsers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BoardsImagesMapping" Type="NailsProdModel.Store.BoardsImagesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BoardsImagesMapping">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoardsImagesMapping_Boards">
+          <End Role="Boards" Type="NailsProdModel.Store.Boards" Multiplicity="0..1" />
+          <End Role="BoardsImagesMapping" Type="NailsProdModel.Store.BoardsImagesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Boards">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BoardsImagesMapping">
+              <PropertyRef Name="BoardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoardsImagesMapping_Images">
+          <End Role="Images" Type="NailsProdModel.Store.Images" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BoardsImagesMapping" Type="NailsProdModel.Store.BoardsImagesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Images">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BoardsImagesMapping">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryImagesMapping_Category">
+          <End Role="Category" Type="NailsProdModel.Store.Category" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CategoryImagesMapping" Type="NailsProdModel.Store.CategoryImagesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CategoryImagesMapping">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryImagesMapping_Images">
+          <End Role="Images" Type="NailsProdModel.Store.Images" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CategoryImagesMapping" Type="NailsProdModel.Store.CategoryImagesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Images">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CategoryImagesMapping">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comments_AppUsers">
+          <End Role="AppUsers" Type="NailsProdModel.Store.AppUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Comments" Type="NailsProdModel.Store.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comments_BoardsImagesMapping">
+          <End Role="BoardsImagesMapping" Type="NailsProdModel.Store.BoardsImagesMapping" Multiplicity="1" />
+          <End Role="Comments" Type="NailsProdModel.Store.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoardsImagesMapping">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="BoardsImagesMappingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Likes_AppUsers">
+          <End Role="AppUsers" Type="NailsProdModel.Store.AppUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Likes" Type="NailsProdModel.Store.Likes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Likes">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Likes_BoardsImagesMapping">
+          <End Role="BoardsImagesMapping" Type="NailsProdModel.Store.BoardsImagesMapping" Multiplicity="1" />
+          <End Role="Likes" Type="NailsProdModel.Store.Likes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoardsImagesMapping">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Likes">
+              <PropertyRef Name="BoardsImagesMappingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rating_Images">
+          <End Role="Images" Type="NailsProdModel.Store.Images" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Rating" Type="NailsProdModel.Store.Rating" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Images">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rating">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserBatchAssigned_User">
+          <End Role="User" Type="NailsProdModel.Store.User" Multiplicity="1" />
+          <End Role="UserBatchAssigned" Type="NailsProdModel.Store.UserBatchAssigned" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserBatchAssigned">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NailsProdModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="NailsProdEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AppUsers" EntityType="NailsProdModel.AppUsers" />
+          <EntitySet Name="Articles" EntityType="NailsProdModel.Articles" />
+          <EntitySet Name="BoardContributor" EntityType="NailsProdModel.BoardContributor" />
+          <EntitySet Name="Boards" EntityType="NailsProdModel.Boards" />
+          <EntitySet Name="BoardsImagesMapping" EntityType="NailsProdModel.BoardsImagesMapping" />
+          <EntitySet Name="Category" EntityType="NailsProdModel.Category" />
+          <EntitySet Name="CategoryImagesMapping" EntityType="NailsProdModel.CategoryImagesMapping" />
+          <EntitySet Name="Comments" EntityType="NailsProdModel.Comments" />
+          <EntitySet Name="Facebook" EntityType="NailsProdModel.Facebook" />
+          <EntitySet Name="Images" EntityType="NailsProdModel.Images" />
+          <EntitySet Name="Likes" EntityType="NailsProdModel.Likes" />
+          <EntitySet Name="Rating" EntityType="NailsProdModel.Rating" />
+          <EntitySet Name="Stores" EntityType="NailsProdModel.Stores" />
+          <EntitySet Name="sysdiagrams" EntityType="NailsProdModel.sysdiagrams" />
+          <EntitySet Name="User" EntityType="NailsProdModel.User" />
+          <EntitySet Name="UserBatchAssigned" EntityType="NailsProdModel.UserBatchAssigned" />
+          <EntitySet Name="vw_BoardCategory" EntityType="NailsProdModel.vw_BoardCategory" />
+          <EntitySet Name="vw_Cat" EntityType="NailsProdModel.vw_Cat" />
+          <EntitySet Name="vw_Images" EntityType="NailsProdModel.vw_Images" />
+          <EntitySet Name="vw_Images4Tagging" EntityType="NailsProdModel.vw_Images4Tagging" />
+          <EntitySet Name="vw_ImagesSNo" EntityType="NailsProdModel.vw_ImagesSNo" />
+          <EntitySet Name="vw_ImgCategory" EntityType="NailsProdModel.vw_ImgCategory" />
+          <EntitySet Name="vw_UserComments" EntityType="NailsProdModel.vw_UserComments" />
+          <AssociationSet Name="FK_AppUsers_Facebook" Association="NailsProdModel.FK_AppUsers_Facebook">
+            <End Role="Facebook" EntitySet="Facebook" />
+            <End Role="AppUsers" EntitySet="AppUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoardContributor_AppUsers" Association="NailsProdModel.FK_BoardContributor_AppUsers">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="BoardContributor" EntitySet="BoardContributor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Boards_AppUsers" Association="NailsProdModel.FK_Boards_AppUsers">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="Boards" EntitySet="Boards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoardsImagesMapping_AppUsers" Association="NailsProdModel.FK_BoardsImagesMapping_AppUsers">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="BoardsImagesMapping" EntitySet="BoardsImagesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comments_AppUsers" Association="NailsProdModel.FK_Comments_AppUsers">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Likes_AppUsers" Association="NailsProdModel.FK_Likes_AppUsers">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="Likes" EntitySet="Likes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoardContributor_Boards" Association="NailsProdModel.FK_BoardContributor_Boards">
+            <End Role="Boards" EntitySet="Boards" />
+            <End Role="BoardContributor" EntitySet="BoardContributor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Boards_Category" Association="NailsProdModel.FK_Boards_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Boards" EntitySet="Boards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoardsImagesMapping_Boards" Association="NailsProdModel.FK_BoardsImagesMapping_Boards">
+            <End Role="Boards" EntitySet="Boards" />
+            <End Role="BoardsImagesMapping" EntitySet="BoardsImagesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BoardsImagesMapping_Images" Association="NailsProdModel.FK_BoardsImagesMapping_Images">
+            <End Role="Images" EntitySet="Images" />
+            <End Role="BoardsImagesMapping" EntitySet="BoardsImagesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comments_BoardsImagesMapping" Association="NailsProdModel.FK_Comments_BoardsImagesMapping">
+            <End Role="BoardsImagesMapping" EntitySet="BoardsImagesMapping" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Likes_BoardsImagesMapping" Association="NailsProdModel.FK_Likes_BoardsImagesMapping">
+            <End Role="BoardsImagesMapping" EntitySet="BoardsImagesMapping" />
+            <End Role="Likes" EntitySet="Likes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryImagesMapping_Category" Association="NailsProdModel.FK_CategoryImagesMapping_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="CategoryImagesMapping" EntitySet="CategoryImagesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryImagesMapping_Images" Association="NailsProdModel.FK_CategoryImagesMapping_Images">
+            <End Role="Images" EntitySet="Images" />
+            <End Role="CategoryImagesMapping" EntitySet="CategoryImagesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rating_Images" Association="NailsProdModel.FK_Rating_Images">
+            <End Role="Images" EntitySet="Images" />
+            <End Role="Rating" EntitySet="Rating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserBatchAssigned_User" Association="NailsProdModel.FK_UserBatchAssigned_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserBatchAssigned" EntitySet="UserBatchAssigned" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AppUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="1024" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="Avatar" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="About" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+          <Property Name="Location" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="Website" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Invite" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="facebookid" Type="Decimal" Precision="28" Scale="0" />
+          <NavigationProperty Name="Facebook" Relationship="NailsProdModel.FK_AppUsers_Facebook" FromRole="AppUsers" ToRole="Facebook" />
+          <NavigationProperty Name="BoardContributor" Relationship="NailsProdModel.FK_BoardContributor_AppUsers" FromRole="AppUsers" ToRole="BoardContributor" />
+          <NavigationProperty Name="Boards" Relationship="NailsProdModel.FK_Boards_AppUsers" FromRole="AppUsers" ToRole="Boards" />
+          <NavigationProperty Name="BoardsImagesMapping" Relationship="NailsProdModel.FK_BoardsImagesMapping_AppUsers" FromRole="AppUsers" ToRole="BoardsImagesMapping" />
+          <NavigationProperty Name="Comments" Relationship="NailsProdModel.FK_Comments_AppUsers" FromRole="AppUsers" ToRole="Comments" />
+          <NavigationProperty Name="Likes" Relationship="NailsProdModel.FK_Likes_AppUsers" FromRole="AppUsers" ToRole="Likes" />
+        </EntityType>
+        <EntityType Name="Articles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Title" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="RelImagePath" Type="String" MaxLength="1024" Unicode="false" FixedLength="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Url" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Image_Height" Type="Int16" />
+          <Property Name="Image_Width" Type="Int16" />
+          <Property Name="FNV1a" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="MURMUR2" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="CRC64" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="ArticleContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="BoardContributor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="BoardID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContributorID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AppUsers" Relationship="NailsProdModel.FK_BoardContributor_AppUsers" FromRole="BoardContributor" ToRole="AppUsers" />
+          <NavigationProperty Name="Boards" Relationship="NailsProdModel.FK_BoardContributor_Boards" FromRole="BoardContributor" ToRole="Boards" />
+        </EntityType>
+        <EntityType Name="Boards">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="CatID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="AppUsers" Relationship="NailsProdModel.FK_Boards_AppUsers" FromRole="Boards" ToRole="AppUsers" />
+          <NavigationProperty Name="BoardContributor" Relationship="NailsProdModel.FK_BoardContributor_Boards" FromRole="Boards" ToRole="BoardContributor" />
+          <NavigationProperty Name="Category" Relationship="NailsProdModel.FK_Boards_Category" FromRole="Boards" ToRole="Category" />
+          <NavigationProperty Name="BoardsImagesMapping" Relationship="NailsProdModel.FK_BoardsImagesMapping_Boards" FromRole="Boards" ToRole="BoardsImagesMapping" />
+        </EntityType>
+        <EntityType Name="BoardsImagesMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="BoardID" Type="Int32" />
+          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image_Title" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Source" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Rating" Type="Int32" />
+          <NavigationProperty Name="AppUsers" Relationship="NailsProdModel.FK_BoardsImagesMapping_AppUsers" FromRole="BoardsImagesMapping" ToRole="AppUsers" />
+          <NavigationProperty Name="Boards" Relationship="NailsProdModel.FK_BoardsImagesMapping_Boards" FromRole="BoardsImagesMapping" ToRole="Boards" />
+          <NavigationProperty Name="Images" Relationship="NailsProdModel.FK_BoardsImagesMapping_Images" FromRole="BoardsImagesMapping" ToRole="Images" />
+          <NavigationProperty Name="Comments" Relationship="NailsProdModel.FK_Comments_BoardsImagesMapping" FromRole="BoardsImagesMapping" ToRole="Comments" />
+          <NavigationProperty Name="Likes" Relationship="NailsProdModel.FK_Likes_BoardsImagesMapping" FromRole="BoardsImagesMapping" ToRole="Likes" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <NavigationProperty Name="Boards" Relationship="NailsProdModel.FK_Boards_Category" FromRole="Category" ToRole="Boards" />
+          <NavigationProperty Name="CategoryImagesMapping" Relationship="NailsProdModel.FK_CategoryImagesMapping_Category" FromRole="Category" ToRole="CategoryImagesMapping" />
+        </EntityType>
+        <EntityType Name="CategoryImagesMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="Category" Relationship="NailsProdModel.FK_CategoryImagesMapping_Category" FromRole="CategoryImagesMapping" ToRole="Category" />
+          <NavigationProperty Name="Images" Relationship="NailsProdModel.FK_CategoryImagesMapping_Images" FromRole="CategoryImagesMapping" ToRole="Images" />
+        </EntityType>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comments1" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+          <Property Name="BoardsImagesMappingID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AppUsers" Relationship="NailsProdModel.FK_Comments_AppUsers" FromRole="Comments" ToRole="AppUsers" />
+          <NavigationProperty Name="BoardsImagesMapping" Relationship="NailsProdModel.FK_Comments_BoardsImagesMapping" FromRole="Comments" ToRole="BoardsImagesMapping" />
+        </EntityType>
+        <EntityType Name="Facebook">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="first_name" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="gender" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="id" Type="Decimal" Nullable="false" Precision="28" Scale="0" />
+          <Property Name="last_name" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="link" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="locale" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="timezone" Type="Double" />
+          <Property Name="updated_time" Type="DateTime" />
+          <NavigationProperty Name="AppUsers" Relationship="NailsProdModel.FK_AppUsers_Facebook" FromRole="Facebook" ToRole="AppUsers" />
+        </EntityType>
+        <EntityType Name="Images">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image_Height" Type="Int16" />
+          <Property Name="Image_Width" Type="Int16" />
+          <Property Name="RelativeImage_Path" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Date" Type="DateTime" />
+          <Property Name="Tagged" Type="Boolean" />
+          <Property Name="CRC64" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="FNV1a" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="MURMUR2" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="Uploaded" Type="Boolean" />
+          <NavigationProperty Name="BoardsImagesMapping" Relationship="NailsProdModel.FK_BoardsImagesMapping_Images" FromRole="Images" ToRole="BoardsImagesMapping" />
+          <NavigationProperty Name="CategoryImagesMapping" Relationship="NailsProdModel.FK_CategoryImagesMapping_Images" FromRole="Images" ToRole="CategoryImagesMapping" />
+          <NavigationProperty Name="Rating" Relationship="NailsProdModel.FK_Rating_Images" FromRole="Images" ToRole="Rating" />
+        </EntityType>
+        <EntityType Name="Likes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BoardsImagesMappingID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AppUsers" Relationship="NailsProdModel.FK_Likes_AppUsers" FromRole="Likes" ToRole="AppUsers" />
+          <NavigationProperty Name="BoardsImagesMapping" Relationship="NailsProdModel.FK_Likes_BoardsImagesMapping" FromRole="Likes" ToRole="BoardsImagesMapping" />
+        </EntityType>
+        <EntityType Name="Rating">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="RePins" Type="Int32" />
+          <Property Name="Likes" Type="Int32" />
+          <Property Name="Rating1" Type="Int32" />
+          <NavigationProperty Name="Images" Relationship="NailsProdModel.FK_Rating_Images" FromRole="Rating" ToRole="Images" />
+        </EntityType>
+        <EntityType Name="Stores">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Title" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="RelImagePath" Type="String" MaxLength="1024" Unicode="false" FixedLength="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Url" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Image_Height" Type="Int16" />
+          <Property Name="Image_Width" Type="Int16" />
+          <Property Name="FNV1a" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="MURMUR2" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="CRC64" Type="Decimal" Precision="28" Scale="0" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="UserBatchAssigned" Relationship="NailsProdModel.FK_UserBatchAssigned_User" FromRole="User" ToRole="UserBatchAssigned" />
+        </EntityType>
+        <EntityType Name="UserBatchAssigned">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="BatchStart" Type="Int32" Nullable="false" />
+          <Property Name="BatchEnd" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="NailsProdModel.FK_UserBatchAssigned_User" FromRole="UserBatchAssigned" ToRole="User" />
+        </EntityType>
+        <EntityType Name="vw_BoardCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="BoardID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="Source" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vw_Cat">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_Images">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="BIMID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Image_Height" Type="Int16" />
+          <Property Name="Image_Width" Type="Int16" />
+          <Property Name="RelativeImage_Path" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="CRC64" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="FNV1a" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="MURMUR2" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="Uploaded" Type="Boolean" />
+          <Property Name="PinID" Type="Decimal" Precision="29" Scale="0" />
+          <Property Name="Image_Title" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="BoardName" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="BoardUserID" Type="Int32" />
+          <Property Name="BIMID" Type="Int32" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Cats" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="BoardID" Type="Int32" />
+          <Property Name="Source" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Rating" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vw_Images4Tagging">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="RelativeImage_Path" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Tagged" Type="Boolean" />
+          <Property Name="CRC64" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="FNV1a" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="MURMUR2" Type="Decimal" Precision="28" Scale="0" />
+          <Property Name="Image_Height" Type="Int16" />
+          <Property Name="Image_Width" Type="Int16" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="CategoryName" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="Image_Title" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vw_ImagesSNo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="SNo" Type="Int64" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RelativeImage_Path" Type="String" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="Tagged" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="vw_ImgCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="Parent" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vw_UserComments">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="BoardsImagesMappingID" />
+          </Key>
+          <Property Name="Comments" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="Avatar" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="BoardsImagesMappingID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AppUsers_Facebook">
+          <End Role="Facebook" Type="NailsProdModel.Facebook" Multiplicity="0..1" />
+          <End Role="AppUsers" Type="NailsProdModel.AppUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facebook">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="AppUsers">
+              <PropertyRef Name="facebookid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoardContributor_AppUsers">
+          <End Role="AppUsers" Type="NailsProdModel.AppUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BoardContributor" Type="NailsProdModel.BoardContributor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BoardContributor">
+              <PropertyRef Name="ContributorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Boards_AppUsers">
+          <End Role="AppUsers" Type="NailsProdModel.AppUsers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Boards" Type="NailsProdModel.Boards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Boards">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoardsImagesMapping_AppUsers">
+          <End Role="AppUsers" Type="NailsProdModel.AppUsers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BoardsImagesMapping" Type="NailsProdModel.BoardsImagesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BoardsImagesMapping">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comments_AppUsers">
+          <End Role="AppUsers" Type="NailsProdModel.AppUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Comments" Type="NailsProdModel.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Likes_AppUsers">
+          <End Role="AppUsers" Type="NailsProdModel.AppUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Likes" Type="NailsProdModel.Likes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Likes">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoardContributor_Boards">
+          <End Role="Boards" Type="NailsProdModel.Boards" Multiplicity="1" />
+          <End Role="BoardContributor" Type="NailsProdModel.BoardContributor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Boards">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BoardContributor">
+              <PropertyRef Name="BoardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Boards_Category">
+          <End Role="Category" Type="NailsProdModel.Category" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Boards" Type="NailsProdModel.Boards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Boards">
+              <PropertyRef Name="CatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoardsImagesMapping_Boards">
+          <End Role="Boards" Type="NailsProdModel.Boards" Multiplicity="0..1" />
+          <End Role="BoardsImagesMapping" Type="NailsProdModel.BoardsImagesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Boards">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BoardsImagesMapping">
+              <PropertyRef Name="BoardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BoardsImagesMapping_Images">
+          <End Role="Images" Type="NailsProdModel.Images" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BoardsImagesMapping" Type="NailsProdModel.BoardsImagesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Images">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BoardsImagesMapping">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comments_BoardsImagesMapping">
+          <End Role="BoardsImagesMapping" Type="NailsProdModel.BoardsImagesMapping" Multiplicity="1" />
+          <End Role="Comments" Type="NailsProdModel.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoardsImagesMapping">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="BoardsImagesMappingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Likes_BoardsImagesMapping">
+          <End Role="BoardsImagesMapping" Type="NailsProdModel.BoardsImagesMapping" Multiplicity="1" />
+          <End Role="Likes" Type="NailsProdModel.Likes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoardsImagesMapping">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Likes">
+              <PropertyRef Name="BoardsImagesMappingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryImagesMapping_Category">
+          <End Role="Category" Type="NailsProdModel.Category" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CategoryImagesMapping" Type="NailsProdModel.CategoryImagesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CategoryImagesMapping">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryImagesMapping_Images">
+          <End Role="Images" Type="NailsProdModel.Images" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CategoryImagesMapping" Type="NailsProdModel.CategoryImagesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Images">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CategoryImagesMapping">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rating_Images">
+          <End Role="Images" Type="NailsProdModel.Images" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Rating" Type="NailsProdModel.Rating" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Images">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rating">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserBatchAssigned_User">
+          <End Role="User" Type="NailsProdModel.User" Multiplicity="1" />
+          <End Role="UserBatchAssigned" Type="NailsProdModel.UserBatchAssigned" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserBatchAssigned">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NailsProdModelStoreContainer" CdmEntityContainer="NailsProdEntities">
+          <EntitySetMapping Name="AppUsers"><EntityTypeMapping TypeName="NailsProdModel.AppUsers"><MappingFragment StoreEntitySet="AppUsers">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+            <ScalarProperty Name="About" ColumnName="About" />
+            <ScalarProperty Name="Location" ColumnName="Location" />
+            <ScalarProperty Name="Website" ColumnName="Website" />
+            <ScalarProperty Name="Invite" ColumnName="Invite" />
+            <ScalarProperty Name="facebookid" ColumnName="facebookid" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Articles"><EntityTypeMapping TypeName="NailsProdModel.Articles"><MappingFragment StoreEntitySet="Articles">
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="RelImagePath" ColumnName="RelImagePath" />
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Url" ColumnName="Url" />
+            <ScalarProperty Name="Image_Height" ColumnName="Image_Height" />
+            <ScalarProperty Name="Image_Width" ColumnName="Image_Width" />
+            <ScalarProperty Name="FNV1a" ColumnName="FNV1a" />
+            <ScalarProperty Name="MURMUR2" ColumnName="MURMUR2" />
+            <ScalarProperty Name="CRC64" ColumnName="CRC64" />
+            <ScalarProperty Name="ArticleContent" ColumnName="ArticleContent" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BoardContributor"><EntityTypeMapping TypeName="NailsProdModel.BoardContributor"><MappingFragment StoreEntitySet="BoardContributor">
+            <ScalarProperty Name="BoardID" ColumnName="BoardID" />
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ContributorID" ColumnName="ContributorID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Boards"><EntityTypeMapping TypeName="NailsProdModel.Boards"><MappingFragment StoreEntitySet="Boards">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="CatID" ColumnName="CatID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BoardsImagesMapping"><EntityTypeMapping TypeName="NailsProdModel.BoardsImagesMapping"><MappingFragment StoreEntitySet="BoardsImagesMapping">
+            <ScalarProperty Name="BoardID" ColumnName="BoardID" />
+            <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Image_Title" ColumnName="Image_Title" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="Source" ColumnName="Source" />
+            <ScalarProperty Name="Rating" ColumnName="Rating" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Category"><EntityTypeMapping TypeName="NailsProdModel.Category"><MappingFragment StoreEntitySet="Category">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CategoryImagesMapping"><EntityTypeMapping TypeName="NailsProdModel.CategoryImagesMapping"><MappingFragment StoreEntitySet="CategoryImagesMapping">
+            <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+            <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Comments"><EntityTypeMapping TypeName="NailsProdModel.Comments"><MappingFragment StoreEntitySet="Comments">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Comments1" ColumnName="Comments" />
+            <ScalarProperty Name="BoardsImagesMappingID" ColumnName="BoardsImagesMappingID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Facebook"><EntityTypeMapping TypeName="NailsProdModel.Facebook"><MappingFragment StoreEntitySet="Facebook">
+            <ScalarProperty Name="first_name" ColumnName="first_name" />
+            <ScalarProperty Name="gender" ColumnName="gender" />
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="last_name" ColumnName="last_name" />
+            <ScalarProperty Name="link" ColumnName="link" />
+            <ScalarProperty Name="locale" ColumnName="locale" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="timezone" ColumnName="timezone" />
+            <ScalarProperty Name="updated_time" ColumnName="updated_time" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Images"><EntityTypeMapping TypeName="NailsProdModel.Images"><MappingFragment StoreEntitySet="Images">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Image_Height" ColumnName="Image_Height" />
+            <ScalarProperty Name="Image_Width" ColumnName="Image_Width" />
+            <ScalarProperty Name="RelativeImage_Path" ColumnName="RelativeImage_Path" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="Tagged" ColumnName="Tagged" />
+            <ScalarProperty Name="CRC64" ColumnName="CRC64" />
+            <ScalarProperty Name="FNV1a" ColumnName="FNV1a" />
+            <ScalarProperty Name="MURMUR2" ColumnName="MURMUR2" />
+            <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Likes"><EntityTypeMapping TypeName="NailsProdModel.Likes"><MappingFragment StoreEntitySet="Likes">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="BoardsImagesMappingID" ColumnName="BoardsImagesMappingID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Rating"><EntityTypeMapping TypeName="NailsProdModel.Rating"><MappingFragment StoreEntitySet="Rating">
+            <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+            <ScalarProperty Name="RePins" ColumnName="RePins" />
+            <ScalarProperty Name="Likes" ColumnName="Likes" />
+            <ScalarProperty Name="Rating1" ColumnName="Rating" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Stores"><EntityTypeMapping TypeName="NailsProdModel.Stores"><MappingFragment StoreEntitySet="Stores">
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="RelImagePath" ColumnName="RelImagePath" />
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Url" ColumnName="Url" />
+            <ScalarProperty Name="Image_Height" ColumnName="Image_Height" />
+            <ScalarProperty Name="Image_Width" ColumnName="Image_Width" />
+            <ScalarProperty Name="FNV1a" ColumnName="FNV1a" />
+            <ScalarProperty Name="MURMUR2" ColumnName="MURMUR2" />
+            <ScalarProperty Name="CRC64" ColumnName="CRC64" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="NailsProdModel.sysdiagrams"><MappingFragment StoreEntitySet="sysdiagrams">
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="definition" ColumnName="definition" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="User"><EntityTypeMapping TypeName="NailsProdModel.User"><MappingFragment StoreEntitySet="User">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UserBatchAssigned"><EntityTypeMapping TypeName="NailsProdModel.UserBatchAssigned"><MappingFragment StoreEntitySet="UserBatchAssigned">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="BatchStart" ColumnName="BatchStart" />
+            <ScalarProperty Name="BatchEnd" ColumnName="BatchEnd" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vw_BoardCategory"><EntityTypeMapping TypeName="NailsProdModel.vw_BoardCategory"><MappingFragment StoreEntitySet="vw_BoardCategory">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="BoardID" ColumnName="BoardID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Source" ColumnName="Source" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vw_Cat"><EntityTypeMapping TypeName="NailsProdModel.vw_Cat"><MappingFragment StoreEntitySet="vw_Cat">
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vw_Images"><EntityTypeMapping TypeName="NailsProdModel.vw_Images"><MappingFragment StoreEntitySet="vw_Images">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Image_Height" ColumnName="Image_Height" />
+            <ScalarProperty Name="Image_Width" ColumnName="Image_Width" />
+            <ScalarProperty Name="RelativeImage_Path" ColumnName="RelativeImage_Path" />
+            <ScalarProperty Name="CRC64" ColumnName="CRC64" />
+            <ScalarProperty Name="FNV1a" ColumnName="FNV1a" />
+            <ScalarProperty Name="MURMUR2" ColumnName="MURMUR2" />
+            <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+            <ScalarProperty Name="PinID" ColumnName="PinID" />
+            <ScalarProperty Name="Image_Title" ColumnName="Image_Title" />
+            <ScalarProperty Name="BoardName" ColumnName="BoardName" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="BoardUserID" ColumnName="BoardUserID" />
+            <ScalarProperty Name="BIMID" ColumnName="BIMID" />
+            <ScalarProperty Name="Comments" ColumnName="Comments" />
+            <ScalarProperty Name="Cats" ColumnName="Cats" />
+            <ScalarProperty Name="BoardID" ColumnName="BoardID" />
+            <ScalarProperty Name="Source" ColumnName="Source" />
+            <ScalarProperty Name="Rating" ColumnName="Rating" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vw_Images4Tagging"><EntityTypeMapping TypeName="NailsProdModel.vw_Images4Tagging"><MappingFragment StoreEntitySet="vw_Images4Tagging">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="RelativeImage_Path" ColumnName="RelativeImage_Path" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="Tagged" ColumnName="Tagged" />
+            <ScalarProperty Name="CRC64" ColumnName="CRC64" />
+            <ScalarProperty Name="FNV1a" ColumnName="FNV1a" />
+            <ScalarProperty Name="MURMUR2" ColumnName="MURMUR2" />
+            <ScalarProperty Name="Image_Height" ColumnName="Image_Height" />
+            <ScalarProperty Name="Image_Width" ColumnName="Image_Width" />
+            <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+            <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+            <ScalarProperty Name="Image_Title" ColumnName="Image_Title" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vw_ImagesSNo"><EntityTypeMapping TypeName="NailsProdModel.vw_ImagesSNo"><MappingFragment StoreEntitySet="vw_ImagesSNo">
+            <ScalarProperty Name="SNo" ColumnName="SNo" />
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="RelativeImage_Path" ColumnName="RelativeImage_Path" />
+            <ScalarProperty Name="Tagged" ColumnName="Tagged" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vw_ImgCategory"><EntityTypeMapping TypeName="NailsProdModel.vw_ImgCategory"><MappingFragment StoreEntitySet="vw_ImgCategory">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Parent" ColumnName="Parent" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vw_UserComments"><EntityTypeMapping TypeName="NailsProdModel.vw_UserComments"><MappingFragment StoreEntitySet="vw_UserComments">
+            <ScalarProperty Name="Comments" ColumnName="Comments" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="BoardsImagesMappingID" ColumnName="BoardsImagesMappingID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="NailsProd">
+        <EntityTypeShape EntityType="NailsProdModel.AppUsers" Width="1.5" PointX="3" PointY="3.625" Height="4.2879036458333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.Articles" Width="1.5" PointX="0.75" PointY="9.5" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.BoardContributor" Width="1.5" PointX="5.25" PointY="4.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.Boards" Width="1.5" PointX="5.25" PointY="1.5" Height="2.5571907552083339" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.BoardsImagesMapping" Width="1.5" PointX="7.5" PointY="3" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.Category" Width="1.5" PointX="3" PointY="0.75" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.CategoryImagesMapping" Width="1.5" PointX="7.5" PointY="8" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.Comments" Width="1.5" PointX="9.75" PointY="4.375" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.Facebook" Width="1.5" PointX="0.75" PointY="4.25" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.Images" Width="1.5" PointX="5.25" PointY="7.875" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.Likes" Width="1.5" PointX="9.75" PointY="1.5" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.Rating" Width="1.5" PointX="7.5" PointY="11.625" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.Stores" Width="1.5" PointX="9.75" PointY="10.5" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.sysdiagrams" Width="1.5" PointX="11.75" PointY="1.5" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.User" Width="1.5" PointX="9.75" PointY="7.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.UserBatchAssigned" Width="1.5" PointX="12" PointY="7.625" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.vw_BoardCategory" Width="1.5" PointX="2.75" PointY="12.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.vw_Cat" Width="1.5" PointX="11.75" PointY="4.5" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.vw_Images" Width="1.5" PointX="4.75" PointY="12.5" Height="4.6725065104166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.vw_Images4Tagging" Width="1.5" PointX="11.75" PointY="10.5" Height="3.3263964843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.vw_ImagesSNo" Width="1.5" PointX="13.75" PointY="1.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.vw_ImgCategory" Width="1.5" PointX="13.75" PointY="4.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NailsProdModel.vw_UserComments" Width="1.5" PointX="6.75" PointY="14.5" Height="1.9802864583333246" IsExpanded="true" />
+        <AssociationConnector Association="NailsProdModel.FK_AppUsers_Facebook" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5.7208968098958337" />
+          <ConnectorPoint PointX="3" PointY="5.7208968098958337" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_BoardContributor_AppUsers" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="5.7401432291666659" />
+          <ConnectorPoint PointX="5.25" PointY="5.7401432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_Boards_AppUsers" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="3.8410953776041667" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="3.8410953776041663" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="3.8410953776041667" />
+          <ConnectorPoint PointX="5.25" PointY="3.8410953776041667" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_BoardsImagesMapping_AppUsers" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="4.4035953776041667" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="4.4035953776041659" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="4.4035953776041667" />
+          <ConnectorPoint PointX="7.166666666666667" PointY="4.4035953776041659" />
+          <ConnectorPoint PointX="7.333333333333333" PointY="4.4035953776041667" />
+          <ConnectorPoint PointX="7.5" PointY="4.4035953776041667" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_Comments_AppUsers" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="6.8577754374999991" />
+          <ConnectorPoint PointX="5" PointY="6.8577754374999991" />
+          <ConnectorPoint PointX="5" PointY="6.9802864583333317" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="6.9802864583333308" />
+          <ConnectorPoint PointX="7.208333333333333" PointY="6.9802864583333317" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="6.9802864583333308" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="6.9802864583333317" />
+          <ConnectorPoint PointX="10.5" PointY="6.9802864583333317" />
+          <ConnectorPoint PointX="10.5" PointY="6.547587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_Likes_AppUsers" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="3.625" />
+          <ConnectorPoint PointX="3.75" PointY="2.9802864583333326" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="2.9802864583333322" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="2.9802864583333326" />
+          <ConnectorPoint PointX="5" PointY="2.9802864583333326" />
+          <ConnectorPoint PointX="5" PointY="1.25" />
+          <ConnectorPoint PointX="9.375" PointY="1.25" />
+          <ConnectorPoint PointX="9.375" PointY="2.4901432291666676" />
+          <ConnectorPoint PointX="9.75" PointY="2.4901432291666676" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_BoardContributor_Boards" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="4.0571907552083335" />
+          <ConnectorPoint PointX="6" PointY="4.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_Boards_Category" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.1151432291666663" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="2.1151432291666659" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="2.1151432291666663" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="2.1151432291666659" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="2.1151432291666663" />
+          <ConnectorPoint PointX="5.25" PointY="2.1151432291666663" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_BoardsImagesMapping_Boards" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="3.5285953776041667" />
+          <ConnectorPoint PointX="7.5" PointY="3.5285953776041667" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_BoardsImagesMapping_Images" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="7.875" />
+          <ConnectorPoint PointX="7.125" PointY="7.5" />
+          <ConnectorPoint PointX="7.125" PointY="5.3962479309895839" />
+          <ConnectorPoint PointX="7.166666666666667" PointY="5.396247930989583" />
+          <ConnectorPoint PointX="7.333333333333333" PointY="5.3962479309895839" />
+          <ConnectorPoint PointX="7.5" PointY="5.3962479309895839" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_Comments_BoardsImagesMapping" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="5.3506982421875" />
+          <ConnectorPoint PointX="9.75" PointY="5.3506982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_Likes_BoardsImagesMapping" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="3.2401432291666676" />
+          <ConnectorPoint PointX="9.75" PointY="3.2401432291666676" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_CategoryImagesMapping_Category" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="1.6513191145833324" />
+          <ConnectorPoint PointX="4.75" PointY="1.6513191145833324" />
+          <ConnectorPoint PointX="4.75" PointY="4.1821907552083335" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="4.1821907552083326" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="4.1821907552083335" />
+          <ConnectorPoint PointX="7.25" PointY="4.1821907552083335" />
+          <ConnectorPoint PointX="7.25" PointY="6.576396484375" />
+          <ConnectorPoint PointX="8.25" PointY="6.576396484375" />
+          <ConnectorPoint PointX="8.25" PointY="8" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_CategoryImagesMapping_Images" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="9.0862939453125" />
+          <ConnectorPoint PointX="7.5" PointY="9.0862939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_Rating_Images" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.53125" PointY="11.393697916666667" />
+          <ConnectorPoint PointX="6.53125" PointY="12.03125" />
+          <ConnectorPoint PointX="7.5" PointY="12.03125" />
+        </AssociationConnector>
+        <AssociationConnector Association="NailsProdModel.FK_UserBatchAssigned_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.25" PointY="8.6439925130208337" />
+          <ConnectorPoint PointX="12" PointY="8.6439925130208337" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

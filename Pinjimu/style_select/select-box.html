@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Select Box</title>
+<meta name="description" content="Styling Select Elements" />
+<script type="text/javascript" src="jquery.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){	
+
+		if (!$.browser.opera) {
+    
+			// select element styling
+			$('select.select').each(function(){
+				var title = $(this).attr('title');
+				if( $('option:selected', this).val() != ''  ) title = $('option:selected',this).text();
+				$(this)
+					.css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+					.after('<span class="select">' + title + '</span>')
+					.change(function(){
+						val = $('option:selected',this).text();
+						$(this).next().text(val);
+						})
+			});
+
+		};
+		
+	});
+</script>
+
+<style>
+
+
+/* */
+
+/* all form DIVs have position property set to relative so we can easily position newly created SPAN */
+form div{position:relative;} 
+
+/* setting the width and height of the SELECT element to match the replacing graphics */
+select.select{
+		position:relative;
+		z-index:10;
+		width:375px !important;
+		height:36px !important;
+		line-height:26px;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:16px;
+		color:#996666;
+}
+
+/* dynamically created SPAN, placed below the SELECT */
+span.select{
+	position:absolute;
+	bottom:0;
+	float:left;
+	left:0;
+	width:375px;
+	height:36px;
+	line-height:36px;
+	text-indent:10px;
+	background:url(images/select.png) no-repeat 0 0;
+	cursor:default;
+	z-index:1;
+	font-family:Arial, Helvetica, sans-serif;
+		font-size:16px;
+		font-weight:bold;
+		color:#996666;
+	}
+	
+
+
+</style>
+</head>
+<body>
+
+
+    <form method="post" action="">  
+	
+    	
+        <div>
+            <select class="select" title="Select one">
+            	<option></option>
+                <option style="font-weight:bold; color:#930">&nbsp;	&nbsp;	&nbsp;Spaces</option>
+                <option>  Basement</option>
+                <option>  Bedroom</option>
+                <option>Dining Room</option>
+                <option>Kitchen</option>
+                <option></option>
+                 <option style="font-weight:bold;color:#930">&nbsp;	&nbsp;	&nbsp;Products</option>
+                <option>  Bedroom Products</option>
+                <option>  Floor</option>
+                <option>Hardware</option>
+                <option>Housekeeping</option>
+            </select>
+        </div>
+        
+        
+
+
+</body>
+</html>

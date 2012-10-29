@@ -1,0 +1,465 @@
+﻿<!DOCTYPE HTML>
+<html lang="en" style="background-image: url(../images/paper.jpg); background-repeat: repeat;
+background-color: #f7f5f5;">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Pinterest</title>
+    <link href="http://freshpin.com/cdn/PindexProd.css" rel="stylesheet"
+        type="text/css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="freshpin.js" type="text/javascript"></script>
+</head>
+<body style="font-family: 'helvetica neue',arial,sans-serif; font-size: 10px; color: #211922;
+    margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0;
+    padding-right: 0; padding-bottom: 0; padding-left: 0;">
+    <div class="header">
+        <div class="line1">
+            <form method="get">
+            <div class="queryBox">
+                <input class="searchfield" type="text" value="Search over 500,000 Pins" id="query" />
+                <input class="lg searchbutton" type="button" id="query_button" />
+            </div>
+            </form>
+            <div class="freshpinlogo">
+                <a href=".">
+                    <img src="logo.png" /></a>
+                <div class="freshpinlogoTagline">
+                    450 Sources, Fresh Daily, Original Sources - Pin On!</div>
+            </div>
+            <div class="aboutus">
+                <ul class="navigation">
+                    <li><a id="about" href="about.html" class="nav">About<span></span></a>
+                        <ul>
+                            <li><a href="help.html">Help</a></li>
+                            <li class="beforeDivider"><a href="copyright.html">Copyright</a></li>
+                            <li><a href="signup">Request an Invite</a></li>
+                        </ul>
+                    </li>
+                    <li class="logininfo"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- #DeletePin.ModalContainer -->
+    <div class="FixedContainer" style="position: relative; z-index: 2; width: 852px;
+        margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; padding-top: 0;
+        padding-right: 0; padding-bottom: 0; padding-left: 0;">
+        <div id="PinEditPreview" class="pin" style="position: relative; width: 192px; font-size: 11px;
+            box-shadow: 0 1px 3px rgba(34,25,25,0.4); -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
+            -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4); float: right; overflow: hidden;
+            margin-top: 93px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px;
+            padding-right: 15px; padding-bottom: 0; padding-left: 15px; border-top-color: #dedcdd#c9c7c8#c9c7c8;
+            border-right-color: #dedcdd#c9c7c8#c9c7c8; border-bottom-color: #dedcdd#c9c7c8#c9c7c8;
+            border-left-color: #dedcdd#c9c7c8#c9c7c8; border-top-style: solid; border-right-style: solid;
+            border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+            border-right-width: 1px; border-bottom-width: 2px; border-left-width: 1px; background-color: #fff;">
+            <div class="price" style="position: absolute; z-index: 3; top: -70px; left: -117px;
+                width: 125px; height: 22px; text-align: center; font-size: 11px; color: #524d4d;
+                overflow: hidden; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -moz-transition: all 0.5s ease-in-out;
+                -webkit-transition: all 0.5s ease-in-out; margin-top: 0; margin-right: 0; margin-bottom: 0;
+                margin-left: 0; padding-top: 8px; padding-right: 0; padding-bottom: 0; padding-left: 0;
+                background-color: #f2f0f0;" align="center">
+            </div>
+            <a href="http://pinterest.com/pin/233765036878453565" style="font-weight: bold; color: #221919;
+                text-decoration: none; outline: none;">
+                <img style="height: 222px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0;
+                    border-left-width: 0;" src="Pinterest_files/177470041536307855_0lynVkmO_b.jpg" /></a>
+            <p id="postDescription" style="line-height: 1.35em; margin-top: 0; margin-right: 0;
+                margin-bottom: .8em; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0;
+                padding-left: 0;">
+            </p>
+        </div>
+        <form id="PinEdit" class="Form StaticForm" action="" method="POST" accept-charset="utf-8"
+        style="float: left; width: 614px; font-size: 13px; margin-top: 96px; margin-right: 0;
+        margin-bottom: 36px; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0;
+        padding-left: 0;">
+        <h3 style="border-bottom-width: 3px; border-bottom-color: rgba(34,25,25,0.1); border-bottom-style: double;
+            font-size: 28px; font-weight: bold; line-height: 1.1em; color: #524d4d; text-shadow: 0 1px rgba(255,255,255,0.9);
+            margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0;
+            padding-right: 0; padding-bottom: 18px; padding-left: 0;">
+            Edit Pin</h3>
+        <ul style="border-top-style: solid; border-top-width: 1px; border-top-color: #ccc;
+            margin-top: 1px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0;
+            padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <li style="border-top-width: 1px; border-top-color: rgba(255,255,255,0.7); border-top-style: solid;
+                border-bottom-width: 1px; border-bottom-color: rgba(34,25,25,0.1); border-bottom-style: solid;
+                position: relative; display: block; font-size: 21px; font-weight: 300; clear: both;
+                color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); float: left; width: 100%;
+                margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px;
+                padding-right: 0; padding-bottom: 15px; padding-left: 0; list-style-type: none;">
+                <label style="display: inline-block; line-height: 1.4em; font-size: 18px; float: left;
+                    width: 150px; padding-top: 7px; vertical-align: top;">
+                    Description</label>
+                <div class="Right" style="float: left; margin-top: 0; margin-right: 0; margin-bottom: 0;
+                    margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                    <div id="ta_holder" class="editable_shadow pin_edit" style="position: relative; margin-top: 0;
+                        margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0;
+                        padding-bottom: 0; padding-left: 0;">
+                        <textarea rows="2" name="details" maxlength="500" id="description_pin_edit" cols="40"
+                            class="expand autocomplete_desc" style="font-family: inherit; font-size: 18px;
+                            font-weight: 300; resize: none; outline: none; line-height: 1.3em; color: #221919;
+                            box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8); -moz-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8);
+                            -webkit-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8);
+                            min-height: 3.95em; display: inline-block; box-sizing: border-box; -moz-box-sizing: border-box;
+                            -ms-box-sizing: border-box; -webkit-box-sizing: border-box; border-radius: 6px;
+                            -moz-border-radius: 6px; -webkit-border-radius: 6px; -moz-transition: all 0.08s ease-in-out;
+                            -webkit-transition: all 0.08s ease-in-out; min-width: 375px; margin-top: 0; margin-right: 0;
+                            margin-bottom: 0; margin-left: 0; padding-top: 6px; padding-right: 12px; padding-bottom: 6px;
+                            padding-left: 12px; border-top-color: #a4a2a2; border-right-color: #a4a2a2; border-bottom-color: #a4a2a2;
+                            border-left-color: #a4a2a2; border-top-style: solid; border-right-style: solid;
+                            border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                            border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #fff;"> </textarea>
+                        <div style="position: absolute; display: none; z-index: 3; top: 81px; right: 0; left: 0;
+                            max-height: 200px; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px;
+                            box-shadow: 0 3px 8px rgba(35,24,24,.33); -moz-box-shadow: 0 3px 8px rgba(35,24,24,.33);
+                            -webkit-box-shadow: 0 3px 8px rgba(35,24,24,.33); overflow-y: scroll; margin-top: 0;
+                            margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0;
+                            padding-bottom: 0; padding-left: 0; border-top-color: #ad9c9c; border-right-color: #ad9c9c;
+                            border-bottom-color: #ad9c9c; border-left-color: #ad9c9c; border-top-style: solid;
+                            border-right-style: solid; border-bottom-style: solid; border-left-style: solid;
+                            border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;
+                            background-color: #fff;" class="tagmate-menu">
+                        </div>
+                    </div>
+                    <span class="CharacterCount colorless hidden" style="display: none !important; color: #8c7e7e;
+                        position: absolute; top: 20px; right: 0; width: 78px; -moz-transition: all 0.5s ease-in-out;
+                        -webkit-transition: all 0.5s ease-in-out;">500</span>
+                </div>
+            </li>
+            <li style="border-top-width: 1px; border-top-color: rgba(255,255,255,0.7); border-top-style: solid;
+                border-bottom-width: 1px; border-bottom-color: rgba(34,25,25,0.1); border-bottom-style: solid;
+                position: relative; display: block; font-size: 21px; font-weight: 300; clear: both;
+                color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); float: left; width: 100%;
+                margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px;
+                padding-right: 0; padding-bottom: 15px; padding-left: 0; list-style-type: none;">
+                <label for="id_link" style="display: inline-block; line-height: 1.4em; font-size: 18px;
+                    float: left; width: 150px; padding-top: 7px; vertical-align: top;">
+                    Link</label>
+                <div class="Right" style="float: left; margin-top: 0; margin-right: 0; margin-bottom: 0;
+                    margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                    <input name="link" value="http://celebrity-gossip.net/michael-fassbender/photo/michael-fassbender-29"
+                        id="id_link" type="text" style="font-family: inherit; font-size: 18px; font-weight: 300;
+                        resize: none; outline: none; line-height: 1.4; color: #221919; box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8);
+                        -moz-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8);
+                        -webkit-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8);
+                        display: inline-block; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box;
+                        -webkit-box-sizing: border-box; border-radius: 6px; -moz-border-radius: 6px;
+                        -webkit-border-radius: 6px; -moz-transition: all 0.08s ease-in-out; -webkit-transition: all 0.08s ease-in-out;
+                        min-width: 375px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                        padding-top: 6px; padding-right: 12px; padding-bottom: 6px; padding-left: 12px;
+                        border-top-color: #a4a2a2; border-right-color: #a4a2a2; border-bottom-color: #a4a2a2;
+                        border-left-color: #a4a2a2; border-top-style: solid; border-right-style: solid;
+                        border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                        border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #fff;" />
+                </div>
+            </li>
+            <li style="border-top-width: 1px; border-top-color: rgba(255,255,255,0.7); border-top-style: solid;
+                border-bottom-width: 1px; border-bottom-color: rgba(34,25,25,0.1); border-bottom-style: solid;
+                position: relative; display: block; font-size: 21px; font-weight: 300; clear: both;
+                color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); float: left; width: 100%;
+                margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px;
+                padding-right: 0; padding-bottom: 15px; padding-left: 0; list-style-type: none;">
+                <label for="id_board" style="display: inline-block; line-height: 1.4em; font-size: 18px;
+                    float: left; width: 150px; padding-top: 7px; vertical-align: top;">
+                    Board</label>
+                <div class="Right" style="float: left; margin-top: 0; margin-right: 0; margin-bottom: 0;
+                    margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                    <select name="board" id="id_board" style="font-family: inherit; font-size: 18px;
+                        font-weight: inherit; resize: none; outline: none;">
+                        <option value="233765105597185279" style="font-size: 18px;">Art</option>
+                        <option value="233765105597175621" style="font-size: 18px;">Me Me Me</option>
+                        <option value="233765105597186027" style="font-size: 18px;">gg</option>
+                        <option value="233765105597182133" selected="selected" style="font-size: 18px;">me 2</option>
+                        <option value="233765105597186818" style="font-size: 18px;">nn</option>
+                        <option value="233765105597194397" style="font-size: 18px;">sr test</option>
+                        <option value="233765105597194058" style="font-size: 18px;">test3</option>
+                    </select>
+                </div>
+            </li>
+            <li style="border-top-width: 1px; border-top-color: rgba(255,255,255,0.7); border-top-style: solid;
+                border-bottom-width: 1px; border-bottom-color: rgba(34,25,25,0.1); border-bottom-style: solid;
+                position: relative; display: block; font-size: 21px; font-weight: 300; clear: both;
+                color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); float: left; width: 100%;
+                margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px;
+                padding-right: 0; padding-bottom: 15px; padding-left: 0; list-style-type: none;">
+                <label style="display: inline-block; line-height: 1.4em; font-size: 18px; float: left;
+                    width: 150px; padding-top: 7px; vertical-align: top;">
+                    Delete</label>
+                <div class="Right" style="float: left; margin-top: 0; margin-right: 0; margin-bottom: 0;
+                    margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                    <a href="#" id="delete" class="Button WhiteButton Button18 deleteButton" onclick="Modal.show('DeletePin'); return false"
+                        style="font-weight: bold; color: #524d4d; text-decoration: none; outline: none;
+                        position: relative; display: inline-block; text-align: center; line-height: 1em;
+                        border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; -moz-transition-property: color, -moz-box-shadow, text-shadow;
+                        -moz-transition-duration: .05s; -moz-transition-timing-function: ease-in-out;
+                        -webkit-transition-property: color, -webkit-box-shadow, text-shadow; -webkit-transition-duration: .05s;
+                        -webkit-transition-timing-function: ease-in-out; box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                        -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                        -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                        cursor: pointer; font-size: 18px; text-shadow: 0 1px rgba(255,255,255,0.9); padding-top: .45em;
+                        padding-right: .825em; padding-bottom: .45em; padding-left: .825em; border-top-color: transparent;
+                        border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent;
+                        border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+                        border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                        border-left-width: 1px;"><strong style="font-style: normal; font-weight: bold; position: relative;
+                            z-index: 2;">Delete Pin</strong><span style="white-space: nowrap; position: absolute;
+                                z-index: 1; top: -1px; right: -1px; bottom: -1px; left: -1px; display: block;
+                                opacity: 1; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px;
+                                box-shadow: inset 0 1px rgba(255,255,255,0.35); -moz-box-shadow: inset 0 1px rgba(255,255,255,0.35);
+                                -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35); -moz-transition-property: opacity;
+                                -moz-transition-duration: 0.5s; -moz-transition-timing-function: ease-in-out;
+                                -webkit-transition-property: opacity; -webkit-transition-duration: 0.5s; -webkit-transition-timing-function: ease-in-out;
+                                font-size: 18px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfafb', endColorstr='#f0eded');
+                                border-top-color: #bbb; border-right-color: #bbb; border-bottom-color: #bbb;
+                                border-left-color: #bbb; border-top-style: solid; border-right-style: solid;
+                                border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                                border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #f0eded;
+                                background-position: 0% 0%;"></span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="Submit" style="border-top-color: rgba(255,255,255,0.7); border-top-width: 1px;
+            border-top-style: solid; float: left; margin-top: 0; margin-right: 0; margin-bottom: 20px;
+            margin-left: 0; padding-top: 24px; padding-right: 0; padding-bottom: 0; padding-left: 150px;">
+            <p style="line-height: 1.35em; margin-top: 0; margin-right: 0; margin-bottom: .8em;
+                margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                <a href="#" class="Button RedButton Button24" onclick="$('#PinEdit').submit(); return false"
+                    style="font-weight: bold; color: #fcf9f9; text-decoration: none; outline: none;
+                    position: relative; display: inline-block; text-align: center; line-height: 1em;
+                    border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; -moz-transition-property: color, -moz-box-shadow, text-shadow;
+                    -moz-transition-duration: .05s; -moz-transition-timing-function: ease-in-out;
+                    -webkit-transition-property: color, -webkit-box-shadow, text-shadow; -webkit-transition-duration: .05s;
+                    -webkit-transition-timing-function: ease-in-out; box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                    -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                    -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                    cursor: pointer; font-size: 24px; text-shadow: 0 -1px rgba(34,25,25,0.5); padding-top: .45em;
+                    padding-right: .825em; padding-bottom: .45em; padding-left: .825em; border-top-color: transparent;
+                    border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent;
+                    border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+                    border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                    border-left-width: 1px;"><strong style="font-style: normal; font-weight: bold; position: relative;
+                        z-index: 2;">Save Pin</strong> <span style="white-space: nowrap; position: absolute;
+                            z-index: 1; top: -1px; right: -1px; bottom: -1px; left: -1px; display: block;
+                            opacity: 1; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px;
+                            box-shadow: inset 0 1px rgba(255,255,255,0.35); -moz-box-shadow: inset 0 1px rgba(255,255,255,0.35);
+                            -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35); -moz-transition-property: opacity;
+                            -moz-transition-duration: 0.5s; -moz-transition-timing-function: ease-in-out;
+                            -webkit-transition-property: opacity; -webkit-transition-duration: 0.5s; -webkit-transition-timing-function: ease-in-out;
+                            font-size: 24px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb5367', endColorstr='#d43638');
+                            border-top-color: #910101; border-right-color: #910101; border-bottom-color: #910101;
+                            border-left-color: #910101; border-top-style: solid; border-right-style: solid;
+                            border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                            border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #d43638;
+                            background-position: 0% 0%;"></span></a>
+            </p>
+        </div>
+        <div style="display: none; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+            padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <input name="csrfmiddlewaretoken" value="0957710216556dfd0bd8f67ca4b016e1" type="hidden"
+                style="font-family: inherit; font-size: inherit; font-weight: inherit; resize: none;
+                outline: none; line-height: 1em; color: #8c7e7e; box-shadow: inset 0 0 2px rgba(255,255,255,0.75);
+                -moz-box-shadow: inset 0 0 2px rgba(255,255,255,0.75); -webkit-box-shadow: inset 0 0 2px rgba(255,255,255,0.75);
+                margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 5px;
+                padding-right: 5px; padding-bottom: 5px; padding-left: 5px; border-top-color: #d1cdcd;
+                border-right-color: #d1cdcd; border-bottom-color: #d1cdcd; border-left-color: #d1cdcd;
+                border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+                border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                border-left-width: 1px; background-color: #fcf9f9;" /></div>
+        <input name="pin_replies" id="id_pin_replies" type="hidden" style="font-family: inherit;
+            font-size: inherit; font-weight: inherit; resize: none; outline: none; line-height: 1em;
+            color: #8c7e7e; box-shadow: inset 0 0 2px rgba(255,255,255,0.75); -moz-box-shadow: inset 0 0 2px rgba(255,255,255,0.75);
+            -webkit-box-shadow: inset 0 0 2px rgba(255,255,255,0.75); margin-top: 0; margin-right: 0;
+            margin-bottom: 0; margin-left: 0; padding-top: 5px; padding-right: 5px; padding-bottom: 5px;
+            padding-left: 5px; border-top-color: #d1cdcd; border-right-color: #d1cdcd; border-bottom-color: #d1cdcd;
+            border-left-color: #d1cdcd; border-top-style: solid; border-right-style: solid;
+            border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+            border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #fcf9f9;" />
+        <input name="buyable" value="0.0" id="id_buyable" type="hidden" style="font-family: inherit;
+            font-size: inherit; font-weight: inherit; resize: none; outline: none; line-height: 1em;
+            color: #8c7e7e; box-shadow: inset 0 0 2px rgba(255,255,255,0.75); -moz-box-shadow: inset 0 0 2px rgba(255,255,255,0.75);
+            -webkit-box-shadow: inset 0 0 2px rgba(255,255,255,0.75); margin-top: 0; margin-right: 0;
+            margin-bottom: 0; margin-left: 0; padding-top: 5px; padding-right: 5px; padding-bottom: 5px;
+            padding-left: 5px; border-top-color: #d1cdcd; border-right-color: #d1cdcd; border-bottom-color: #d1cdcd;
+            border-left-color: #d1cdcd; border-top-style: solid; border-right-style: solid;
+            border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+            border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #fcf9f9;" />
+        </form>
+    </div>
+
+   
+    <style type="text/css">
+#AboutLeft li a:hover .hover { visibility: visible !important; }
+.Button:hover span { border: 1px solid #777777 !important; }
+.actions .Button:hover span { border: 1px solid #777777 !important; }
+#BoardButton .Button span:hover { border: 1px solid #2A1919 !important; }
+body .Megaphone .Sheet { border: 1px solid #c8c298 !important; }
+body { margin: 0 !important; padding: 0 !important; }
+img { border: 0 !important; }
+q:before { content: '' !important; }
+q:after { content: '' !important; }
+body { font-family: "helvetica neue",arial,sans-serif !important; font-size: 10px !important; color: #211922 !important; }
+a:hover { color: #cb2027 !important; text-decoration: underline !important; }
+textarea:focus { background-color: #fff !important; box-shadow: inset 0 1px 1px rgba(34,29,29,0.1) !important; -moz-box-shadow: inset 0 1px 1px rgba(34,29,29,0.1) !important; -webkit-box-shadow: inset 0 1px 1px rgba(34,29,29,0.1) !important; }
+input:focus { background-color: #fff !important; box-shadow: inset 0 1px 1px rgba(34,29,29,0.1) !important; -moz-box-shadow: inset 0 1px 1px rgba(34,29,29,0.1) !important; -webkit-box-shadow: inset 0 1px 1px rgba(34,29,29,0.1) !important; }
+.noState:hover { background-color: transparent !important; }
+.noState:active { color: #221919 !important; }
+.clearfix:after { clear: both !important; display: block !important; height: 0 !important; content: " " !important; visibility: hidden !important; }
+.ImgLink:active { background-color: #221919 !important; }
+.ImgLink:hover img { opacity: .9 !important; filter: alpha(opacity=90) !important; }
+.ImgLink:active img { opacity: .9 !important; filter: alpha(opacity=90) !important; }
+.WhiteContainer:after { clear: both !important; display: block !important; height: 0 !important; content: " " !important; visibility: hidden !important; }
+.pin .ImgLink:hover { text-decoration: none !important; }
+.convo:after { clear: both !important; display: block !important; height: 0 !important; content: " " !important; visibility: hidden !important; }
+a.convo:hover { background-color: #f2f0f0 !important; }
+a.convo:active { color: #221919 !important; background-color: #e1dfdf !important; }
+.comment:hover .ReportComment { opacity: 1 !important; font-weight: 700 !important; }
+.pinBoard.inMotion:hover .board { box-shadow: 0 1px 6px rgba(0,0,0,0.5) !important; -moz-box-shadow: 0 1px 6px rgba(0,0,0,0.5) !important; -webkit-box-shadow: 0 1px 6px rgba(0,0,0,0.5) !important; }
+.pin:hover .actions { display: block !important; }
+.pin:hover .bottom { display: block !important; }
+.pin .WhiteButton.Button11:hover span { box-shadow: inset 0 1px rgba(255,255,255,0.35), 0 1px 2px rgba(35,24,24,0.75) !important; -moz-box-shadow: inset 0 1px rgba(255,255,255,0.35), 0 1px 2px rgba(35,24,24,0.75) !important; -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35), 0 1px 2px rgba(35,24,24,0.75) !important; }
+.pin .WhiteButton.Button11:active span { box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 1px rgba(232,230,230,0.5) !important; -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 1px rgba(232,230,230,0.5) !important; -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 1px rgba(232,230,230,0.5) !important; }
+.pin .WhiteButton.Button11.disabled:hover span { box-shadow: inset 0 1px rgba(255,255,255,0.35) !important; -moz-box-shadow: inset 0 1px rgba(255,255,255,0.35) !important; -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35) !important; }
+.pin .WhiteButton.Button11.disabled:active span { box-shadow: inset 0 1px 2px rgba(34,25,25,0.25) !important; -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25) !important; -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25) !important; }
+.actions .repin_link:hover em { background-position: 0 -10px !important; }
+.actions .repin_link:active em { background-position: 0 -20px !important; }
+.actions .likebutton:hover em { background-position: -11px -10px !important; }
+.actions .likebutton:active em { background-position: -11px -20px !important; }
+.actions .comment:hover em { background-position: -21px -10px !important; }
+.actions .comment:active em { background-position: -21px -20px !important; }
+a.remove_activity_rec:hover { text-decoration: none !important; }
+a.remove_activity_invite:hover { text-decoration: none !important; }
+.feed .story:hover { text-decoration: none !important; background-color: #f2f0f0 !important; }
+.feed .story.nohover:hover { background-color: transparent !important; }
+.feed .story:active { color: #cb2027 !important; background-color: #ccc !important; }
+.feed .story:hover .remove { display: block !important; }
+.feed .story .remove:hover { background-color: #fff !important; border-color: #ccc !important; }
+.RemoveStory:hover { text-decoration: none !important; }
+.feed .story:hover .RemoveStory { display: block !important; }
+body#building { height: 100% !important; }
+.Button:hover { text-decoration: none !important; }
+.Button:hover span { -moz-transition-property: opacity !important; -moz-transition-duration: 0.05s !important; -moz-transition-timing-function: linear !important; -webkit-transition-property: opacity !important; -webkit-transition-duration: 0.05s !important; -webkit-transition-timing-function: linear !important; }
+.Button:active span { -moz-transition: none !important; -webkit-transition: none !important; }
+.RedButton:hover { color: #fff !important; text-shadow: 0 -1px rgba(34,25,25,0.3) !important; }
+.RedButton:active { color: #f2f0f0 !important; text-shadow: 0 -1px rgba(34,25,25,0.6) !important; }
+.RedButton:hover span { border-color: #ad0303 !important; background-color: #d63e40 !important; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ea5d6e), to(#d63e40), color-stop(.5,#e3535d),color-stop(.5,#e04a54)) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ea5d6e', endColorstr='#d63e40') !important; }
+.RedButton:active span { border-color: #510000 !important; background-color: #c83031 !important; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d5414b), to(#c83031), color-stop(.5,#d5414b),color-stop(.5,#d33d46)) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dd4b5d', endColorstr='#c83031') !important; }
+.RedButton.Button11:hover span { box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 5px rgba(235,82,82,0.25) !important; -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 5px rgba(235,82,82,0.25) !important; -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 5px rgba(235,82,82,0.25) !important; }
+.RedButton.Button11:active span { box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 1px rgba(235,82,82,0.35) !important; -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 1px rgba(235,82,82,0.35) !important; -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 2px rgba(235,82,82,0.35) !important; }
+.RedButton.Button13:hover span { box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 6px rgba(235,82,82,0.25) !important; -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 6px rgba(235,82,82,0.25) !important; -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 6px rgba(235,82,82,0.25) !important; }
+.RedButton.Button13:active span { box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 2px rgba(235,82,82,0.35) !important; -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 2px rgba(235,82,82,0.35) !important; -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 2px rgba(235,82,82,0.35) !important; }
+.RedButton.Button18:hover span { box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 10px rgba(235,82,82,0.25) !important; -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 10px rgba(235,82,82,0.25) !important; -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 10px rgba(235,82,82,0.25) !important; }
+.RedButton.Button18:active span { box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 3px rgba(235,82,82,0.35) !important; -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 3px rgba(235,82,82,0.35) !important; -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 3px rgba(235,82,82,0.35) !important; }
+.RedButton.Button24:hover span { box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 14px rgba(235,82,82,0.25) !important; -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 14px rgba(235,82,82,0.25) !important; -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 14px rgba(235,82,82,0.25) !important; }
+.RedButton.Button24:active span { box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235,82,82,0.35) !important; -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235,82,82,0.35) !important; -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(235,82,82,0.35) !important; }
+.DeleteButton:hover span { border-color: #910101 !important; background-color: #a20007 !important; background-image: linear-gradient(top, rgb(240, 119, 102), rgb(162, 0, 7)) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f07766', EndColorStr='#a20007') !important; }
+.DeleteButton:active span { border-color: #510000 !important; background-color: #610007 !important; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d5414b), to(#c83031), color-stop(.5,#d5414b),color-stop(.5,#d33d46)) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dd4b5d', endColorstr='#c83031') !important; }
+.WhiteButton:hover { color: #666060 !important; text-shadow: 0 1px rgba(255,255,255,1) !important; }
+.WhiteButton:active { color: #454141 !important; text-shadow: 0 1px rgba(255,255,255,0.8) !important; }
+.WhiteButton:hover span { border-color: #c3c3c3 !important; background-color: #f2f0f0 !important; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfcfc), to(#f2f0f0), color-stop(.5,#fbf9f9),color-stop(.5,#f7f5f6)) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfcfc', endColorstr='#f2f0f0') !important; }
+.WhiteButton:active span { border-color: #b7b7b7 !important; background-color: #ebe8e8 !important; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f4f5), to(#ebe8e8), color-stop(.5,#f3f0f0),color-stop(.5,#f1eeef)) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f4f5', endColorstr='#ebe8e8') !important; }
+.WhiteButton.Button11:hover span { box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 5px rgba(232,230,230,0.75) !important; -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 5px rgba(232,230,230,0.75) !important; -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 5px rgba(232,230,230,0.75) !important; }
+.WhiteButton.Button11:active span { box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 1px rgba(232,230,230,0.5) !important; -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 1px rgba(232,230,230,0.5) !important; -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 2px rgba(232,230,230,0.5) !important; }
+.WhiteButton.Button13:hover span { box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 6px rgba(232,230,230,0.75) !important; -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 6px rgba(232,230,230,0.75) !important; -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 6px rgba(232,230,230,0.75) !important; }
+.WhiteButton.Button13:active span { box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 2px rgba(232,230,230,0.5) !important; -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 2px rgba(232,230,230,0.5) !important; -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 2px rgba(232,230,230,0.5) !important; }
+.WhiteButton.Button18:hover span { box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 10px rgba(232,230,230,0.75) !important; -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 10px rgba(232,230,230,0.75) !important; -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 10px rgba(232,230,230,0.75) !important; }
+.WhiteButton.Button18:active span { box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 3px rgba(232,230,230,0.5) !important; -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 3px rgba(232,230,230,0.5) !important; -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 3px rgba(232,230,230,0.5) !important; }
+.WhiteButton.Button24:hover span { box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 14px rgba(232,230,230,0.75) !important; -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 14px rgba(232,230,230,0.75) !important; -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35), 0 0 14px rgba(232,230,230,0.75) !important; }
+.WhiteButton.Button24:active span { box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(232,230,230,0.5) !important; -moz-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(232,230,230,0.5) !important; -webkit-box-shadow: inset 0 1px 2px rgba(34,25,25,0.25), 0 0 4px rgba(232,230,230,0.5) !important; }
+.Button.Suppressed:hover span { opacity: 1 !important; filter: alpha(opacity=100) !important; }
+.Button.disabled:hover { color: #d1cdcd !important; text-decoration: none !important; }
+#Search input:focus { background-color: #fff !important; box-shadow: 0 1px #fff, inset 0 1px rgba(34,25,25,0.1) !important; -moz-box-shadow: 0 1px #fff, inset 0 1px rgba(34,25,25,0.1) !important; -webkit-box-shadow: 0 1px #fff, inset 0 1px rgba(34,25,25,0.1) !important; }
+#Search a:active { box-shadow: inset 0 1px 1px rgba(34,29,29,0.15) !important; -moz-box-shadow: inset 0 1px 1px rgba(34,29,29,0.15) !important; -webkit-box-shadow: inset 0 1px 1px rgba(34,29,29,0.15) !important; }
+.HeaderContainer .nav:hover span { background-position: center !important; }
+.HeaderContainer .nav:active span { background-position: bottom center !important; }
+.HeaderContainer li:hover .nav { color: #221919 !important; }
+.HeaderContainer li:hover ul { display: block !important; }
+.HeaderContainer li ul a:hover { color: #221919 !important; text-decoration: none !important; background-color: #e1dfdf !important; }
+.HeaderContainer li ul a:active { color: #fff !important; background-color: #cb2027 !important; }
+#Navigation li:hover .nav { text-decoration: none !important; text-shadow: 0 1px rgba(255,255,255,0.3) !important; background-color: #e1dfdf !important; }
+#Navigation li:active .nav { color: #fff !important; text-shadow: 0 -1px rgba(34,25,25,0.3) !important; background-color: #cb2027 !important; }
+#BoardUsers #CollaboratorsLink:hover { color: #221919 !important; text-decoration: none !important; background: #e1dfdf !important; border-color: #524d4d !important; overflow: hidden !important; }
+#BoardUsers #CollaboratorsLink:active { color: #000 !important; background: #cccaca !important; border-color: #221919 !important; box-shadow: inset 0 1px 3px rgba(34,25,25,0.5) !important; -moz-box-shadow: inset 0 1px 3px rgba(34,25,25,0.5) !important; -webkit-box-shadow: inset 0 1px 3px rgba(34,25,25,0.5) !important; }
+#profile #ProfileHeader .info p.noDescription:hover { padding: 3px !important; margin: -4px 0 0 -4px !important; border: 1px solid #c9b5b5 !important; cursor: text !important; margin-bottom: 6px !important; }
+#profile .icons a.icon:hover { background-position-y: -15px !important; }
+#BigPinItButton:hover { color: #000 !important; text-decoration: none !important; }
+#BigPinItButton:hover { color: #3b2e2e !important; text-decoration: none !important; box-shadow: inset 0 0 4px rgba(255,255,255,0.5), inset 0 1px 2px rgba(255,255,255,0.7), 0 2px #ddd, 0 3px 0 #e7e7e7, 0 4px 2px rgba(0,0,0,0.15), 0 4px 17px rgba(34,25,25,0.2) !important; -moz-box-shadow: inset 0 0 4px rgba(255,255,255,0.5), inset 0 1px 2px rgba(255,255,255,0.7), 0 2px #ddd, 0 3px 0 #e7e7e7, 0 4px 2px rgba(0,0,0,0.15), 0 4px 17px rgba(34,25,25,0.2) !important; -webkit-box-shadow: inset 0 0 4px rgba(255,255,255,0.5), inset 0 1px 2px rgba(255,255,255,0.7), 0 2px #ddd, 0 3px 0 #e7e7e7, 0 4px 2px rgba(0,0,0,0.15), 0 4px 17px rgba(34,25,25,0.2) !important; }
+#profile #ContextBar ul li a:hover { background-color: #E1DFDF !important; color: #554747 !important; border-top-color: #E1DFDF !important; }
+#profile #ContextBar ul li a:active { background-color: #cb2027 !important; color: #fff !important; border-top-color: #cb2027 !important; text-shadow: none !important; }
+#profile #ContextBar ul li a.selected:active { color: #554747 !important; }
+#profile #ContextBar ul li a.selected:before { position: absolute !important; left: 0 !important; top: -10px !important; bottom: -10px !important; right: 0 !important; content: "" !important; box-shadow: inset 0 0px 10px rgba(34,25,25,0.1) !important; -moz-box-shadow: inset 0 0px 10px rgba(34,25,25,0.1) !important; -webkit-box-shadow: inset 0 0px 10px rgba(34,25,25,0.1) !important; }
+.add_collaborators .collaborator a.delete_collaborator:hover { background-position: 0 -68px !important; }
+.add_collaborators .collaborator a.delete_collaborator:active { background-position: 0 -118px !important; }
+.modal .close:hover { background-color: #ebe8e8 !important; background: -webkit-linear-gradient(#f9f6f6, #ebe8e8) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f6f6', endColorstr='#ebe8e8') !important; }
+.modal .close:active { background-color: #c21f24 !important; background: -webkit-linear-gradient(#d62228, #c21f24) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d62228', endColorstr='#c21f24') !important; box-shadow: inset 0 1px 1px rgba(34,25,25,0.5), 0 1px #b22d00 !important; -moz-box-shadow: inset 0 1px 1px rgba(34,25,25,0.5), 0 1px #b22d00 !important; -webkit-box-shadow: inset 0 1px 1px rgba(34,25,25,0.5), 0 1px #b22d00 !important; }
+.modal .close:hover span { background-position: center !important; }
+.modal .close:active span { background-position: bottom center !important; }
+.Form input[type=text]:focus { border-color: #930 !important; box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8), 0 0 14px rgba(235,82,82,0.35) !important; -moz-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8), 0 0 14px rgba(235,82,82,0.35) !important; -webkit-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8), 0 0 14px rgba(235,82,82,0.35) !important; }
+.Form input[type=password]:focus { border-color: #930 !important; box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8), 0 0 14px rgba(235,82,82,0.35) !important; -moz-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8), 0 0 14px rgba(235,82,82,0.35) !important; -webkit-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8), 0 0 14px rgba(235,82,82,0.35) !important; }
+.Form textarea:focus { border-color: #930 !important; box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8), 0 0 14px rgba(235,82,82,0.35) !important; -moz-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8), 0 0 14px rgba(235,82,82,0.35) !important; -webkit-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8), 0 0 14px rgba(235,82,82,0.35) !important; }
+.FancyForm input[type=text]:focus + label { opacity: .5 !important; filter: alpha(opacity="50") !important; }
+.FancyForm input[type=password]:focus + label { opacity: .5 !important; filter: alpha(opacity="50") !important; }
+.FancyForm textarea:focus + label { opacity: .5 !important; filter: alpha(opacity="50") !important; }
+.StaticForm li:after { clear: both !important; display: block !important; height: 0 !important; content: " " !important; visibility: hidden !important; }
+.login_button:hover { text-decoration: none !important; cursor: pointer !important; }
+.login_button:active { height: 38px !important; margin-top: 2px !important; }
+.fb:hover { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b4582', endColorstr='#243d79',GradientType=0 ) !important; background: linear-gradient(top, #2b4582 0%,#2b4582 49%,#243d79 49%,#2b4582 100%,#243d79 100%) !important; box-shadow: 0px 3px 0px #172d59 !important; -moz-box-shadow: 0px 3px 0px #172d59 !important; -webkit-box-shadow: 0px 3px 0px #172d59 !important; }
+.fb:active { background-color: #243d79 !important; background-image: none !important; box-shadow: inset 0px 1px 0px rgba(50, 50, 50, 0.4) !important; -moz-box-shadow: inset 0px 1px 0px rgba(50, 50, 50, 0.4) !important; -webkit-box-shadow: inset 0px 1px 0px rgba(50, 50, 50, 0.4) !important; }
+.fb:hover .logo_wrapper { border-right: 1px solid #284473 !important; }
+.fb:active .logo_wrapper { border-right-color: #21386e !important; }
+.fb:hover > span { border-left: 1px solid #51668c !important; }
+.fb:active > span { border-left-color: #2c4b94 !important; }
+.tw:hover { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#18b8ee', endColorstr='#18b2e6',GradientType=0 ) !important; background: linear-gradient(top, #18b8ee 0%,#18b8ee 49%,#18b2e6 49%,#18b2e6 100%) !important; box-shadow: 0px 3px 0px #1d82a5 !important; -moz-box-shadow: 0px 3px 0px #1d82a5 !important; -webkit-box-shadow: 0px 3px 0px #1d82a5 !important; }
+.tw:active { height: 38px !important; background-color: #2088B4 !important; background-image: none !important; box-shadow: inset 0px 1px 0px rgba(50, 50, 50, 0.4) !important; -moz-box-shadow: inset 0px 1px 0px rgba(50, 50, 50, 0.4) !important; -webkit-box-shadow: inset 0px 1px 0px rgba(50, 50, 50, 0.4) !important; }
+.tw:active .logo_wrapper { border-right-color: #1f83ad !important; }
+.tw:active > span { border-left-color: #2392c2 !important; }
+#OpenLinks .cell:hover { color: #221919 !important; text-decoration: none !important; cursor: pointer !important; }
+#OpenLinks .cell:active { color: #cb2027 !important; }
+#OpenLinks .cell:hover #scrape { background-position: 0 -81px !important; }
+#OpenLinks .cell:active #scrape { background-position: 0 -162px !important; }
+#OpenLinks .cell:hover #upload { background-position: -66px -81px !important; }
+#OpenLinks .cell:active #upload { background-position: -66px -162px !important; }
+#OpenLinks .cell:hover #board { background-position: -132px -81px !important; }
+#OpenLinks .cell:active #board { background-position: -132px -162px !important; }
+#OpenLinks .cell:hover { background-color: #e1dfdf !important; }
+#ScrapePin .picker:hover { background: #eee !important; text-decoration: none !important; }
+.tagmate-menu-option:hover { color: #221919 !important; background-color: #ebe8e8 !important; }
+.tagmate-menu-option:active { color: #fff !important; background-color: #cb2027 !important; }
+.tagmate-menu-option:hover { color: #221919 !important; background-color: #ebe8e8 !important; }
+.tagmate-menu-option:active { color: #fff !important; background-color: #cb2027 !important; }
+.BoardPicker:hover { background-color: #ebe8e8 !important; background: -webkit-linear-gradient(#f9f6f6, #ebe8e8) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f6f6', endColorstr='#ebe8e8') !important; border-color: #bfbdbd !important; }
+.BoardPicker:active { background-color: #c21f24 !important; background: -webkit-linear-gradient(#d62228, #c21f24) !important; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d62228', endColorstr='#c21f24') !important; border-color: #510000 !important; box-shadow: inset 0 1px 1px rgba(34,25,25,0.5), 0 2px 2px white !important; -moz-box-shadow: inset 0 1px 1px rgba(34,25,25,0.5), 0 2px 2px white !important; -webkit-box-shadow: inset 0 1px 1px rgba(34,25,25,0.5), 0 2px 2px white !important; }
+.BoardPicker:active .CurrentBoard { color: #fff !important; }
+.BoardPicker:active .CurrentBoard { color: #fff !important; text-shadow: none !important; }
+.BoardPicker:active .CurrentCategory { color: #fff !important; text-shadow: none !important; }
+.BoardPicker:hover .DownArrow { background-position: center !important; }
+.BoardPicker:active .DownArrow { background-position: center bottom !important; }
+.BoardList li:hover { color: #221919 !important; background-color: #ebe8e8 !important; }
+.BoardList li:active { color: #fff !important; background-color: #cb2027 !important; text-shadow: none !important; }
+.BoardList li:active .CollaborativeBoard { background-position: bottom center !important; }
+.PinForm .Buttons label:hover { color: #524d4d !important; border-color: #e1dfdf !important; background-color: #fff !important; }
+.PinForm .Buttons label:active { padding: 10px 9px 8px !important; color: #000 !important; box-shadow: inset 0 1px 1px rgba(34,29,29,0.5) !important; -moz-box-shadow: inset 0 1px 1px rgba(34,29,29,0.5) !important; -webkit-box-shadow: inset 0 1px 1px rgba(34,29,29,0.5) !important; }
+.ui-menu .ui-menu-item a:hover { color: #221919 !important; text-decoration: none !important; background-color: #f2f0f0 !important; }
+.ui-menu .ui-menu-item a:active { color: #fff !important; background-color: #cb2027 !important; }
+#zoom #PinImageHolder:hover #PinActionButtons { display: inline !important; }
+#zoom #PinImageHolder .Button:hover span { border-color: rgba(140,126,126,0.75) !important; box-shadow: inset 0 1px rgba(255,255,255,0.35), 0 1px 1px rgba(35,24,24,0.75) !important; }
+#zoom #PinImageHolder .Button:active span { box-shadow: inset 0 1px 2px rgba(34,25,25,0.25) !important; }
+#zoom #PinImageHolder .RepinButton:hover em { background-position: -12px -13px !important; }
+#zoom #PinImageHolder .RepinButton:active em { background-position: -12px -26px !important; }
+#zoom #PinImageHolder .ZoomLikeButton:hover em { background-position: -24px -13px !important; }
+#zoom #PinImageHolder .ZoomLikeButton:active em { background-position: -24px -26px !important; }
+@-webkit-keyframes loadingrotate {  }
+@-moz-keyframes loadingrotate {  }
+#PinPinner #PinnerName a:hover { color: #211922 !important; text-decoration: underline !important; background-color: transparent !important; }
+#PinActionButtons .like-button:hover em { background-position: -24px -13px !important; }
+#PinActionButtons .unlike-button:hover em { background-position: -24px -13px !important; }
+#PinActionButtons .like-button:active em { background-position: -24px -26px !important; }
+#PinActionButtons .unlike-button:active em { background-position: -24px -26px !important; }
+#PinActionButtons .repin-button:hover em { background-position: -12px -13px !important; }
+#PinActionButtons .repin-button:active em { background-position: -12px -26px !important; }
+.pintag:after { content: " " !important; }
+.firebugResetStyles:before { content: "" !important; }
+.firebugResetStyles:after { content: "" !important; }
+</style>
+</body>
+</html>

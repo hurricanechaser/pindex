@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>加</value>
+  </data>
+  <data name="Banner" xml:space="preserve">
+    <value>450来源，每日新鲜，原始来源 - 寄望！</value>
+  </data>
+  <data name="Board" xml:space="preserve">
+    <value>板</value>
+  </data>
+  <data name="Boards" xml:space="preserve">
+    <value>议会</value>
+  </data>
+  <data name="Board_1" xml:space="preserve">
+    <value>创建一局</value>
+  </data>
+  <data name="Board_2" xml:space="preserve">
+    <value>主板名称</value>
+  </data>
+  <data name="Board_3" xml:space="preserve">
+    <value>编辑委员会</value>
+  </data>
+  <data name="Board_4" xml:space="preserve">
+    <value>删除局</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>浏览</value>
+  </data>
+  <data name="Cat" xml:space="preserve">
+    <value>类别</value>
+  </data>
+  <data name="Cat_1" xml:space="preserve">
+    <value>点击选择产品类别</value>
+  </data>
+  <data name="Cat_2" xml:space="preserve">
+    <value>从选择一个类别</value>
+  </data>
+  <data name="Cat_3" xml:space="preserve">
+    <value>所选类别</value>
+  </data>
+  <data name="Change_Password" xml:space="preserve">
+    <value>更改密码</value>
+  </data>
+  <data name="Chinese" xml:space="preserve">
+    <value>中国的</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>评论</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>投稿</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>版权</value>
+  </data>
+  <data name="Del" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="Desc" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Edit_Profile" xml:space="preserve">
+    <value>编辑个人资料</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>电邮地址</value>
+  </data>
+  <data name="First_Name" xml:space="preserve">
+    <value>名字</value>
+  </data>
+  <data name="Forgot_Pass" xml:space="preserve">
+    <value>忘记密码？</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="Help_1" xml:space="preserve">
+    <value>什么是 SiteName</value>
+  </data>
+  <data name="Help_10" xml:space="preserve">
+    <value>什么是一针</value>
+  </data>
+  <data name="Help_11" xml:space="preserve">
+    <value>一针是已经有人在任何一个源站点添加图像。您可以通过浏览这些图像，并迅速找到自己的风格或插接新的内容。看到引脚的来源，你可以在图像上的鼠标</value>
+  </data>
+  <data name="Help_12" xml:space="preserve">
+    <value>你为什么当你鼠标在图像的图标</value>
+  </data>
+  <data name="Help_13" xml:space="preserve">
+    <value>SiteName 你带来超过450来源最近期的图像，你可以用它来创建 SiteName 你自己的议会或任何您最喜爱的虚拟板。如果你看到你喜欢的图像，只需点击图标，你就能够针Pinterest，Tumblr，Lockerz或Flickr图像到您的电路板</value>
+  </data>
+  <data name="Help_14" xml:space="preserve">
+    <value>什么是两个链接时显示你鼠标在图像</value>
+  </data>
+  <data name="Help_15" xml:space="preserve">
+    <value>当您在任何 SiteName 形象的鼠标，你会看到两个环节。第一个环节是源图像是从。点击此链接将带你到源站点的形象。第二个环节是类别的形象已被放置在 SiteName下。在此点击将带你到该类别 SiteName 板</value>
+  </data>
+  <data name="Help_2" xml:space="preserve">
+    <value>针实践</value>
+  </data>
+  <data name="Help_3" xml:space="preserve">
+    <value>隐私权政策</value>
+  </data>
+  <data name="Help_5" xml:space="preserve">
+    <value>使用条款</value>
+  </data>
+  <data name="Help_6" xml:space="preserve">
+    <value>SiteName 从策划网站超过450的图像流。这是一个简单方便的方式找到新的内容，为你录所附或插接</value>
+  </data>
+  <data name="Help_7" xml:space="preserve">
+    <value>我们开始的的 SiteName，因为我们希望有一个更容易的方式来获得新的想法，到我们的针板</value>
+  </data>
+  <data name="Help_8" xml:space="preserve">
+    <value>我们只是想从原始来源的新鲜内容。所以，我们建</value>
+  </data>
+  <data name="Help_9" xml:space="preserve">
+    <value>与 SiteName 你只浏览，过滤和排序的方式，你希望他们独特的形象。我们试图消除所有重复，节省您的时间。由于我们的大部分内容从原始来源，很容易追溯。 SiteName 是一个有趣的方式，快速地发现新事物</value>
+  </data>
+  <data name="Help_CopyRight" xml:space="preserve">
+    <value>&lt;h1&gt;
+                    版权&lt;/h1&gt;
+                &lt;p&gt;
+                     SiteName （“ SiteName ”）尊重他人的知识产权，并预计它的用户做同样的。  SiteName 政策，在适当情况下，在其酌情权，禁用和/或终止一再侵犯或多次被控侵犯他人版权或其他知识产权的用户帐户。&lt;/p&gt;
+                &lt;p&gt;
+                    按照1998年的数字千年版权法案，其中的文字可能会被发现在美国版权局网站&lt;a href="http://www.copyright.gov/legislation/dmca.pdf"&gt;呻/ www.copyright.gov /立法/ dmca.pdf的&lt;/ A&gt;， SiteName 将尽快回应使用的的 SiteName 网站（“网站”）所报告的 SiteName 指定的版权代理机构，确定样品中犯下的侵犯版权索赔注意下面。&lt;/p&gt;
+                &lt;p&gt;
+                    如果您是版权拥有人，或授权行事的代表之一，或授权任何专有权行动受版权，请完成下面的DMCA通知涉嫌侵权指控侵犯版权，或通过网站进行报告和它提供 SiteName 指定的版权代理。当收到如下所述的通知，， SiteName 将采取任何行动，在其自行决定，它认为适当的，包括去除的材料从网站的挑战。涉嫌侵权的DMCA通知（“通知”）&lt;/p&gt;
+                &lt;p&gt;
+                    确定你声称的版权作品被侵权，或 - 如果本公告所涵盖的多个版权作品 - 你可能会提供您声称的版权作品的代表名单。已侵犯&lt;/p&gt;
+                &lt;p&gt;
+                    确定：（一）侵犯您声称的材料（或侵权活动的主题），这是要删除或访问，这是被禁用，合理足以让我们找到的材料，包括信息最低限度，如适用的话，可能会发现这种材料的网站上显示的链接的URL，（二）引用或链接，材料或活动，您声称被侵权，将被删除或访问这是被禁用的，合理的信息足以让我们找到引用或链接，其中包括在最低限度，如果适用，链接的URL显示在网站上，如引用或链接可能会发现。&lt;/p &gt;
+                &lt;p&gt;
+                    提供您的邮寄地址，电话号码，如果有，电子邮件地址。&lt;/p&gt;
+                &lt;p&gt;
+                    包括双方在公告正文下面的语句：&lt;/p&gt;
+                &lt;p&gt;
+                    “我在此声明，我有充分的理由相信，受版权保护的材料或引用或链接到这些材料的有争议的使用未授权的著作权人，其代理人或法律（例如，作为一个公平的使用）。” &lt;/p&gt;
+                &lt;p&gt;
+                    所有已完成的项目，提供本通知， SiteName 指定的版权代理：&lt;/p&gt;
+                &lt;p&gt;
+                     SiteName 版权代理
+                    参考
+                    340小号柠檬AVE
+                    参考
+                    ＃7725核桃，加州91789
+                    参考
+                    copyright@freshpin.com
+                    参考
+                    650 - 681 - 4160
+                &lt;/p&gt;</value>
+  </data>
+  <data name="Help_Pin_Practices" xml:space="preserve">
+    <value>&lt;h1&gt;
+                    密码常规&lt;/h1&gt;
+                &lt;p&gt;
+                    我们策展的 SiteName 到确保所有的引脚分类和高品质的。但使用 SiteName 人民作出这么多用自己的特殊贡献。
+                &lt;/p&gt;
+                &lt;p&gt;
+                    我们已经采取了集体的 SiteName 用户的输入，并奠定了这些准则，这将有助于我们保持 SiteName 社会的积极的，有益的和清洁。
+                &lt;/p&gt;
+                &lt;ol&gt;
+                    &lt;li&gt;
+                        &lt;h3&gt;
+                            尊重&lt;/h3&gt;
+                        &lt;p&gt;
+                             SiteName 用于社区不同的口味。我们知道，个人的口味，是个人，但请尊重你的意见和谈话。&lt;/p&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;h3&gt;
+                            是正宗&lt;/h3&gt;
+                        &lt;p&gt;
+                             SiteName 允许你表达你是谁。由具有同等效力的目的，它是建立在一个公平的方式使用服务，您将帮助 SiteName 在长远的更好的地方。&lt;/p&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;h3&gt;
+                            信用你的源代码&lt;/h3&gt;
+                        &lt;p&gt;
+                            引脚是最有用的，当他们有链接回到原始来源。如果你注意到，一针不正确来源，发表评论，使原平纳可以更新源。寻找原始来源始终是最好的辅助光源，如图片搜索或博客条目。&lt;/p&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;h3&gt;
+                            报告令人反感的内容&lt;/h3&gt;
+                        &lt;p&gt;
+                            我们不允许裸露，可恨的内容，或内容，鼓励人们伤害自己。如果您发现违反我们的服务条款，可接受使用政策的内容，您可以通过电子邮件我们在&lt;a提交内容href="mailto:content@freshpin.com"&gt; content@freshpin.com &lt;/ A&gt; &lt;审查/ P&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;h3&gt;
+                            告诉我们如何使 SiteName  &lt;/h3&gt;
+                        &lt;p&gt;
+                            我们才刚刚开始，所以要在这里和那里是颠簸。让我们知道什么工作，什么不是。尽管我们并不总是有时间应对每电子邮件，我们需要你的投入严重。您可以与我们取得联系随时&lt;a href="mailto:help@freshpin.com"&gt; help@freshpin.com的。&lt;/ A&gt; &lt;/p&gt;
+                    &lt;/li&gt;
+                &lt;/ol&gt;</value>
+  </data>
+  <data name="Help_Privacy" xml:space="preserve">
+    <value>&lt;h1&gt;
+                    隐私权政策&lt;/h1&gt;
+                &lt;p&gt;
+                    SiteName（“SiteName”，“我们”，“我们”，“我们”提供了一个网站位于&lt;a href="http://freshpin.com"&gt; http://freshpin.com &lt;/ A&gt;为用户网站（“会员（S）”，
+                    &lt;br /&gt;
+                    “用户（S）”，“您”）。本隐私政策解释我们的政策方面的信息您提供我们收集和我们如何使用或披露的信息。我们重视您的隐私，并提供本隐私政策，以帮助您做出明智的决定，关于您使用本网站。&lt;/p&gt;
+                &lt;p&gt;
+                    隐私政策的一部分，并须使用本网站的条款。通过成为会员或使用本网站或它的资源，功能，功能或服务（以下简称“服务”）的任何部分，您同意您，提供任何个人身份信息，提供或收集任何其他信息受使用条款和隐私政策。
+                &lt;/p&gt;
+                &lt;h2&gt;
+                    我们收到的信息，收集和使用&lt;/h2&gt;
+                &lt;h3&gt;
+                    个人身份信息&lt;/h3&gt;
+                &lt;p&gt;
+                    作为一个普遍的问题，我们不收集您的个人身份信息，除非你提供这些信息通过注册成为会员（“会员”），或参与我们或使用的服务，会员服务，或以其他方式，包括但不限于，当您选择第三方服务连接，或通过登录网站，上传照片，发表评论，收集和披露的影片，或参与任何促销活动的一部分。我们也可能要求您提供额外的个人身份信息，利用会员服务，登记，或功能，例如姓名，电子邮件地址，电话号码，开票，运输和其他信用卡或付款处理信息。&lt;/p&gt;
+                &lt;p&gt;
+                    您提供&lt;strong&gt;姓名和联系信息。&lt;/strong&gt;在注册过程中，你都必须给予正确的联系信息，如您的姓名，通讯地址，电子邮件地址和出生日期。我们要求各会员有关的目的使用该信息，包括确定您使用本网站的资格，维护和监控您的会员，有针对性的广告相关联的帐户，并确定和/或功能或服务的可用性资格。作为注册的一部分输入你的名字将被用来在您的公开展示和提供的个人资料。然而，没有其他个人身份信息，您在注册时提供的将是可见的在您的公开个人资料，或披露或使用除本隐私政策中所述。
+                &lt;/p&gt;
+                &lt;p&gt;
+                    通过网站和服务，你可以自行上传照片，图片或其他信息，包含你的肖像和/或他人，或邮寄的份额可能包含或透露个人身份信息，或公开或收集的视频内容的意见或评论包含个人身份信息。这样做，您承认并同意，所有此类信息发布，收集，或以其他方式或通过网站或服务的提供成为下提交使用条款和发布的内容（1）不再构成个人身份信息受的隐私政策和（2）成为公开的，例如，它可以收集，查看，分发和由他人使用，包括但不限于网站上，更广泛地通过互联网和其他媒体渠道。&lt;/p&gt;
+                &lt;p&gt;
+                    通过第三方的&lt;strong&gt;连接。&lt;/strong&gt;我们也可以分享，披露，或以其他方式与您的同意或授权使用您的个人身份信息或肖像，包括但不限于，通过第三方服务收集的这些信息，你选择了我们提供使用该服务的连接，或签署的网站。&lt;/p&gt;
+                &lt;p&gt;
+                    &lt;strong&gt;其他用途。&lt;/strong&gt;最后，我们收集和使用您的信息，包括个人身份信息，个性化您的经验，支持您使用和访问有关网站的信息和服务（包括网站的连接相关的维修，性能，设计，备份和分析，服务更新，您的会员），分析使用，回应你的查询，通知或更新有关的功能和优惠，满足您的订单，为客户提供服务，地址或防止潜在的禁止和/或非法活动，并决定遵守和执行使用条款，包括本隐私权政策。
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    非个人身份信息&lt;/h3&gt;
+                &lt;p&gt;
+                    在您提供的信息和我们保持此外，我们可能会收集某些信息，自动记录您的IP地址，在您的计算机上放置“曲奇”（详情请参阅下文），和/或创建的日志文件或机制。这些方法没有收集您的个人身份信息。
+                &lt;/p&gt;
+                &lt;p&gt;
+                    我们用这样的非个人身份识别信息，以帮助我们识别您的浏览器，让您使用某些网站功能，诊断我们服务器的问题，管理和改善我们的网站，了解您的喜好，量身为您的广告或其他信息，根据获得的信息从您的IP地址，“曲奇”或日志文件，并普遍加强对本网站和/​​或服务。&lt;/p&gt;你的整体体验
+                &lt;p&gt;
+                    我们聚集在一起，为我们使用广泛的人口统计信息对我们的成员以及与您使用的服务或特定网站的功能（如频率使用，购买和观看历史）和您提供的信息直接发送给我们任何其他相关的具体信息，或通过您的使用本网站。然而，我们也可能会收集和报告向第三方聚合，非个人身份信息关于您和其他会员或用户（如，如果我们的成员有一半是18和25岁之间的妇女，我们可以提供，一般信息内容或服务提供商），集体意见（例如，从一个特定的地区议员更喜欢另一个产品），和你的集体网站的使用情况和行为。&lt;/p&gt;
+                &lt;p&gt;
+                    我们可能会保留您的信息存档的副本，包括个人身份识别和非个人身份信息，提交，您提供或我们为您使用网站或服务的法律或合法经营的要求，结果获得的其他信息目的。&lt;/p&gt;
+                &lt;h3&gt;
+                    饼干，日志文件和Web Beacons的使用&lt;/h3&gt;
+                &lt;p&gt;
+                    。的&lt;strong&gt;饼干&lt;/strong&gt;当你访问的网站，我们可能会发送到您的计算机的唯一标识您的浏览器的一个或多个Cookie - 一个小文本文件，其中包含一个字母数字字符的字符串 - 。我们使用cookie来存储某些信息，跟踪和瞄准我们的会员使用本网站，并在网站上，以提高他们的经验。
+                &lt;/p&gt;
+                &lt;p&gt;
+                    我们使用会话cookie和持久cookie。一个持久的cookie仍然后您关闭浏览器。您的浏览器上使用永久性Cookie，随后访问网站。持久Cookie可以按照您的网页浏览器帮助文件指示删除。会话cookie是临时的，消失后您关闭浏览器。
+                &lt;/p&gt;
+                &lt;p&gt;
+                    您可以重置您的网页浏览器拒绝所有的cookies，或通知您，当cookie被发送，让您可以接受或拒绝它。但是，请注意该网站的一些功能可能无法正常工作或为目的，如果能够接受cookie被禁用。此外，如果你改变你的电脑，改变您的互联网浏览器（例如，从Internet Explorer到Firefox），或删除所有的cookies，您将需要更新您的喜好。&lt;/p&gt;
+                &lt;p&gt;
+                    的&lt;strong&gt;日志文件的信息。&lt;/strong&gt;当你使用本网站，我们的服务器会自动记录您的网页浏览器发送每当你访问任何网站的某些信息。这些服务器日志可能包括，如您的网络请求，互联网协议（“IP”）地址，浏览器类型，浏览器语言，指/退出页面的URL，平台类型，点击次数，域名，登陆网页，浏览过的网页和信息为了这些网页的特定网页上花费的时间，您的请求的日期和时间，以及一个或多个Cookie可能唯一识别您的浏览器。&lt;/p&gt;
+                &lt;p&gt;
+                    透明的GIF的&lt;strong&gt;信息&lt;/strong&gt;当你使用本网站，我们可能会采用“清晰GIF”（又名网络信标），这是用来匿名跟踪您的在线使用模式（即在非个人识别方式， ）。此外，我们还可以使用清晰GIF跟踪收件人打开邮件发送到您的基于HTML的电子邮件。&lt;/p&gt;
+                &lt;h3&gt;
+                    使用其他信息&lt;/h3&gt;
+                &lt;p&gt;
+                    你可以邀请其他人成为会员。如果你这样做，我们会要求您为您的朋友的电子邮件地址。我们会自动发送一封电子邮件，邀请他或她访问的网站，并加入您的朋友。我们不会重新发送这一邀请，除非你特别要求，我们这样做。我们存储的电子邮件信息，您发送电子邮件和评估的邀请程序元素的唯一目的。
+                &lt;/p&gt;
+                &lt;h2&gt;
+                    信息的第三方接收，收集和使用&lt;/h2&gt;
+                &lt;h3&gt;
+                    广告相关的数据收集&lt;/h3&gt;
+                &lt;p&gt;
+                    我们可能会与第三方共享，如下所述，包括广告主，广告网络或广告服务器聚合，非个人身份信息。然而，我们明知不提供任何个人身份信息，任何第三方未经您的同意或一个特定的程序或功能，而你有能力选择或选择退出（例如，见部分除外全国广告倡议（“负离子”）和数字广告联盟（“的DAA”）所述）。
+                &lt;/p&gt;
+                &lt;p&gt;
+                    我们也可以让广告商，第三方广告网络和第三方广告服务和其他公司的服务或使其他网站，直接服务广告，你和/或启用其他服务，通过我们的网站，服务和软件的使用。由直接向您的服务这些广告，这些公司可以设置并引发他们自己的cookie，Web beacon和/或其他技术，您的计算机上，这反过来，可能被用来裁缝，报告，分析网站上看到的广告和其他网站。我们没有进入或控制这些第三方的cookies，信标，或技术。他们也不是受本隐私政策。
+                &lt;/p&gt;
+                &lt;p&gt;
+                    如果你想联系广告商，第三方广告网络和第三方广告服务公司或其他公司与我们有关系，以了解更多有关他们的隐私政策和股权（如有），他们提供了选择他们的数据收集，请访问他们的网站（S）。
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    信息用于商业或营销目的&lt;/h3&gt;
+                &lt;p&gt;
+                    虽然您已选择公开披露（无论是通过的意见书，使用您的个人资料的名称，或以其他方式）的任何个人身份信息提供给他人使用，是完全超出我们的控制的，我们不会分享您的个人识别信息使用未经您的同意，为他们的商业或营销或第三方公司除了作为一个特定的程序或功能，你有能力选择或选择退出使用商业上合理的手段的一部分。
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    人口统计数据
+                &lt;/h3&gt;
+                &lt;p&gt;
+                    虽然我们不提供广告客户的个人识别信息，除按照本隐私政策允许，请注意，如果广告客户要求我们显示出一定的受众的广告（例如，女性年龄18-25岁）或受众群体（如，成员18-25观看网站上的某些内容），如果你回应，广告，广告商或广告服务器可能会认为你适合观众或听众段指定。一个广告也可能会使用有关您使用本网站的信息（但不是任何个人身份信息）的次数，如您观看的广告，以确定提供给你额外的广告。
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    &lt;/h3&gt;外部链接
+                &lt;p&gt;
+                    最后，这个网站包含其他第三方网站的链接。本私隐政策并不适用，我们不一定赞同和不负责的内容或隐私的做法，这种“挂钩”的网站，广告主，广告网络或广告服务器。您应该熟悉自己各自的隐私政策使用任何第三方网站。&lt;/p&gt;
+                &lt;h3&gt;
+                    儿童的隐私&lt;/h3&gt;
+                &lt;p&gt;
+                    根据“儿童在线隐私保护法案（COPPA）的条款，我们不会故意收集个人 - 未满十三（13）岁的儿童的身份信息。网站和服务不针对未满十三（13）岁的儿童，并通过网站或服务和/或注册成为会员，你代表你是没有根据年龄十三（13）。父母或法定监护人可能不同意使用，本隐私政策，或代表这些孩子的这些孩子的个人身份信息的披露条款。如果我们学习，我们在不知不觉中已收集个人身份信息的人少于十三（13）岁，那么我们将采取适当的步骤删除此信息。&lt;/p&gt;
+                &lt;h3&gt;
+                    安全性和保密性&lt;/h3&gt;
+                &lt;p&gt;
+                    您的个人身份信息的安全对我们非常重要，因此，我们采取合理的商业步骤，以维护信息安全。而详尽，这些步骤包括：当你想向我们付款，我们不采取支付处理信息，而是引导你到第三方付款处理器的信息进行加密，使用安全套接字层技术（SSL的） ;我们使用的措施，以监察和检讨帐户活动和努力来检测欺诈性活动或其他异常行为，我们也允许你选择一定的社会网络或其他网站的部分&lt;/p&gt;隐私设置。
+                &lt;p&gt;
+                    记住，没有方法在互联网上传输或电子存储方法是完美的，或100％的安全。我们也无法控制其他用户或成员的行动，与大家分享您的信息或你所作出的信息公开。因此，我们不能做不保证或担保您通过您使用本网站，包括但不限于，难保唯一授权的人会查看您的信息，信息不得泄漏，访问，修改所提供的任何信息的安全性，成为公开的，甚至是破坏。您同意，您在您自己的风险提供信息和专门释放在任何此类信息或违反安全性。&lt;/p&gt;方式有关的任何责任，我们
+                &lt;p&gt;
+                    同样，我们是不会负责任何第三方侵犯或绕过网站上的任何隐私设置或安全措施的努力。任何用户识别名称或密码，您使用（无论是您或我们提供）你应保持机密，不应与任何未授权访问您的个人身份信息共享。你负责，并应采取措施，以减少风险，披露等识别名称或密码，包括但不限于，使用比你在其他地方使用不同的密码，使用强密码，并定期更新您的防病毒软件。&lt;/p&gt;
+                &lt;p&gt;
+                    我们保留采取任何行动，就在网站上公布，包括信息的权利，但不局限于，信息或其他材料，并终止您的会员和使用权。但是，我们不能，我们也不，审查，编辑和/或控制人公开提供的信息，并通过网站的内容，用户，任何会员或其他供应商提供的信息。&lt;/p&gt;
+                &lt;p&gt;
+                    我们还可以使用的帐户信息，以确定是否有资格或使某些功能或服务提供给会员。因此，在帐户信息或您的个人身份信息发生变化或需要更新，如果有错误，你需要更正或更新，并应通过网站的“我的帐户”部分。&lt;/p&gt;
+                &lt;p&gt;
+                    如果您有任何疑问或网站上的有关信息安全保密，请让我们知道通过联系我们网站上的链接。
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    会员的喜好或设置与退出&lt;/h3&gt;
+                &lt;p&gt;
+                    我们不会出售，买卖，出租或比在本隐私政策和/或披露，除非你同意这样的披露（例如，通过直接协议等披露或您的请求，接收货物或其他第三方分享您的个人身份信息从第三方服务或其他参与网站上的活动）。&lt;/p&gt;
+                &lt;p&gt;
+                    如果您已经选择接收来自这些第三方的营销信息，您可以联系这些当事人选择 - 从他们那里收到此类通信&lt;/p&gt;
+                &lt;p&gt;
+                    我们保留权利公开（保密的基础上）和/或转让您的个人识别信息，我们的附属机构，或向第三方出售全部或绝大部分的股票或资产的所有的连接。&lt;/p&gt;
+                &lt;h3&gt;
+                    法律要求披露或损害的预防&lt;/h3&gt;
+                &lt;p&gt;
+                    我们可能需要适用法律，传票，法院命令或其他法律程序（包括但不限于，协助政府执法机构）披露或保留一段时间，您的个人识别信息和/或非个人身份识别信息。我们的政策是遵守任何这样的要求（包括一个很好的理由相信存在这样的规定），您同意我们应当有任何这样的披露或保留不承担任何责任。&lt;/p&gt;
+                &lt;h3&gt;
+                    和从美国&lt;/h3&gt;通讯
+                &lt;p&gt;
+                    通过联系我们网站上的链接，您可以选择提交的请求的SiteName帮助台。填写所需的字段，我们将使用此信息来回应您的询问。&lt;/p&gt;
+                &lt;p&gt;
+                    成为会员，你也同意接收来自SiteName各种通信。我们可能会使用你为了那些通信传输给你提供的个人身份信息或其他信息。这种通信包括但不限，欢迎新成员，您向我们查询，通过文字，RSS或其他通讯技术的消息电子邮件，我们给您的查询您的会员帐户活动或您使用任何功能或服务本网站，并通知有关的网站（例如，服务或技术问题，现有的或新的功能或服务等）的发展。我们将提供合理的商业手段，以允许您选择 - 接受某些此类通信&lt;/p&gt;
+                &lt;h3&gt;
+                    变通&lt;/h3&gt;
+                &lt;p&gt;
+                    我们可能会更新本隐私政策不时修改或扩大我们的网站，通过我们的网站上张贴更新的隐私权政策。我们建议您检查从时间到时间，以便了解我们如何处理您的信息。&lt;/p&gt;
+                &lt;h3&gt;
+                    联系美国&lt;/h3&gt;
+                &lt;p&gt;
+                    如果您对本隐私政策有任何疑问或对本网站的隐私做法，你可以联系我们通过电子邮件我们在&lt;a href="mailto:help@freshpin.com"&gt; help@freshpin.com &lt;/a&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="Help_Term" xml:space="preserve">
+    <value>&lt;h1&gt;
+                    使用条款&lt;/h1&gt;
+                &lt;p&gt;
+                    请仔细阅读以下条款和条件。这些条款对您的访问和使用本网站和服务，所有网站内容（定义见下文），你和 SiteName 之间构成有约束力的法律协议。&lt;/p&gt;
+                &lt;h3&gt;
+                    关键条款涉及到的内容&lt;/h3&gt;
+                &lt;p&gt;
+                    “内容”是指文字，图形，图像，音乐，软件，音频，视频，信息或其他材料。&lt;/p&gt;
+                &lt;p&gt;
+                    “ SiteName 内容”是指 SiteName 可通过网站或服务，包括从第三方许可的任何内容，所有内容，但不包括会员的内容。&lt;/p&gt;
+                &lt;p&gt;
+                    “会员”是指一个人完成 SiteName 的帐户注册过程中，根据“户口登记”介绍如下。&lt;/p&gt;
+                &lt;p&gt;
+                    “会员内容”是指所有的会员职位，上传，发布的内容，提交或发送到通过网站或服务的提供。&lt;/p&gt;
+                &lt;p&gt;
+                    “网站内容”是指会员的内容和 SiteName 内容。&lt;/p&gt;
+                &lt;p&gt;
+                    本网站的某些领域（与您访问或使用某些服务或网站内容）可能有不同的条款及条件发布或可能需要您同意并接受附加条款和条件。如果有一个的网站，服务，网站内容，后者的条款及条件的特定区域发布这些条款和条款和条件之间的冲突，将优先尊重您使用或访问该网站的区域，服务或网站内容。&lt;/p&gt;
+                &lt;p&gt;
+                    您承认并同意，通过访问或使用本网站或服务或本网站或经由本服务张贴任何会员内容，则表明您已阅读，理解并同意受到这些条款的约束，你不该网站注册。如果您不同意这些条款，那么你无权访问或使用网站，服务或网站内容。如果您接受或同意代表一家公司或其他法人实体，这些条款，您声明和保证，你有权力对这些条款的约束，公司或其他法人实体，在这种情况下，“你”和“您的“会参考，并适用于该公司或其他法人实体。&lt;/p&gt;
+                &lt;h3&gt;修改&lt;/h3&gt;
+                &lt;p&gt;
+                     SiteName 保留权利，在其自行决定，修改，中止或终止本网站或服务，或在任何时间，恕不另行通知修改这些条款。如果我们修改这些条款，我们将在网站上张贴的修改，或为您提供修改的通知。继续访问或使用网站或服务后，我们已经发布了修改或在网站上提供了一个修改的通知你，你表明您同意修改后的条款的约束。如果修改后的条款是不能接受的给你，你唯一的办法是停止使用本网站和服务。&lt;/p&gt;
+                &lt;h3&gt;
+                    资格&lt;/h3&gt;
+                &lt;p&gt;
+                    网站和服务的目的纯粹是13岁以上的人。任何访问或使用13岁以下的任何人的网站或服务，明令禁止。通过访问或使用网站或服务，您声明和保证，你是13岁以上。&lt;/p&gt;
+                &lt;h3&gt;
+                    户口登记&lt;/h3&gt;
+                &lt;p&gt;
+                    为了访问网站的某些功能和服务，并张贴在网站上或通过服务的任何会员的内容，你必须注册创建一个帐户（“帐户”）。通过您的帐户，你必须注册 SiteName 与某些第三方社交网络服务，包括但不限于，Facebook和Twitter（以下统称“的SNS”）。当你通过你的SNS帐户注册，你将被要求登录到服务，使用你的SNS帐户凭据。首次通过SNS建立一个帐户，将提示你你的 SiteName 和SNS的帐户合并。通过与SNS通过您的帐户创建一个帐户，你让 SiteName 访问你的SNS帐户信息，您同意遵守适用的条款和您SNS的条件，在您的使用，通过这样的SNS服务。如果您目前尚未注册为会员，你点击登陆与SNS，你首先会被要求输入您的SNS的凭据，然后给予注册并加入 SiteName 选项。成员可以自动发布近期活动适用的SNS，会员也可以选择禁用访问SNS的帐户和断开对服务的访问他们的的 SiteName 帐户和SNS帐户之间的连接，在任何时间&lt;/p&gt;
+                &lt;p&gt;
+                    您同意在注册过程中提供准确，最新和完整的信息，并更新此类信息保持准确，最新及完整。  SiteName 有权暂停或终止您的帐户，如果在注册过程中或以后提供的任何信息，被证明是不准确，不完整或。你是负责维护您的密码。您同意不以向任何第三方透露您的密码和您的帐户下采取的任何活动或行动的唯一责任，无论是否已授权的活动或行动。任何未经授权使用您的帐户，你将立即通知 SiteName 。&lt;/p&gt;
+                &lt;h3&gt;
+                    隐私&lt;/h3&gt;
+                &lt;p&gt;
+                    看到在&lt;a href="about.aspx#privacy"&gt; http://freshpin.com/privacy我们的隐私权政策&lt;/a&gt;关于您的个人信息的 SiteName 的收集和使用信息和通知。&lt;/p&gt;
+                &lt;h3&gt;
+                    的 SiteName 内容和会员内容许可&lt;/h3&gt;
+                &lt;p&gt;
+                    除遵守这些条款的条款和条件， SiteName 授予您有限的，非排他性的，不可转让的许可，没有再授权的权利，访问，浏览，下载和打印您的个人单独和任何 SiteName 内容非商业目的。你不会使用，复制，改编，修改，根据准备衍生作品，分发，许可，出售，转让，公开展示，公开表演，传输流，广播或以其他方式利用该网站，服务或网站内容，除明确允许在这些条款。以暗示或其他任何许可证或权利被授予给你 SiteName 或它的检查员所拥有或控制下的任何知识产权权利，除了这些条款中明确授予的权利和牌照。&lt;/p&gt;
+                &lt;h3&gt;
+                    会员内容&lt;/h3&gt;
+                &lt;p&gt;
+                    我们可以在我们的全权，允许成员张贴，上传，发布，提交或传送会员的内容。任何会员的内容，可通过网站或服务，您特此授予 SiteName 一个世界性的，不可撤销的，永久的，非排他性，可转让的，免版税的许可，再授权的权利，以使用，复制，改编，修改，分发，许可，出售，转让，公开展示，公开表演，传输，流，广播，访问，查看，否则只能利用该会员通过或通过网站或服务的方式，内容。  SiteName 不主张在任何该等会员在这些条款的内容和没有任何所有权，将被视为限制，你可能有使用和利用等任何会员内容的任何权利。&lt;/p&gt;
+                &lt;p&gt;
+                    您承认并同意，你是全权负责所有会员内容，您就可以通过网站和服务。因此，您声明和保证：（i）你要么是所有会员内容的唯一所有者，您可以通过网站和服务，或你拥有的所有权利，许可，同意和释放是必要的，以授予 SiteName 在这样的会员内容的权利，拟根据这些条款;和（二）无论是会员含量您张贴，上传，出版，提交或“会员内容或 SiteName 的会员内容使用的任何部分转交上，透过或的网站和服务的方式将侵犯，挪用或违反第三方的专利，版权，在商标，商业秘密，道德权利或其他专有或智慧财产权利，或宣传或隐私的权利，或结果违反任何适用法律或法规。&lt;/p&gt;
+                &lt;h3&gt;
+                    反馈&lt;/h3&gt;
+                &lt;p&gt;
+                    我们欢迎并鼓励您提供反馈，为改善网站和服务的意见和建议（“反馈”）。您可以通过网站的“联系我们”节提交反馈。您承认并同意，所有的反馈将是 SiteName 唯一和排他性的财产和您在此不可撤销地分配给 SiteName 并同意不可撤销地分配 SiteName 您的权利，所有权和利益，所有反馈，包括但不限于全球所有专利，版权，商业秘密，商标，道德权利和其他专利或知识产权的财产权利。  SiteName 的要求和费用，你将要执行的文件，并采取进一步行动，作为 SiteName 可能合理要求，以协助的 SiteName 收购，完善，并保持其反馈的知识产权和其他法律的保护。&lt;/p&gt;
+                &lt;h3&gt;
+                    &lt;/h3&gt;一般禁止
+                &lt;p&gt;
+                    您同意不会做任何下列：&lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;后，上传，发布，提交，提供接入或传输的任何内容：（一）侵犯，挪用，或违反第三方的专利，版权，商标，商业秘密，道义上的权利或其他知识产权，或权利宣传或隐私;（ii）违反或鼓励任何行为会违反任何适用法律或法规，或会引起民事赔偿责任;（三）欺诈，虚假，误导或欺骗性的;（四）属于诽谤，淫秽，色情，庸俗或进攻;（五）促进歧视，偏见，种族主义，仇恨，骚扰或对任何个人或团体的危害;（六）暴力或威胁，或宣扬暴力或威胁到任何其他人的行动;（七）促进非法或有害的活动或物质。&lt;/li&gt;
+                    &lt;li&gt;使用，展示，镜像或框架内网站的网站，或任何个别元素的的 SiteName 名称，任何 SiteName 商标，标识或其他专有信息，或页面或页面上所载的任何形式的布局和设计，未经我们明确的书面同意; &lt;/li&gt;
+                    &lt;li&gt;访问，篡改，或使用本网站的非公有制领域，我们的电脑系统，或我们的供应商交货技术系统; &lt;/li&gt;
+                    &lt;li&gt;试图探测，扫描或测试任何的 SiteName 系统或网络的脆弱性或违反任何安全或认证措施; &lt;/li&gt;
+                    &lt;li&gt;避免，绕过，删除，禁用，损害，解扰或以其他方式规避任何技术措施实施 SiteName 或任何我们的供应商或其他任何第三方（包括其他用户），以保护本网站或网站内容; &lt;/li&gt;
+                    &lt;li&gt;试图访问或搜索网站，网站的内容或从本网站下载网站内容，通过使用任何引擎，工具，代理，设备或机制（包括蜘蛛，机器人，爬行，数据挖掘工具或类似）其他比软件和/或 SiteName 或其他可用的第三方网页浏览器提供的搜索代理; &lt;/li&gt;
+                    &lt;li&gt;发送任何未经请求或授权的广告，宣传材料，电子邮件，垃圾邮件，垃圾邮件，连锁信件或其他形式的征求; &lt;/li&gt;
+                    &lt;li&gt;使用未经 SiteName 的明确书面同意，任何元标签或其他隐藏的文本或元数据，利用网站名称或的 SiteName 商标，标识，URL或产品名称; &lt;/li&gt;
+                    &lt;li&gt;使用的网站或网站内容作任何商业用途或任何第三方的利益，或者在这些条款不容许任何方式; &lt;/li&gt;
+                    &lt;li&gt;伪造任何TCP / IP数据包报头或在任何电子邮件或新闻组张贴，或以任何方式使用该网站或网站内容，发送改变，欺骗或虚假的源识别信息的头信息的任何部分; &lt;/li&gt;
+                    &lt;li&gt;尝试破译，反编译，反汇编或逆向工程软件提供的网站或网站内容。&lt;/li&gt;
+                    &lt;li&gt;干扰或企图干扰任何用户，主机或网络，包括但不限于，发送病毒，超载，洪水泛滥，垃圾邮件，或邮件轰炸网站的访问; &lt;/li&gt;
+                    &lt;li&gt;收集或储存未经其明确许可，任何网站从本网站的其他用户的个人识别信息; &lt;/li&gt;
+                    &lt;li&gt;冒充或谎称与任何人或实体的关系; &lt;/li&gt;
+                    &lt;li&gt;违反任何适用法律或法规; &lt;/li&gt;
+                    &lt;li&gt;鼓励或允许做任何上述任何其他个人。&lt;/li&gt;
+                &lt;/ UL&gt;
+                &lt;p&gt;
+                    的 SiteName 将有权利进行调查和起诉违反上述任何法律最大限度。的 SiteName 可能涉及与执法当局合作，起诉谁违反了这些条款的用户。您承认，的 SiteName 有没有义务监视您访问或使用本网站，服务或网站内容，或查看或编辑任何网站内容，但有权做经营的网站和服务的目的，以确保你遵守这些条款，或不遵守适用的法律或法院的命令或规定，行政机关或其他政府机构。  SiteName 保留权利，在任何时间，恕不另行通知，删除或禁止访问的任何网站内容，网站名称，在其自行决定，认为是令人反感的违反这些条款或其他有害的网站或以任何理由，服务。&lt;/p&gt;
+                &lt;h3&gt;
+                    版权政策&lt;/h3&gt;
+                &lt;p&gt;
+                     SiteName 已采纳和实施的政策，在注册用户或其他帐户持有人一再侵犯或相信被一再侵犯版权保留的权利&lt;/p&gt;适当的情况下终止提供
+                &lt;h3&gt;
+                    友情链接&lt;/h3&gt;
+                &lt;p&gt;
+                    本网站包含第三方网站或资源的链接。您承认并同意， SiteName 是不负责或承担责任：（一）提供或此类网站或资源的准确性;或（ii）的内容，产品，或服务，或可从此类网站或资源。此类网站或资源的链接，并不意味着任何此类网站或资源 SiteName 或内容的认可，产品，或从此类网站或资源提供的服务。你承认全权负责，并承担所有风险，您使用任何此类网站或资源所产生的。&lt;/p&gt;
+                &lt;h3&gt;
+                    终止&lt;/h3&gt;
+                &lt;p&gt;
+                    如果违反这些条款中的任何一个， SiteName 将有权暂停或停用您的帐户或终止这些条款，在其自行决定，并没有事先通知您。  SiteName 有权撤销您的访问和使用的网站，服务和内容，在任何时间，或无故。
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    免责声明&lt;/h3&gt;
+                &lt;p&gt;
+                    在站点，服务和网站内容是提供“AS IS”，无任何形式的担保，明示或暗示的保证。在不限制前述， SiteName 明确否认任何特定用途的，安静的享受或不侵权的，以及因交易或贸易惯例中的任何担保适销性，适用性的担保。的 SiteName 不做任何担保，站点，服务或网站内容将满足您的需要一个不间断，安全，无错误。  SiteName 不做获得的任何产品，服务或网站内容的质量没有保证，关于通过网站或服务或精度，通过网站或服务获得的任何网站内容的及时性，真实性，完整性或可靠性。&lt;/p&gt;
+                &lt;p&gt;
+                    没有明确外，建议或信息，无论是口头或书面的，从的 SiteName 或通过网站，服务，内容或成员的内容获得，不会产生任何保证。&lt;/p&gt;
+                &lt;p&gt;
+                    你仅仅负责你的通讯和其他与本网站服务的用户和与人沟通或的使用您的网站或服务的结果进行交互的其他人相互作用。你明白 SiteName “不是屏幕或查究的网站或服务的任何用户的背景，也不 SiteName 使任何试图验证作者USERSOF网站或服务的陈述。的 SiteName 不做没有对用户的网站或服务或其相容性CURRENTOR未来用户的网站或服务的任何行为的陈述或保证。您同意采取合理的预防措施，在所有通讯和互动的网站或服务的其他用户和与人沟通或的使用您的网站或服务的结果进行交互的其他人，特别是如果你决定满足脱机或人士。
+                &lt;/p&gt;
+                &lt;h3&gt;
+                    赔偿&lt;/h3&gt;
+                &lt;p&gt;
+                    您同意保护，赔偿，并举行 SiteName ，其管理人员，董事，雇员和代理商，无害从和反对任何索赔，债务，损害赔偿，损失及开支，包括但不限于合理法律及会计费用，所产生的或以任何方式连接（i）您访问或使用本网站或网站内容的服务，（ii）您的会员内容，或（iii）您违反这些条款。&lt;/p&gt;
+                &lt;h3&gt;
+                    责任限制&lt;/h3&gt;
+                &lt;p&gt;
+                    您承认并同意，为了最大程度的法律制裁，因您的访问和使用的网站，服务和网站内容的全部风险仍然与你。既不 SiteName 或任何其他干部参与创建，生产或提供的网站，服务或内容承担任何附带的，特殊的，惩罚性或间接损害，包括利润损失，数据丢失或商誉损失，业务中断，电脑损毁或系统故障或替代产品或服务的成本，或为个人或人身伤害或情绪困扰所产生的任何损害或这些条款，或因使用或无法使用本网站，服务，网站内容，或从任何通讯，相互作用或其他用户的网站或服务或与人沟通或的使用您的网站或服务的结果进行交互的其他人的会议，无论是基于保证，合同，侵权（包括过失） ，产品责任或任何其他法律理论和， SiteName 无论是否被告知此类损害的可能性，即使有限的赔偿规定，本发现有失败，其根本目的。&lt;/p&gt;
+                &lt;p&gt;
+                    在任何情况下 SiteName 的累计赔偿责任引起的或在这些条款的连接或因使用或无法使用该网站，服务或网站内容超过一百元（100美元）。损害上述规定的限制之间 SiteName 与你讨价还价的基础上的基本要素。某些司法管辖区不允许排除或限制必然或偶然的损害赔偿责任，因此上述限制可能不适用于你。&lt;/p&gt;
+                &lt;h3&gt;
+                    专有权利声明&lt;/h3&gt;
+                &lt;p&gt;
+                    所有商标，服务标记，徽标，商标名称和此处使用的任何其他专有 SiteName 指定的商标或注册商标 SiteName 。任何其他商标，服务标记，徽标，商标名称和任何其他的专有名称是各自党派的商标或注册商标。&lt;/p&gt;
+                &lt;h3&gt;
+                    管制法律和司法管辖权&lt;/h3&gt;
+                &lt;p&gt;
+                    这些条款和与之有关的任何行动将受加利福尼亚州法律，不考虑其法律条款的冲突。就这些条款的标的物的专属管辖权和场地的任何行动，将在州和联邦法院在位于加利福尼亚州北部地区和双方各自双方放弃任何异议，在这些法院的管辖权和地点。&lt;/p&gt;
+                &lt;h3&gt;
+                    整个协议&lt;/h3&gt;
+                &lt;p&gt;
+                    这些条款构成整个和排他性的理解和站点名之间的协议，和你有关的网站，服务，网站内容，和会员的内容，这些条款并取代任何和所有之前的口头或书面的谅解或 SiteName 和您之间的协议有关网站，服务和内容。&lt;/p&gt;
+                &lt;h3&gt;
+                    转让&lt;/h3&gt;
+                &lt;p&gt;
+                    您不得转让或转移这些条款，通过法律或其他操作，无需 SiteName 的事先书面同意。出让或转让未征得这种同意这些条款，你的任何企图，将是无效和不具法律效力。  SiteName 不得转让或转移这些条款，在其自行决定，不受任何限制。除前述，这些条款的约束，并确保有利益的各方，其继承人和许可受让人。&lt;/p&gt;
+                &lt;h3&gt;
+                    声明&lt;/h3&gt;
+                &lt;p&gt;
+                    允许或要求的任何通知或其他通讯下文，包括那些关于修改这些条款，将会以书面形式的 SiteName （我）通过电子邮件（在每种情况下，您提供的地址）或（ii）邮寄到网站。对于通过电子邮件发出的公告，收到日期将被视为该通知书发送日期。&lt;/p&gt;
+                &lt;h3&gt;
+                    一般&lt;/h3&gt;
+                &lt;p&gt;
+                    的 SiteName 未能执行这些条款的任何权利或不会构成放弃该权利或规定今后的执法工作。任何此类权利或规定的减免将是有效的，只有以书面形式，并通过的 SiteName 正式授权的代表签署。除明确规定这些条款规定，任何补救措施的任何一方在行使这些条款将根据这些条款或其他不妨碍其他补救措施。如果因任何原因有管辖权的法院认定这些条款无效或不可执行的任何规定，该规定将允许的最大范围内执行，这些条款的其他条款将维持十足效力及作用。&lt;/p&gt;
+                &lt;h3&gt;
+                    联系 SiteName  &lt;/h3&gt;
+                &lt;p&gt;
+                    如果您有任何有关这些条款或网站的任何问题，投诉或索赔问题，请通过联系我们的 SiteName 网站上的形成与我们联系&lt;/p&gt;</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>家</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>图像</value>
+  </data>
+  <data name="Images_1" xml:space="preserve">
+    <value>查找图片</value>
+  </data>
+  <data name="Image_1" xml:space="preserve">
+    <value>当前资料图片</value>
+  </data>
+  <data name="Just_Me" xml:space="preserve">
+    <value>只是我</value>
+  </data>
+  <data name="Like" xml:space="preserve">
+    <value>喜欢</value>
+  </data>
+  <data name="Link" xml:space="preserve">
+    <value>链接</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>载入中</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="Loc_Ex" xml:space="preserve">
+    <value>手持设备，例如帕洛阿尔托，加利福尼亚</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="Login_1" xml:space="preserve">
+    <value>您的帐户</value>
+  </data>
+  <data name="Log_Out" xml:space="preserve">
+    <value>注销</value>
+  </data>
+  <data name="Me" xml:space="preserve">
+    <value>我</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>新</value>
+  </data>
+  <data name="New_1" xml:space="preserve">
+    <value>很棘手</value>
+  </data>
+  <data name="New_2" xml:space="preserve">
+    <value>新的，同样</value>
+  </data>
+  <data name="New_3" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>未来</value>
+  </data>
+  <data name="Old" xml:space="preserve">
+    <value>老</value>
+  </data>
+  <data name="Old_1" xml:space="preserve">
+    <value>您的当前密码</value>
+  </data>
+  <data name="Pass" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="FreshPin" xml:space="preserve">
+    <value>FreshPin</value>
+  </data>
+  <data name="Pins" xml:space="preserve">
+    <value>销</value>
+  </data>
+  <data name="Pin_1" xml:space="preserve">
+    <value>引脚来自任何网站的图片作为您浏览网页</value>
+  </data>
+  <data name="Pin_2" xml:space="preserve">
+    <value>“针脚”按钮</value>
+  </data>
+  <data name="Pin_3" xml:space="preserve">
+    <value>添加 针</value>
+  </data>
+  <data name="Pin_4" xml:space="preserve">
+    <value>上传 针</value>
+  </data>
+  <data name="Pin_5" xml:space="preserve">
+    <value>针脚</value>
+  </data>
+  <data name="Pin_6" xml:space="preserve">
+    <value>谁可以固定</value>
+  </data>
+  <data name="Pin_7" xml:space="preserve">
+    <value>编辑引脚</value>
+  </data>
+  <data name="Pin_8" xml:space="preserve">
+    <value>删除引脚</value>
+  </data>
+  <data name="Pin_9" xml:space="preserve">
+    <value>保存引脚</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>点</value>
+  </data>
+  <data name="Prev" xml:space="preserve">
+    <value>上一页</value>
+  </data>
+  <data name="Repin" xml:space="preserve">
+    <value>列宾</value>
+  </data>
+  <data name="Request_an_Invite" xml:space="preserve">
+    <value>申请一个邀请</value>
+  </data>
+  <data name="Request_Invitation" xml:space="preserve">
+    <value>要求邀请</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>保存设置</value>
+  </data>
+  <data name="Save_Profile" xml:space="preserve">
+    <value>保存配置文件</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Set_1" xml:space="preserve">
+    <value>不公开显示</value>
+  </data>
+  <data name="Sign_Up" xml:space="preserve">
+    <value>注册邀请参加</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>网站</value>
+  </data>
+</root>

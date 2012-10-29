@@ -1,0 +1,32 @@
+
+
+.slides
+{
+    overflow: hidden; /* fix ie overflow issue */
+    position: relative;
+    border: 1px solid .ccc;   
+}
+
+/* remove the list styles, width : item width * total items */
+.slides ul
+{
+    position: relative;
+    left: 0;
+    top: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 16384px;
+}
+
+/* width of the item, in this case I put 250x250x gif */
+.slides li
+{
+    width: 170px;    
+    float: left;
+}
+
+.slides li img
+{
+    
+}

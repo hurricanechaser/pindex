@@ -1,0 +1,5 @@
+﻿
+
+  <li><a href="javascript:void(0);" catid="46"  name="sellist"><% =cat.Manicure %></a></li>
+  <li><a href="javascript:void(0);" catid="44"  name="sellist"><% =cat.Nail_Polish %></a></li>
+  <li><a href="javascript:void(0);" catid="45"  name="sellist"><% =cat.Pattern_Tools %></a></li>

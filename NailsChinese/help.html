@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PinPolish / Help</title>
+    <link rel="icon" href="favicon.ico" />
+    <link href="http://freshpin.com/cdn/CreateDetails.css" rel="stylesheet" type="text/css" />
+    <!--[if (gt IE 6)&(lt IE 9)]><link rel="stylesheet" href="ie7-and-up_fa603afa.css" type="text/css" media="all" /><![endif]-->
+    <script type="text/javascript">        var _sf_startpt = (new Date()).getTime()</script>
+    <link rel="stylesheet" type="text/css" href="http://freshpin.com/cdn/font.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="http://freshpin.com/cdn/scripts/bundle_pin_5b2724f1.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/cookies.js" type="text/javascript"></script>
+    <script src="http://freshpin.com/cdn/scripts/jeresig-jquery.hotkeys-0451de1/jquery.hotkeys.js"></script>
+    <script src="freshpin.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://freshpin.com/cdn/copyright.css" type="text/css"
+        media="all" />
+    <link rel="stylesheet" href="http://freshpin.com/cdn/about_dc0f3cd9.css" type="text/css"
+        media="all">
+    <script type="text/javascript">
+        $(document).ready(function () { $('#AboutLeft .selected').addClass('loaded'); });
+    </script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31949192-1']);
+        _gaq.push(['_trackPageview', location.pathname + location.search + location.hash]);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <style type="text/css">
+        img#user_image
+        {
+            width: 24px;
+            height: 24px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -o-border-radius: 2px;
+            -ms-border-radius: 2px;
+            border-radius: 2px;
+            float: left;
+            margin-right: 10px;
+        }
+        .loggedinuser
+        {
+            margin-top: 4px;
+            font-size: 14px;
+            float: left;
+        }
+        .logout
+        {
+            font-size: 14px;
+        }
+        .ContactForm
+        {
+            overflow: hidden;
+            width: 500px;
+            padding: 0 10px;
+            margin: 0 -10px;
+        }
+        .ContactForm li.contact_user
+        {
+            width: 375px;
+            overflow: hidden;
+        }
+        .ContactButton
+        {
+            float: right;
+            margin-top: -8px;
+        }
+        .faq_topic
+        {
+            display: none;
+            opacity: 0;
+        }
+        .visible
+        {
+            display: block;
+        }
+        #CategoryPicker .ProblemList
+        {
+            height: auto;
+        }
+        #CategoryPicker .ProblemList ul
+        {
+            margin-bottom: 0;
+        }
+        #CategoryPicker .ProblemList li
+        {
+            margin-bottom: 0;
+        }
+        .success
+        {
+            font-size: 18px;
+            color: green;
+            font-weight: 300;
+            text-align: left;
+        }
+        .error
+        {
+            margin-bottom: 10px;
+        }
+        h2#tips
+        {
+            font-size: 24px;
+            margin-bottom: 0;
+            margin-top: 30px;
+            opacity: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        function disableButton(button) {
+            if (!(button.hasClass('disabled')))
+                button.addClass('disabled');
+        }
+
+        function enableButton(button) {
+            if (button.hasClass('disabled'))
+                button.removeClass('disabled');
+        }
+
+        $(document).ready(function () {
+            var header = $('h2#tips');
+            var button = $('.ContactButton');
+
+            BoardPicker.setup(".BoardPicker", function (value) {
+                // If the description isn't empty, enable the button now.
+                if ($('#description').val() !== '') {
+                    enableButton(button);
+                }
+
+                // Add the problem name and short value to our hidden input.
+                $('#id_category').val(value);
+                $('#id_category').attr('data-name', $('.CurrentBoard')());
+
+
+                // Hide any FAQs that are currently visible.
+                $('.visible').removeClass('visible');
+
+
+                // If the selected option is "Bugs", "Other", or "Suggestions", there are no tips,
+                // so if the header is visible we should hide it.
+                if (value == 'bugs' || value == 'other' || value == 'suggestions') {
+                    if (!(header.hasClass('hidden')))
+                        header.animate({ 'opacity': 0 }, 400, function () { $(this).addClass('hidden') });
+                }
+
+
+                // If the selected option isn't "Bugs" or "Other",
+                // we can show the related tips, otherwise create the browser
+                // dropdown for a bug report.
+                if (value != 'bugs' && value != 'other') {
+                    // Fade in the "Helpful Tips" header if it is hidden.
+                    if (header.hasClass('hidden'))
+                        header.removeClass('hidden').animate({ 'opacity': 1 }, 400);
+
+                    // Fade in the frequently-asked questions for this topic.
+                    $('#' + value).addClass('visible').animate({ 'opacity': 1 }, 400);
+                }
+            });
+
+            $('.FAQTitle').click(function () {
+                $(this).toggleClass("active").parent().next().slideToggle("fast");
+                return false
+            });
+
+            $('#description').keyup(function () {
+                if ($(this).val() !== '' && $('#id_category').val() !== '')
+                    enableButton(button);
+                else if ($(this).val() === '')
+                    disableButton(button);
+            });
+
+            $('.ContactButton').click(function () {
+                // Every email will have a problem, problem code, and message.
+                var problem = $('#id_category').attr('data-name');
+                var problemCode = $('#id_category').val();
+                var message = $('#description').val();
+                var browser = $('#browser').val();
+
+                // If the user is logged in, get their username, user ID, and email address.
+                // Otherwise, the user was prompted for an email address.
+                var email;
+                var loggedInUser = $('.loggedinuser');
+                var loggedIn = false;
+
+                if (loggedInUser.length < 1) {
+                    if ($('#contact').val().length > 0) {
+                        loggedIn = true;
+                        email = $('#contact').val();
+                    } else {
+                        disableButton(button);
+                        $('.ContactForm').before('<div class="error">Please enter your email address.</div>');
+                        $('#contact').focus();
+                        setTimeout(function () { $('.error').fadeOut(500) }, 5000, function () { $('.error').remove() });
+                    }
+                } else {
+                    loggedIn = true;
+                }
+
+                if (loggedIn) {
+                    if (problem !== '' && message !== '') {
+                        $.post($('.ContactForm').attr('action'), {
+                            email: email,
+                            problem: problem,
+                            message: message,
+                            browser: navigator.userAgent
+                        }, function (data) {
+                            if (data.status == 'success') {
+                                $('.Button').addClass('disabled');
+                                $('#contact').val('');
+                                $('#description').val('');
+                                $('#id_category').val('');
+                                $('.CurrentBoard')('What do you need help with?');
+                                $('.ContactForm').before('<div class="success">Your message was sent successfully! Thanks for your feedback.</div>');
+                                setTimeout(function () { $('.success').fadeOut(500) }, 5000, function () { $('.success').remove() });
+                            }
+                        }, 'json'
+                        );
+                    } else {
+                        $('.ContactForm').before('<div class="error">Sorry! You have to fill out all the fields before submitting this form.</div>');
+                        setTimeout(function () { $('.error').fadeOut(500) }, 5000, function () { $('.error').remove() });
+                    }
+                }
+                return false;
+            });
+
+        });
+    </script>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PinPolish - Pin Practices</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="http://freshpin.com/cdn/CreateDetails.css" />
+    <!--[if (gt IE 6)&(lt IE 9)]><link rel="stylesheet" href="ie7-and-up_fa603afa.css" type="text/css" media="all" /><![endif]-->
+    <link rel="stylesheet" href="http://freshpin.com/cdn/copyright.css" type="text/css"
+        media="all" />
+    <link rel="stylesheet" type="text/css" href="http://freshpin.com/cdn/font.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://freshpin.com/cdn/scripts//bundle_pin_5b2724f1.js" type="text/javascript"
+        charset="utf-8"></script>
+    <script src="http://freshpin.com/cdn/scripts/cookies.js" type="text/javascript"></script>
+    <script src="http://freshpin.com/cdn/scripts/jeresig-jquery.hotkeys-0451de1/jquery.hotkeys.js"></script>
+    <script src="freshpin.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://freshpin.com/cdn/about_dc0f3cd9.css" type="text/css"
+        media="all">
+    <script type="text/javascript">
+        $(document).ready(function () { $('#AboutLeft .selected').addClass('loaded'); });
+    </script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31949192-1']);
+        _gaq.push(['_trackPageview', location.pathname + location.search + location.hash]);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+</head>
+<body>
+    <div id="wl_disclaimer">
+        <table width="100%" cellspacing="1" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td align="center" style="margin: 0px; font: normal 11px verdana,arial,sans-serif;
+                        color: #000000; background-color: #EEEEEE;">
+                        这是原网页的计算机翻译。 它仅提供大体上的翻译，不能视为完整或准确无误。
+                    </td>
+                    <td width="13" valign="top" style="background-color: #EEEEEE;">
+                        <img width="13" height="13" onclick="wl_close_disclaimer()" style="cursor: pointer"
+                            title="Close Disclaimer" alt="Close Disclaimer" src="http://www.worldlingo.com/images/close_disclaimer.gif">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="Header">
+        <div class="FixedContainer HeaderContainer">
+            <div class="freshpinlogo">
+                <a href=".">
+                    <img src="logo.png"></a>
+                <div class="freshpinlogoTagline">
+                    450个来源，新每日，初始源- Pin!</div>
+            </div>
+            <ul id="Navigation">
+                <li><a class="nav" href="about.html">关于<span></span></a>
+                    <ul>
+                        <li><a href="help.html">帮助</a></li>
+                        <li class="beforeDivider"><a href="copyright.html">版权</a></li>
+                    </ul>
+                </li>
+                <li class="logininfo"><a class="nav" href="login">Login</a></li>
+            </ul>
+            <div id="Search">
+                <form class="text">
+                <input type="text" value="查寻500,000个别针" size="27" name="q" id="query" class="ui-autocomplete-input"
+                    autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                <a class="lg" href="help.html#" id="query_button">
+                    <img alt="" src="http://freshpin.com/cdn/img/search.gif"></a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="AboutContainer">
+        <div id="AboutContent">
+            <div id="AboutLeft">
+                <ul>
+                    <li><a href="about.html"><span>PinPolish是什么？</span> <span class="pointer normal"></span>
+                        <span class="pointer hover"></span></a></li>
+                    <li><a href="PinPractices.html"><span>Pin实践</span> <span class="pointer normal"></span>
+                        <span class="pointer hover"></span></a></li>
+                    <li><a class="selected loaded" href="help.html"><span>帮助</span> <span class="pointer normal">
+                    </span><span class="pointer hover"></span></a></li>
+                </ul>
+                <img id="NavRule" alt="航海规则" src="http://freshpin.com/cdn/img/NavRule.png">
+                <ul>
+                    <li><a href="privacy.html"><span>隐私权政策</span> <span class="pointer normal"></span><span
+                        class="pointer hover"></span></a></li>
+                    <li><a href="copyright.html"><span>版权</span> <span class="pointer normal"></span><span
+                        class="pointer hover"></span></a></li>
+                    <li><a href="terms.html"><span>使用条款</span> <span class="pointer normal"></span><span
+                        class="pointer hover"></span></a></li>
+                </ul>
+            </div>
+            <!-- #AboutLeft -->
+            <div id="AboutRight">
+                <h1>
+                    帮助</h1>
+                <!-- This is the generic FAQ section -->
+                <div id="faqs">
+                    <div id="pinning101">
+                        <h3>
+                            <a class="FAQTitle" href="help.html#">PinPolish是什么？</a></h3>
+                        <div class="FAQContent">
+                            <p>
+                                PinPolish是图象小河从450 curated站点。 它是简单和方便的 方式发现新的内容为您的stylebook或pinboard。</p>
+                            <p>
+                                因为我们想要一个容易的方法有新的想法我们的pinboards，我们开始了PinPolish。</p>
+                            <p>
+                                我们简单地想要新内容从初始源。 如此我们修造了PinPolish。</p>
+                            <p>
+                                与PinPolish您只浏览独特的图象，被过滤和被排序您要的方式 他们。 我们设法消灭所有复制品节省您的时间。 从大多数我们的内容 来自的初始源追踪是容易的。
+                                PinPolish是乐趣方式 迅速发现新的事。</p>
+                            <div class="AboutRule">
+                            </div>
+                        </div>
+                        <h3>
+                            <a class="FAQTitle" href="help.html#">什么是别针？</a></h3>
+                        <div class="FAQContent">
+                            <p>
+                                别针是某人在任何一个来源站点中增加了的图象。 您能 通过这些图象浏览和迅速发现新的内容为您自己的样式或pinboard。 要看别针的来源，您能老鼠在图象。</p>
+                            <div class="AboutRule">
+                            </div>
+                        </div>
+                        <h3>
+                            <a class="FAQTitle" href="help.html#">为什么您有像，当您老鼠在图象？</a></h3>
+                        <div class="FAQContent">
+                            <p>
+                                PinPolish带来您最近图象从您能使用的450个来源 创造您自己的委员会在PinPolish或在你的任一个喜爱的真正委员会。 如果您看您喜欢的图象，正义点击像，并且您能别住
+                                图象对您的委员会在Pinterest、Tumblr、Lockerz或者Flickr。</p>
+                            <div class="AboutRule">
+                            </div>
+                        </div>
+                        <h3>
+                            <a class="FAQTitle" href="help.html#">什么是被显示的二个链接，当您老鼠在 图象？</a></h3>
+                        <div class="FAQContent">
+                            <p>
+                                当您老鼠在所有图象在PinPolish，您将看二个链接。 第一个链接 是图象从的来源。 点击在这个链接把您带对图象 在来源站点。 第二个链接是安置了得图象下的类别
+                                在PinPolish。 点击在此把您带对PinPolish委员会为那个类别。
+                            </p>
+                            <div class="AboutRule">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+</html>

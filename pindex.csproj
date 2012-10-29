@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{107D18DA-0D7E-4E3D-8997-A8BD550ED4C9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PindexProd</RootNamespace>
+    <AssemblyName>PindexProd</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>..\DotNetOpenAuth-3.4.7.11121\Bin\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="EmailSender, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\EmailSender.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="HashLib, Version=2.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\HashLib.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer, Version=3.1.4.545, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\Administrator\Documents\Visual Studio 2010\Projects\photogallery\packages\ImageResizer.3.1.4\lib\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Plugins.DiskCache, Version=3.1.4.545, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\ImageResizer.Plugins.DiskCache.dll</HintPath>
+    </Reference>
+    <Reference Include="Intelligencia.UrlRewriter, Version=2.0.0.9, Culture=neutral, PublicKeyToken=0573f3650687980d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Intelligencia.UrlRewriter.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartThreadPool, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\SmartThreadPool.dll</HintPath>
+    </Reference>
+    <Reference Include="SubSonic.Core, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.60829.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="changePassword.html" />
+    <Content Include="copyright.html" />
+    <Content Include="default.aspx" />
+    <Content Include="editboard.aspx" />
+    <Content Include="editIcon.png" />
+    <Content Include="editpin.html" />
+    <Content Include="experience.html" />
+    <Content Include="FAQs.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="help.html" />
+    <Content Include="home.aspx" />
+    <Content Include="lib\blowery.Web.HttpCompress.dll" />
+    <Content Include="lib\blowery.Web.HttpCompress.pdb" />
+    <Content Include="lib\blowery.Web.HttpCompress.xml" />
+    <Content Include="lib\EFExtensions.dll" />
+    <Content Include="lib\EntityFramework.dll" />
+    <Content Include="lib\EntityFramework.xml" />
+    <Content Include="lib\LinqKit.dll" />
+    <Content Include="lib\SubSonic.Core.dll" />
+    <Content Include="logo-login.png" />
+    <Content Include="logo.png" />
+    <Content Include="PindexProd\dbml\sqlmetal.txt" />
+    <Content Include="PinPractices.html" />
+    <Content Include="privacy.html" />
+    <Content Include="resetpasstmpl.html" />
+    <Content Include="settings.aspx" />
+    <Content Include="signuptmpl.html" />
+    <Content Include="fbloggedin.html" />
+    <Content Include="fblogin.html" />
+    <Content Include="freshpinboardthumbs.js" />
+    <Content Include="freshpinchangepassword.js" />
+    <Content Include="freshpinsettings.js" />
+    <Content Include="lib\Facebook.dll" />
+    <Content Include="lib\Facebook.pdb" />
+    <Content Include="lib\Facebook.xml" />
+    <Content Include="lib\Intelligencia.UrlRewriter.dll" />
+    <Content Include="lib\Intelligencia.UrlRewriter.xml" />
+    <Content Include="lib\Ionic.Zip.Reduced.dll" />
+    <Content Include="lib\Newtonsoft.Json.dll" />
+    <Content Include="lib\Newtonsoft.Json.pdb" />
+    <Content Include="lib\Newtonsoft.Json.xml" />
+    <Content Include="lib\SevenZipSharp.dll" />
+    <Content Include="lib\SmartThreadPool.dll" />
+    <Content Include="lib\SmartThreadPool.pdb" />
+    <Content Include="lib\UrlRewritingNet.UrlRewriter.dll" />
+    <Content Include="freshpin.js" />
+    <Content Include="lib\HtmlAgilityPack.dll" />
+    <Content Include="lib\HtmlAgilityPack.pdb" />
+    <Content Include="lib\HtmlAgilityPack.XML" />
+    <Content Include="lib\ImageResizer.Plugins.DiskCache.dll" />
+    <Content Include="lib\ImageResizer.Plugins.DiskCache.pdb" />
+    <Content Include="lib\ImageResizer.Plugins.DiskCache.XML" />
+    <Content Include="LoggedIn.aspx" />
+    <Content Include="lib\DotNetOpenAuth.dll" />
+    <Content Include="lib\DotNetOpenAuth.pdb" />
+    <Content Include="lib\DotNetOpenAuth.xml" />
+    <Content Include="lib\EmailSender.dll" />
+    <Content Include="lib\EmailSender.pdb" />
+    <Content Include="lib\HashLib.dll" />
+    <Content Include="lib\HashLib.pdb" />
+    <Content Include="lib\ImageResizer.dll" />
+    <Content Include="lib\ImageResizer.pdb" />
+    <Content Include="lib\ImageResizer.xml" />
+    <Content Include="login.html" />
+    <Content Include="freshpinloggedin.js" />
+    <Content Include="freshpinhome.js" />
+    <Content Include="settings.html" />
+    <Content Include="tagging\boards.html" />
+    <Content Include="tagging\boards.css" />
+    <Content Include="tagging\dedupe.html" />
+    <Content Include="tagging\home.html" />
+    <Content Include="tagging\login.html" />
+    <Content Include="tagging\loginboards.html" />
+    <Content Include="tagging\tagframe.html" />
+    <Content Include="tagging\dedupe1.html" />
+    <Content Include="tagging\dedupe.css" />
+    <Content Include="tagging\login\css\style.css" />
+    <Content Include="tagging\login\images\freshPinLogo.jpg" />
+    <Content Include="tagging\login\images\logo.jpg" />
+    <Content Include="tagging\login\images\rounded.gif" />
+    <Content Include="Pin.aspx" />
+    <Content Include="signupnew.html" />
+    <Content Include="tagging\style.css" />
+    <Content Include="terms.html" />
+    <Content Include="User.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cat.resx</DependentUpon>
+    </Compile>
+    <Compile Include="cat.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cat.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="CookieUtil.cs" />
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editboard.aspx.cs">
+      <DependentUpon>editboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editboard.aspx.designer.cs">
+      <DependentUpon>editboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.ashx.cs">
+      <DependentUpon>home.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HttpHandlerBase.cs" />
+    <Compile Include="PageHandlerBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PindexProd\dbml\PindexProd.cs" />
+    <Compile Include="PindexProd\petapoco\PindexProd.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PindexProd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PindexProd\SubSonic\ActiveRecord\ActiveRecord.cs">
+      <DependentUpon>ActiveRecord.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PindexProd\SubSonic\ActiveRecord\Context.cs">
+      <DependentUpon>Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PindexProd\SubSonic\ActiveRecord\StoredProcedures.cs">
+      <DependentUpon>StoredProcedures.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PindexProd\SubSonic\ActiveRecord\Structs.cs">
+      <DependentUpon>Structs.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PindexProd\SubSonic\LinqTemplates\Classes.cs">
+      <DependentUpon>Classes.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PindexProd\SubSonic\LinqTemplates\Context.cs">
+      <DependentUpon>Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PindexProd\SubSonic\LinqTemplates\StoredProcedures.cs">
+      <DependentUpon>StoredProcedures.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PindexProd\SubSonic\LinqTemplates\Structs.cs">
+      <DependentUpon>Structs.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="settings.aspx.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settings.aspx.designer.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="strings.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>strings.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UnmanagedHttpModule.cs" />
+    <Compile Include="Pin.aspx.cs">
+      <DependentUpon>Pin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pin.aspx.designer.cs">
+      <DependentUpon>Pin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="POST.ashx.cs">
+      <DependentUpon>POST.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="GET.ashx.cs">
+      <DependentUpon>GET.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HttpModule.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="User.ashx.cs">
+      <DependentUpon>User.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="GET.ashx" />
+    <Content Include="POST.ashx" />
+    <Content Include="imgHandler.ashx" />
+    <Content Include="home.ashx" />
+    <None Include="new_file.php" />
+    <None Include="PindexProd\petapoco\PindexProd.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PindexProd.cs</LastGenOutput>
+    </None>
+    <None Include="PindexProd\petapoco\PetaPoco.Core.ttinclude" />
+    <None Include="PindexProd\petapoco\PetaPoco.Generator.ttinclude" />
+    <None Include="PindexProd\SubSonic\ActiveRecord\ActiveRecord.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ActiveRecord.cs</LastGenOutput>
+    </None>
+    <None Include="PindexProd\SubSonic\ActiveRecord\Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Context.cs</LastGenOutput>
+    </None>
+    <None Include="PindexProd\SubSonic\ActiveRecord\StoredProcedures.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StoredProcedures.cs</LastGenOutput>
+    </None>
+    <None Include="PindexProd\SubSonic\ActiveRecord\Structs.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Structs.cs</LastGenOutput>
+    </None>
+    <None Include="PindexProd\SubSonic\ARSettings.ttinclude" />
+    <None Include="PindexProd\SubSonic\ARSQLServer.ttinclude" />
+    <None Include="PindexProd\SubSonic\LinqTemplates\Classes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Classes.cs</LastGenOutput>
+    </None>
+    <None Include="PindexProd\SubSonic\LinqTemplates\Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Context.cs</LastGenOutput>
+    </None>
+    <None Include="PindexProd\SubSonic\LinqTemplates\StoredProcedures.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StoredProcedures.cs</LastGenOutput>
+    </None>
+    <None Include="PindexProd\SubSonic\LinqTemplates\Structs.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Structs.cs</LastGenOutput>
+    </None>
+    <None Include="PindexProd\SubSonic\LTSettings.ttinclude" />
+    <None Include="PindexProd\SubSonic\LTSQLServer.ttinclude" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="User.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PindexProd\edmx\" />
+    <Folder Include="PindexTagging\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Users\Administrator\Documents\Visual Studio 2010\Projects\HttpCompress\HttpCompress\HttpCompress.csproj">
+      <Project>{24B5F8DA-F11C-4B77-8BF9-5D2E4534DDE5}</Project>
+      <Name>HttpCompress</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Users\Administrator\Documents\Visual Studio 2010\Projects\Utilities\Utilities.csproj">
+      <Project>{67A8634E-E1DF-469A-9450-BB03C5411827}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cat.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>cat.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cat.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>cat.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="strings.resx">
+      <LastGenOutput>strings.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="strings.zh-CN.resx">
+      <LastGenOutput>strings.zh-CN.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

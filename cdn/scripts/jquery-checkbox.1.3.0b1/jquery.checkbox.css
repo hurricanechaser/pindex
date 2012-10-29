@@ -1,0 +1,25 @@
+.jquery-checkbox       {display: inline; font-size: 50px; line-height: 50px; cursor: pointer; cursor: hand;}
+.jquery-checkbox .mark {display: inline;}
+
+.jquery-checkbox img {vertical-align: middle; width:99px; height: 50px;}
+.jquery-checkbox img{background: transparent url(CheckBoxOnOff.png) no-repeat;}
+
+.jquery-checkbox img{
+	background-position: 0px 0px;
+}
+.jquery-checkbox-hover img{
+	background-position: 0px 0px;
+}
+.jquery-checkbox-checked img{
+	background-position: 0px -50px;
+}
+.jquery-checkbox-checked .jquery-checkbox-hover img {
+	background-position: 0px -50px;
+}
+
+.jquery-checkbox-disabled img{
+	background-position: 0px -50px;
+}
+.jquery-checkbox-checked .jquery-checkbox-disabled img{
+	background-position: 0px -50px;
+}

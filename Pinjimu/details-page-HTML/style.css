@@ -1,0 +1,301 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #faf4e8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 18px;
+    text-align: justify;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 18px;
+    text-align: justify;
+}
+
+#wrapper {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    background-color: #faf4e8;
+}
+
+#wrapperInner {
+    width: 1000px;
+    height: auto;
+    margin: 0;
+    float: left; /*border:1px solid black;*/
+}
+
+#header {
+    width: 1000px;
+    height: auto;
+    float: left;
+    margin: 0;
+}
+
+.bodyContent {
+    width: 1000px;
+    height: auto;
+    float: left;
+    margin: 10px 0; /* border:1px solid red;*/
+}
+
+.leftPanel {
+    width: 510px;
+    height: 610px;
+    float: left;
+    margin: 0;
+}
+
+.markPinkerton {
+    width: 507px;
+    height: 162px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid #efefef; /* -moz-box-shadow:3px 3px 3px 3px #ccc;-webkit-box-shadow: 3px 3px 3px 3px #ccc;box-shadow:3px 3px 3px 3px #ccc;*/
+}
+
+.markPinkertonImg {
+    width: 97px;
+    height: 146px;
+    float: left;
+    margin: 7px 5px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+    ;
+}
+
+    .markPinkertonImg img {
+        margin: 10px 8px 0 8px;
+    }
+
+    .markPinkertonImg p {
+        padding-left: 7px;
+    }
+
+.markPinkertonContentTriangle {
+    width: 8px;
+    height: 146px;
+    float: left;
+    margin: 7px 0 7px 5px;
+    border-right: 1px solid #efefef;
+}
+
+.markPinkertonContent {
+    width: 262px;
+    height: 146px;
+    float: left;
+    margin: 7px 5px 7px 0px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+    border-left: none;
+}
+
+.mpcTitle {
+    width: 45px;
+    height: auto;
+    float: left;
+    margin: 0px;
+    padding-left: 5px;
+    list-style-type: none;
+}
+
+    .mpcTitle li {
+        display: block;
+        text-align: right;
+        line-height: 20px;
+        color: #ab8063;
+    }
+
+.mpcTxt {
+    width: auto;
+    height: auto;
+    float: left;
+    margin: 0 5px;
+    padding-left: 5px;
+    list-style-type: none;
+}
+
+   .mpcTxt li {
+        display: block;
+        text-align: left;
+        line-height: 20px;
+        color: #000;
+    }
+
+.markPinkertonGlobe {
+    width: 100px;
+    height: 146px;
+    float: left;
+    margin: 7px 5px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+}
+
+    .markPinkertonGlobe img {
+        margin: 35px 12px;
+    }
+
+.photograph {
+    width: 507px;
+    height: 288px;
+    float: left;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 1px solid #efefef;
+    background-image: url(images/markPinkerton-photograph.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+    .photograph img {
+        margin: 15px 135px;
+    }
+
+.panelBadgesTags {
+    width: 250px;
+    height: 124px;
+    margin: 10px 0px;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #efefef;
+}
+
+    .panelBadgesTags h3 {
+        color: #575757;
+        margin-top: 5px;
+        padding-left: 5px;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+.rightPanel {
+    width: 475px;
+    height: 628px;
+    float: left;
+    margin: 0 0 0 10px;
+}
+
+.rpWrapper {
+    width: 475px;
+    height: 610px;
+    float: left;
+    margin: 0;
+    background-color: #e8e7e7;
+    overflow: auto;
+    position: relative;
+    border: 1px solid #ebe0d8;
+}
+
+.rpWrapperHeader {
+    width: 465px;
+    height: 23px;
+    margin: 0;
+    padding-left: 10px;
+    float: left;
+    background-image: url(images/bg-rp-wrapper-header.jpg);
+    background-repeat: repeat-x;
+    color: #666666;
+}
+
+.rpcontent {
+    width: 455px;
+    height: 100px;
+    margin: 13px 5px 0 5px;
+    float: left;
+}
+
+.rpcuserImage {
+    width: 58px;
+    height: 58px;
+    float: left;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+    #rpcuserImage img {
+        margin: 4px;
+    }
+
+.rpcPanelTriangle {
+    width: 7px;
+    height: 100px;
+    float: left;
+    margin: 0 0 0 7px;
+    border-left: 1px solid #d3b39c;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    .rpcPanelTriangle img {
+        width: 7px;
+        margin: 30px 0 0 -6px;
+    }
+
+.rpcPanel {
+    width: 380px;
+    height: 100px;
+    float: left;
+    margin: 0 0 0 -7px;
+    background-color: #fff;
+    border: 1px solid #d3b39c;
+    border-left: none;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.rpcPanelHeader {
+    width: 378px;
+    height: 23px;
+    float: left;
+    margin: 0 1px;
+    background-image: url(images/bg-rp-wrapper-header.jpg);
+    background-repeat: repeat-x;
+}
+
+    .rpcPanelHeader p {
+        padding: 0 10px;
+        margin: 0;
+    }
+
+    .rpcPanelHeader #countUser {
+        float: right;
+        color: #669900;
+        font-size: 14px;
+        margin: -15px 5px 0 0;
+    }
+
+.rpcPanelTxt {
+    width: 358px;
+    height: auto;
+    float: left;
+    margin: 0 10px;
+    padding: 5px 0px;
+    border-bottom: 1px solid #ebe0d8;
+}
+
+.rpcPanelText {
+    float: right;
+    margin-right: 5px;
+}
+
+.floated {
+    float: left;
+    position: relative; /* fixes many nasty IE bugs */
+}
+
+.clearfloat {
+    clear: both;
+    height: 0px;
+    line-height: 0px;
+    visibility: hidden;
+}

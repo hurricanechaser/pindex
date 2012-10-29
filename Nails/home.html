@@ -1,0 +1,387 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>PinPolish / Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-5">
+    <!--[if (gt IE 6)&(lt IE 9)]><link rel="stylesheet" href="ie7-and-up_fa603afa.css" type="text/css" media="all" /><![endif]-->
+    <link rel="icon" href="favicon.ico" />
+    <link href="http://cdn.pinpolish.com/nails.css" rel="stylesheet" type="text/css" />
+    <link href="http://cdn.pinpolish.com/font.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31949192-1']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="freshpin.js" type="text/javascript"></script>
+    <script src="freshpinhome.js" type="text/javascript"></script>
+    <script src="http://cdn.pinpolish.com/scripts/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="http://cdn.pinpolish.com/scripts/jeresig-jquery.hotkeys-0451de1/jquery.hotkeys.js"
+        type="text/javascript"></script>
+    <script src="http://cdn.pinpolish.com/scripts/scrolltopcontrol.js" type="text/javascript"></script>
+    <script src="http://cdn.pinpolish.com/scripts/jquery-jquery-tmpl/jquery.tmpl.min.js"
+        type="text/javascript"></script>
+    <script src="http://cdn.pinpolish.com/scripts/desandro-masonry/jquery.masonry.min.js"
+        type="text/javascript"></script>
+    <script src="http://cdn.pinpolish.com/scripts/farinspace-jquery.imgpreload-6e0e307/jquery.imgpreload.min.js"
+        type="text/javascript"></script>
+    <script src="http://cdn.pinpolish.com/scripts/cookies.js" type="text/javascript"></script>
+    <script src="http://cdn.pinpolish.com/scripts/jqmodal/jqModal.js" type="text/javascript"></script>
+    <script src="http://cdn.pinpolish.com/scripts/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script id="_webengage_script_tag" type="text/javascript">
+        window.webengageWidgetInit = window.webengageWidgetInit || function () {
+            webengage.init({
+                licenseCode: "~71680a6b"
+            }).onReady(function () {
+                webengage.render();
+            });
+        };
+        (function (d) {
+            var _we = d.createElement('script');
+            _we.type = 'text/javascript';
+            _we.async = true;
+            _we.src = (d.location.protocol == 'https:' ? "//ssl.widgets.webengage.com" : "//cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-3.0.js";
+            var _sNode = d.getElementById('_webengage_script_tag');
+            _sNode.parentNode.insertBefore(_we, _sNode);
+        })(document);
+    </script>
+    <script id="rank" type="text/x-jquery-tmpl">
+    <ul class="box" >       
+        <li class="img"><a href="javascript:void(0)" name="${i}"></a>
+        </li> 
+        <li style="display: block;font-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>${Name}</span></li>        
+        <li style="display: block;font-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>${type}:${count}</span></li>        
+    </ul>
+    </script>
+    <script id="articles" type="text/x-jquery-tmpl">
+    <div class="containerBox">
+        <a href="${source}" target="_blank" style="text-decoration: none;"><h2>${title} </h2></a>
+        <div class="desc">${desc}</div>
+        <div class="img-cont"><a href="${source}" target="_blank"><img src="${url}?width=380" style="width:380px;height:${height}px" /></a></div>
+    </div>
+    </script>
+    <script id="stores" type="text/x-jquery-tmpl">
+    <ul class="box" >
+        <li class="img"><a href="${source}" target="_blank">
+            <img src="${url}?width=190" style="height:height:${getHeight($data)}pxpx" alt="${title}" /></a>
+        </li>
+        <li><div class="name"><span>${title}</span></div></li>
+    </ul>
+    </script>
+    <script id="picTemplate" type="text/x-jquery-tmpl">
+        <ul class="box">
+            <li class="buttons"><a name="buttons" class="buttonLike" href="javascript:void(0)">Like</a> <a class="buttonPin" name="buttons"
+                                                                                href="javascript:void(0)">Re-pin</a> <a name="buttons" class="buttonComment" href="javascript:void(0)">Comment</a>
+            </li>
+            <li class="img"><a href="#pin=${PinID}">
+                                <img src="${url}?width=190" style="height:${getHeight($data)}px" alt="${title}" /></a>
+            </li>           
+            {{if isgamify($data) == true }}
+            <li class="gamify">
+                <img name="gmfht" src="http://cdn.pinpolish.com/img/prize.png" bimid="${BIMID}" />
+            </li>
+            {{/if}} 
+        <li class="boards">
+           <div class="post-pin">
+                <div class="post-text">Post This To</div>
+                <div class="post-icons"> <img href="${getUrl($data,'p')}" class="pinit" src="http://cdn.pinpolish.com/img/nails/pinterest_logo.png" width="24" height="24" title="Pinterest" border="0" />&nbsp; 
+                <img  class="pinit" src="http://cdn.pinpolish.com/img/nails/facebook_logo.png" width="24" height="24" title="Facebook" border="0" />&nbsp; 
+                <img  class="pinit" src="http://cdn.pinpolish.com/img/nails/tumblr_logo.png" width="24" height="24" title="Tumblr" border="0" /></div>
+           </div>
+        </li>
+        <li>
+            <div class="name">
+                <span>${title}</span></div>
+        </li>
+        {{if comments && comments.length}}
+        <li class="comments">{{tmpl(comments) "#comments"}} </li>
+        {{/if}} 
+     </ul>
+    </script>
+    <script id="comments" type="text/x-jquery-tmpl">
+      <div>
+         <a href="javascript:void(0)" ><img src="${Avatar}?height=20" /></a><p><a href="javascript:void(0)" title="Flickr">${Name}</a>${Comments}</p> 
+      </div>
+    </script>
+    <script id="cats" type="text/x-jquery-tmpl">
+        <a href="#cat=${escape(getVal($data,'Name'))}" style="overflow:hidden;" >${Name}</a>   
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="line1">
+            <div class="queryBox">
+                <input class="searchfield" type="text" value="Search over 500,000 Pins" id="query" />
+                <input class="searchbutton" type="button" id="query_button" />
+                <input class="scrollbutton" type="button" id="scroll_button" />
+            </div>
+            <div class="freshpinlogo">
+                <a href="." name="noblock">
+                    <img src="logo.png" /></a>
+                <div class="freshpinlogoTagline">
+                    450 Sources, Fresh Daily, Original Sources - Pin On!</div>
+            </div>
+            <div class="aboutus">
+                <ul class="navigation">
+                    <li><a id="about" name="noblock" href="about.html" class="nav">About<span></span></a>
+                        <ul>
+                            <li><a name="noblock" href="help.html">Help</a></li>
+                            <li class="beforeDivider"><a name="noblock" href="copyright.html">Copyright</a></li>
+                            <li><a href="javascript:void(0);" id="reqin">Request an Invite</a></li>
+                        </ul>
+                    </li>
+                    <li id="logininfo" class="logininfo"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="line2">
+            <div class="menu3">
+                <ul style="margin: 0px;">
+                    <li id="mlevel1"><a href="#articles">Articles</a><span class="bgNone"></span></li>
+                    <li id="mlevel2" class="menu"><a href=".">Styles</a><span></span></li>
+                    <li id="mlevel3" class="menu"><a href="javascript:void(0)">Top Hundreds</a> <span></span>
+                    </li>
+                    <li class="menu"><a href="#stores">Stores</a><span class="bgNone"></span></li>
+                    <li class="menu"><a href="javascript:void(0)" id="pts">Points</a><span class="bgNone"></span></li>
+                    <li class="menu"><a href="hairstyle">Hair Style</a> <span class="bgNone"></span>
+                    </li>
+                    <li class="menu"><a href="eyeshadow">Eye Shadow</a> <span class="bgNone"></span>
+                    </li>
+                    <li class="menu"><a href="lipstick">Lip Stick</a> <span class="bgNone"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="submenu" id="submenu2" style="display: none">
+            <div>
+                <a class="none" href="javascript:rcat('Color');"><strong>Color</strong></a><br />
+                <a href="javascript:rcat('Multi (3+)');">Multi (3+)</a> <a href="javascript:rcat('Two-Tone');">
+                    Two-Tone</a> <a href="javascript:rcat('Metallic');">Metallic</a> <a href="javascript:rcat('Red');">
+                        Red</a> <a href="javascript:rcat('Orange');">Orange</a> <a href="javascript:rcat('Yellow');">
+                            Yellow</a> <a href="javascript:rcat('Green');">Green</a> <a href="javascript:rcat('Teal');">
+                                Teal</a> <a href="javascript:rcat('Blue');">Blue</a> <a href="javascript:rcat('Purple');">
+                                    Purple</a> <a href="javascript:rcat('Pink');">Pink</a> <a href="javascript:rcat('White');">
+                                        White</a> <a href="javascript:rcat('Gray');">Gray</a> <a href="javascript:rcat('Black');">
+                                            Black</a> <a href="javascript:rcat('Brown');">Brown</a>
+                <br />
+                <a class="none" href="javascript:rcat('Finish');"><strong>Finish</strong></a><br />
+                <a href="javascript:rcat('Shiny');">Shiny</a> <a href="javascript:rcat('Matte');">Matte</a>
+                <a href="javascript:rcat('Glitter');">Glitter</a>
+                <br />
+                <a class="none" href="javascript:rcat('Difficulty');"><strong>Difficulty</strong></a><br />
+                <a href="javascript:rcat('Simple');">Simple</a> <a href="javascript:rcat('Medium');">
+                    Medium</a> <a href="javascript:rcat('Hard');">Hard</a> <a href="javascript:rcat('Crazy');">
+                        Crazy</a>
+                <br />
+                <a class="none" href="javascript:rcat('Style');"><strong>Style</strong></a><br />
+                <a href="javascript:rcat('Pattern');">Pattern</a> <a href="javascript:rcat('Picture');">
+                    Picture</a> <a href="javascript:rcat('Gradient');">Gradient</a> <a href="javascript:rcat('3D');">
+                        3D</a> <a href="javascript:rcat('Airbrush');">Airbrush</a> <a href="javascript:rcat('FreeStyle');">
+                            FreeStyle</a> <a href="javascript:rcat('Stamp');">Stamp</a> <a href="javascript:rcat('Stilleto');">
+                                Stilleto</a>
+                <br />
+                <a class="none" href="javascript:rcat('With People');"><strong>With People</strong></a><br />
+                <a href="javascript:rcat('Face');">Face</a> <a href="javascript:rcat('Outfit');">Outfit</a>
+                <a href="javascript:rcat('Pedicures');">Pedicures</a> <a href="javascript:rcat('Accessories');">
+                    Accessories</a>
+                <br />
+                <a class="none" href="javascript:rcat('How-To');"><strong>How-To</strong></a><br />
+                <a href="javascript:rcat('HowToGallery');">How To Gallery</a>
+                <br />
+                <a class="none" href="javascript:rcat('Products');"><strong>Products</strong></a><br />
+                <a href="javascript:rcat('Nail Polish');">Nail Polish</a> <a href="javascript:rcat('Pattern Tools');">
+                    Pattern Tools</a> <a href="javascript:rcat('Manicure');">Manicure</a>
+                <br />
+            </div>
+        </div>
+        <div class="submenu" id="submenu3" style="display: none; width: 160px">
+            <div>
+                <a class="none" name="mf" href="#rank=mf">Most Followers</a><br />
+                <a class="none" name="ml" href="#rank=ml">Most Likes</a><br />
+                <a class="none" name="mp" href="#rank=mp">Most Pins</a><br />
+                <a class="none" name="mpp" href="#rank=mpp">Most Popular Pins</a><br />
+            </div>
+        </div>
+        <div class="submenu" id="submenu5" style="display: none; width: 160px;">
+            <div>
+                <a class="none" href="HostPinParty">Host a Pin Party</a><br />
+                <a class="none" href="experience">The Experience</a><br />
+                <a class="none" href="FAQs">FAQs</a><br />
+                <a class="none" href="DoItNow">Do It Now</a><br />
+            </div>
+        </div>
+    </div>
+    <div class="gallery">
+    </div>
+    <div id="articlesCont" style="display: none;">
+        <h1 id="articlesheader" class="art-heading1">
+            Articles
+        </h1>
+        <div id="articlesLayout">
+        </div>
+    </div>
+    <div id="gamify" class="popup">
+        <div class="modal">
+            <div class="header1">
+                <div class="title">
+                    <h2>
+                        Comment</h2>
+                </div>
+                <div id="commentclose" class="close">
+                    <a href="javascript:void(0)">x</a></div>
+            </div>
+            <div class="cont">
+            </div>
+        </div>
+    </div>
+    <div id="pin" style="position: absolute; box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+        -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4); display: none; -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+        margin-top: 0; margin-right: auto; margin-bottom: 32px; margin-left: auto; padding-top: 0;
+        padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: #FFFFFF;
+        z-index: 2; text-align: center; left: 50%;">
+        <div style="clear: both; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+            padding-top: 20px; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+        </div>
+        <div id="PinActionButtons" style="height: 26px; width: 280px; float: left; overflow: hidden;
+            margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 30px; padding-top: 0;
+            padding-right: 0; padding-bottom: 0; padding-left: 13px; background-image: url('http://cdn.pinpolish.com/img/detailiconBg.jpg');
+            background-repeat: no-repeat; background-position: left top;">
+            <a name="buttons" href="javascript:void(0)" style="font-weight: bold; color: #221919;
+                text-decoration: none; outline: none;">
+                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
+                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
+                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 30px; background-image: url('http://cdn.pinpolish.com/img/nails/likeIconDetailPage.png');
+                    background-repeat: no-repeat; background-position: left 5px;" align="left">
+                    Like</div>
+            </a><a name="buttons" href="javascript:void(0)" style="font-weight: bold; color: #221919;
+                text-decoration: none; outline: none;">
+                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
+                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
+                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 23px; background-image: url('http://cdn.pinpolish.com/img/nails/repinIconDetailPage.png');
+                    background-repeat: no-repeat; background-position: left 4px;" align="left">
+                    Repin</div>
+            </a><a name="buttons" href="javascript:void(0)" style="font-weight: bold; color: #221919;
+                text-decoration: none; outline: none;">
+                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
+                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
+                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 25px; background-image: url('http://cdn.pinpolish.com/img/nails/commentIconDetailPage.png');
+                    background-repeat: no-repeat; background-position: left 4px;" align="left">
+                    Comment</div>
+            </a>
+        </div>
+        <div style="clear: both; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+            padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+        </div>
+        <div style="display: block; position: relative; overflow: hidden; margin-top: 20px;
+            margin-right: 30px; margin-bottom: 30px; margin-left: 30px; padding-top: 0; padding-right: 0;
+            padding-bottom: 0; padding-left: 0; background-color: #fff;">
+            <a id="pinimgsource" target="_blank">
+                <img id="pinCloseupImage" alt="Pinned Image" style="display: block; margin-top: 0;
+                    margin-right: auto; margin-bottom: 0; margin-left: auto; border-top-width: 0;
+                    border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" /></a></div>
+        <p id="pintitle" style="margin: 0px; color: #524D4D; font-size: 13px; font-weight: bold;
+            word-break: break-word; padding-top: 0; padding-right: 0; padding-bottom: 0;
+            padding-left: 0;">
+        </p>
+    </div>
+    <div id="signUpWraper" class="signUpWraper">
+        <div class="LogoHeader">
+            <div style="margin: 0 auto; margin-left: 300px;">
+                <a href=".">
+                    <img src="logo-login.png" />
+                </a>
+            </div>
+        </div>
+        <div style="text-align: center; line-height: 80px; font-size: 32px; font-weight: bold;">
+            <span>Sign up for an invite to join PinPolish.</span></div>
+        <div>
+            <div style="text-align: center; line-height: 40px; font-size: 15px;">
+                <span>or <a href="javascript:void(0)" id="rilogint" style="color: #a19191">Login </a>
+                    to your account.</span></div>
+            <div>
+                <div class="inputBox">
+                    <input type="text" class="" id="invitationBox">
+                </div>
+                <div class="BlueButton">
+                    <a href="javascript:void(0)" id="reqinvite">Request Invitation</a>
+                </div>
+                <div style="clear: both">
+                </div>
+                <div style="text-align: center;">
+                    <span style="color: red; font-size: 14px; font-weight: bold;" id="err"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="login" class="login">
+        <div class="freshpinlogoLoginPage">
+            <a href="." name="noblock">
+                <img src="logo-login.png" /></a>
+        </div>
+        <div class="socialButtons">
+            <div class="fbTw fl">
+                <a name="noblock" href="https://www.facebook.com/dialog/oauth?client_id=345515548837116&redirect_uri=http%3A%2F%2Fpinpolish.com%2Ffbloggedin.aspx&scope=user_about_me&response_type=token">
+                    <img id="logwfb" style="cursor: pointer;" src="http://cdn.pinpolish.com/img/logInWithFB.gif" /></a>
+            </div>
+            <!--  <div class="fbTw fr">
+                <img class="logwtw" style="cursor: pointer;" src="http://cdn.pinpolish.com/img/logInWithTW.gif" /></div>-->
+        </div>
+        <div class="loginBar">
+            <img id="logbar" src="http://cdn.pinpolish.com/img/login_bar.png" /></div>
+        <div class="loginCont">
+            <fieldset class="inputs">
+                <input type="text" required="" autofocus="" placeholder="Email Address" id="user" />
+            </fieldset>
+            <!--<label for="user" style="color: #FF0000">*</label>-->
+            <fieldset class="inputs">
+                <input type="password" required="" placeholder="Password" id="pass" />
+            </fieldset>
+            <!--<label for="pass" style="color: #FF0000">*</label-->
+            <div class="loginBut fl">
+                <input type="image" value="Login" id="loginbutton" src="http://cdn.pinpolish.com/img/loginBut.gif" /></div>
+            <div class="resetPassword fr">
+                <a id="fup" href="javascript:void(0)">Forgot your password?</a></div>
+            <div style="clear: both;">
+            </div>
+            <span style="color: red; font-family: arial; font-size: 12px; padding: 0;" id="Span1">
+            </span>
+        </div>
+    </div>
+    <div id="fbd" class="popup fbd">
+        <div class="modal">
+            <div class="header1">
+                <div class="title">
+                    <h2>
+                        Comment</h2>
+                </div>
+                <div id="fbdclose" class="close">
+                    <a href="javascript:void(0)">x</a></div>
+            </div>
+            <div class="cont">
+                <ul>
+                    <li>
+                        <p class="ques">
+                            how helpful was this...</p>
+                    </li>
+                    <li class="choice">
+                        <input type="radio" name="choosefbd" /><span>this was super easy</span> </li>
+                    <li class="choice">
+                        <input type="radio" name="choosefbd" /><span>this was average</span> </li>
+                    <li class="choice">
+                        <input type="radio" name="choosefbd" /><span>this was very hard</span> </li>
+                    <li class="choice">
+                        <input type="radio" name="choosefbd" /><span>only a professional could this.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

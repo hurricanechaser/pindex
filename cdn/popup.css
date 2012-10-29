@@ -1,0 +1,60 @@
+/* jqModal base Styling courtesy of;
+	Brice Burgess <bhb@iceburg.net> */
+
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+	the Window's z-index value will be set to 3000 by default (via jqModal.js). */
+
+.pinterest
+{
+    border: 1px solid #C0C0C0;
+    display: none;
+    position: fixed;
+    top: 100%;
+    left: 20%;
+    width: 800px;
+    height: 600px;
+    background-color: #FFFFFF;
+}
+
+.popup
+{
+    border-width: 0px;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.pinterest .close
+{
+    cursor: pointer;
+    float: right;
+}
+.pinterest .load
+{
+    bottom: 0px;
+    left: 0px;
+    position:absolute;
+}
+.pinterest .pinit
+{
+    background-image: url('img/pinit_preview_none.png');
+    background-repeat: no-repeat;
+}
+.jqmOverlay
+{
+    background-color: #FFFFFF;
+}
+
+/* Background iframe styling for IE6. Prevents ActiveX bleed-through (<select> form elements, etc.) */
+* iframe.jqm
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: expression(this.parentNode.offsetWidth+'px');
+    height: expression(this.parentNode.offsetHeight+'px');
+}
+
+
+
+

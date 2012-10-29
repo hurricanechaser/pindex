@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="pindex.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ExecAllImages" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">function getAttribute(tag, attr) { var elems = document.getElementsByTagName(tag); var urls = []; for (var i = 0, l = elems.length; i &lt; l; i++) {urls.push(elems[i][attr]);} return urls.join(',');};getAttribute('img', 'src') ;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

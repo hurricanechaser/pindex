@@ -1,0 +1,80 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#"    #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Linq" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="C:\inetpub\wwwroot\pindex\Pinjimu\lib\Dapper.dll" #>
+<#@ assembly name="C:\inetpub\wwwroot\pindex\Pinjimu\lib\DapperExtensions.dll" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Linq" #>
+
+<#@ import namespace="Dapper" #>
+<#@ import namespace="DapperExtensions" #>
+<#@ output extension=".txt" #>
+
+<#
+   
+    string cs=  "Data Source=botcodesql.cloudapp.net;Initial Catalog=NailsProd;Persist Security Info=True;User ID=pinadmin;Password=Fresh123!@#;connection timeout=60;Max Pool Size = 1000;Min Pool Size = 100;";
+    SqlConnection conn =new  SqlConnection(cs); 
+    conn.Open();
+    IEnumerable<Category> categories =conn.Query<Category>("Select * from Category where ParentId =43 order by Name"); 
+    Temp.cats=categories;  
+    //WriteLine(@"<ul class=""pureCssMenu"">");
+    IEnumerable<Category> nulls=categories.Where<Category>(o=>!o.ParentID.HasValue);
+    foreach(Category o in categories){       
+        bool hc=haschild(o.ID);             
+        WriteLine(string.Format(@"  <li><a href=""javascript:void(0);"" catid=""{0}""  name=""sellist""><% =cat.{1} %></a></li>",o.ID, o.Name.Replace(" ","_")));
+        //if(hc)
+            //writesub(o.ID);
+       
+
+        //WriteLine(string.Format(@"<data name=""{0}"" xml:space=""preserve""><value>{1}</value></data>",o.Name.Replace(' ','_'),o.Name));
+       
+    }
+    //WriteLine("</ul>");
+    conn.Close();  
+        
+ #>
+<#+ 
+    public class Category{
+        public int ID{
+            get;
+            set;
+        }
+        public string Name{
+            get;
+            set;
+        }
+        public int? ParentID{
+            get;
+            set;
+        }
+    }
+    public static class Temp
+    {
+        public static IEnumerable<Category> cats;
+    }
+    string cs=  "Data Source=161.58.92.137;Initial Catalog=Pinjimu;Persist Security Info=True;User ID=sa;Password=password123!@#;connection timeout=60;Max Pool Size = 1000;Min Pool Size = 100;";
+    public bool haschild(int id){       
+        return Temp.cats.Where(o=>o.ParentID==id).Count()>0;
+    }
+    
+    public void writesub(int id){            
+       
+        IEnumerable<Category> categories = Temp.cats;     
+        WriteLine(@"<ul class=""pureCssMenu"">");
+        IEnumerable<Category> notnull=categories.Where<Category>(o=>o.ParentID==id);
+        foreach(Category o in notnull){       
+            bool hc=haschild(o.ID);                 
+            WriteLine(string.Format(@"<li ><a  href=""javascript:h('cat','{0}');"">{1}</a>",o.Name,hc?string.Format("<span><% =cat.{0} %></span>", o.Name.Replace(" ","_")):string.Format("<% =cat.{0} %>", o.Name.Replace(" ","_"))));
+            if(hc)
+                writesub(o.ID);
+            WriteLine("</li>");
+       
+        }
+        WriteLine("</ul>");
+    }
+        
+ #>

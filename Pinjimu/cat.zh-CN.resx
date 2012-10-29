@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Accessories_and_Decor" xml:space="preserve">
+    <value>装饰配件</value>
+  </data>
+  <data name="Bedroom_Products" xml:space="preserve">
+    <value>床上用品</value>
+  </data>
+  <data name="Floors" xml:space="preserve">
+    <value>地板砖和木地板</value>
+  </data>
+  <data name="Furniture" xml:space="preserve">
+    <value>家具</value>
+  </data>
+  <data name="Hardware" xml:space="preserve">
+    <value>五金配件</value>
+  </data>
+  <data name="Home_Office_Products" xml:space="preserve">
+    <value>家庭办公用品</value>
+  </data>
+  <data name="Kids_Products" xml:space="preserve">
+    <value>儿童房</value>
+  </data>
+  <data name="Kitchen_Products" xml:space="preserve">
+    <value>厨房</value>
+  </data>
+  <data name="Lighting" xml:space="preserve">
+    <value>灯具</value>
+  </data>
+  <data name="Outdoor_Products" xml:space="preserve">
+    <value>庭院用品</value>
+  </data>
+  <data name="Storage_and_Organization" xml:space="preserve">
+    <value>储藏和收纳</value>
+  </data>
+  <data name="Tabletop" xml:space="preserve">
+    <value>桌面摆设</value>
+  </data>
+  <data name="Windows_and_Doors" xml:space="preserve">
+    <value>门和窗</value>
+  </data>
+  <data name="Window_Treatment" xml:space="preserve">
+    <value>窗帘</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>园林</value>
+  </data>
+  <data name="Staircase" xml:space="preserve">
+    <value>楼梯</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>物品</value>
+  </data>
+  <data name="Rooms" xml:space="preserve">
+    <value>空间</value>
+  </data>
+  <data name="Following" xml:space="preserve">
+    <value>我关注的人</value>
+  </data>
+  <data name="Popular" xml:space="preserve">
+    <value>热门</value>    
+  </data>
+  <data name="Bedroom_Products" xml:space="preserve">
+    <value>床上用品</value>
+  </data>
+  <data name="Kids" xml:space="preserve">
+    <value>儿童用品</value>
+  </data>
+  <data name="Basement" xml:space="preserve">
+    <value>地下室</value>
+  </data>
+  <data name="Bathroom" xml:space="preserve">
+    <value>浴室</value>
+  </data>
+  <data name="Bedroom" xml:space="preserve">
+    <value>卧室</value>
+  </data>
+  <data name="Closet" xml:space="preserve">
+    <value>衣帽间</value>
+  </data>
+  <data name="Dining_Room" xml:space="preserve">
+    <value>餐厅</value>
+  </data>
+  <data name="Entry" xml:space="preserve">
+    <value>玄关</value>
+  </data>
+  <data name="Exterior" xml:space="preserve">
+    <value>外景</value>
+  </data>
+  <data name="Family_Room" xml:space="preserve">
+    <value>家庭房</value>
+  </data>
+  <data name="Garage_and_Shed" xml:space="preserve">
+    <value>车库</value>
+  </data>
+  <data name="Hall" xml:space="preserve">
+    <value>走廊</value>
+  </data>
+  <data name="Home_Gym" xml:space="preserve">
+    <value>健身房</value>
+  </data>
+  <data name="Home_Office" xml:space="preserve">
+    <value>书房</value>
+  </data>
+  <data name="Kitchen" xml:space="preserve">
+    <value>厨房用品</value>
+  </data>
+  <data name="Laundry_Room" xml:space="preserve">
+    <value>洗衣间</value>
+  </data>
+  <data name="Living_Room" xml:space="preserve">
+    <value>客厅</value>
+  </data>
+  <data name="Media_Room" xml:space="preserve">
+    <value>媒体室</value>
+  </data>
+  <data name="Patio" xml:space="preserve">
+    <value>阳台</value>
+  </data>
+  <data name="Pool" xml:space="preserve">
+    <value>泳池</value>
+  </data>
+  <data name="Porch" xml:space="preserve">
+    <value>门廊</value>
+  </data>
+  <data name="Powder_Room" xml:space="preserve">
+    <value>浴室</value>
+  </data>
+  <data name="Wine_Cellar" xml:space="preserve">
+    <value>酒窖</value>
+  </data>
+  <data name="Bath_Products" xml:space="preserve">
+    <value>卫浴用品</value>
+  </data>
+  <data name="Fabric" xml:space="preserve">
+    <value>织物</value>
+  </data>
+  <data name="Asian" xml:space="preserve">
+    <value>亚洲的</value>
+  </data>
+  <data name="Contemporary" xml:space="preserve">
+    <value>现代的</value>
+  </data>
+  <data name="Eclectic" xml:space="preserve">
+    <value>混搭</value>
+  </data>
+  <data name="Mediterranean" xml:space="preserve">
+    <value>地中海</value>
+  </data>
+  <data name="Modern" xml:space="preserve">
+    <value>现代</value>
+  </data>
+  <data name="Traditional" xml:space="preserve">
+    <value>传统</value>
+  </data>
+  <data name="Tropical" xml:space="preserve">
+    <value>热带</value>
+  </data>
+  <data name="Housekeeping" xml:space="preserve">
+    <value>家政</value>
+  </data>
+  <data name="Spaces" xml:space="preserve">
+    <value>空间</value>
+  </data>
+  <data name="Style" xml:space="preserve">
+    <value>风格</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>所有</value>
+  </data>
+  <data name="Curtains" xml:space="preserve">
+    <value>窗帘</value>
+  </data>
+  <data name="Trends" xml:space="preserve">
+    <value>趋势</value>
+  </data>
+</root>

@@ -1,0 +1,1118 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>PinPolish / Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-5">
+    <!--[if (gt IE 6)&(lt IE 9)]><link rel="stylesheet" href="ie7-and-up_fa603afa.css" type="text/css" media="all" /><![endif]-->
+    <link rel="icon" href="favicon.ico" />
+    <link href="http://freshpin.com/cdn/nails.css" rel="stylesheet" type="text/css" />
+    <link href="http://freshpin.com/cdn/font.css" rel="stylesheet" type="text/css" />
+    <link href="http://freshpin.com/cdn/popup.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31949192-1']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link href="http://freshpin.com/cdn/add.css" rel="stylesheet" type="text/css" />
+    <script src="freshpin.js" type="text/javascript"></script>
+    <link href="http://freshpin.com/cdn/dropdownMenu.css" rel="stylesheet" type="text/css" />
+    <link href="http://freshpin.com/cdn/loggedin.css" rel="stylesheet" type="text/css" />
+    <script src="freshpinloggedin.js" type="text/javascript"></script>
+    <script src="freshpinhome.js" type="text/javascript"></script>
+    <script src="http://freshpin.com/cdn/scripts/jeresig-jquery.hotkeys-0451de1/jquery.hotkeys.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/scrolltopcontrol.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/jquery-jquery-tmpl/jquery.tmpl.min.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/desandro-masonry/jquery.masonry.min.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/jqmodal/jqModal.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/jquery-ui-1-1.8.18.custom/development-bundle/ui/minified/jquery.ui.core.min.js"
+        type="text/javascript"></script>
+    <script src="http://freshpin.com/cdn/scripts/jquery-ui-1-1.8.18.custom/development-bundle/ui/minified/jquery.ui.widget.min.js"
+        type="text/javascript"></script>
+    <script src="http://freshpin.com/cdn/scripts/jquery-ui-1-1.8.18.custom/development-bundle/ui/minified/jquery.ui.mouse.min.js"
+        type="text/javascript"></script>
+    <script src="http://freshpin.com/cdn/scripts/jquery-ui-1-1.8.18.custom/development-bundle/ui/minified/jquery.ui.draggable.min.js"
+        type="text/javascript"></script>
+    <script src="http://freshpin.com/cdn/scripts/jeresig-jquery.hotkeys-0451de1/jquery.hotkeys.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/cookies.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/farinspace-jquery.imgpreload-6e0e307/jquery.imgpreload.min.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/jquery.easing.1.3.js"></script>
+    <script src="http://freshpin.com/cdn/scripts/jquery-hashchange/jquery.ba-hashchange.min.js"
+        type="text/javascript"></script>
+    <script id="_webengage_script_tag" type="text/javascript">
+        window.webengageWidgetInit = window.webengageWidgetInit || function () {
+            webengage.init({
+                licenseCode: "~71680a6b"
+            }).onReady(function () {
+                webengage.render();
+            });
+        };
+
+        (function (d) {
+            var _we = d.createElement('script');
+            _we.type = 'text/javascript';
+            _we.async = true;
+            _we.src = (d.location.protocol == 'https:' ? "//ssl.widgets.webengage.com" : "//cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-3.0.js";
+            var _sNode = d.getElementById('_webengage_script_tag');
+            _sNode.parentNode.insertBefore(_we, _sNode);
+        })(document);
+    </script>
+    <script id="boards" type="text/x-jquery-tmpl">
+    <div class="pinBoard">
+        <h3>
+            <a href="#board=${name}" >${name}</a></h3>
+        <h4>
+            ${pins} pins</h4>
+        <div class="board">          
+          {{each images}}            
+             {{if $index == 0}} 
+                <img src="${getVal($value,'url')}?width=222" style="height:${getHeight($value,222)}px" />
+             {{else}}
+                <span><img src="${getVal($value,'url')}?width=55"  /></span>
+             {{/if}}
+          {{/each}}          
+            <div style="clear: both;">
+            </div>
+            <div class="boardfooter" style="cursor:pointer;" name="edit" boardid="${id}">
+                <strong>Edit</strong></div>
+        </div>
+    </div>
+    </script>
+    <script id="rank" type="text/x-jquery-tmpl">
+    <ul class="box" >       
+        <li class="img"><a href="javascript:void(0)" name="${i}"></a>
+        </li>       
+        <li style="display: block;paddingfont-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>${Name}</span></li>        
+        <li style="display: block;font-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>${type}:${count}</span></li>        
+    </ul>
+    </script>
+    <script id="articles" type="text/x-jquery-tmpl">
+     <div class="containerBox">
+    <a href="${source}" target="_blank" style="text-decoration: none;"><h2>${title} </h2></a>
+    <div class="desc">${desc}</div>
+    <div class="img-cont"><a href="${source}" target="_blank"><img src="${url}?width=380" style="width:380px;height:${height}px" /></a></div>
+</div>
+    </script>
+    <script id="stores" type="text/x-jquery-tmpl">
+     <ul class="box" >
+        <li class="img"><a href="${source}" target="_blank">
+            <img src="${url}?width=190" style="height:${height}px" alt="${title}" /></a>
+        </li>
+        <li> <div class="name"><span>${title}</span></div> </li>
+    </ul>
+    </script>
+    <script id="picTemplate" type="text/x-jquery-tmpl">
+        <ul class="box" >
+            <li class="buttons">
+                {{if editable == true && FreshPin.authenticated() == true}}
+                <a href="javascript:void(0)" imageid="${ID}" bimid="${BIMID}" class="button" name="edit" >Edit</a>
+                {{else}}
+                <a href="javascript:void(0)" imageid="${ID}" bimid="${BIMID}" name="like"  class="buttonLike{{if liked}} buttonLikeDis{{/if}}">Like</a>
+                {{/if}}
+                <a href="javascript:void(0)" imageid="${ID}" bimid="${BIMID}" url="${url}?width=190" name="pin" class="buttonPin">Re-pin</a>
+                <a href="javascript:void(0)" imageid="${ID}" style="display:none;" bimid="${BIMID}" name="comment" class="buttonComment">Comment</a>
+            </li>
+            <li class="img"><a href="#pin=${PinID}"> 
+                                <img src="${url}?width=190" style="height:${getHeight($data)}px" /></a>
+            </li>
+            <li class="boards">
+                <div class="post-pin">
+<div class="post-text">Post This To</div>
+<div class="post-icons"> <img href="${getUrl($data,'p')}" class="pinit" src="http://freshpin.com/cdn/img/nails/pinterest_logo.png" width="24" height="24" title="Pinterest" border="0" />&nbsp; 
+  <img  class="pinit" src="http://freshpin.com/cdn/img/nails/facebook_logo.png" width="24" height="24" title="Facebook" border="0" />&nbsp; 
+  <img  class="pinit" src="http://freshpin.com/cdn/img/nails/tumblr_logo.png" width="24" height="24" title="Tumblr" border="0" /></div>
+</div>
+                       
+        </li>
+        <li> <div class="name"><span>${title}</span></div> </li>
+         {{if comments && comments.length}}
+                <li class="comments" >     
+       {{tmpl(comments) "#comments"}}
+       </li>  
+       {{/if}}       
+      <li class="addComment">       
+        <span>
+            <img src="${FreshPin.getAV()}" width="22" height="22" /></span>
+        <textarea name="addc"  ></textarea>
+        <a sc="sc" bimid="${BIMID}" href="javascript:void(0)">Comment</a>         
+    </ul>
+    </script>
+    <script id="cats" type="text/x-jquery-tmpl">
+   <a  href="#cat=${escape(getVal($data,'Name'))}" style="overflow:hidden;" >${Name}</a>   
+    </script>
+    <script id="comments" type="text/x-jquery-tmpl">
+     <div>
+      <a href="javascript:void(0)" ><img src="${getUplUImg($data)}?height=20"  /></a> <p><a href="javascript:void(0)" title="Flickr">${Name}</a> ${Comments}</p> 
+     </div>
+    </script>
+    <script id="cattpl" type="text/x-jquery-tmpl">
+    <li catid="${ID}" index="${index}"><a href="javascript:void(0)" >${Name}</a></li>
+    </script>
+    <script id="boardstpl" type="text/x-jquery-tmpl">
+    <li boardid="${ID}" style="cursor:pointer;" index="${index}">${Name}</li>
+    </script>
+    <script id="subcattpl" type="text/x-jquery-tmpl"> 
+        <ul class="subNav">
+            <li catid="${ID}" index="${index}"><a href="javascript:void(0)" >${Name}</a></li>
+        </ul>
+    </script>
+    <script id="ebboardCollaborators" type="text/x-jquery-tmpl"> 
+<div name="cont"  >
+<a href="${getUD($data)}" style="font-weight: bold; color: #221919;text-decoration: none; outline: none; float: left; font-size: inherit; height: 36px;width: 36px;">
+<img src="${getUplUImg($data)}?width=36" style="display: block; width: 36px !important; height: auto !important; border-top-width: 0;border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" /></a>
+<a href="${getUD($data)}" style="font-weight: bold; color: #221919;text-decoration: none; outline: none; float: left; font-size: inherit; width: 198px;overflow: hidden; white-space: nowrap; text-overflow: ellipsis; margin-top: 7px;
+ margin-right: 18px; margin-bottom: 0; margin-left: 10px;">${FirstName}</a><a name="rem" un="${Name}"  style="font-weight: bold;color: #524d4d; text-decoration: none; outline: none; position: relative; display: inline-block;
+ text-align: center; line-height: 1em; border-radius: 6px; -moz-border-radius: 6px;
+ -webkit-border-radius: 6px; -moz-transition-property: color,
+ -moz-box-shadow, text-shadow; -moz-transition-duration: .05s; -moz-transition-timing-function: ease-in-out; -webkit-transition-property: color, -webkit-box-shadow, text-shadow;
+ -webkit-transition-duration: .05s; -webkit-transition-timing-function: ease-in-out;
+ box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+ -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+ -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+ cursor: pointer; font-size: 18px; text-shadow: 0 1px rgba(255,255,255,0.9); float: left;
+ margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 10px; padding-top: .45em;
+ padding-right: .825em; padding-bottom: .45em; padding-left: .825em; border-top-color: transparent;
+ border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent;
+ border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+ border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+ border-left-width: 1px;" ><strong style="font-style: normal; font-weight: bold; position: relative;
+z-index: 2;">Remove</strong><span style="position: absolute; z-index: 1; top: -1px;
+right: -1px; bottom: -1px; left: -1px; display: block; opacity: 1; border-radius: 6px;
+-moz-border-radius: 6px; -webkit-border-radius: 6px; box-shadow: inset 0 1px rgba(255,255,255,0.35);
+-moz-box-shadow: inset 0 1px
+rgba(255,255,255,0.35); -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35); -moz-transition-property: opacity; -moz-transition-duration: 0.5s;
+-moz-transition-timing-function: ease-in-out; -webkit-transition-property: opacity;
+-webkit-transition-duration: 0.5s; -webkit-transition-timing-function: ease-in-out;
+font-size: 18px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfafb', endColorstr='#f0eded');
+border-top-color: #bbb; border-right-color: #bbb; border-bottom-color: #bbb;
+border-left-color: #bbb; border-top-style: solid; border-right-style: solid;
+border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #f0eded;
+background-position: 0%
+0%;"></span></a>
+        <div style="clear:both;" />
+        </div>
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="line1">
+            <div class="queryBox">
+                <input type="text" id="query" value="查寻500,000个别针" class="searchfield">
+                <input type="button" id="query_button" class="lg searchbutton">
+            </div>
+            <div class="freshpinlogo">
+                <a href=".">
+                    <img src="logo.png"></a>
+                <div class="freshpinlogoTagline">
+                    450个来源，新每日，初始源- Pin!</div>
+            </div>
+            <div class="aboutus">
+                <ul class="navigation">
+                    <li><a class="nav" href="about.html" id="about">关于<span></span></a>
+                        <ul>
+                            <li><a href="help.html">帮助</a></li>
+                            <li class="beforeDivider"><a href="copyright.html">版权</a></li>
+                            <li><a href="signup">请求邀请</a></li>
+                        </ul>
+                    </li>
+                    <li class="logininfo"><a class="nav" href="login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="line2">
+            <div class="menu3">
+                <ul style="margin: 0px;">
+                    <li id="mlevel1"><a href="#articles">文章</a><span class="bgNone"></span></li>
+                    <li class="menu" id="mlevel2"><a href=".">样式</a><span></span></li>
+                    <li class="menu" id="mlevel3"><a href="javascript:void(0)">顶面上百</a> <span></span>
+                    </li>
+                    <li class="menu"><a href="#stores">商店</a><span class="bgNone"></span></li>
+                    <!--<li id="mlevel4" class="menu"><a href="javascript:void(0)">Pin Rewards</a> <span
+                                                                                                       class="bgNone"></span></li>-->
+                    <!--<li id="mlevel5" class="menu"><a href="javascript:void(0)">Pin Party</a> <span></span>
+                        </li>-->
+                </ul>
+            </div>
+        </div>
+        <div style="left: 737px; display: none;" id="submenu2" class="submenu">
+            <div>
+                <a href="javascript:rcat('Color');" class="none"><strong>颜色</strong></a><br />
+                <a href="javascript:rcat('Multi(3+)');">多(3+)</a> <a href="javascript:rcat('Two-Tone');">
+                    Two-Tone</a> <a href="javascript:rcat('Metallic');">金属</a> <a href="javascript:rcat('Red');">
+                        红色</a> <a href="javascript:rcat('Orange');">橙色</a> <a href="javascript:rcat('Yellow');">
+                            黄色</a> <a href="javascript:rcat('Green');">绿色</a> <a href="javascript:rcat('Teal');">
+                                小野鸭</a> <a href="javascript:rcat('Blue');">蓝色</a> <a href="javascript:rcat('Purple');">
+                                    紫色</a> <a href="javascript:rcat('Pink');">桃红色</a> <a href="javascript:rcat('White');">
+                                        白色</a> <a href="javascript:rcat('Gray');">灰色</a> <a href="javascript:rcat('Black');">
+                                            黑色</a> <a href="javascript:rcat('Brown');">布朗</a>
+                <br />
+                <a href="javascript:rcat('Finish');" class="none"><strong>结束</strong></a><br />
+                <a href="javascript:rcat('Shiny');">发光</a> <a href="javascript:rcat('Matte');">表面无光泽</a>
+                <a href="javascript:rcat('Glitter');">闪烁</a>
+                <br />
+                <a href="javascript:rcat('Difficulty');" class="none"><strong>困难</strong></a><br />
+                <a href="javascript:rcat('Simple');">简单</a> <a href="javascript:rcat('Medium');">媒介</a>
+                <a href="javascript:rcat('Hard');">艰苦</a> <a href="javascript:rcat('Crazy');">疯狂</a>
+                <br />
+                <a href="javascript:rcat('Style');" class="none"><strong>样式</strong></a><br />
+                <a href="javascript:rcat('Pattern');">样式</a> <a href="javascript:rcat('Picture');">图片</a>
+                <a href="javascript:rcat('Gradient');">梯度</a> <a href="javascript:rcat('3D');">3D</a>
+                <a href="javascript:rcat('Airbrush');">气刷</a> <a href="javascript:rcat('FreeStyle');">
+                    自由式</a> <a href="javascript:rcat('Stamp');">邮票</a> <a href="javascript:rcat('Stilleto');">
+                        Stilleto</a>
+                <br />
+                <a href="javascript:rcat('With People');" class="none"><strong>与人</strong></a><br />
+                <a href="javascript:rcat('Face');">面孔</a> <a href="javascript:rcat('Outfit');">成套装备</a>
+                <a href="javascript:rcat('Pedicures');">Pedicures</a> <a href="javascript:rcat('Accessories');">
+                    辅助部件</a>
+                <br />
+                <a href="javascript:rcat('How-To');" class="none"><strong>怎么对</strong></a><br />
+                <a href="javascript:rcat('HowToGallery');">怎么对画廊</a>
+                <br />
+                <a href="javascript:rcat('Products');" class="none"><strong>产品</strong></a><br />
+                <a href="javascript:rcat('Nail Polish');">指甲油</a> <a href="javascript:rcat('Pattern Tools');">
+                    样式工具</a> <a href="javascript:rcat('Manicure');">修指甲</a>
+                <br />
+            </div>
+        </div>
+        <div style="display: none; width: 160px" id="submenu3" class="submenu">
+            <div>
+                <a href="#rank=mf" name="mf" class="none">多数追随者</a><br />
+                <a href="#rank=ml" name="ml" class="none">多数喜欢</a><br />
+                <a href="#rank=mp" name="mp" class="none">多数别针</a><br />
+                <a href="#rank=mpp" name="mpp" class="none">多数普遍的别针</a><br />
+            </div>
+        </div>
+        <div style="display: none; width: 160px;" id="submenu5" class="submenu">
+            <div>
+                <a href="HostPinParty" class="none">主持一个Pin党</a><br />
+                <a href="experience" class="none">经验</a><br />
+                <a href="FAQs" class="none">常见问题解答</a><br />
+                <a href="DoItNow" class="none">现在做它</a><br />
+            </div>
+        </div>
+    </div>
+    <div class="gallery">
+    </div>
+    <div id="articlesCont" style="display: none;">
+        <h1 id="articlesheader" class="art-heading1">
+            Articles
+        </h1>
+        <div id="articlesLayout">
+        </div>
+    </div>
+    <div id="boardsCont" class="boards">
+    </div>
+    <div id="content" style="margin-top: 100px;">
+    </div>
+    <!-- <div class="pinterest">
+        <img src="http://freshpin.com/cdn/img/load2.gif" class="load" />
+        <img class="close" id="close" src="http://freshpin.com/cdn/img/closediag.png"
+            src="http://freshpin.com/cdn/img/closediag.png" src="http://freshpin.com/cdn/img/closediag.png" />
+        <iframe class="popup" src="about:blank;" name="popup" id="popup"></iframe>
+    </div>-->
+    <div id="add" class="add">
+        <div class="modal">
+            <div class="header1">
+                <div class="title">
+                    <h2>
+                        Add</h2>
+                </div>
+                <div id="addclose" class="close">
+                    <a href="javascript:void(0)">x</a></div>
+            </div>
+            <div class="yellowStripe">
+                Pin images from any website as you browse the web with the <a href="javascript:void(0)">
+                    "Pin It" button</a>.</div>
+            <div class="openlink">
+                <div id="apcont">
+                    <a class="cell1" id="addpint" href="javascript:void(0)">
+                        <div class="icon pin">
+                        </div>
+                        <span>Add a Pin</span> </a>
+                </div>
+                <div id="upcont">
+                    <a class="cell1" id="uploadpint" href="javascript:void(0)">
+                        <div class="icon arrow">
+                        </div>
+                        <span>Upload a Pin</span> </a>
+                </div>
+                <div>
+                    <a class="cell1" href="javascript:void(0)" id="createboard">
+                        <div class="icon board">
+                        </div>
+                        <span>Create a Board</span> </a>
+                </div>
+                <div style="clear: both;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="comment" class="Repin">
+        <div class="modal">
+            <div class="header1">
+                <div class="title">
+                    <h2>
+                        Comment</h2>
+                </div>
+                <div id="commentclose" class="close">
+                    <a href="javascript:void(0)">x</a></div>
+            </div>
+            <div class="cont">
+                <div class="addPinRightPane">
+                    <textarea id="commentDesc"></textarea>
+                    <span><a class="redButton" id="saveComment" href="javascript:void(0)"><span>Comment</span></a></span>
+                    <label id="commentCharCount">
+                        500</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fbd" class="Repin">
+        <div class="modal">
+            <div class="header1">
+                <div class="title">
+                    <h2>
+                        Comment</h2>
+                </div>
+                <div id="fbdclose" class="close">
+                    <a href="javascript:void(0)">x</a></div>
+            </div>
+            <div class="cont">
+                <div class="addPinRightPane">
+                    <textarea id="tafb"></textarea>
+                    <span><a class="redButton" id="savefeedback" href="javascript:void(0)"><span>Feedback</span></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Repin" class="Repin">
+        <div class="modal">
+            <div class="header1">
+                <div class="title">
+                    <h2>
+                        Repin</h2>
+                </div>
+                <div id="Repinclose" class="close">
+                    <a href="javascript:void(0)">x</a></div>
+            </div>
+            <div class="cont">
+                <div style="clear: both;">
+                </div>
+                <div class="pinIt">
+                    <div class="uploadCont">
+                        <div class="uploadImages">
+                            <img id="imgRP" /></div>
+                    </div>
+                </div>
+                <div class="addPinRightPane">
+                    <div class="PinForm">
+                        <div class="selectBox">
+                            <a class="select" style="height: 30px; display: block;" id="selectRP" href="javascript:void(0)">
+                                <span class="title" id="titleRP"></span><span class="rightArrow"></span></a>
+                            <div class="dropDownBox" id="dropDownBoxRP">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <textarea id="RPDesc"></textarea>
+                    <span><a class="redButton" id="saveRP" href="javascript:void(0)"><span>Pin It</span></a></span>
+                    <label id="RPCharCount">
+                        500</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="uploadPin" class="uploadPin">
+        <div class="modal">
+            <div class="header1">
+                <div class="title">
+                    <h2>
+                        Upload a Pin</h2>
+                </div>
+                <div id="uploadPinclose" class="close">
+                    <a href="javascript:void(0)">x</a></div>
+            </div>
+            <div class="cont">
+                <div class="findImage">
+                    <input class="whiteBut" id="fu" href="javascript:void(0)" value="Browse.." type="file" />
+                    <div class="loaderImg" id="lmuplimg" style="display: none">
+                        <img src="http://freshpin.com/cdn/img/load2.gif" /></div>
+                </div>
+                <div style="clear: both;">
+                </div>
+                <div class="pinIt">
+                    <div class="uploadCont">
+                        <div class="uploadImages">
+                            <img id="uploadedImage" /></div>
+                    </div>
+                </div>
+                <div class="addPinRightPane">
+                    <div class="PinForm">
+                        <div class="selectBox">
+                            <a class="select" style="height: 30px; display: block;" id="selectUP" href="javascript:void(0)">
+                                <span class="title" id="titleUP">Wedding Planner</span> <span class="rightArrow">
+                                </span></a>
+                            <div class="dropDownBox" id="dropDownBoxUP">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <textarea id="uplPDesc" elastic="true"></textarea>
+                    <span><a class="redButton" id="saveUploadPin" href="javascript:void(0)"><span>Pin It</span></a></span>
+                    <label id="uplPCharCount">
+                        500</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="addPin" class="addPin">
+        <div class="modal">
+            <div class="header1">
+                <div class="title">
+                    <h2>
+                        Add a Pin</h2>
+                </div>
+                <div id="addPinclose" class="close">
+                    <a href="javascript:void(0)">x</a></div>
+            </div>
+            <div class="cont">
+                <div class="findImage" id="fImages">
+                    <input type="text" name="textfield" id="url" />
+                    <span><a class="whiteBut" id="fImages" href="javascript:void(0)"><span>Find Images</span></a></span>
+                    <div class="loaderImg" id="lmfindimages" style="display: none">
+                        <img src="http://freshpin.com/cdn/img/load2.gif" /></div>
+                </div>
+                <div style="clear: both;">
+                </div>
+                <div class="pinIt">
+                    <div class="uploadCont">
+                        <div class="uploadImages">
+                            <img id="urlimages" />
+                        </div>
+                        <div class="prevNext">
+                            <div class="prev" id="prev">
+                                <a href="javascript:void(0)">Prev</a></div>
+                            <div class="next" id="next">
+                                <a href="javascript:void(0)">Next</a></div>
+                        </div>
+                    </div>
+                    <div class="loading" id="lmpreloadimages" style="display: none">
+                        <img src="http://freshpin.com/cdn/img/load2.gif" /><br />
+                        <span>Loading....</span>
+                    </div>
+                </div>
+                <div class="addPinRightPane">
+                    <div class="PinForm">
+                        <div class="selectBox">
+                            <a class="select" id="selectAP" href="javascript:void(0)"><span class="title" id="titleAP">
+                            </span><span class="rightArrow"></span></a>
+                            <div class="dropDownBox" id="dropDownBoxAP">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <textarea id="addPDesc" elastic="true"></textarea>
+                    <span><a class="redButton" id="saveAddPin" href="javascript:void(0)"><span>Pin It</span></a></span>
+                    <label id="addPCharCount">
+                        500</label>
+                </div>
+            </div>
+            <div style="clear: both;">
+            </div>
+        </div>
+    </div>
+    <div id="CreateBoard" class="CreateBoard">
+        <div class="modal">
+            <div class="header1">
+                <div class="title">
+                    <h2>
+                        Create a Board</h2>
+                </div>
+                <div id="CreateBoardclose" class="close">
+                    <a href="javascript:void(0)">x</a></div>
+            </div>
+            <div class="cont">
+                <div class="pinIt">
+                    <p>
+                        <label>
+                            Board Name</label>
+                        <input type="text" name="textfield" id="cbname" />
+                    </p>
+                    <label>
+                        Who can pin?</label>
+                    <div style="clear: both;">
+                    </div>
+                    <label>
+                        <input type="radio" checked="checked" validation="none" value="me" name="change_BoardCollaborators">
+                        <span style="padding-left: 25px;">Just Me</span>
+                    </label>
+                    <div style="clear: both;">
+                    </div>
+                    <label>
+                        <input type="radio" value="multiple" validation="block" name="change_BoardCollaborators">
+                        <span style="padding-left: 25px;">Me + Contributors</span>
+                    </label>
+                    <div style="clear: both;">
+                    </div>
+                    <label id="contributorslist">
+                    </label>
+                    <div style="clear: both;">
+                    </div>
+                    <div class="whoCanpin" id="emailBox">
+                        <input type="text" name="textfield" id="contributor" />
+                        <span><a class="whiteBut" id="contribute" href="javascript:void(0)"><span>Add</span></a></span>
+                    </div>
+                    <div>
+                        <a class="redButton" id="saveCreateBoard" href="javascript:void(0)"><span>Create Board</span></a></div>
+                    <label class="labelBox" id="cbselcat">
+                        Click to select Category</label>
+                </div>
+                <div class="category" id="boardcategory" style="visibility: hidden">
+                    <h2>
+                        Choose a Category from</h2>
+                    <ul class="scroll" id="cbcat">
+                    </ul>
+                    <div class="subBox" id="cbsubcat" style="display: none">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="editboard" class="editboard">
+        <div class="modal">
+            <div class="header1">
+                <div class="title">
+                    <h2>
+                        Edit Board</h2>
+                </div>
+                <div id="editboardclose" class="close">
+                    <a href="javascript:void(0)">x</a></div>
+            </div>
+            <div class="cont">
+                <div style="margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto;
+                    float: left; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                    <ul style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0;
+                        padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                        <!-- Board Title -->
+                        <li style="display: block; font-size: 21px; font-weight: 300; clear: both; color: #8c7e7e;
+                            text-shadow: 0 1px rgba(255,255,255,0.9); border-top-style: solid; border-top-width: 1px;
+                            border-top-color: rgba(255,255,255,0.7); border-bottom-style: solid; border-bottom-width: 1px;
+                            border-bottom-color: rgba(34,25,25,0.1); float: left; width: 100%; margin-top: 0;
+                            margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px; padding-right: 0;
+                            padding-bottom: 15px; padding-left: 0; list-style-type: none;">
+                            <div style="width: 150px; float: left; margin-top: 0; margin-right: 0; margin-bottom: 0;
+                                margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                <label for="id_name" style="display: inline-block; line-height: 1.4em; font-size: 18px;
+                                    float: left; width: 150px; padding-top: 7px; vertical-align: top;">
+                                    Title</label></div>
+                            <div style="float: left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                                padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                <input type="text" name="name" value="me 2" id="id_name" style="font-family: inherit;
+                                    font-size: 18px; font-weight: 300; resize: none; outline: none; line-height: 1.4;
+                                    color: #221919; box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px #fff; -moz-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px #fff;
+                                    -webkit-box-shadow: inset 0 1px rgba(34,25,25,0.15),
+0 1px #fff; display: inline-block; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box;
+                                    -webkit-box-sizing: border-box; border-radius: 6px; -moz-border-radius: 6px;
+                                    -webkit-border-radius: 6px; -moz-transition: all 0.08s
+ease-in-out; -webkit-transition: all 0.08s ease-in-out; min-width: 375px; margin-top: 0; margin-right: 0; margin-bottom: 0;
+                                    margin-left: 0; padding-top: 6px; padding-right: 12px; padding-bottom: 6px; padding-left: 12px;
+                                    border-top-color: #ad9c9c; border-right-color: #ad9c9c; border-bottom-color: #ad9c9c;
+                                    border-left-color: #ad9c9c; border-top-style: solid; border-right-style: solid;
+                                    border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                                    border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #fff;" />
+                            </div>
+                        </li>
+                        <li style="display: block; font-size: 21px; font-weight: 300; clear: both; color: #8c7e7e;
+                            text-shadow: 0 1px
+rgba(255,255,255,0.9); border-top-style: solid; border-top-width: 1px; border-top-color: rgba(255,255,255,0.7);
+                            border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgba(34,25,25,0.1);
+                            float: left; width: 100%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                            padding-top: 15px; padding-right: 0; padding-bottom: 15px; padding-left: 0; list-style-type: none;">
+                            <input type="hidden" name="category" value="film_music_books" id="id_category" style="font-family: inherit;
+                                font-size: inherit; font-weight: inherit; resize: none; outline: none; line-height: 1em;
+                                color: #8c7e7e; box-shadow: inset
+0 0 2px rgba(255,255,255,0.75); -moz-box-shadow: inset 0 0 2px rgba(255,255,255,0.75); -webkit-box-shadow: inset 0 0 2px rgba(255,255,255,0.75);
+                                margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 5px;
+                                padding-right: 5px; padding-bottom: 5px; padding-left: 5px; border-top-color: #d1cdcd;
+                                border-right-color: #d1cdcd; border-bottom-color: #d1cdcd; border-left-color: #d1cdcd;
+                                border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+                                border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                                border-left-width: 1px; background-color: #fcf9f9;" />
+                            <div style="width: 150px; float: left; margin-top: 0; margin-right: 0; margin-bottom: 0;
+                                margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                <label style="display: inline-block; line-height: 1.4em; font-size: 18px; float: left;
+                                    width: 150px; padding-top: 7px; vertical-align: top;">
+                                    Category</label></div>
+                            <div style="float: left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                                padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                <div style="display: none; position: fixed; z-index: 9998; top: 0; right: 0; bottom: 0;
+                                    left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0;
+                                    padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                </div>
+                                <div id="CategoryPicker" style="width: 337px; position: relative; display: block;
+                                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcfc',
+endColorstr='#f0eded'); border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; box-shadow: inset 0 1px 1px rgba(34,25,25,0.1),
+0 1px #fff; -moz-box-shadow: inset 0 1px 1px rgba(34,25,25,0.1), 0 1px #fff; -webkit-box-shadow: inset 0 1px 1px rgba(34,25,25,0.1), 0 1px #fff;
+                                    margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 6px;
+                                    padding-right: 24px; padding-bottom: 6px; padding-left: 12px; border-top-color: #ad9c9c;
+                                    border-right-color: #ad9c9c; border-bottom-color: #ad9c9c; border-left-color: #ad9c9c;
+                                    border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+                                    border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                                    border-left-width: 1px; background-color: #f0eded;">
+                                    <div style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0;
+                                        padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                        <span id="ecbselcat" style="display: block; white-space: nowrap; overflow: hidden;
+                                            font-size: 18px;">Selected Category</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="display: block; font-size: 21px; font-weight: 300; clear: both; color: #8c7e7e;
+                            text-shadow: 0 1px rgba(255,255,255,0.9); border-top-style: solid; border-top-width: 1px;
+                            border-top-color: rgba(255,255,255,0.7); border-bottom-style: solid; border-bottom-width: 1px;
+                            border-bottom-color: rgba(34,25,25,0.1); float: left; width: 100%; margin-top: 0;
+                            margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px; padding-right: 0;
+                            padding-bottom: 15px; padding-left: 0; list-style-type: none;">
+                            <label style="display: inline-block; line-height: 1.4em; font-size: 18px; float: left;
+                                width: 150px; padding-top: 7px; vertical-align: top;">
+                                Who can pin?</label>
+                            <div style="font-size: 18px; float: left; margin-top: 0; margin-right: 0; margin-bottom: 0;
+                                margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                <div id="boardCollaborators" style="font-size: 18px; overflow: hidden; margin-top: 0;
+                                    margin-right: 0; margin-bottom: 10px; margin-left: 0; padding-top: 0; padding-right: 0;
+                                    padding-bottom: 7px; padding-left: 0; border-top-style: none; border-right-style: none;
+                                    border-bottom-style: none; border-left-style: none;">
+                                </div>
+                                <span id="invite_response" style="background-color: #FFA; padding-bottom: 10px; padding-left: 20px;
+                                    padding-right: 20px; padding-top: 12px; float: left; margin-bottom: 10px; width: 429px;
+                                    margin-top: -10px; color: #2A1919; font-size: 18px; display: none;"></span>
+                                <div style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0;
+                                    padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                    <input type="text" id="ebcontributor" title="Enter Email Address or Username" autocomplete="off"
+                                        role="textbox" aria-autocomplete="list" aria-haspopup="true" style="font-family: inherit;
+                                        font-size: 18px; font-weight: 300; resize: none; outline: none; line-height: 1.4;
+                                        color: #221919; box-shadow: inset 0 1px rgba(34,25,25,0.15),
+0 1px #fff; -moz-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px #fff; -webkit-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px #fff;
+                                        min-width: 301px; float: left; clear: both; display: inline-block; box-sizing: border-box;
+                                        -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;
+                                        border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; -moz-transition: all 0.08s
+ease-in-out; -webkit-transition: all 0.08s ease-in-out; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                                        padding-top: 6px; padding-right: 12px; padding-bottom: 6px; padding-left: 12px;
+                                        border-top-color: #ad9c9c; border-right-color: #ad9c9c; border-bottom-color: #ad9c9c;
+                                        border-left-color: #ad9c9c; border-top-style: solid; border-right-style: solid;
+                                        border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                                        border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #fff;" />
+                                    <div style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0;
+                                        padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                        <ul role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 1000000top: 460px !important;
+                                            top: 0px; left: 0px; display: none; border-radius: 6px; -moz-border-radius: 6px;
+                                            -webkit-border-radius: 6px; font-size: 13px; color: #524d4d; position: absolute;
+                                            max-height: 311px; cursor: default; overflow: hidden; box-shadow: 0 3px 8px rgba(0,0,0,.3);
+                                            -moz-box-shadow: 0 3px 8px rgba(0,0,0,.3); -webkit-box-shadow: 0 3px 8px rgba(0,0,0,.3);
+                                            margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 3px;
+                                            padding-right: 0; padding-bottom: 0; padding-left: 0; border-top-color: #ad9c9c;
+                                            border-right-color: #ad9c9c; border-bottom-color: #ad9c9c; border-left-color: #ad9c9c;
+                                            border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+                                            border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                                            border-left-width: 1px; background-color: #fff;">
+                                        </ul>
+                                    </div>
+                                    <a href="javascript:void(0);" id="ebcontribute" style="font-weight: bold; color: #524d4d;
+                                        text-decoration: none; outline: none; position: relative; display: inline-block;
+                                        text-align: center; line-height: 1em; border-radius: 6px; -moz-border-radius: 6px;
+                                        -webkit-border-radius: 6px; -moz-transition-property: color,
+-moz-box-shadow, text-shadow; -moz-transition-duration: .05s; -moz-transition-timing-function: ease-in-out; -webkit-transition-property: color, -webkit-box-shadow, text-shadow;
+                                        -webkit-transition-duration: .05s; -webkit-transition-timing-function: ease-in-out;
+                                        box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                                        -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                                        -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                                        cursor: pointer; font-size: 18px; text-shadow: 0 1px rgba(255,255,255,0.9); float: left;
+                                        margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 10px; padding-top: .45em;
+                                        padding-right: .825em; padding-bottom: .45em; padding-left: .825em; border-top-color: transparent;
+                                        border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent;
+                                        border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+                                        border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                                        border-left-width: 1px;"><strong style="font-style: normal; font-weight: bold; position: relative;
+                                            z-index: 2;">Add</strong><span style="position: absolute; z-index: 1; top: -1px;
+                                                right: -1px; bottom: -1px; left: -1px; display: block; opacity: 1; border-radius: 6px;
+                                                -moz-border-radius: 6px; -webkit-border-radius: 6px; box-shadow: inset 0 1px rgba(255,255,255,0.35);
+                                                -moz-box-shadow: inset 0 1px
+rgba(255,255,255,0.35); -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35); -moz-transition-property: opacity; -moz-transition-duration: 0.5s;
+                                                -moz-transition-timing-function: ease-in-out; -webkit-transition-property: opacity;
+                                                -webkit-transition-duration: 0.5s; -webkit-transition-timing-function: ease-in-out;
+                                                font-size: 18px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfafb', endColorstr='#f0eded');
+                                                border-top-color: #bbb; border-right-color: #bbb; border-bottom-color: #bbb;
+                                                border-left-color: #bbb; border-top-style: solid; border-right-style: solid;
+                                                border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                                                border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #f0eded;
+                                                background-position: 0%
+0%;"></span></a>
+                                </div>
+                                <ul id="CurrentCollaborators" style="border-top-width: 0 !important; margin-top: 10px;
+                                    margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0;
+                                    padding-bottom: 0; padding-left: 0;">
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <div id="saveEB" style="border-top-color: rgba(255,255,255,0.7); border-top-width: 1px;
+                        border-top-style: solid; float: left; margin-top: 0; margin-right: 0; margin-bottom: 20px;
+                        margin-left: 0; padding-top: 24px; padding-right: 0; padding-bottom: 0; padding-left: 15px;">
+                        <a href="javascript:void(0)" style="font-weight: bold; color: #fcf9f9; text-decoration: none;
+                            outline: none; position: relative; display: inline-block; text-align: center;
+                            line-height: 1em; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px;
+                            -moz-transition-property: color, -moz-box-shadow, text-shadow; -moz-transition-duration: .05s;
+                            -moz-transition-timing-function: ease-in-out; -webkit-transition-property: color, -webkit-box-shadow, text-shadow;
+                            -webkit-transition-duration: .05s; -webkit-transition-timing-function: ease-in-out;
+                            box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                            -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                            -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                            cursor: pointer; font-size: 24px; text-shadow: 0 -1px rgba(34,25,25,0.5); padding-top: .45em;
+                            padding-right: .825em; padding-bottom: .45em; padding-left: .825em; border-top-color: transparent;
+                            border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent;
+                            border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+                            border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                            border-left-width: 1px;"><strong style="font-style: normal; font-weight: bold; position: relative;
+                                z-index: 2;">Save Settings</strong> <span style="position: absolute; z-index: 1;
+                                    top: -1px; right: -1px; bottom: -1px; left: -1px; display: block; opacity: 1;
+                                    border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; box-shadow: inset 0 1px rgba(255,255,255,0.35);
+                                    -moz-box-shadow: inset 0 1px rgba(255,255,255,0.35); -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35);
+                                    -moz-transition-property: opacity; -moz-transition-duration: 0.5s; -moz-transition-timing-function: ease-in-out;
+                                    -webkit-transition-property: opacity; -webkit-transition-duration: 0.5s; -webkit-transition-timing-function: ease-in-out;
+                                    font-size: 24px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb5367', endColorstr='#d43638');
+                                    border-top-color: #910101; border-right-color: #910101; border-bottom-color: #910101;
+                                    border-left-color: #910101; border-top-style: solid; border-right-style: solid;
+                                    border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                                    border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #d43638;
+                                    background-position: 0% 0%;"></span></a>
+                    </div>
+                    <div id="delEB" style="border-top-color: rgba(255,255,255,0.7); border-top-width: 1px;
+                        border-top-style: solid; float: left; margin-top: 0; margin-right: 0; margin-bottom: 20px;
+                        margin-left: 0; padding-top: 24px; padding-right: 0; padding-bottom: 0; padding-left: 15px;">
+                        <a style="font-weight: bold; color: #fcf9f9; text-decoration: none; outline: none;
+                            position: relative; display: inline-block; text-align: center; line-height: 1em;
+                            border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; -moz-transition-property: color, -moz-box-shadow, text-shadow;
+                            -moz-transition-duration: .05s; -moz-transition-timing-function: ease-in-out;
+                            -webkit-transition-property: color, -webkit-box-shadow, text-shadow; -webkit-transition-duration: .05s;
+                            -webkit-transition-timing-function: ease-in-out; box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                            -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                            -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                            cursor: pointer; font-size: 24px; text-shadow: 0 -1px rgba(34,25,25,0.5); padding-top: .45em;
+                            padding-right: .825em; padding-bottom: .45em; padding-left: .825em; border-top-color: transparent;
+                            border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent;
+                            border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+                            border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                            border-left-width: 1px;"><strong style="font-style: normal; font-weight: bold; position: relative;
+                                z-index: 2;">Delete Board</strong> <span style="position: absolute; z-index: 1; top: -1px;
+                                    right: -1px; bottom: -1px; left: -1px; display: block; opacity: 1; border-radius: 8px;
+                                    -moz-border-radius: 8px; -webkit-border-radius: 8px; box-shadow: inset 0 1px rgba(255,255,255,0.35);
+                                    -moz-box-shadow: inset 0 1px
+rgba(255,255,255,0.35); -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35); -moz-transition-property: opacity;
+                                    -moz-transition-duration: 0.5s; -moz-transition-timing-function: ease-in-out;
+                                    -webkit-transition-property: opacity; -webkit-transition-duration: 0.5s; -webkit-transition-timing-function: ease-in-out;
+                                    font-size: 24px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb5367', endColorstr='#d43638');
+                                    border-top-color: #910101; border-right-color: #910101; border-bottom-color: #910101;
+                                    border-left-color: #910101; border-top-style: solid; border-right-style: solid;
+                                    border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                                    border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #d43638;
+                                    background-position: 0% 0%;"></span></a>
+                    </div>
+                </div>
+                <div class="category" id="eboardcategory">
+                    <h2>
+                        Choose a Category from</h2>
+                    <ul class="scroll" id="ecbcat">
+                    </ul>
+                    <div class="subBox" id="ecbsubcat" style="display: none">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="editpin" style="width: 900px;">
+        <div class="modal">
+            <div class="header1">
+                <div class="title">
+                    <h2>
+                        Edit Pin</h2>
+                </div>
+                <div class="close" id="closeedit">
+                    <a href="javascript:void(0)">x</a></div>
+            </div>
+            <div class="cont">
+                <div style="padding: 15; margin: 0; z-index: 2; width: 852px; top: 100%; left: 20%;
+                    background-color: #FFFFFF;">
+                    <div id="PinEditPreview" style="position: relative; width: 192px; font-size: 11px;
+                        box-shadow: 0 1px 3px rgba(34,25,25,0.4); -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
+                        -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4); float: right; overflow: hidden;
+                        margin-top: 36px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px;
+                        padding-right: 15px; padding-bottom: 0; padding-left: 15px; border-top-color: #dedcdd#c9c7c8#c9c7c8;
+                        border-right-color: #dedcdd#c9c7c8#c9c7c8; border-bottom-color: #dedcdd#c9c7c8#c9c7c8;
+                        border-left-color: #dedcdd#c9c7c8#c9c7c8; border-top-style: solid; border-right-style: solid;
+                        border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                        border-right-width: 1px; border-bottom-width: 2px; border-left-width: 1px; background-color: #fff;">
+                        <div style="position: absolute; z-index: 3; top: -70px; left: -117px; width: 125px;
+                            height: 22px; text-align: center; font-size: 11px; color: #524d4d; overflow: hidden;
+                            -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -o-transform: rotate(-45deg);
+                            -ms-transform: rotate(-45deg); -moz-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out;
+                            margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 8px;
+                            padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: #f2f0f0;"
+                            align="center">
+                        </div>
+                        <a id="pinlink" style="font-weight: bold; color: #221919; text-decoration: none;
+                            outline: none;">
+                            <img id="pinimg" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0;
+                                border-left-width: 0;" /></a>
+                        <p id="postDescription" style="line-height: 1.35em; margin-top: 0; margin-right: 0;
+                            margin-bottom: .8em; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0;
+                            padding-left: 0;">
+                        </p>
+                    </div>
+                    <div id="PinEdit" style="float: left; width: 614px; font-size: 13px; margin-top: 36px;
+                        margin-right: 0; margin-bottom: 36px; margin-left: 0; padding-top: 0; padding-right: 0;
+                        padding-bottom: 0; padding-left: 0;">
+                        <ul style="border-top-style: solid; border-top-width: 1px; border-top-color: #ccc;
+                            margin-top: 1px; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0;
+                            padding-right: 0; padding-bottom: 0; padding-left: 15px;">
+                            <li style="border-top-width: 1px; border-top-color: rgba(255,255,255,0.7); border-top-style: solid;
+                                border-bottom-width: 1px; border-bottom-color: rgba(34,25,25,0.1); border-bottom-style: solid;
+                                position: relative; display: block; font-size: 21px; font-weight: 300; clear: both;
+                                color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); float: left; width: 100%;
+                                margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px;
+                                padding-right: 0; padding-bottom: 15px; padding-left: 0; list-style-type: none;">
+                                <label style="display: inline-block; line-height: 1.4em; font-size: 18px; float: left;
+                                    width: 150px; padding-top: 7px; vertical-align: top;">
+                                    Description</label>
+                                <div style="float: left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                                    padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                    <div id="ta_holder" style="position: relative; margin-top: 0; margin-right: 0; margin-bottom: 0;
+                                        margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                        <textarea rows="2" name="details" maxlength="500" id="description_pin_edit" cols="40"
+                                            style="font-family: inherit; font-size: 18px; font-weight: 300; resize: none;
+                                            outline: none; line-height: 1.3em; color: #221919; box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8);
+                                            -moz-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8);
+                                            -webkit-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8);
+                                            min-height: 3.95em; display: inline-block; box-sizing: border-box; -moz-box-sizing: border-box;
+                                            -ms-box-sizing: border-box; -webkit-box-sizing: border-box; border-radius: 6px;
+                                            -moz-border-radius: 6px; -webkit-border-radius: 6px; -moz-transition: all 0.08s ease-in-out;
+                                            -webkit-transition: all 0.08s ease-in-out; min-width: 375px; margin-top: 0; margin-right: 0;
+                                            margin-bottom: 0; margin-left: 0; padding-top: 6px; padding-right: 12px; padding-bottom: 6px;
+                                            padding-left: 12px; border-top-color: #a4a2a2; border-right-color: #a4a2a2; border-bottom-color: #a4a2a2;
+                                            border-left-color: #a4a2a2; border-top-style: solid; border-right-style: solid;
+                                            border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                                            border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #fff;"> </textarea>
+                                        <div style="position: absolute; display: none; z-index: 3; top: 81px; right: 0; left: 0;
+                                            max-height: 200px; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px;
+                                            box-shadow: 0 3px 8px rgba(35,24,24,.33); -moz-box-shadow: 0 3px 8px rgba(35,24,24,.33);
+                                            -webkit-box-shadow: 0 3px 8px rgba(35,24,24,.33); overflow-y: scroll; margin-top: 0;
+                                            margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0;
+                                            padding-bottom: 0; padding-left: 0; border-top-color: #ad9c9c; border-right-color: #ad9c9c;
+                                            border-bottom-color: #ad9c9c; border-left-color: #ad9c9c; border-top-style: solid;
+                                            border-right-style: solid; border-bottom-style: solid; border-left-style: solid;
+                                            border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;
+                                            background-color: #fff;">
+                                        </div>
+                                    </div>
+                                    <span id="editPCharCount" style="color: #8c7e7e; width: 78px; -moz-transition: all 0.5s ease-in-out;
+                                        -webkit-transition: all 0.5s ease-in-out;"></span>
+                                </div>
+                            </li>
+                            <li style="border-top-width: 1px; border-top-color: rgba(255,255,255,0.7); border-top-style: solid;
+                                border-bottom-width: 1px; border-bottom-color: rgba(34,25,25,0.1); border-bottom-style: solid;
+                                position: relative; display: block; font-size: 21px; font-weight: 300; clear: both;
+                                color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); float: left; width: 100%;
+                                margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px;
+                                padding-right: 0; padding-bottom: 15px; padding-left: 0; list-style-type: none;">
+                                <label for="id_link" style="display: inline-block; line-height: 1.4em; font-size: 18px;
+                                    float: left; width: 150px; padding-top: 7px; vertical-align: top;">
+                                    Link</label>
+                                <div style="float: left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                                    padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                    <input name="link" id="id_link" type="text" style="font-family: inherit; font-size: 18px;
+                                        font-weight: 300; resize: none; outline: none; line-height: 1.4; color: #221919;
+                                        box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8); -moz-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8);
+                                        -webkit-box-shadow: inset 0 1px rgba(34,25,25,0.15), 0 1px rgba(255,255,255,0.8);
+                                        display: inline-block; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box;
+                                        -webkit-box-sizing: border-box; border-radius: 6px; -moz-border-radius: 6px;
+                                        -webkit-border-radius: 6px; -moz-transition: all 0.08s ease-in-out; -webkit-transition: all 0.08s ease-in-out;
+                                        min-width: 375px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                                        padding-top: 6px; padding-right: 12px; padding-bottom: 6px; padding-left: 12px;
+                                        border-top-color: #a4a2a2; border-right-color: #a4a2a2; border-bottom-color: #a4a2a2;
+                                        border-left-color: #a4a2a2; border-top-style: solid; border-right-style: solid;
+                                        border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                                        border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #fff;" />
+                                </div>
+                            </li>
+                            <li style="border-top-width: 1px; border-top-color: rgba(255,255,255,0.7); border-top-style: solid;
+                                border-bottom-width: 1px; border-bottom-color: rgba(34,25,25,0.1); border-bottom-style: solid;
+                                position: relative; display: block; font-size: 21px; font-weight: 300; clear: both;
+                                color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); float: left; width: 100%;
+                                margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px;
+                                padding-right: 0; padding-bottom: 15px; padding-left: 0; list-style-type: none;">
+                                <label for="id_board" style="display: inline-block; line-height: 1.4em; font-size: 18px;
+                                    float: left; width: 150px; padding-top: 7px; vertical-align: top;">
+                                    Board</label>
+                                <div style="float: left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                                    padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                    <select name="board" id="id_board" style="font-family: inherit; font-size: 18px;
+                                        font-weight: inherit; resize: none; outline: none;">
+                                    </select>
+                                </div>
+                            </li>
+                            <li style="border-top-width: 1px; border-top-color: rgba(255,255,255,0.7); border-top-style: solid;
+                                border-bottom-width: 1px; border-bottom-color: rgba(34,25,25,0.1); border-bottom-style: solid;
+                                position: relative; display: block; font-size: 21px; font-weight: 300; clear: both;
+                                color: #8c7e7e; text-shadow: 0 1px rgba(255,255,255,0.9); float: left; width: 100%;
+                                margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 15px;
+                                padding-right: 0; padding-bottom: 15px; padding-left: 0; list-style-type: none;">
+                                <label style="display: inline-block; line-height: 1.4em; font-size: 18px; float: left;
+                                    width: 150px; padding-top: 7px; vertical-align: top;">
+                                    Delete</label>
+                                <div style="float: left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                                    padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                                    <a href="javascript:void(0)" id="delete" style="font-weight: bold; color: #524d4d;
+                                        text-decoration: none; outline: none; position: relative; display: inline-block;
+                                        text-align: center; line-height: 1em; border-radius: 6px; -moz-border-radius: 6px;
+                                        -webkit-border-radius: 6px; -moz-transition-property: color, -moz-box-shadow, text-shadow;
+                                        -moz-transition-duration: .05s; -moz-transition-timing-function: ease-in-out;
+                                        -webkit-transition-property: color, -webkit-box-shadow, text-shadow; -webkit-transition-duration: .05s;
+                                        -webkit-transition-timing-function: ease-in-out; box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                                        -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                                        -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                                        cursor: pointer; font-size: 18px; text-shadow: 0 1px rgba(255,255,255,0.9); padding-top: .45em;
+                                        padding-right: .825em; padding-bottom: .45em; padding-left: .825em; border-top-color: transparent;
+                                        border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent;
+                                        border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+                                        border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                                        border-left-width: 1px;"><strong style="font-style: normal; font-weight: bold; position: relative;
+                                            z-index: 2;">Delete Pin</strong><span style="white-space: nowrap; position: absolute;
+                                                z-index: 1; top: -1px; right: -1px; bottom: -1px; left: -1px; display: block;
+                                                opacity: 1; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px;
+                                                box-shadow: inset 0 1px rgba(255,255,255,0.35); -moz-box-shadow: inset 0 1px rgba(255,255,255,0.35);
+                                                -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35); -moz-transition-property: opacity;
+                                                -moz-transition-duration: 0.5s; -moz-transition-timing-function: ease-in-out;
+                                                -webkit-transition-property: opacity; -webkit-transition-duration: 0.5s; -webkit-transition-timing-function: ease-in-out;
+                                                font-size: 18px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfafb', endColorstr='#f0eded');
+                                                border-top-color: #bbb; border-right-color: #bbb; border-bottom-color: #bbb;
+                                                border-left-color: #bbb; border-top-style: solid; border-right-style: solid;
+                                                border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                                                border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #f0eded;
+                                                background-position: 0% 0%;"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div style="border-top-color: rgba(255,255,255,0.7); border-top-width: 1px; border-top-style: solid;
+                            float: left; margin-top: 0; margin-right: 0; margin-bottom: 20px; margin-left: 0;
+                            padding-top: 24px; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                            <p style="line-height: 1.35em; margin-top: 0; margin-right: 0; margin-bottom: .8em;
+                                margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 15px;">
+                                <a id="saveeditpin" href="javascript:void(0)" style="font-weight: bold; color: #fcf9f9;
+                                    text-decoration: none; outline: none; position: relative; display: inline-block;
+                                    text-align: center; line-height: 1em; border-radius: 8px; -moz-border-radius: 8px;
+                                    -webkit-border-radius: 8px; -moz-transition-property: color, -moz-box-shadow, text-shadow;
+                                    -moz-transition-duration: .05s; -moz-transition-timing-function: ease-in-out;
+                                    -webkit-transition-property: color, -webkit-box-shadow, text-shadow; -webkit-transition-duration: .05s;
+                                    -webkit-transition-timing-function: ease-in-out; box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                                    -moz-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                                    -webkit-box-shadow: 0 1px rgba(255,255,255,0.8), inset 0 1px rgba(255,255,255,0.35);
+                                    cursor: pointer; font-size: 24px; text-shadow: 0 -1px rgba(34,25,25,0.5); padding-top: .45em;
+                                    padding-right: .825em; padding-bottom: .45em; padding-left: .825em; border-top-color: transparent;
+                                    border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent;
+                                    border-top-style: solid; border-right-style: solid; border-bottom-style: solid;
+                                    border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                                    border-left-width: 1px;"><strong style="font-style: normal; font-weight: bold; position: relative;
+                                        z-index: 2;">Save Pin</strong> <span style="white-space: nowrap; position: absolute;
+                                            z-index: 1; top: -1px; right: -1px; bottom: -1px; left: -1px; display: block;
+                                            opacity: 1; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px;
+                                            box-shadow: inset 0 1px rgba(255,255,255,0.35); -moz-box-shadow: inset 0 1px rgba(255,255,255,0.35);
+                                            -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35); -moz-transition-property: opacity;
+                                            -moz-transition-duration: 0.5s; -moz-transition-timing-function: ease-in-out;
+                                            -webkit-transition-property: opacity; -webkit-transition-duration: 0.5s; -webkit-transition-timing-function: ease-in-out;
+                                            font-size: 24px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb5367', endColorstr='#d43638');
+                                            border-top-color: #910101; border-right-color: #910101; border-bottom-color: #910101;
+                                            border-left-color: #910101; border-top-style: solid; border-right-style: solid;
+                                            border-bottom-style: solid; border-left-style: solid; border-top-width: 1px;
+                                            border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #d43638;
+                                            background-position: 0% 0%;"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pin" style="position: absolute; box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+        -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4); display: none; -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+        margin-top: 0; margin-right: auto; margin-bottom: 32px; margin-left: auto; padding-top: 0;
+        padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: #FFFFFF;
+        z-index: 2; text-align: center; left: 50%;">
+        <div style="clear: both; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+            padding-top: 20px; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+        </div>
+        <div id="PinActionButtons" style="height: 26px; width: 280px; float: left; overflow: hidden;
+            margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 30px; padding-top: 0;
+            padding-right: 0; padding-bottom: 0; padding-left: 13px; background-image: url('http://freshpin.com/cdn/img/detailiconBg.jpg');
+            background-repeat: no-repeat; background-position: left top;">
+            <a id="likepint" href="javascript:void(0)" style="font-weight: bold; color: #221919;
+                text-decoration: none; outline: none;">
+                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
+                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
+                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 30px; background-image: url('http://freshpin.com/cdn/img/nails/likeIconDetailPage.png');
+                    background-repeat: no-repeat; background-position: left 5px;" align="left">
+                    Like</div>
+            </a><a id="editpint" href="javascript:void(0)" style="font-weight: bold; color: #221919;
+                text-decoration: none; outline: none;">
+                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
+                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
+                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 30px; background-image: url('http://freshpin.com/cdn/img/nails/repinIconDetailPage.png');
+                    background-repeat: no-repeat; background-position: left 5px;" align="left">
+                    Edit</div>
+            </a><a id="repint" href="javascript:void(0)" style="font-weight: bold; color: #221919;
+                text-decoration: none; outline: none;">
+                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
+                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
+                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 23px; background-image: url('http://freshpin.com/cdn/img/nails/repinIconDetailPage.png');
+                    background-repeat: no-repeat; background-position: left 4px;" align="left">
+                    Repin</div>
+            </a><a id="commentt" href="javascript:void(0)" style="font-weight: bold; color: #221919;
+                text-decoration: none; outline: none;">
+                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
+                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
+                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 25px; background-image: url('http://freshpin.com/cdn/img/nails/commentIconDetailPage.png');
+                    background-repeat: no-repeat; background-position: left 4px;" align="left">
+                    Comment</div>
+            </a>
+        </div>
+        <div style="clear: both; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
+            padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+        </div>
+        <div style="display: block; position: relative; overflow: hidden; margin-top: 20px;
+            margin-right: 30px; margin-bottom: 30px; margin-left: 30px; padding-top: 0; padding-right: 0;
+            padding-bottom: 0; padding-left: 0; background-color: #fff;">
+            <img id="pinCloseupImage" alt="Pinned Image" style="display: block; margin-top: 0;
+                margin-right: auto; margin-bottom: 0; margin-left: auto; border-top-width: 0;
+                border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" /></div>
+        <p id="pintitle" style="margin: 0px; color: #524D4D; font-size: 13px; font-weight: bold;
+            word-break: break-word; padding-top: 0; padding-right: 0; padding-bottom: 0;
+            padding-left: 0;">
+        </p>
+    </div>
+</body>
+</html>

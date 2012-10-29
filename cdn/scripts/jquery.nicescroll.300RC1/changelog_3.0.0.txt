@@ -1,0 +1,32 @@
+Changelog nicescroll release 3.0.0
+http://areaaperta.com/nicescroll
+https://github.com/inuyaksa/jquery.nicescroll
+
+New features
+- horizontal scrollbar
+- setCaption, enabling mouse capture for easiest mouse drag detection (IE5+/Firefox4+)
+- scroll events
+
+New parameters
+- horizrailenabled:true
+- railalign, vertical rail bar alignment (right/left)
+- railvalign, horizontal rail bar alignment (bottom/top)
+- enabletranslate3d:true
+- enablemousewheel:true
+- enablekeyboard:true
+
+Changed features
+- detection engine optimization (speed and memory occupation)
+- optimization to scroll momentum
+- iOS5+, force hw acceleration on native scrolling
+- railpadding, disabled "top" and "bottom" setting for performance optimization
+- bounce disabled on not scrollable direction [issue #53]
+- use backface-visibility:hidden only for iOS devices
+- bouncroll default changed to true
+
+Fixes
+- hwaccel scroll, reset transition values when scrolling end
+- chrome scrollbar bug, when scrollbar has hidden, a void bar is displayed
+- iframe with touchbehavior enabled, grab cursor not displayed
+- railpadding not working, issue #52
+- ipad, input range issue, google code 12

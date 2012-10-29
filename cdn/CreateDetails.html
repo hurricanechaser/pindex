@@ -1,0 +1,881 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clothes and Such / nails.</title>
+    <meta name="medium" content="image" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta property="pinterestapp:actions" content="4832" />
+    <!--[if (gt IE 6)&(lt IE 9)]><link rel="stylesheet" href="ie7-and-up_fa603afa.css" type="text/css" media="all" /><![endif]-->
+    <link rel="stylesheet" type="text/css" href="CreateDetails.css" />
+</head>
+<body>
+    <div id="Header">
+        <div class="FixedContainer HeaderContainer">
+            <a href="#" id="Pinterest">
+                <img src="../img/pindexlogo.jpg" alt="Pinterest Logo" /></a>
+            <ul id="Navigation">
+                <li><a href="#" class="nav">About<span></span></a>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Pin It Button</a></li>
+                        <li class="beforeDivider"><a href="#">Copyright</a></li>
+                        <li class="divider"><a href="#">Careers</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="nav LoginNav">Login</a></li>
+            </ul>
+            <div id="Search">
+                <form action="/search/" method="get" class="text">
+                <input type="text" id="query" name="q" size="27" value="Search" />
+                <a id="query_button" href="#" class="lg">
+                    <img src="../img/search.gif" alt="" /></a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="Add" class="ModalContainer">
+        <div class="modal wide PaddingLess">
+            <div class="header lg">
+                <a href="#" class="close" onclick="Modal.close('Add'); return false"><strong>Close</strong><span></span></a>
+                <h2>
+                    Add</h2>
+            </div>
+            <p id="PinIt">
+                Pin images from any website as you browse the web with the <a href="#" onclick="load_url(); return false">
+                    &ldquo;Pin It&rdquo; button</a>.</p>
+            <div id="OpenLinks">
+                <a href="#" id="OpenScrapePin" class="cell" onclick="AddDialog.close('Add', 'ScrapePin'); return false">
+                    <div class="icon" id="scrape">
+                    </div>
+                    <span>Add a Pin</span> </a><a id="OpenUploadPin" class="cell" onclick="AddDialog.close('Add', 'UploadPin'); return false">
+                        <div class="icon" id="upload">
+                        </div>
+                        <span>Upload a Pin</span> </a><a id="OpenCreateBoard" class="cell" onclick="AddDialog.close('Add', 'CreateBoard'); CreateBoardDialog.reset(); return false">
+                            <div class="icon" id="board">
+                            </div>
+                            <span>Create a Board</span> </a>
+            </div>
+            <!-- #OpenLinks -->
+        </div>
+        <!-- .modal.wide.PostSetup -->
+        <div class="overlay">
+        </div>
+    </div>
+    <!-- #Add.ModalContainer -->
+    <div id="Repin" class="ModalContainer">
+        <div class="modal wide PostSetup">
+            <div class="header lg">
+                <a href="#" class="close" onclick="RepinDialog.reset(); return false"><strong>Close</strong><span></span></a>
+                <h2>
+                    Repin</h2>
+            </div>
+            <div class="ImagePicker">
+                <img src="../img/load2.gif" class="load" alt="Loading Indicator" />
+                <div class="Images pin">
+                    <div class="price">
+                    </div>
+                    <ul>
+                        <li>
+                            <img src="../img/DefaultPin.gif" alt="Media" /></li>
+                    </ul>
+                </div>
+                <div class="Arrows">
+                    <a href="#" class="imagePickerNext picker">Next&nbsp;&rarr;<span class="imagePickerNextArrow"></span></a>
+                    <a href="#" class="imagePickerPrevious picker">&larr;&nbsp;Prev<span class="imagePickerPreviousArrow"></span></a>
+                </div>
+            </div>
+            <div class="PinForm">
+                <div class="BoardListOverlay">
+                </div>
+                <div class="BoardSelector BoardPicker">
+                    <div class="current">
+                        <span class="CurrentBoard"></span><span class="DownArrow"></span>
+                    </div>
+                    <div class="BoardList">
+                        <ul>
+                        </ul>
+                        <div class="CreateBoard">
+                            <input type="text" value="Create New Board" />
+                            <a href="#" class="Button WhiteButton Button18 noFloat"><strong>Create</strong><span></span></a>
+                            <div class="CreateBoardStatus">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="InputArea">
+                    <ul class="Form FancyForm">
+                        <li class="noMarginBottom ">
+                            <textarea class="DescriptionTextarea" rows="2" name="caption"></textarea>
+                            <label>
+                                Describe your pin&hellip;</label>
+                            <span class="fff"></span></li>
+                    </ul>
+                    <p class="CharacterHelp">
+                        Type <strong>@</strong> to mention people, <strong>$</strong> or <strong>£</strong>
+                        to add price.</p>
+                </div>
+                <div class="CreateBoardStatus error mainerror">
+                </div>
+                <div class="Buttons">
+                    <a href="#" class="Button Button18 RedButton"><strong>Pin It</strong><span></span></a>
+                </div>
+            </div>
+            <form action="" id="repinform" method="post">
+            <input type="hidden" name="board" id="repin_board" value="" />
+            <input type="hidden" name="id" id="repin_pin_id" />
+            <input type="hidden" name="tags" id="repin_tags" />
+            <input type="hidden" name="replies" id="repin_comment_replies" />
+            <input type="hidden" name="details" id="repin_details" value="" />
+            <input type="hidden" name="buyable" id="repin_currency_holder" />
+            <div style='display: none'>
+                <input type='hidden' name='csrfmiddlewaretoken' value='9eea9fb626d76fd3d335b16b57684cf9' />
+            </div>
+            </form>
+        </div>
+        <!-- .modal.wide.PostSetup -->
+        <div class="modal wide PostSuccess">
+            <div class="header lg" style="text-align: left;">
+                <h2>
+                    <a href="#" class="close" onclick="RepinDialog.reset(); return false"><strong>Close</strong><span></span></a>Repin</h2>
+            </div>
+            Repinned to <span><a href="#" class="BoardLink"></a></span>.
+            <br />
+            Shared with your followers. <a href="#" class="PinLink">See it now</a>.
+        </div>
+        <!-- .modal.wide.PostSuccess -->
+        <div class="overlay">
+        </div>
+    </div>
+    <!-- #Repin.ModalContainer -->
+    <div id="ScrapePin" class="ModalContainer">
+        <div class="modal wide">
+            <div class="header lg">
+                <a href="#" class="close" onclick="AddDialog.childClose('Add','ScrapePin'); return false">
+                    <strong>Close</strong><span></span></a>
+                <h2>
+                    Add a Pin</h2>
+            </div>
+            <div class="PinTop inputHolder scrapePin">
+                <ul class="Form FancyForm">
+                    <li>
+                        <img src="../img/load2.gif" class="load" alt="Loading Indicator" />
+                        <a href="#" id="ScrapeButton" class="Button WhiteButton Button18 floatRight"><strong>
+                            Find Images</strong><span></span></a>
+                        <input id="ScrapePinInput" type="text" />
+                        <label>
+                            http://</label>
+                        <span class="fff"></span></li>
+                </ul>
+            </div>
+            <div class="PinBottom">
+                <div class="ImagePicker">
+                    <img src="../img/load2.gif" class="load" alt="Loading Indicator" />
+                    <div class="Images pin">
+                        <div class="price">
+                        </div>
+                        <ul>
+                            <li>
+                                <img src="../img/DefaultPin.gif" alt="Media" /></li>
+                        </ul>
+                    </div>
+                    <div class="Arrows">
+                        <a href="#" class="imagePickerNext picker">Next&nbsp;&rarr;<span class="imagePickerNextArrow"></span></a>
+                        <a href="#" class="imagePickerPrevious picker">&larr;&nbsp;Prev<span class="imagePickerPreviousArrow"></span></a>
+                    </div>
+                </div>
+                <div class="PinForm">
+                    <div class="BoardListOverlay">
+                    </div>
+                    <div class="BoardSelector BoardPicker">
+                        <div class="current">
+                            <span class="CurrentBoard"></span><span class="DownArrow"></span>
+                        </div>
+                        <div class="BoardList">
+                            <ul>
+                            </ul>
+                            <div class="CreateBoard">
+                                <input type="text" value="Create New Board" />
+                                <a href="#" class="Button WhiteButton Button18 noFloat"><strong>Create</strong><span></span></a>
+                                <div class="CreateBoardStatus">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="InputArea">
+                        <ul class="Form FancyForm">
+                            <li class="noMarginBottom ">
+                                <textarea class="DescriptionTextarea" rows="2" name="caption"></textarea>
+                                <label>
+                                    Describe your pin&hellip;</label>
+                                <span class="fff"></span></li>
+                        </ul>
+                        <p class="CharacterHelp">
+                            Type <strong>@</strong> to mention people, <strong>$</strong> or <strong>£</strong>
+                            to add price.</p>
+                    </div>
+                    <div class="CreateBoardStatus error mainerror">
+                    </div>
+                    <div class="Buttons">
+                        <a href="#" class="Button Button18 RedButton"><strong>Pin It</strong><span></span></a>
+                    </div>
+                </div>
+            </div>
+            <form method="POST">
+            <input type="hidden" name="board" id="id_board" value="" />
+            <input type="hidden" name="details" value="" id="id_details" />
+            <input type="hidden" name="link" value="" id="id_link" />
+            <input type="hidden" name="img_url" id="id_img_url" />
+            <input type="hidden" name="tags" id="id_tags" />
+            <input id="peeps_holder" type="hidden" name="replies" />
+            <input id="currency_holder" type="hidden" name="buyable" />
+            <div style='display: none'>
+                <input type='hidden' name='csrfmiddlewaretoken' value='9eea9fb626d76fd3d335b16b57684cf9' />
+            </div>
+            </form>
+        </div>
+        <!-- .modal.wide -->
+        <div class="overlay">
+        </div>
+    </div>
+    <!-- #ScrapePin.ModalContainer -->
+    <div id="UploadPin" class="ModalContainer">
+        <div class="modal wide">
+            <div class="header lg">
+                <a href="#" class="close" onclick="AddDialog.childClose('Add','UploadPin'); return false">
+                    <strong>Close</strong><span></span></a>
+                <h2>
+                    Upload a Pin</h2>
+            </div>
+            <div class="PinTop">
+                <form action="/post/" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="board" id="id_board" value="" />
+                <input type="hidden" name="details" value="" id="id_details" />
+                <input type="hidden" name="link" value="" id="id_link" />
+                <input type="hidden" name="img_url" id="id_img_url" />
+                <input type="hidden" name="tags" id="id_tags" />
+                <input id="peeps_holder" type="hidden" name="replies" />
+                <input id="currency_holder" type="hidden" name="buyable" />
+                <input type="file" name="img" />
+                <div style='display: none'>
+                    <input type='hidden' name='csrfmiddlewaretoken' value='9eea9fb626d76fd3d335b16b57684cf9' />
+                </div>
+                </form>
+            </div>
+            <div class="PinBottom">
+                <div class="ImagePicker">
+                    <img src="../img/load2.gif" class="load" alt="Loading Indicator" />
+                    <div class="Images pin">
+                        <div class="price">
+                        </div>
+                        <ul>
+                            <li>
+                                <img src="../img/DefaultPin.gif" alt="Media" /></li>
+                        </ul>
+                    </div>
+                    <div class="Arrows">
+                        <a href="#" class="imagePickerNext picker">Next&nbsp;&rarr;<span class="imagePickerNextArrow"></span></a>
+                        <a href="#" class="imagePickerPrevious picker">&larr;&nbsp;Prev<span class="imagePickerPreviousArrow"></span></a>
+                    </div>
+                </div>
+                <div class="PinForm">
+                    <div class="BoardListOverlay">
+                    </div>
+                    <div class="BoardSelector BoardPicker">
+                        <div class="current">
+                            <span class="CurrentBoard"></span><span class="DownArrow"></span>
+                        </div>
+                        <div class="BoardList">
+                            <ul>
+                            </ul>
+                            <div class="CreateBoard">
+                                <input type="text" value="Create New Board" />
+                                <a href="#" class="Button WhiteButton Button18 noFloat"><strong>Create</strong><span></span></a>
+                                <div class="CreateBoardStatus">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="InputArea">
+                        <ul class="Form FancyForm">
+                            <li class="noMarginBottom ">
+                                <textarea class="DescriptionTextarea" rows="2" name="caption"></textarea>
+                                <label>
+                                    Describe your pin&hellip;</label>
+                                <span class="fff"></span></li>
+                        </ul>
+                        <p class="CharacterHelp">
+                            Type <strong>@</strong> to mention people, <strong>$</strong> or <strong>£</strong>
+                            to add price.</p>
+                    </div>
+                    <div class="CreateBoardStatus error mainerror">
+                    </div>
+                    <div class="Buttons">
+                        <a href="#" class="Button Button18 RedButton"><strong>Pin It</strong><span></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .modal.wide -->
+        <div class="overlay">
+        </div>
+    </div>
+    <!-- #UploadPin.ModalContainer -->
+    <div id="CreateBoard" class="ModalContainer">
+        <div class="modal wide">
+            <div class="header lg">
+                <a href="#" class="close" onclick="AddDialog.childClose('Add','CreateBoard'); return false">
+                    <strong>Close</strong><span></span></a>
+                <h2>
+                    Create a Board</h2>
+            </div>
+            <form action="" class="Form StaticForm noMargin">
+            <ul>
+                <li class="noBorderTop">
+                    <input id="BoardName" type="text" name="name" />
+                    <label>
+                        Board Name</label>
+                    <span class="fff"></span></li>
+                <li>
+                    <input id="id_category" type="hidden" name="category" value="" />
+                    <div class="BoardListOverlay">
+                    </div>
+                    <div id="CategoryPicker" class="BoardSelector BoardPicker">
+                        <div class="current">
+                            <span class="CurrentBoard">Select a Category</span> <span class="DownArrow"></span>
+                        </div>
+                        <div class="BoardList">
+                            <ul>
+                                <li class="BoardCategory" name="BoardCategory" data="architecture"><span>Architecture</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="art"><span>Art</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="cars_motorcycles"><span>Cars &
+                                    Motorcycles</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="design"><span>Design</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="diy_crafts"><span>DIY & Crafts</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="education"><span>Education</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="film_music_books"><span>Film, Music
+                                    & Books</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="fitness"><span>Fitness</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="food_drink"><span>Food & Drink</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="gardening"><span>Gardening</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="geek"><span>Geek</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="hair_beauty"><span>Hair & Beauty</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="history"><span>History</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="holidays"><span>Holidays</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="home"><span>Home Decor</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="humor"><span>Humor</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="kids"><span>Kids</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="mylife"><span>My Life</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="women_apparel"><span>Women's Apparel</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="men_apparel"><span>Men's Apparel</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="outdoors"><span>Outdoors</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="people"><span>People</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="pets"><span>Pets</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="photography"><span>Photography</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="prints_posters"><span>Print & Posters</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="products"><span>Products</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="science"><span>Science & Nature</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="sports"><span>Sports</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="technology"><span>Technology</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="travel_places"><span>Travel & Places</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="wedding_events"><span>Wedding &
+                                    Events</span></li>
+                                <li class="BoardCategory" name="BoardCategory" data="other"><span>Other</span></li>
+                            </ul>
+                        </div>
+                        <!-- .BoardList -->
+                    </div>
+                    <!-- #CategoryPicker.BoardSelector.BoardPicker -->
+                    <label>
+                        Board Category</label>
+                </li>
+                <li>
+                    <label class="radio">
+                        Who can pin?</label>
+                    <div class="Right">
+                        <div style="display: none; border-top: 0;">
+                        </div>
+                        <ul class="pinability">
+                            <li>
+                                <label>
+                                    <input type="radio" name="change_BoardCollaborators" value="me" checked="checked" />
+                                    <span>Just Me</span>
+                                </label>
+                            </li>
+                            <li class="last-child">
+                                <label>
+                                    <input type="radio" name="change_BoardCollaborators" value="multiple" />
+                                    <span>Me + Contributors</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style='display: none'>
+                        <input type='hidden' name='csrfmiddlewaretoken' value='9eea9fb626d76fd3d335b16b57684cf9' />
+                    </div>
+                    <div id="add_collaborators" style="display: none;">
+                        <span id="invite_response"></span>
+                        <input type="text" name="collaborator_name" value="Name or Email Address" id="collaborator_name" />
+                        <a href="#" id="submit_collaborator" class="Button WhiteButton Button18 collab_button">
+                            <strong>Add</strong><span></span></a>
+                        <ul id="CurrentCollaborators">
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="Submit">
+                <a href="#" class="Button RedButton Button18"><strong>Create Board</strong><span></span></a></div>
+            <div class="CreateBoardStatus error">
+            </div>
+            </form>
+        </div>
+        <!-- .modal -->
+        <div class="overlay">
+        </div>
+    </div>
+    <div id="EmailModal" class="ModalContainer">
+        <div class="modal thin">
+            <div class="header lg">
+                <a href="#" class="close" onclick="Modal.close('EmailModal'); Closeup.resetEmailModal(); return false">
+                    <strong>Close</strong><span></span></a>
+                <h2>
+                    Email This Pin</h2>
+            </div>
+            <form action="/pin/84020349267695048/share/" method="post" class="Form FancyForm">
+            <ul>
+                <li>
+                    <input type="text" id="MessageRecipientName" class="ClearOnFocus" name="MessageRecipientName"
+                        maxlength="180" />
+                    <label>
+                        Recipient Name</label>
+                    <span class="fff"></span><span class="helper red"></span></li>
+                <li>
+                    <input type="text" id="MessageRecipientEmail" class="ClearOnFocus" name="MessageRecipientEmail"
+                        maxlength="180" />
+                    <label>
+                        Recipient Email</label>
+                    <span class="fff"></span><span class="helper red"></span></li>
+                <li class="optional">
+                    <textarea id="MessageBody" class="ClearOnFocus" name="MessageBody" maxlength="180"></textarea>
+                    <label>
+                        Message (optional)</label>
+                    <span class="fff"></span></li>
+            </ul>
+            <div style='display: none'>
+                <input type='hidden' name='csrfmiddlewaretoken' value='9eea9fb626d76fd3d335b16b57684cf9' />
+            </div>
+            <div>
+                <a href="#" class="SubmitButton Button RedButton Button18 disabled" data-form="EmailModal">
+                    <strong>Send Email</strong><span></span></a></div>
+            <div class="inputstatus error">
+            </div>
+            </form>
+        </div>
+        <!-- .modal.thin -->
+        <div class="overlay">
+        </div>
+    </div>
+    <!-- #EmailModal.ModalContainer -->
+    <div id="EmbedModal" class="ModalContainer">
+        <div class="modal wide">
+            <div class="header lg">
+                <a href="#" class="close" onclick="Modal.close('EmbedModal'); return false"><strong>
+                    Close</strong><span></span></a>
+                <h2>
+                    Embed Pin on Your Blog</h2>
+            </div>
+            <form action="#" method="post" class="Form FancyForm">
+            <ul>
+                <li>
+                    <input type="text" id="EmbedImageWidth" class="ClearOnFocus" name="EmbedImageWidth"
+                        maxlength="180" style="display: inline-block; width: 25%; min-width: 25%;" />
+                    <strong class="colorlight" style="font-weight: 300;">px &mdash; Image Width</strong>
+                    <span class="fff" style="right: 75%"></span></li>
+                <li>
+                    <input type="text" id="EmbedImageHeight" class="ClearOnFocus" name="EmbedImageHeight"
+                        maxlength="180" style="display: inline-block; width: 25%; min-width: 25%;" />
+                    <strong class="colorlight" style="font-weight: 300;">px &mdash; Image Height</strong>
+                    <span class="fff" style="right: 75%"></span></li>
+                <li>
+                    <textarea id="EmbedHTMLCode" class="ClearOnFocus" name="EmbedHTML" maxlength="180"
+                        onfocus="this.select()" wrap="virtual"></textarea>
+                </li>
+            </ul>
+            </form>
+        </div>
+        <!-- .modal.wide -->
+        <div class="overlay">
+        </div>
+    </div>
+    <!-- #EmbedModal.ModalContainer -->
+    <div id="ReportModal" class="ModalContainer">
+        <div class="modal thin">
+            <div class="header lg">
+                <a href="#" class="close" onclick="Modal.close('ReportModal'); Closeup.resetReportModal(); return false">
+                    <strong>Close</strong><span></span></a>
+                <h2>
+                    Report Pin</h2>
+            </div>
+            <form action="#" method="post" class="Form FancyForm">
+            <p id="ReportLabel">
+                Why are you reporting this pin?</p>
+            <ul>
+                <li>
+                    <div class="option">
+                        <input id="nudity" name="reason" type="radio" value="nudity">
+                        <label for="nudity">
+                            Nudity or Pornography</label>
+                    </div>
+                    <div class="option">
+                        <input id="attacks" name="reason" type="radio" value="attacks">
+                        <label for="attacks">
+                            Attacks a group or individual</label>
+                    </div>
+                    <div class="option">
+                        <input id="graphic-violence" name="reason" type="radio" value="graphic-violence">
+                        <label for="graphic-violence">
+                            Graphic Violence</label>
+                    </div>
+                    <div class="option">
+                        <input id="hate-speech" name="reason" type="radio" value="hate-speech">
+                        <label for="hate-speech">
+                            Hateful Speech or Symbols</label>
+                    </div>
+                    <div class="option">
+                        <input id="spam" name="reason" type="radio" value="spam">
+                        <label for="spam">
+                            Spam</label>
+                    </div>
+                    <div class="option">
+                        <input id="other" name="reason" type="radio" value="other">
+                        <label for="other">
+                            Other</label>
+                    </div>
+                </li>
+                <li class="NoCheck Hidden">
+                    <textarea id="ReportPin" class="ClearOnFocus" name="ReportPin" maxlength="180" onfocus="this.select()"
+                        wrap="virtual"></textarea>
+                    <label>
+                        Please write a little about why you want to report this pin.</label>
+                    <span class="fff"></span></li>
+            </ul>
+            <div style='display: none'>
+                <input type='hidden' name='csrfmiddlewaretoken' value='9eea9fb626d76fd3d335b16b57684cf9' />
+            </div>
+            <div>
+                <a href="#" class="SubmitButton Button RedButton Button18 disabled" data-form="ReportModal">
+                    <strong>Report Pin</strong> <span></span></a><a href="/about/copyright/" style="font-size: 13px;
+                        float: right; margin-top: 10px;">Is this your intellectual property?</a>
+            </div>
+            </form>
+        </div>
+        <!-- .modal.wide -->
+        <div class="overlay">
+        </div>
+    </div>
+    <!-- #EmbedModal.ModalContainer -->
+    <div class="FixedContainer">
+        <div class="CloseupLeft">
+            <div id="SocialShare">
+                <ul>
+                    <li>
+                        <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fpinterest.com%2Fpin%2F84020349267695048%2F&amp;layout=button_count&amp;show_faces=true&amp;width=80&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21"
+                            scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 80px;
+                            height: 21px;" allowtransparency="true"></iframe>
+                    </li>
+                    <li><a href="http://twitter.com/share" class="twitter-share-button" data-count="none"
+                        data-via="pinterest">Tweet</a>
+                        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+                    </li>
+                    <li><a href="#" id="PinEmbed" class="Button WhiteButton Button11"><strong>&lt;&gt; Embed</strong><span></span></a></li>
+                    <li><a href="flag/" id="PinReport" class="Button WhiteButton Button11"><strong>&#9872;
+                        Report Pin</strong><span></span></a></li>
+                </ul>
+            </div>
+            <div class="pin pinBoard WhiteContainer clearfix">
+                <h3>
+                    Clothes and Such</h3>
+                <a href="#" class="link ImgLink">
+                    <img src="../img/CreateDetailsImg/179651472605058314_hisnUmzV_t.jpg" alt="Pin Thumbnail" /><img
+                        src="../img/CreateDetailsImg/84020349267823982_Gz1U3UGn_t.jpg" alt="Pin Thumbnail" /><img
+                            src="../img/CreateDetailsImg/188306828139103552_h4AmTylM_t.jpg" alt="Pin Thumbnail" /><img
+                                src="../img/CreateDetailsImg/73676143873495449_tKixQiOe_t.jpg" alt="Pin Thumbnail" /><img
+                                    src="../img/CreateDetailsImg/73676143873496277_LqBlwkoP_t.jpg" alt="Pin Thumbnail" /><img
+                                        src="../img/CreateDetailsImg/84020349267766875_7idWof27_t.jpg" alt="Pin Thumbnail" /><img
+                                            src="../img/CreateDetailsImg/84020349267766863_BtFlZ1M1_t.jpg" alt="Pin Thumbnail" /><img
+                                                src="../img/CreateDetailsImg/84020349267766646_sJDpGOF9_t.jpg" alt="Pin Thumbnail" /><img
+                                                    src="../img/CreateDetailsImg/84020349267766359_rLiLlkkp_t.jpg" alt="Pin Thumbnail" />
+                </a>
+                <div class="followBoard">
+                </div>
+            </div>
+            <!-- .pin.pinBoard.WhiteContainer.clearfix-->
+            <div class="pin pinBoard WhiteContainer domainPins clearfix">
+                <h3>
+                    Also from <a href="#" class="colorless">weheartit.com</a></h3>
+                <a href="#" class="link">
+                    <img src="../img/CreateDetailsImg/190558627952859191_R34iYRL7_t.jpg" />
+                    <img src="../img/CreateDetailsImg/74168725082981652_Vjtm8kqI_t.jpg" />
+                    <img src="../img/CreateDetailsImg/170925748327245095_n2jMFZzc_t.jpg" />
+                </a>
+            </div>
+        </div>
+        <!-- .CloseupLeft -->
+        <div class="CloseupRight">
+            <div class="WhiteContainer clearfix">
+                <div id="PinPinner">
+                    <a href="#" id="PinnerImage" class="ImgLink">
+                        <img src="../img/CreateDetailsImg/picture1.jpg" alt="User Profile Picture" /></a>
+                    <p id="PinnerName">
+                        <a href="#">Kirsten Palmer</a>
+                        <p id="PinnerStats" class="colorless">
+                            Pinned 12 weeks ago via <a href='#' class='colorless'>pinmarklet</a>
+                        </p>
+                </div>
+                <!-- #PinPinner -->
+                <div id="PinActionButtons">
+                    <p id="PinSource" class="colorlight">
+                        From <a href="#" target="_blank">weheartit.com</a></p>
+                    <ul>
+                        <li class="like-button"><a class="Button Button13 WhiteButton like_pin" href="/landing/">
+                            <strong><em></em>Like</strong><span></span></a></li>
+                        <li class="repin-button"><a class="Button Button13 WhiteButton" href="/landing/"><strong>
+                            <em></em>Repin</strong><span></span></a></li>
+                    </ul>
+                </div>
+                <!-- #PinActionButtons -->
+                <div id="PinImage" class="ImgLink">
+                    <a href="#" rel="nofollow" target="_blank">
+                        <img src="../img/CreateDetailsImg/84020349267695048_1oHSFdYY_c.jpg" id="pinCloseupImage"
+                            alt="Pinned Image" /></a>
+                </div>
+                <div id="PinCaption">
+                    nails.
+                    <p id="PinOrigin" class="colorlight">
+                        Pinned via <a href='#' class='colorless'>pinmarklet</a>
+                    </p>
+                    <!-- #PinOrigin -->
+                </div>
+                <!-- #PinCaption -->
+                <div class="PinComments">
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                    <div class="comment">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/cdiff-20.jpg" alt="Thumbnail of Jessie Pinneo" /></a>
+                        <p class="CommenterMeta">
+                            <a href="/jessie_lynne/" class="CommenterName">Jessie Pinneo</a> What is the grey
+                            polish called? and what's the brand? i've been looking for a color like that...</p>
+                    </div>
+                </div>
+                <!-- .PinComments -->
+                <div id="loginToComment">
+                    <a href="#">Login to Comment</a></div>
+                <div id="PinLikes" class="PinActivity">
+                    <h4>
+                        Likes</h4>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <a href="#" class="CommenterImage tipsyHover" title="Justice White">
+                        <img src="../img/CreateDetailsImg/picture2.jpg" alt="Thumbnail of Justice White" /></a>
+                    <p class="PinMoreActivity">
+                        + 1019 more likes</p>
+                </div>
+                <div id="PinRepins" class="PinActivity">
+                    <h4>
+                        Repins</h4>
+                    <div class="PinRepinStory">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/picture3.jpg" alt="Thumbnail of SmithHouseMgr " /></a><span
+                                class="repin_post_attr"><a href='#'>SmithHouseMgr </a>onto <a href='#'>TheMoMMy loves
+                                    her family!!</a></span></div>
+                    <div class="PinRepinStory">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/picture3.jpg" alt="Thumbnail of Grace Baek" /></a><span
+                                class="repin_post_attr"><a href='#'>Grace Baek</a> onto <a href='#'>Style</a></span></div>
+                    <div class="PinRepinStory">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/picture3.jpg" alt="Thumbnail of Devon Wiggins" /></a><span
+                                class="repin_post_attr"><a href='#'>Devon Wiggins</a> onto <a href='#'>My Style</a></span></div>
+                    <div class="PinRepinStory">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/picture3.jpg" alt="Thumbnail of Ali Warner" /></a><span
+                                class="repin_post_attr"><a href='#'>Ali Warner</a> onto <a href='#'>Sexy Styles
+                                </a></span>
+                    </div>
+                    <div class="PinRepinStory">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/picture3.jpg" alt="Thumbnail of Alexandria " /></a><span
+                                class="repin_post_attr"><a href='#'>Alexandria </a>onto <a href='#'>Well Manicured
+                                </a></span>
+                    </div>
+                    <div class="PinRepinStory">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/picture3.jpg" alt="Thumbnail of Candice Johnston" /></a><span
+                                class="repin_post_attr"><a href='#'>Candice Johnston</a> onto <a href='#'>Eye make-up
+                                    +</a></span></div>
+                    <div class="PinRepinStory">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/picture3.jpg" alt="Thumbnail of Brittany Barfield" /></a><span
+                                class="repin_post_attr"><a href='#'>Brittany Barfield</a> onto <a href='#'>Nail Art</a></span></div>
+                    <div class="PinRepinStory">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/picture3.jpg" alt="Thumbnail of Joy Voas" /></a><span
+                                class="repin_post_attr"><a href='#'>Joy Voas</a> onto <a href='#'>Pretty Lady.</a></span></div>
+                    <div class="PinRepinStory">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/picture3.jpg" alt="Thumbnail of Eyes Haveit" /></a><span
+                                class="repin_post_attr"><a href='#'>Eyes Haveit</a> onto <a href='#'>Look at these Nails</a></span></div>
+                    <div class="PinRepinStory">
+                        <a href="#" class="CommenterImage">
+                            <img src="../img/CreateDetailsImg/picture3.jpg" alt="Thumbnail of Kim Pham" /></a><span
+                                class="repin_post_attr"><a href='#'>Kim Pham</a> onto <a href='#'>My Style</a></span></div>
+                    <p class="PinMoreActivity">
+                        + 3769 more repins</p>
+                </div>
+            </div>
+            <!-- .WhiteContainer.clearfix -->
+        </div>
+        <!-- .CloseupRight -->
+    </div>
+    <!-- .FixedContainer -->
+</html>

@@ -1,0 +1,24 @@
+
+
+.gallery .box{border-width: 1px 1px 2px; border-style: solid; border-color: #dedcdd #c9c7c8 #c9c7c8;}
+
+.header .line2{ border-bottom:#c9c7c8 2px solid;}
+.WhiteContainer {background:#fff; border-bottom:#c9c7c8 2px solid; border-left:#c9c7c8 1px solid; border-top:#dedcdd 1px solid; border-right:#c9c7c8 1px solid}
+.CloseupLeft WhiteContainer{position:static; margin:0px 0px 15px;}
+#Header{ border-bottom:#c9c7c8 2px solid;}
+.header .line1 .aboutus li ul{border:1px solid #CCCACA;}
+.HeaderContainer li ul{border:1px solid #CCCACA;}
+.gallery .box{margin:15px 0px 15px 0px;}
+.add .modal{border-bottom:2px solid #a3a3a3 !important; border-left:1px solid #a3a3a3!important; border-right:1px solid #a3a3a3!important; border-top:1px solid #a3a3a3!important;}
+.uploadPin .modal{border-bottom:#a3a3a3 2px solid!important; border-left:#a3a3a3 1px solid!important; border-top:#a3a3a3 1px solid!important; border-right:#a3a3a3 1px solid!important;}
+.CreateBoard .modal{border-bottom:#a3a3a3 2px solid!important; border-left:#a3a3a3 1px solid!important; border-top:#a3a3a3 1px solid!important; border-right:#a3a3a3 1px solid!important;}
+.uploadPin .modal .cont .uploadPinBottom .uploadImages{border:#a3a3a3 1px solid;}
+.uploadPin .modal{border-bottom:#a3a3a3 2px solid!important; border-left:#a3a3a3 1px solid!important; border-top:#a3a3a3 1px solid!important; border-right:#a3a3a3 1px solid!important;}
+.add{border:1px solid #888888; border-bottom:2px;}
+.CreateBoard{border-bottom:2px solid #a3a3a3; border-left:1px solid #a3a3a3; border-right:1px solid #a3a3a3; border-top:1px solid #a3a3a3;}
+.addPin{ border-bottom:2px solid #a3a3a3; border-left:1px solid #a3a3a3; border-right:1px solid #a3a3a3; border-top:1px solid #a3a3a3;}
+.uploadPin .modal .cont .pinIt .pinImage img{border:1px solid #a3a3a3;}
+.addPin .modal .cont .uploadCont .uploadImages{border:1px solid #a3a3a3;}
+.pinBoard .board{border:1px solid #d0cfd0;}
+
+

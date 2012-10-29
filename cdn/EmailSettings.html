@@ -1,0 +1,136 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>User Name</title>
+<link rel="icon" href="img/favicon.ico" />
+<!--<link href="home.css" rel="stylesheet" type="text/css" />-->
+<link href="CreateDetails.css" rel="stylesheet" type="text/css" />
+<!--[if (gt IE 6)&(lt IE 9)]><link rel="stylesheet" href="ie7-and-up_fa603afa.css" type="text/css" media="all" /><![endif]-->
+<link rel="stylesheet" href="scripts/jquery-checkbox.1.3.0b1/jquery.checkbox.css" />
+		<link rel="stylesheet" href="scripts/jquery-checkbox.1.3.0b1/jquery.safari-checkbox.css" />
+		<script type="text/javascript" src="scripts/jquery-checkbox.1.3.0b1/jquery.js"></script>
+		<script type="text/javascript" src="scripts/jquery-checkbox.1.3.0b1/jquery.checkbox.min.js"></script>
+		<script type="text/javascript">
+		    $(document).ready(function () {
+		        $('input:checkbox:not([safari])').checkbox();
+		        $('input[safari]:checkbox').checkbox({ cls: 'jquery-safari-checkbox' });
+		        $('input:radio').checkbox();
+		    });
+
+		    displayForm = function (elementId) {
+		        var content = [];
+		        $('#' + elementId + ' input').each(function () {
+		            var el = $(this);
+		            if ((el.attr('type').toLowerCase() == 'radio')) {
+		                if (this.checked)
+		                    content.push([
+								'"', el.attr('name'), '": ',
+								'value="', (this.value), '"',
+								(this.disabled ? ', disabled' : '')
+							].join(''));
+		            }
+		            else
+		                content.push([
+							'"', el.attr('name'), '": ',
+							(this.checked ? 'checked' : 'not checked'),
+							(this.disabled ? ', disabled' : '')
+						].join(''));
+		        });
+		        alert(content.join('\n'));
+		    }
+
+		    changeStyle = function (skin) {
+		        jQuery('#myform :checkbox').checkbox((skin ? { cls: skin} : {}));
+		    }
+			
+		</script>
+</head>
+<body>
+<div id="Header">
+  <div class="FixedContainer HeaderContainer">
+    <div class="freshpinlogo">
+      <div class="freshpinlogoText"> <a href="home.html">FreshPin</a></div>
+      <div class="freshpinlogoTagline"> 450 Sources, Fresh Daily, Original Sources - Pin On!</div>
+    </div>
+    <ul id="Navigation">
+      <li><a class="nav" href="about.html">About<span></span></a>
+        <ul>
+          <li><a href="help.html">Help</a></li>
+          <li class="beforeDivider"><a href="javascript:alert('To Do');">Copyright</a></li>
+          <li class="divider"><a href="javascript:alert('To Do');">Careers</a></li>
+          <li><a href="javascript:alert('To Do');">Team</a></li>
+          <li><a href="javascript:alert('To Do');">Blog</a></li>
+        </ul>
+      </li>
+      <li><a class="nav LoginNav" href="#">Login</a></li>
+    </ul>
+    <div id="Search">
+      <input type="text" value="Search over 500,000 Pins" size="27" name="q" id="query">
+      <a class="lg" style="cursor: pointer;" id="query_button"> <img alt="" id="s" src="img/search.gif"></a> </div>
+  </div>
+</div>
+<div class="FixedContainer">
+  <form id="profileEdit" class="Form StaticForm">
+    <h3>Email Settings</h3>
+    <ul>
+      <li>
+        <label for="id_email">Email</label>
+        <div class="Right NoInput">
+          jagadeesan.t@gmail.com
+          <span class="help_text"><a href="#">Change Email</a></span> </div>
+      </li>
+      <li>
+        <label>All</label>
+        <div class="Right"><input  type="checkbox" checked>Any email</div>
+      </li>
+            <li>
+        <label>Group Pins</label>
+        <div class="Right"><input  type="checkbox" checked>When a new pin is added to a group board</div>
+      </li>
+            <li>
+        <label>Comments</label>
+        <div class="Right"><input  type="checkbox" checked>When someone comments on your pin</div>
+      </li>
+            <li>
+        <label>Likes</label>
+        <div class="Right"><input  type="checkbox" checked>When someone likes your pin</div>
+      </li>
+            <li>
+        <label>Repins</label>
+        <div class="Right"><input  type="checkbox" checked>When your pin is repinned</div>
+      </li>
+            <li>
+        <label>Follows</label>
+        <div class="Right"><input  type="checkbox" checked>When a new person follows you</div>
+      </li>
+            <li>
+        <label>Frequency</label>
+        <div style="padding-bottom: 0;" class="Right NoInput">
+                        <label style="padding-bottom: 0;" id="radio">
+                            <span style="display: block; margin-bottom: 8px;">How often you receive emails about likes, repins, &amp; follows:</span>
+<ul>
+<li style="width:155px; float:left;"><label class="radioBox" for="id_email_interval_0"><input type="radio"> <span>Immediately</span></label></li>
+<li style="width:116px; float:left;"><label class="radioBox" for="id_email_interval_0"><input type="radio"> <span>Once Daily</span></label></li>
+
+</ul>
+                        </label>
+                        
+                    </div>
+      </li>
+            <li>
+        <label>Digest</label>
+        <div class="Right"><input  type="checkbox" checked>Emails summarizing your weekly activity</div>
+      </li>
+            <li>
+        <label>News</label>
+        <div class="Right"><input  type="checkbox" checked>Occasional Pinterest news and updates</div>
+      </li>
+            
+    </ul>
+    <div class="Submit"> <a onclick="" class="redButton" href="#"><span>Save Settings</span></a></div>
+  </form>
+</div>
+</body>
+</html>
