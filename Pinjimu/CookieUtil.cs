@@ -17,7 +17,6 @@ namespace Pinjimu
 
         public static bool CookieExists(string cookieName)
         {
-
             bool exists = false;
             HttpCookie cookie = context.Request.Cookies[cookieName];
             if (cookie != null)

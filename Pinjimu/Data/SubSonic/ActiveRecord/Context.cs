@@ -149,6 +149,7 @@ namespace SubSonic.POCOS
         public Query<Point> Points { get; set; }
         public Query<PointsHistory> PointsHistories { get; set; }
         public Query<Article> Articles { get; set; }
+        public Query<Contact> Contacts { get; set; }
         public Query<Category> Categories { get; set; }
 
 			
@@ -274,6 +275,7 @@ namespace SubSonic.POCOS
             Points = new Query<Point>(provider);
             PointsHistories = new Query<PointsHistory>(provider);
             Articles = new Query<Article>(provider);
+            Contacts = new Query<Contact>(provider);
             Categories = new Query<Category>(provider);
             #endregion
 
@@ -302,6 +304,7 @@ namespace SubSonic.POCOS
             	DataProvider.Schema.Tables.Add(new PointsTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new PointsHistoryTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new ArticlesTable(DataProvider));
+            	DataProvider.Schema.Tables.Add(new ContactsTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new CategoryTable(DataProvider));
             }
             #endregion

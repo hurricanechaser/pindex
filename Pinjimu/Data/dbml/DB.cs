@@ -55,6 +55,9 @@ namespace Pinjimu.Data.dbml
     partial void InsertComments(Comments instance);
     partial void UpdateComments(Comments instance);
     partial void DeleteComments(Comments instance);
+    partial void InsertContacts(Contacts instance);
+    partial void UpdateContacts(Contacts instance);
+    partial void DeleteContacts(Contacts instance);
     partial void InsertFacebook(Facebook instance);
     partial void UpdateFacebook(Facebook instance);
     partial void DeleteFacebook(Facebook instance);
@@ -184,6 +187,14 @@ namespace Pinjimu.Data.dbml
 			get
 			{
 				return this.GetTable<Comments>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Contacts> Contacts
+		{
+			get
+			{
+				return this.GetTable<Contacts>();
 			}
 		}
 		
@@ -376,6 +387,14 @@ namespace Pinjimu.Data.dbml
 			get
 			{
 				return this.GetTable<Vw_ImgCategory>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Vw_Pin> Vw_Pin
+		{
+			get
+			{
+				return this.GetTable<Vw_Pin>();
 			}
 		}
 		
@@ -2182,6 +2201,8 @@ namespace Pinjimu.Data.dbml
 		
 		private System.Nullable<int> _Rating;
 		
+		private EntityRef<Contacts> _Contacts;
+		
 		private EntityRef<AppUsers> _AppUsers;
 		
 		private EntityRef<Boards> _Boards;
@@ -2378,6 +2399,41 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK__Contacts__BIMID__02C769E9", Storage="_Contacts", ThisKey="ID", OtherKey="BIMID", IsUnique=true, IsForeignKey=false, DeleteRule="NO ACTION")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8, EmitDefaultValue=false)]
+		public Contacts Contacts
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Contacts.HasLoadedOrAssignedValue == false)))
+				{
+					return null;
+				}
+				return this._Contacts.Entity;
+			}
+			set
+			{
+				Contacts previousValue = this._Contacts.Entity;
+				if (((previousValue != value) 
+							|| (this._Contacts.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Contacts.Entity = null;
+						previousValue.BoardsImagesMapping = null;
+					}
+					this._Contacts.Entity = value;
+					if ((value != null))
+					{
+						value.BoardsImagesMapping = this;
+					}
+					this.SendPropertyChanged("Contacts");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_BoardsImagesMapping_AppUsers", Storage="_AppUsers", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
 		public AppUsers AppUsers
 		{
@@ -2481,7 +2537,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_Comments_BoardsImagesMapping", Storage="_Comments", ThisKey="ID", OtherKey="BoardsImagesMappingID", DeleteRule="NO ACTION")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8, EmitDefaultValue=false)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9, EmitDefaultValue=false)]
 		public EntitySet<Comments> Comments
 		{
 			get
@@ -2500,7 +2556,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_Likes_BoardsImagesMapping", Storage="_Likes", ThisKey="ID", OtherKey="BoardsImagesMappingID", DeleteRule="NO ACTION")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9, EmitDefaultValue=false)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10, EmitDefaultValue=false)]
 		public EntitySet<Likes> Likes
 		{
 			get
@@ -2564,6 +2620,7 @@ namespace Pinjimu.Data.dbml
 		
 		private void Initialize()
 		{
+			this._Contacts = default(EntityRef<Contacts>);
 			this._AppUsers = default(EntityRef<AppUsers>);
 			this._Boards = default(EntityRef<Boards>);
 			this._Images = default(EntityRef<Images>);
@@ -3258,6 +3315,273 @@ namespace Pinjimu.Data.dbml
 		private void Initialize()
 		{
 			this._AppUsers = default(EntityRef<AppUsers>);
+			this._BoardsImagesMapping = default(EntityRef<BoardsImagesMapping>);
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Contacts")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Contacts : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _BIMID;
+		
+		private string _Contact;
+		
+		private string _Type;
+		
+		private string _Address;
+		
+		private string _Phone;
+		
+		private string _Website;
+		
+		private string _Avatar;
+		
+		private EntityRef<BoardsImagesMapping> _BoardsImagesMapping;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnBIMIDChanging(int value);
+    partial void OnBIMIDChanged();
+    partial void OnContactChanging(string value);
+    partial void OnContactChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnWebsiteChanging(string value);
+    partial void OnWebsiteChanged();
+    partial void OnAvatarChanging(string value);
+    partial void OnAvatarChanged();
+    #endregion
+		
+		public Contacts()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BIMID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int BIMID
+		{
+			get
+			{
+				return this._BIMID;
+			}
+			set
+			{
+				if ((this._BIMID != value))
+				{
+					if (this._BoardsImagesMapping.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBIMIDChanging(value);
+					this.SendPropertyChanging();
+					this._BIMID = value;
+					this.SendPropertyChanged("BIMID");
+					this.OnBIMIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contact", DbType="VarChar(64)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public string Contact
+		{
+			get
+			{
+				return this._Contact;
+			}
+			set
+			{
+				if ((this._Contact != value))
+				{
+					this.OnContactChanging(value);
+					this.SendPropertyChanging();
+					this._Contact = value;
+					this.SendPropertyChanged("Contact");
+					this.OnContactChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(32)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(1024)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(32)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Website", DbType="VarChar(2048)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		public string Website
+		{
+			get
+			{
+				return this._Website;
+			}
+			set
+			{
+				if ((this._Website != value))
+				{
+					this.OnWebsiteChanging(value);
+					this.SendPropertyChanging();
+					this._Website = value;
+					this.SendPropertyChanged("Website");
+					this.OnWebsiteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Avatar", DbType="VarChar(2048)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+		public string Avatar
+		{
+			get
+			{
+				return this._Avatar;
+			}
+			set
+			{
+				if ((this._Avatar != value))
+				{
+					this.OnAvatarChanging(value);
+					this.SendPropertyChanging();
+					this._Avatar = value;
+					this.SendPropertyChanged("Avatar");
+					this.OnAvatarChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK__Contacts__BIMID__02C769E9", Storage="_BoardsImagesMapping", ThisKey="BIMID", OtherKey="ID", IsForeignKey=true)]
+		public BoardsImagesMapping BoardsImagesMapping
+		{
+			get
+			{
+				return this._BoardsImagesMapping.Entity;
+			}
+			set
+			{
+				BoardsImagesMapping previousValue = this._BoardsImagesMapping.Entity;
+				if (((previousValue != value) 
+							|| (this._BoardsImagesMapping.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BoardsImagesMapping.Entity = null;
+						previousValue.Contacts = null;
+					}
+					this._BoardsImagesMapping.Entity = value;
+					if ((value != null))
+					{
+						value.Contacts = this;
+						this._BIMID = value.ID;
+					}
+					else
+					{
+						this._BIMID = default(int);
+					}
+					this.SendPropertyChanged("BoardsImagesMapping");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void Initialize()
+		{
 			this._BoardsImagesMapping = default(EntityRef<BoardsImagesMapping>);
 			OnCreated();
 		}
@@ -8296,6 +8620,301 @@ namespace Pinjimu.Data.dbml
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_Pin")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Vw_Pin
+	{
+		
+		private string _Contact;
+		
+		private string _Address;
+		
+		private string _Type;
+		
+		private string _Phone;
+		
+		private string _Website;
+		
+		private System.Nullable<short> _Image_Height;
+		
+		private System.Nullable<short> _Image_Width;
+		
+		private string _RelativeImage_Path;
+		
+		private System.Nullable<bool> _Uploaded;
+		
+		private System.Nullable<decimal> _PinID;
+		
+		private string _Image_Title;
+		
+		private string _Source;
+		
+		private System.Nullable<int> _UserID;
+		
+		private int _BIMID;
+		
+		private string _Avatar;
+		
+		public Vw_Pin()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contact", DbType="VarChar(64)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public string Contact
+		{
+			get
+			{
+				return this._Contact;
+			}
+			set
+			{
+				if ((this._Contact != value))
+				{
+					this._Contact = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(1024)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(32)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(32)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Website", DbType="VarChar(2048)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public string Website
+		{
+			get
+			{
+				return this._Website;
+			}
+			set
+			{
+				if ((this._Website != value))
+				{
+					this._Website = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image_Height", DbType="SmallInt")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		public System.Nullable<short> Image_Height
+		{
+			get
+			{
+				return this._Image_Height;
+			}
+			set
+			{
+				if ((this._Image_Height != value))
+				{
+					this._Image_Height = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image_Width", DbType="SmallInt")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+		public System.Nullable<short> Image_Width
+		{
+			get
+			{
+				return this._Image_Width;
+			}
+			set
+			{
+				if ((this._Image_Width != value))
+				{
+					this._Image_Width = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RelativeImage_Path", DbType="VarChar(2048)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+		public string RelativeImage_Path
+		{
+			get
+			{
+				return this._RelativeImage_Path;
+			}
+			set
+			{
+				if ((this._RelativeImage_Path != value))
+				{
+					this._RelativeImage_Path = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Uploaded", DbType="Bit")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+		public System.Nullable<bool> Uploaded
+		{
+			get
+			{
+				return this._Uploaded;
+			}
+			set
+			{
+				if ((this._Uploaded != value))
+				{
+					this._Uploaded = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PinID", DbType="Decimal(29,0)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+		public System.Nullable<decimal> PinID
+		{
+			get
+			{
+				return this._PinID;
+			}
+			set
+			{
+				if ((this._PinID != value))
+				{
+					this._PinID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image_Title", DbType="NVarChar(2048)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+		public string Image_Title
+		{
+			get
+			{
+				return this._Image_Title;
+			}
+			set
+			{
+				if ((this._Image_Title != value))
+				{
+					this._Image_Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Source", DbType="VarChar(2048)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+		public string Source
+		{
+			get
+			{
+				return this._Source;
+			}
+			set
+			{
+				if ((this._Source != value))
+				{
+					this._Source = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+		public System.Nullable<int> UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BIMID", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+		public int BIMID
+		{
+			get
+			{
+				return this._BIMID;
+			}
+			set
+			{
+				if ((this._BIMID != value))
+				{
+					this._BIMID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Avatar", DbType="VarChar(2048)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+		public string Avatar
+		{
+			get
+			{
+				return this._Avatar;
+			}
+			set
+			{
+				if ((this._Avatar != value))
+				{
+					this._Avatar = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_User")]
 	[global::System.Runtime.Serialization.DataContractAttribute()]
 	public partial class Vw_User
@@ -8532,6 +9151,8 @@ namespace Pinjimu.Data.dbml
 		
 		private string _FirstName;
 		
+		private string _Speciality;
+		
 		public Vw_UserComments()
 		{
 		}
@@ -8634,6 +9255,23 @@ namespace Pinjimu.Data.dbml
 				if ((this._FirstName != value))
 				{
 					this._FirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Speciality", DbType="Char(1)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+		public string Speciality
+		{
+			get
+			{
+				return this._Speciality;
+			}
+			set
+			{
+				if ((this._Speciality != value))
+				{
+					this._Speciality = value;
 				}
 			}
 		}

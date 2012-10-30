@@ -1891,6 +1891,17 @@ namespace SubSonic.POCOS1
             }
         }
 
+        public IQueryable<Contact> Contacts
+        {
+            get
+            {
+                  var db=new SubSonic.POCOS1.PinjimuDB();
+                  return from items in db.Contacts
+                       where items.BIMID == _ID
+                       select items;
+            }
+        }
+
         public IQueryable<Comment> Comments
         {
             get
@@ -3478,6 +3489,181 @@ namespace SubSonic.POCOS1
         #endregion
 
         #region Foreign Keys
+        #endregion
+
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+        public event PropertyChangingEventHandler PropertyChanging;
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void SendPropertyChanging()
+        {
+            var handler = PropertyChanging;
+            if (handler != null)
+               handler(this, emptyChangingEventArgs);
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+	}
+	
+    
+    
+    /// <summary>
+    /// A class which represents the Contacts table in the Pinjimu Database.
+    /// This class is queryable through PinjimuDB.Contact 
+    /// </summary>
+
+	public partial class Contact: INotifyPropertyChanging, INotifyPropertyChanged
+	{
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+	    
+	    public Contact(){
+	        OnCreated();
+	    }
+	    
+	    #region Properties
+	    
+        partial void OnBIMIDChanging(int value);
+        partial void OnBIMIDChanged();
+		
+		private int _BIMID;
+		public int BIMID { 
+		    get{
+		        return _BIMID;
+		    } 
+		    set{
+		        this.OnBIMIDChanging(value);
+                this.SendPropertyChanging();
+                this._BIMID = value;
+                this.SendPropertyChanged("BIMID");
+                this.OnBIMIDChanged();
+		    }
+		}
+		
+        partial void OnContactXChanging(string value);
+        partial void OnContactXChanged();
+		
+		private string _ContactX;
+		public string ContactX { 
+		    get{
+		        return _ContactX;
+		    } 
+		    set{
+		        this.OnContactXChanging(value);
+                this.SendPropertyChanging();
+                this._ContactX = value;
+                this.SendPropertyChanged("ContactX");
+                this.OnContactXChanged();
+		    }
+		}
+		
+        partial void OnTypeChanging(string value);
+        partial void OnTypeChanged();
+		
+		private string _Type;
+		public string Type { 
+		    get{
+		        return _Type;
+		    } 
+		    set{
+		        this.OnTypeChanging(value);
+                this.SendPropertyChanging();
+                this._Type = value;
+                this.SendPropertyChanged("Type");
+                this.OnTypeChanged();
+		    }
+		}
+		
+        partial void OnAddressChanging(string value);
+        partial void OnAddressChanged();
+		
+		private string _Address;
+		public string Address { 
+		    get{
+		        return _Address;
+		    } 
+		    set{
+		        this.OnAddressChanging(value);
+                this.SendPropertyChanging();
+                this._Address = value;
+                this.SendPropertyChanged("Address");
+                this.OnAddressChanged();
+		    }
+		}
+		
+        partial void OnPhoneChanging(string value);
+        partial void OnPhoneChanged();
+		
+		private string _Phone;
+		public string Phone { 
+		    get{
+		        return _Phone;
+		    } 
+		    set{
+		        this.OnPhoneChanging(value);
+                this.SendPropertyChanging();
+                this._Phone = value;
+                this.SendPropertyChanged("Phone");
+                this.OnPhoneChanged();
+		    }
+		}
+		
+        partial void OnWebsiteChanging(string value);
+        partial void OnWebsiteChanged();
+		
+		private string _Website;
+		public string Website { 
+		    get{
+		        return _Website;
+		    } 
+		    set{
+		        this.OnWebsiteChanging(value);
+                this.SendPropertyChanging();
+                this._Website = value;
+                this.SendPropertyChanged("Website");
+                this.OnWebsiteChanged();
+		    }
+		}
+		
+        partial void OnAvatarChanging(string value);
+        partial void OnAvatarChanged();
+		
+		private string _Avatar;
+		public string Avatar { 
+		    get{
+		        return _Avatar;
+		    } 
+		    set{
+		        this.OnAvatarChanging(value);
+                this.SendPropertyChanging();
+                this._Avatar = value;
+                this.SendPropertyChanged("Avatar");
+                this.OnAvatarChanged();
+		    }
+		}
+		
+
+        #endregion
+
+        #region Foreign Keys
+        public IQueryable<BoardsImagesMapping> BoardsImagesMappings
+        {
+            get
+            {
+                  var db=new SubSonic.POCOS1.PinjimuDB();
+                  return from items in db.BoardsImagesMappings
+                       where items.ID == _BIMID
+                       select items;
+            }
+        }
+
         #endregion
 
 

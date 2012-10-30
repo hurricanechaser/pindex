@@ -177,11 +177,11 @@ function scrollTo(v) {
             }
         });
         tmpl.hover(function () {
-            $(this).find('.buttons').css({display:'inline',opacity:0}).transition({ opacity:1},'fast');
-            $(this).find('.boardsPinBoards').css({display:'inline',opacity:0}).transition({opacity:1},'fast');
+            $(this).find('.buttons').css({ display: 'inline', opacity: 0 }).transition({ opacity: 1 }, 'fast');
+            $(this).find('.boardsPinBoards').css({ display: 'inline', opacity: 0 }).transition({ opacity: 1 }, 'fast');
         }, function () {
-            $(this).find('.buttons').transition({ opacity:0},'fast').css({display:'none'});
-            $(this).find('.boardsPinBoards').transition({ opacity:0},'fast').css({display:'none'});
+            $(this).find('.buttons').transition({ opacity: 0 }, 'fast').css({ display: 'none' });
+            $(this).find('.boardsPinBoards').transition({ opacity: 0 }, 'fast').css({ display: 'none' });
         });
         tmpl.find('img[name="social"]').click(function () {
             var url = $(this).attr('href');
@@ -240,20 +240,27 @@ function scrollTo(v) {
         set();
         cbusers(FreshPin.constants.data);
     }
-    function setpin() {
-        var o = FreshPin.constants.pin;
-        if (o.editable && FreshPin.authenticated()) {
-            $('#editpint').css('display', '');
-            $('#likepint').css('display', 'none');
-        } else {
-            $('#editpint').css('display', 'none');
-            $('#likepint').css('display', '');
-            //if (o.liked) $('#likepint div').addClass('pinDisLike');
-        }
-        $('#pinCloseupImage').attr('src', o.url).attr('alt', o.title);
-        $('#pinimgsource').attr('href', o.imgsource);
-        $('#pintitle').html(o.title).width(o.width + 60);
-        $('#pin').css({ left: ($(window).width() / 2 - $('#pin').width() / 2) }).attr('bimid', o.BIMID).jqmShow();
+    function setpin() {      
+        var o = FreshPin.constants.pin
+        //var imgsrc = $('#pinCloseupImage');
+        //if (o.editable && FreshPin.authenticated()) {
+        //    $('#editpint').css('display', '');
+        //    $('#likepint').css('display', 'none');
+        //} else {
+        //    $('#editpint').css('display', 'none');
+        //    $('#likepint').css('display', '');
+        //}
+        //if (o.Contact && o.Address && o.Avatar && o.Phone && o.Website) {
+        //    imgsrc.height(280);
+        //} else {
+        //    $('#contactInfo').hide();
+        //    imgsrc.height(450);
+        //}
+        //imgsrc.attr('src', o.url).attr('alt', o.title);
+        //$('#pinimgsource').attr('href', o.imgsource);
+        //$('#pintitle').html(o.title).width(o.width + 60);
+        var html = templates.pin(o);
+        $('#pin').empty().attr('bimid', o.BIMID).html(html).css(cssCenterY('#pin')).jqmShow();
     }
     function reload(e) {
         _his.push(location.hash);
@@ -386,20 +393,26 @@ function scrollTo(v) {
     $s._his = _his;
 })(window);
 $(function () {
+    
     if (!$.support.transition)
         $.fn.transition = $.fn.animate;
-    $.fx.interval = 1;
+    $.fx.interval = 1, _.templateSettings = {
+        evaluate: /<#([\s\S]+?)#>/g,
+        interpolate: /<#=([\s\S]+?)#>/g,
+        escape: /<#-([\s\S]+?)#>/g
+    };
     $('#topcontrol').click(function () { scrollTo(0); });
     templates.picTemplate = $("#picTemplate").template();
     templates.boards = $("#boards").template();
     templates.users = $("#usertpl").template();
+    templates.pin = _.template($('#pintmpl').html());
     $('#pin').jqm({
         onShow: function (hash) {
             $(document.body).css({ overflow: 'hidden' });
             hash.o.css({ opacity: .5 }).show();
             hash.w.show();
         },
-        forceclose:function (hash) {
+        forceclose: function (hash) {
             hash.w.hide();
             hash.o.css({ opacity: 0 }).hide();
             $(document.body).css({ overflow: 'auto' });
@@ -408,7 +421,7 @@ $(function () {
         },
         onHide: function (hash) {
             hash.w.hide();
-            hash.o.css({opacity: 0}).hide();
+            hash.o.css({ opacity: 0 }).hide();
             FreshPin.constants.pinClosed = true;
             $(document.body).css({ overflow: 'auto' });
             $('#pinCloseupImage').attr('src', '');
@@ -540,7 +553,7 @@ $(function () {
                 hash.w.css({ top: 0 }).hide();
             },
             onHide: function (hash) {
-                hash.o.css({opacity: 0}).hide();
+                hash.o.css({ opacity: 0 }).hide();
                 hash.w.css({ top: 0 }).hide();
             }
         });
@@ -596,7 +609,7 @@ $(function () {
             hash.w.css({ top: 0 }).hide();
         },
         onHide: function (hash) {
-            hash.o.css({opacity: 0}).hide();
+            hash.o.css({ opacity: 0 }).hide();
             hash.w.css({ top: 0 }).hide();
         }
     });
@@ -619,7 +632,7 @@ $(function () {
                     hash.w.css({ top: 0 }).hide();
                 },
                 onHide: function (hash) {
-                    hash.o.css({opacity: 0}).hide();
+                    hash.o.css({ opacity: 0 }).hide();
                     hash.w.css({ top: 0 }).hide();
                 }
             });

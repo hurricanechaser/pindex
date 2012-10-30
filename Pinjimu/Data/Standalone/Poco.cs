@@ -20,6 +20,23 @@ public long? MURMUR2 { get;set; }
 public long? CRC64 { get;set; }
 public string Title { get;set; }
 public string RelImagePath { get;set; }
+}public class vw_Pin {
+
+public int BIMID { get;set; }
+public string Avatar { get;set; }
+public string Contact { get;set; }
+public string Address { get;set; }
+public string Type { get;set; }
+public string Phone { get;set; }
+public string Website { get;set; }
+public short? Image_Height { get;set; }
+public short? Image_Width { get;set; }
+public string RelativeImage_Path { get;set; }
+public bool? Uploaded { get;set; }
+public long? PinID { get;set; }
+public string Image_Title { get;set; }
+public string Source { get;set; }
+public int? UserID { get;set; }
 }public class Images {
 
 public int ID { get;set; }
@@ -141,6 +158,7 @@ public int? Rating { get;set; }
 public int UserID { get;set; }
 public int BoardsImagesMappingID { get;set; }
 public string FirstName { get;set; }
+public string Speciality { get;set; }
 public string Comment { get;set; }
 public string Name { get;set; }
 public string Avatar { get;set; }
@@ -288,6 +306,15 @@ public string ArticleContent { get;set; }
 public string Description { get;set; }
 public string Title { get;set; }
 public string RelImagePath { get;set; }
+}public class Contacts {
+
+public int BIMID { get;set; }
+public string Contact { get;set; }
+public string Type { get;set; }
+public string Address { get;set; }
+public string Phone { get;set; }
+public string Website { get;set; }
+public string Avatar { get;set; }
 }public class Category {
 
 public int ID { get;set; }

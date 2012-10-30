@@ -138,35 +138,42 @@ namespace Pinjimu
             string pin = context.Request.Params["pin"];
             int? userID = Common.UserID;
             if (userID.HasValue)
-                context.WriteJsonP(JsonConvert.SerializeObject((from o in GetDataContext2.Vw_Images
+                context.WriteJsonP(JsonConvert.SerializeObject((from o in GetDataContext2.Vw_Pin                                                               
                                                                 where o.PinID.Value.ToString() == pin
                                                                 select new
-                                                                {
-                                                                    o.ID,
-                                                                    o.BoardID,
+                                                                {                                                                  
                                                                     editable = o.UserID.HasValue && (o.UserID == userID),
                                                                     title = o.Image_Title,
                                                                     source = Common.GetAbsoluteUri(o.Source),
-                                                                    imgsource = o.Source,
-                                                                   
+                                                                    imgsource = o.Source,                                                                   
                                                                     Comments = Common.XmlToJArray(GetDataContext2.ForXML_vw_UserComments(o.BIMID)),
                                                                     o.BIMID,
+                                                                    o.Contact,
+                                                                    o.Address,
+                                                                    o.Website,
+                                                                    o.Avatar,
+                                                                    o.Phone,                                                                  
                                                                     width = o.Image_Width,
+                                                                    height=o.Image_Height,
                                                                     url = ((o.Uploaded ?? false) ? Common.UploadedImageRelPath : Common.ContentUrl) + o.RelativeImage_Path.Trim()
                                                                 }).First(), Formatting.Indented, Common.JsonSerializerSettings));
             else
-                context.WriteJsonP(JsonConvert.SerializeObject((from o in GetDataContext2.Vw_Images
+                context.WriteJsonP(JsonConvert.SerializeObject((from o in GetDataContext2.Vw_Pin
                                                                 where o.PinID.Value.ToString() == pin
                                                                 select new
-                                                                {
-                                                                    o.ID,
-                                                                    o.BoardID,
+                                                                {                                                                 
                                                                     title = o.Image_Title,
                                                                     source = Common.GetAbsoluteUri(o.Source),
                                                                     imgsource = o.Source,
                                                                     Comments = Common.XmlToJArray(GetDataContext2.ForXML_vw_UserComments(o.BIMID)),
                                                                     o.BIMID,
+                                                                    o.Contact,
+                                                                    o.Address,
+                                                                    o.Website,
+                                                                    o.Avatar,
+                                                                    o.Phone,  
                                                                     width = o.Image_Width,
+                                                                    height = o.Image_Height,
                                                                     url = ((o.Uploaded ?? false) ? Common.UploadedImageRelPath : Common.ContentUrl) + o.RelativeImage_Path.Trim()
                                                                 }).First(), Formatting.Indented, Common.JsonSerializerSettings));
         }

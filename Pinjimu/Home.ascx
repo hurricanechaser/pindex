@@ -520,7 +520,9 @@
             </div>
         </div>
     </div>
+   
     <ctl:Pin runat="server"/>
+      
     <div id="gallery" class="gallery">
     </div>
     <div id="boardsCont" class="boards" style="display: none; top: 0px;">

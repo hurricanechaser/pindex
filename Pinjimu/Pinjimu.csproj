@@ -157,6 +157,7 @@
     <Content Include="details-page-HTML\style.css" />
     <Content Include="img\C-Icon.jpg" />
     <Content Include="img\D-icon.jpg" />
+    <Content Include="img\left-triangle.png" />
     <Content Include="img\M-Icon.jpg" />
     <Content Include="img\prof-Contractor-icon.jpg" />
     <Content Include="img\prof-designer-icon.jpg" />

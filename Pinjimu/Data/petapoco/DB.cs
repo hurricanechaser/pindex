@@ -6,7 +6,7 @@
 // 
 //     Connection String Name: `DataConnectionString`
 //     Provider:               `System.Data.SqlClient`
-//     Connection String:      `Data Source=botcodesql.cloudapp.net;Initial Catalog=Pinjimu;Persist Security Info=True;User ID=pinadmin;password=**zapped**;`
+//     Connection String:      `Data Source=(local);Initial Catalog=Pinjimu;Persist Security Info=True;User ID=sa;password=**zapped**;`
 //     Schema:                 ``
 //     Include Views:          `True`
 
@@ -321,6 +321,237 @@ namespace Pinjimu.Data.POCOS
 			}
 		}
 		decimal? _CRC64;
+
+	}
+    
+	[TableName("vw_Pin")]
+	[ExplicitColumns]
+    public partial class vw_Pin : DB.Record<vw_Pin>  
+    {
+        [Column] 
+		public string Contact 
+		{ 
+			get
+			{
+				return _Contact;
+			}
+			set
+			{
+				_Contact = value;
+				MarkColumnModified("Contact");
+			}
+		}
+		string _Contact;
+
+        [Column] 
+		public string Address 
+		{ 
+			get
+			{
+				return _Address;
+			}
+			set
+			{
+				_Address = value;
+				MarkColumnModified("Address");
+			}
+		}
+		string _Address;
+
+        [Column] 
+		public string Type 
+		{ 
+			get
+			{
+				return _Type;
+			}
+			set
+			{
+				_Type = value;
+				MarkColumnModified("Type");
+			}
+		}
+		string _Type;
+
+        [Column] 
+		public string Phone 
+		{ 
+			get
+			{
+				return _Phone;
+			}
+			set
+			{
+				_Phone = value;
+				MarkColumnModified("Phone");
+			}
+		}
+		string _Phone;
+
+        [Column] 
+		public string Website 
+		{ 
+			get
+			{
+				return _Website;
+			}
+			set
+			{
+				_Website = value;
+				MarkColumnModified("Website");
+			}
+		}
+		string _Website;
+
+        [Column] 
+		public short? Image_Height 
+		{ 
+			get
+			{
+				return _Image_Height;
+			}
+			set
+			{
+				_Image_Height = value;
+				MarkColumnModified("Image_Height");
+			}
+		}
+		short? _Image_Height;
+
+        [Column] 
+		public short? Image_Width 
+		{ 
+			get
+			{
+				return _Image_Width;
+			}
+			set
+			{
+				_Image_Width = value;
+				MarkColumnModified("Image_Width");
+			}
+		}
+		short? _Image_Width;
+
+        [Column] 
+		public string RelativeImage_Path 
+		{ 
+			get
+			{
+				return _RelativeImage_Path;
+			}
+			set
+			{
+				_RelativeImage_Path = value;
+				MarkColumnModified("RelativeImage_Path");
+			}
+		}
+		string _RelativeImage_Path;
+
+        [Column] 
+		public bool? Uploaded 
+		{ 
+			get
+			{
+				return _Uploaded;
+			}
+			set
+			{
+				_Uploaded = value;
+				MarkColumnModified("Uploaded");
+			}
+		}
+		bool? _Uploaded;
+
+        [Column] 
+		public decimal? PinID 
+		{ 
+			get
+			{
+				return _PinID;
+			}
+			set
+			{
+				_PinID = value;
+				MarkColumnModified("PinID");
+			}
+		}
+		decimal? _PinID;
+
+        [Column] 
+		public string Image_Title 
+		{ 
+			get
+			{
+				return _Image_Title;
+			}
+			set
+			{
+				_Image_Title = value;
+				MarkColumnModified("Image_Title");
+			}
+		}
+		string _Image_Title;
+
+        [Column] 
+		public string Source 
+		{ 
+			get
+			{
+				return _Source;
+			}
+			set
+			{
+				_Source = value;
+				MarkColumnModified("Source");
+			}
+		}
+		string _Source;
+
+        [Column] 
+		public int? UserID 
+		{ 
+			get
+			{
+				return _UserID;
+			}
+			set
+			{
+				_UserID = value;
+				MarkColumnModified("UserID");
+			}
+		}
+		int? _UserID;
+
+        [Column] 
+		public int BIMID 
+		{ 
+			get
+			{
+				return _BIMID;
+			}
+			set
+			{
+				_BIMID = value;
+				MarkColumnModified("BIMID");
+			}
+		}
+		int _BIMID;
+
+        [Column] 
+		public string Avatar 
+		{ 
+			get
+			{
+				return _Avatar;
+			}
+			set
+			{
+				_Avatar = value;
+				MarkColumnModified("Avatar");
+			}
+		}
+		string _Avatar;
 
 	}
     
@@ -1830,6 +2061,21 @@ namespace Pinjimu.Data.POCOS
 			}
 		}
 		string _FirstName;
+
+        [Column] 
+		public string Speciality 
+		{ 
+			get
+			{
+				return _Speciality;
+			}
+			set
+			{
+				_Speciality = value;
+				MarkColumnModified("Speciality");
+			}
+		}
+		string _Speciality;
 
 	}
     
@@ -3616,6 +3862,118 @@ namespace Pinjimu.Data.POCOS
 			}
 		}
 		string _Description;
+
+	}
+    
+	[TableName("Contacts")]
+	[PrimaryKey("BIMID", autoIncrement=false)]
+	[ExplicitColumns]
+    public partial class Contact : DB.Record<Contact>  
+    {
+        [Column] 
+		public int BIMID 
+		{ 
+			get
+			{
+				return _BIMID;
+			}
+			set
+			{
+				_BIMID = value;
+				MarkColumnModified("BIMID");
+			}
+		}
+		int _BIMID;
+
+        [Column("Contact")] 
+		public string _Contact 
+		{ 
+			get
+			{
+				return __Contact;
+			}
+			set
+			{
+				__Contact = value;
+				MarkColumnModified("Contact");
+			}
+		}
+		string __Contact;
+
+        [Column] 
+		public string Type 
+		{ 
+			get
+			{
+				return _Type;
+			}
+			set
+			{
+				_Type = value;
+				MarkColumnModified("Type");
+			}
+		}
+		string _Type;
+
+        [Column] 
+		public string Address 
+		{ 
+			get
+			{
+				return _Address;
+			}
+			set
+			{
+				_Address = value;
+				MarkColumnModified("Address");
+			}
+		}
+		string _Address;
+
+        [Column] 
+		public string Phone 
+		{ 
+			get
+			{
+				return _Phone;
+			}
+			set
+			{
+				_Phone = value;
+				MarkColumnModified("Phone");
+			}
+		}
+		string _Phone;
+
+        [Column] 
+		public string Website 
+		{ 
+			get
+			{
+				return _Website;
+			}
+			set
+			{
+				_Website = value;
+				MarkColumnModified("Website");
+			}
+		}
+		string _Website;
+
+        [Column] 
+		public string Avatar 
+		{ 
+			get
+			{
+				return _Avatar;
+			}
+			set
+			{
+				_Avatar = value;
+				MarkColumnModified("Avatar");
+			}
+		}
+		string _Avatar;
 
 	}
     
