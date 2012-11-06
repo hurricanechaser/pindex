@@ -25,7 +25,7 @@
     string webconfig=System.IO.Path.Combine(rp,"web.config");
     Dictionary<string,string> connKeyStore = new Dictionary<string,string>();
     var elements= XDocument.Load(webconfig)
-        .Descendants("connectionStrings")
+        .Descendants("connectionStrings") 
         .Elements("add");
     foreach (var el in elements){
         string name= el.Attribute("name").Value;

@@ -38,57 +38,26 @@ namespace Pinjimu
         }
         public void Init(HttpApplication context)
         {
-            context.BeginRequest += new EventHandler(context_BeginRequest);
-            context.EndRequest += new EventHandler(context_EndRequest);
+            context.BeginRequest += new EventHandler(context_BeginRequest);          
         }
 
         private void context_BeginRequest(object sender, EventArgs e)
         {
-            HttpApplication context = (HttpApplication)sender;
-            Dictionary<string, string> _dict = new Dictionary<string, string>();
-            string[] appCookies = Common.AppCookies.Split(',');
-            foreach (string cookieName in context.Request.Cookies)
-            {
-                if (appCookies.Contains(cookieName))
-                {
-                    HttpCookie cookie = context.Request.Cookies[cookieName];
-                    if (_dict.ContainsKey(cookieName)) _dict[cookieName] = context.Server.UrlDecode(cookie.Value);
-                    else _dict.Add(cookieName, context.Server.UrlDecode(cookie.Value));
-                }
-            }
-            Common.CookieValue = _dict;
-            string culture = Common.ReadValue(Common.sessioncookie, "culture");
-            if (!string.IsNullOrEmpty(culture))
-                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(culture);
+            HttpApplication context = (HttpApplication)sender;              
             if (context.Request.Url.Segments.Length > 1)
             {
                 string user = context.Request.Url.Segments.Last().ToLower();
-                if (!user.Contains(".") && !user.Contains("pinjimu"))
+                if (!user.Contains("."))
                 {
-                   
-                    context.Server.TransferRequest(string.Format("User.aspx?user={0}", user));
-                  
+                    StringWriter writer = new StringWriter();
+                    context.Server.Execute(string.Format("User.aspx?user={0}", user), writer);
+                    context.Response.Write(writer.ToString());
+                    context.Response.End();
                 }
             }
         }
 
         #endregion
-
-        private void context_EndRequest(object sender, EventArgs e)
-        {
-            HttpApplication context = (HttpApplication)sender;
-            Dictionary<string, string> _dict = Common.CookieValue;
-            if (_dict != null)
-                foreach (var value in _dict)
-                {
-                    HttpCookie cookie = context.Response.Cookies[value.Key];
-                    if (cookie == null)
-                        context.Response.Cookies.Add(new HttpCookie(value.Key, (value.Value))
-                        {
-                            HttpOnly = false
-                        });
-                    else cookie.Value = value.Value;
-                }
-        }
+  
     }
 }

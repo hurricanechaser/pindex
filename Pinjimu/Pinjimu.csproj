@@ -159,6 +159,7 @@
     <Content Include="img\D-icon.jpg" />
     <Content Include="img\left-triangle.png" />
     <Content Include="img\M-Icon.jpg" />
+    <Content Include="img\globe.jpg" />
     <Content Include="img\prof-Contractor-icon.jpg" />
     <Content Include="img\prof-designer-icon.jpg" />
     <Content Include="img\prof-FurnManu-icon.jpg" />
@@ -306,6 +307,7 @@
     <Content Include="tagging\style.css" />
     <Content Include="tagging\tagframe.html" />
     <Content Include="User.html" />
+    <Content Include="verify.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -329,6 +331,7 @@
     </Compile>
     <Compile Include="Common.cs" />
     <Compile Include="CookieUtil.cs" />
+    <Compile Include="HttpModule.cs" />
     <Compile Include="signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -510,6 +513,7 @@
       <LastGenOutput>menu.txt</LastGenOutput>
     </None>
     <Content Include="details-page-HTML\images\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -577,7 +581,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>41375</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://freshpindev.botcodelocal.com/Pinjimu</IISUrl>
+          <IISUrl>http://pinjimu.com</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

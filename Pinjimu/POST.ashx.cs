@@ -128,8 +128,24 @@ namespace Pinjimu
                 case "up1":
                     Upload1(context);
                     break;
+                case "verify":
+                    Verify(context);
+                    break;
             }
             base.EndRequest(context);
+        }
+
+        private void Verify(HttpContext context)
+        {
+            var Images = GetDataContext1.Query<Data.POCOS.Image>("Select * from Images where (verified is null) or (verified = 1)");
+            int count = GetDataContext1.Single<int>("Select count(*) from Images where (verified is null) or (verified = 1)");
+            foreach (var image in Images)
+            {
+                image.Verified = File.Exists(Path.Combine(((image.Uploaded ?? false) ? Common.UploadedImagePath : Common.ImagePath), image.RelativeImage_Path.Replace('/', '\\')));
+                image.Update();
+                context.Response.Write(count--);
+                context.Response.Flush();
+            }
         }
 
         private void UpdateAbout(HttpContext context)

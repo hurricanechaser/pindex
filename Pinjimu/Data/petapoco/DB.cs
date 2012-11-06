@@ -329,81 +329,6 @@ namespace Pinjimu.Data.POCOS
     public partial class vw_Pin : DB.Record<vw_Pin>  
     {
         [Column] 
-		public string Contact 
-		{ 
-			get
-			{
-				return _Contact;
-			}
-			set
-			{
-				_Contact = value;
-				MarkColumnModified("Contact");
-			}
-		}
-		string _Contact;
-
-        [Column] 
-		public string Address 
-		{ 
-			get
-			{
-				return _Address;
-			}
-			set
-			{
-				_Address = value;
-				MarkColumnModified("Address");
-			}
-		}
-		string _Address;
-
-        [Column] 
-		public string Type 
-		{ 
-			get
-			{
-				return _Type;
-			}
-			set
-			{
-				_Type = value;
-				MarkColumnModified("Type");
-			}
-		}
-		string _Type;
-
-        [Column] 
-		public string Phone 
-		{ 
-			get
-			{
-				return _Phone;
-			}
-			set
-			{
-				_Phone = value;
-				MarkColumnModified("Phone");
-			}
-		}
-		string _Phone;
-
-        [Column] 
-		public string Website 
-		{ 
-			get
-			{
-				return _Website;
-			}
-			set
-			{
-				_Website = value;
-				MarkColumnModified("Website");
-			}
-		}
-		string _Website;
-
-        [Column] 
 		public short? Image_Height 
 		{ 
 			get
@@ -539,19 +464,19 @@ namespace Pinjimu.Data.POCOS
 		int _BIMID;
 
         [Column] 
-		public string Avatar 
+		public string Contacts 
 		{ 
 			get
 			{
-				return _Avatar;
+				return _Contacts;
 			}
 			set
 			{
-				_Avatar = value;
-				MarkColumnModified("Avatar");
+				_Contacts = value;
+				MarkColumnModified("Contacts");
 			}
 		}
-		string _Avatar;
+		string _Contacts;
 
 	}
     
@@ -724,6 +649,88 @@ namespace Pinjimu.Data.POCOS
 			}
 		}
 		bool? _Verified;
+
+	}
+    
+	[TableName("sysdiagrams")]
+	[PrimaryKey("diagram_id")]
+	[ExplicitColumns]
+    public partial class sysdiagram : DB.Record<sysdiagram>  
+    {
+        [Column] 
+		public string name 
+		{ 
+			get
+			{
+				return _name;
+			}
+			set
+			{
+				_name = value;
+				MarkColumnModified("name");
+			}
+		}
+		string _name;
+
+        [Column] 
+		public int principal_id 
+		{ 
+			get
+			{
+				return _principal_id;
+			}
+			set
+			{
+				_principal_id = value;
+				MarkColumnModified("principal_id");
+			}
+		}
+		int _principal_id;
+
+        [Column] 
+		public int diagram_id 
+		{ 
+			get
+			{
+				return _diagram_id;
+			}
+			set
+			{
+				_diagram_id = value;
+				MarkColumnModified("diagram_id");
+			}
+		}
+		int _diagram_id;
+
+        [Column] 
+		public int? version 
+		{ 
+			get
+			{
+				return _version;
+			}
+			set
+			{
+				_version = value;
+				MarkColumnModified("version");
+			}
+		}
+		int? _version;
+
+        [Column] 
+		public byte[] definition 
+		{ 
+			get
+			{
+				return _definition;
+			}
+			set
+			{
+				_definition = value;
+				MarkColumnModified("definition");
+			}
+		}
+		byte[] _definition;
 
 	}
     
@@ -1385,6 +1392,163 @@ namespace Pinjimu.Data.POCOS
 			}
 		}
 		int _CategoryID;
+
+	}
+    
+	[TableName("Contacts")]
+	[PrimaryKey("ID", autoIncrement=false)]
+	[ExplicitColumns]
+    public partial class Contact : DB.Record<Contact>  
+    {
+        [Column] 
+		public int ImageID 
+		{ 
+			get
+			{
+				return _ImageID;
+			}
+			set
+			{
+				_ImageID = value;
+				MarkColumnModified("ImageID");
+			}
+		}
+		int _ImageID;
+
+        [Column("Contact")] 
+		public string _Contact 
+		{ 
+			get
+			{
+				return __Contact;
+			}
+			set
+			{
+				__Contact = value;
+				MarkColumnModified("Contact");
+			}
+		}
+		string __Contact;
+
+        [Column] 
+		public string Type 
+		{ 
+			get
+			{
+				return _Type;
+			}
+			set
+			{
+				_Type = value;
+				MarkColumnModified("Type");
+			}
+		}
+		string _Type;
+
+        [Column] 
+		public string Address 
+		{ 
+			get
+			{
+				return _Address;
+			}
+			set
+			{
+				_Address = value;
+				MarkColumnModified("Address");
+			}
+		}
+		string _Address;
+
+        [Column] 
+		public string Phone 
+		{ 
+			get
+			{
+				return _Phone;
+			}
+			set
+			{
+				_Phone = value;
+				MarkColumnModified("Phone");
+			}
+		}
+		string _Phone;
+
+        [Column] 
+		public string Website 
+		{ 
+			get
+			{
+				return _Website;
+			}
+			set
+			{
+				_Website = value;
+				MarkColumnModified("Website");
+			}
+		}
+		string _Website;
+
+        [Column] 
+		public string Avatar 
+		{ 
+			get
+			{
+				return _Avatar;
+			}
+			set
+			{
+				_Avatar = value;
+				MarkColumnModified("Avatar");
+			}
+		}
+		string _Avatar;
+
+        [Column] 
+		public DateTime Date 
+		{ 
+			get
+			{
+				return _Date;
+			}
+			set
+			{
+				_Date = value;
+				MarkColumnModified("Date");
+			}
+		}
+		DateTime _Date;
+
+        [Column] 
+		public string Name 
+		{ 
+			get
+			{
+				return _Name;
+			}
+			set
+			{
+				_Name = value;
+				MarkColumnModified("Name");
+			}
+		}
+		string _Name;
+
+        [Column] 
+		public int ID 
+		{ 
+			get
+			{
+				return _ID;
+			}
+			set
+			{
+				_ID = value;
+				MarkColumnModified("ID");
+			}
+		}
+		int _ID;
 
 	}
     
@@ -2077,6 +2241,21 @@ namespace Pinjimu.Data.POCOS
 		}
 		string _Speciality;
 
+        [Column] 
+		public DateTime Date 
+		{ 
+			get
+			{
+				return _Date;
+			}
+			set
+			{
+				_Date = value;
+				MarkColumnModified("Date");
+			}
+		}
+		DateTime _Date;
+
 	}
     
 	[TableName("Prize")]
@@ -2714,6 +2893,21 @@ namespace Pinjimu.Data.POCOS
 			}
 		}
 		int _UserID;
+
+        [Column] 
+		public DateTime? Date 
+		{ 
+			get
+			{
+				return _Date;
+			}
+			set
+			{
+				_Date = value;
+				MarkColumnModified("Date");
+			}
+		}
+		DateTime? _Date;
 
 	}
     
@@ -3862,118 +4056,6 @@ namespace Pinjimu.Data.POCOS
 			}
 		}
 		string _Description;
-
-	}
-    
-	[TableName("Contacts")]
-	[PrimaryKey("BIMID", autoIncrement=false)]
-	[ExplicitColumns]
-    public partial class Contact : DB.Record<Contact>  
-    {
-        [Column] 
-		public int BIMID 
-		{ 
-			get
-			{
-				return _BIMID;
-			}
-			set
-			{
-				_BIMID = value;
-				MarkColumnModified("BIMID");
-			}
-		}
-		int _BIMID;
-
-        [Column("Contact")] 
-		public string _Contact 
-		{ 
-			get
-			{
-				return __Contact;
-			}
-			set
-			{
-				__Contact = value;
-				MarkColumnModified("Contact");
-			}
-		}
-		string __Contact;
-
-        [Column] 
-		public string Type 
-		{ 
-			get
-			{
-				return _Type;
-			}
-			set
-			{
-				_Type = value;
-				MarkColumnModified("Type");
-			}
-		}
-		string _Type;
-
-        [Column] 
-		public string Address 
-		{ 
-			get
-			{
-				return _Address;
-			}
-			set
-			{
-				_Address = value;
-				MarkColumnModified("Address");
-			}
-		}
-		string _Address;
-
-        [Column] 
-		public string Phone 
-		{ 
-			get
-			{
-				return _Phone;
-			}
-			set
-			{
-				_Phone = value;
-				MarkColumnModified("Phone");
-			}
-		}
-		string _Phone;
-
-        [Column] 
-		public string Website 
-		{ 
-			get
-			{
-				return _Website;
-			}
-			set
-			{
-				_Website = value;
-				MarkColumnModified("Website");
-			}
-		}
-		string _Website;
-
-        [Column] 
-		public string Avatar 
-		{ 
-			get
-			{
-				return _Avatar;
-			}
-			set
-			{
-				_Avatar = value;
-				MarkColumnModified("Avatar");
-			}
-		}
-		string _Avatar;
 
 	}
     

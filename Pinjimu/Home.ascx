@@ -45,7 +45,8 @@
     <link href="http://cdn.pinjimu.com/pinjimu.min.css" rel="stylesheet"
         type="text/css" />
     <% } %>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="freshpin.js" type="text/javascript"></script>
     <script src="freshpinhome.js" type="text/javascript"></script>
     <script src="http://cdn.pinjimu.com/build/files/homeincludes1.js"
@@ -104,7 +105,7 @@
     </script>
     <script id="comments" type="text/x-jquery-tmpl">
      <div class="commentBox">
-     <a href="${UN}" ><img src="${getUplUImg($data)}?height=20" />  </a>  <p> : <a href="${UN}" style="float:left;text-align:left;" >${Name} {{if Speciality }} <img name="cSymbol" src="${getSpecialityImg($data)}" style="width: 15px; margin: -20px 0 0 0;float:right;"  alt="Symbol" /> {{/if}}</a> ${Comment}</p> 
+     <a href="${Name}#boards" ><img src="${getUplUImg($data)}?height=20" />  </a>  <p> : <a href="${Name}#boards" style="float:left;text-align:left;" >${FirstName} {{if Speciality }} <img name="cSymbol" src="${getSpecialityImg($data)}" style="width: 15px; margin: -20px 0 0 0;float:right;"  alt="Symbol" /> {{/if}}</a> ${Comment}</p> 
      </div>
     </script>
     <script id="cats" type="text/x-jquery-tmpl">
@@ -138,7 +139,7 @@
             <div class="Profile-pict"> <img id="fbtn_img_p_${F_ID}" src="${getAvatar($data,'F_Avatar')}?width=100&height=100" /></div>
             <div style="border:0px solid red; width:320px; float:left;">
                 <div style="float:left">
-                    <h4 class="link" style="margin-top:10px;"><a href="${F_UserName}">${F_FullName}</a></h4>
+                    <h4 class="link" style="margin-top:10px;"><a href="${F_UserName}#boards">${F_FullName}</a></h4>
                 </div>
                 <div style="float:right; margin-top:10px;">
                     <div class="unfolwBtn">                    
@@ -617,6 +618,13 @@
             <span style="color: red; font-family: arial; font-size: 12px; padding: 0;" id="err1">
             </span>
         </div>
+    </div>
+    <div id="PinZoomBox" style="position: fixed; display: none; z-index: 10;">
+        <img border="0" id="PinZoomImage" style="display: block; width: 100%; height: 100%;">
+        <div id="PinZoomClose" style="position: absolute; width: 36px; right: -15px; top: -15px;
+            background-image: url(http://cdn.pinjimu.com/img/zoom_sprite.png); height: 36px;
+            z-index: 11; cursor: pointer; background-repeat: no-repeat;">
+        </div>      
     </div>
     <div id="topcontrol" class="topcontrol">
         <%=strings.Scroll_To_Top%></div>

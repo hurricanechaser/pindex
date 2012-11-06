@@ -747,7 +747,7 @@ ul, li
     position: fixed;
     display: none;
     width: 70px;
-    height: 70px;
+    height: 55px;
     color: #524d4d;
     font-size: 14px;
     font-family: Helvetica, Arial, Sans-Serif;
@@ -1819,7 +1819,7 @@ ul, li
 }
 .clear
 {
-    clear: left;
+    clear: both;
 }
 .profilerow3
 {
@@ -5263,3 +5263,262 @@ ul.pureCssMenu table a:hover table span, ul.pureCssMenu table a:hover a:hover ta
 }
 
 
+/*Pin*/
+
+.bodyContent {
+    height: auto;
+    background-color: white;
+    float: left;
+    margin: 10px 0; /* border:1px solid red;*/
+}
+
+.leftPanel {
+    float: left;
+    margin: 0;
+}
+
+.contactInfo {
+    width: 507px;
+    height: 162px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid #efefef; /* -moz-box-shadow:3px 3px 3px 3px #ccc;-webkit-box-shadow: 3px 3px 3px 3px #ccc;box-shadow:3px 3px 3px 3px #ccc;*/
+}
+
+.contactInfoImg {
+    width: 97px;
+    height: 146px;
+    float: left;
+    margin: 7px 5px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+}
+
+    .contactInfoImg img {
+        margin: 10px 8px 0 8px;
+        width: 80px;
+        height: 100px;
+    }
+
+    .contactInfoImg p {
+        padding-left: 7px;
+    }
+
+.contactInfoContentTriangle {
+    width: 8px;
+    height: 146px;
+    float: left;
+    margin: 7px 0 7px 5px;
+    border-right: 1px solid #efefef;
+}
+
+.contactInfoContent {
+    width: 262px;
+    height: 146px;
+    float: left;
+    margin: 7px 5px 7px 0px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+    border-left: none;
+}
+
+.mpcTitle {
+    height: auto;
+    float: left;
+    display: block;
+    margin: 0px;
+    padding-left: 5px;
+    list-style-type: none;
+}
+
+    .mpcTitle .label {
+        display: block;
+        float: left;
+        text-align: left;
+        line-height: 20px;
+        color: #ab8063;
+    }
+
+.mpcTxt {
+    width: auto;
+    height: auto;
+    margin: 0 5px;
+    padding-left: 5px;
+    list-style-type: none;
+    display: block;
+    text-align: left;
+    line-height: 20px;
+    color: #000;
+}
+
+.contactInfoGlobe {
+    width: 100px;
+    height: 146px;
+    float: left;
+    margin: 7px 5px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+}
+
+    .contactInfoGlobe img {
+        margin: 35px 12px;
+    }
+
+.photograph {
+    margin: 10px;
+    min-height: 412px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+    .photograph img {
+        margin: 15px 0px 15px 0px;
+        height: 362px;
+        cursor: zoom-in;
+        cursor: -webkit-zoom-in;
+        cursor: -moz-zoom-in;
+    }
+
+.panelBadgesTags {
+    width: 250px;
+    height: 124px;
+    margin: 10px 0px;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #efefef;
+}
+
+    .panelBadgesTags h3 {
+        color: #575757;
+        margin-top: 5px;
+        padding-left: 5px;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+.rightPanel {   
+    float: right;
+    margin: 0 10px;
+}
+
+.rpWrapper {
+    width: 475px;
+    height: 610px;
+    float: left;
+    margin: 0;
+    background-color: #e8e7e7;
+    overflow: auto;
+    position: relative;
+    border: 1px solid #ebe0d8;
+}
+
+.rpWrapperHeader {
+    width: 465px;
+    height: 23px;
+    margin: 0;
+    padding-left: 10px;
+    float: left;
+    background-image: url(img/pinjimu/bg-rp-wrapper-header.jpg);
+    background-repeat: repeat-x;
+    color: #666666;
+}
+
+.rpcontent {
+    width: 455px;
+    height: 100px;
+    margin: 13px 5px 0 5px;
+    float: left;
+}
+
+.rpcuserImage {
+    width: 58px;
+    height: 58px;
+    float: left;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+    .rpcuserImage img {
+        margin: 4px;
+    }
+
+.rpcPanelTriangle {
+    width: 7px;
+    height: 100px;
+    float: left;
+    margin: 0 0 0 7px;
+    border-left: 1px solid #d3b39c;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    .rpcPanelTriangle img {
+        width: 7px;
+        margin: 30px 0 0 -6px;
+    }
+
+.rpcPanel {
+    width: 380px;
+    height: 100px;
+    float: left;
+    margin: 0 0 0 -7px;
+    background-color: #fff;
+    border: 1px solid #d3b39c;
+    border-left: none;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.rpcPanelHeader {
+    width: 378px;
+    height: 23px;
+    float: left;
+    margin: 0 1px;
+    background-image: url(img/pinjimu/bg-rp-wrapper-header.jpg);
+    background-repeat: repeat-x;
+}
+
+    .rpcPanelHeader p {
+        padding: 0 10px;
+        margin: 0;
+    }
+
+    .rpcPanelHeader #countUser {
+        float: right;
+        color: #669900;
+        font-size: 14px;
+        margin: -15px 5px 0 0;
+    }
+
+.rpcPanelTxt {
+    width: 358px;
+    height: auto;
+    float: left;
+    margin: 0 10px;
+    padding: 5px 0px;
+    border-bottom: 1px solid #ebe0d8;
+}
+
+.rpcPanelText {
+    float: right;
+    margin-right: 5px;
+}
+
+.floated {
+    float: left;
+    position: relative; /* fixes many nasty IE bugs */
+}
+
+.clearfloat {
+    clear: both;
+    height: 0px;
+    line-height: 0px;
+    visibility: hidden;
+}
+
+
+/*End Of Pin*/

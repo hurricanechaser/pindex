@@ -7,6 +7,7 @@
 <%@ Import Namespace="Dapper" %>
 <%@ Import Namespace="DapperExtensions" %>
 <%@ Register Src="~/ProfileCont.ascx" TagPrefix="ctl" TagName="pc" %>
+<%@ Register TagName="Pin" TagPrefix="ctl" Src="~/Pin.ascx" %>
 <script runat="server">
     private string pre;
     public string getAboutText;
@@ -19,16 +20,15 @@
         Pinjimu.Data.Standalone.AppUsers obj = conn.GetList<Pinjimu.Data.Standalone.AppUsers>(pred).FirstOrDefault();
         if (obj != null)
         {
-           
             getAboutText = obj.About;
             var Fobj = (from f in GetDataContext2.Vw_FollowCount where f.UserID == obj.ID select f).Single();
             Common.WriteValue(Common.InfoCookie, JObject.FromObject(new
             {
                 vuID = obj.ID,
                 vuemail = obj.Email,
-                vuname =  string.IsNullOrEmpty(obj.FirstName) ? obj.Name : obj.FirstName,
+                vuname = string.IsNullOrEmpty(obj.FirstName) ? obj.Name : obj.FirstName,
                 vuavatar = string.IsNullOrWhiteSpace(obj.Avatar) ? null : Common.UploadedImageRelPath + obj.Avatar,
-                vuboards = GetDataContext2.Boards.Count(o=>o.UserID==obj.ID),
+                vuboards = GetDataContext2.Boards.Count(o => o.UserID == obj.ID),
                 vupins = GetDataContext2.BoardsImagesMapping.Count(o => o.UserID == obj.ID),
                 vulikes = GetDataContext2.Likes.Count(o => o.UserID == obj.ID),
                 vupoints = obj.Points,
@@ -73,11 +73,11 @@
     {
         return string.IsNullOrEmpty(avatar) ? Common.CDN + Common.UserBlankImg : avatar;
     }
-    
+
     public bool followingstatus()
     {
         Pinjimu.Data.dbml.DataContext context = new Pinjimu.Data.dbml.DataContext(Common.DataConnectionString);
-        bool followingstatus=context.FollowStatus(Common.UserID, Common.VUserID) ?? false;
+        bool followingstatus = context.FollowStatus(Common.UserID, Common.VUserID) ?? false;
         context.Dispose();
         return followingstatus;
 
@@ -163,7 +163,7 @@
     <ul class="box" >        
         <li class="img"><a href="javascript:void(0)" name="${i}"></a>
         </li>
-        <li style="display: block;paddingfont-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>${Name}</span></li>        
+        <li style="display: block;font-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>${Name}</span></li>        
         <li style="display: block;font-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>${type}:${count}</span></li>        
     </ul>
     </script>
@@ -226,7 +226,7 @@
     </script>
     <script id="comments" type="text/x-jquery-tmpl">
      <div class="commentBox">
-      <a href="${UN}" ><img src="${getUplUImg($data)}?height=20" />  </a>  <p> : <a href="${UN}" style="float:left;text-align:left;" >${Name} {{if Speciality }} <img name="cSymbol" src="${getSpecialityImg($data)}" style="width: 15px; margin: -20px 0 0 0;float:right;"  alt="Symbol" /> {{/if}}</a> ${Comment}</p> 
+      <a href="${Name}#boards" ><img src="${getUplUImg($data)}?height=20" />  </a>  <p> : <a href="${Name}#boards" style="float:left;text-align:left;" >${FirstName} {{if Speciality }} <img name="cSymbol" src="${getSpecialityImg($data)}" style="width: 15px; margin: -20px 0 0 0;float:right;"  alt="Symbol" /> {{/if}}</a> ${Comment}</p> 
      </div>
     </script>
     <script id="cattpl" type="text/x-jquery-tmpl">
@@ -378,12 +378,13 @@ background-position: 0%
         FreshPin.constants.domain = '<%=Common.Domain%>';
         FreshPin.constants.upl = '<%=Common.UploadedImageRelPath%>';
         FreshPin.constants.authcookie = '<%=Common.AuthCookie%>';
-        FreshPin.constants.infocookie = '<%=Common.InfoCookie%>';
-        FreshPin.server.abouttext = '<%=getAboutText%>';
+        FreshPin.constants.infocookie = '<%=Common.InfoCookie%>';       
         FreshPin.server.followingstatus = <%=followingstatus().ToString().ToLower()%>;
     </script>
 </head>
 <body>
+    <input type="hidden" value="<%=getAboutText%>" id="getAboutText" />
+    <script type="text/javascript"> FreshPin.server.abouttext = $('#getAboutText').val();</script>
     <div class="header" id="header">
         <div class="line1" id="line1">
             <div class="queryBox">
@@ -1489,67 +1490,7 @@ rgba(255,255,255,0.35); -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35); 
             </div>
         </div>
     </div>
-    <div id="pin" style="position: fixed; box-shadow: 0 1px 3px rgba(34,25,25,0.4); -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
-        display: none; -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4); margin-top: 0;
-        margin-right: auto; margin-bottom: 32px;  padding-top: 0; padding-right: 0;
-        padding-bottom: 0; padding-left: 0; background-color: #FFFFFF; text-align: center;
-        overflow-x: auto; overflow-y: scroll;top:0px;z-index:4; max-height:100%;">
-        <div style="clear: both; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
-            padding-top: 20px; padding-right: 0; padding-bottom: 0; padding-left: 0;">
-        </div>
-        <div id="PinActionButtons" style="height: 26px; width: 280px; float: left; overflow: hidden;
-            margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 30px; padding-top: 0;
-            padding-right: 0; padding-bottom: 0; padding-left: 13px; background-image: url('http://cdn.pinjimu.com/img/pinjimu/detailiconBg.jpg');
-            background-repeat: no-repeat; background-position: left top;">
-            <a <% if (Common.UserID.HasValue){ %>  id="likepint" <% } else {%>   name="buttons"<% } %> href="javascript:void(0)" style="font-weight: bold; color: #221919;
-                text-decoration: none; outline: none;">
-                <div class="pinLike" align="left">
-                    <%=strings.Like %></div>
-            </a><a  <% if (Common.UserID.HasValue)
-                  { %>  id="editpint" <% } else { %>   name="buttons"
-                                                             <% } %>  href="javascript:void(0)" style="font-weight: bold; color: #221919;
-                text-decoration: none; outline: none;">
-                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
-                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
-                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
-                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 30px; background-image: url('http://cdn.pinjimu.com/img/pinjimu/repinIconDetailPage.png');
-                    background-repeat: no-repeat; background-position: left 5px;" align="left">
-                    <%=strings.Edit %></div>
-            </a><a  <% if (Common.UserID.HasValue)
-                  { %>  id="repint" <% } else {%>  name="buttons"
-                                                             <% } %>  href="javascript:void(0)" style="font-weight: bold; color: #221919;
-                text-decoration: none; outline: none;">
-                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
-                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
-                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
-                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 23px; background-image: url('http://cdn.pinjimu.com/img/pinjimu/repinIconDetailPage.png');
-                    background-repeat: no-repeat; background-position: left 4px;" align="left">
-                    <%=strings.Repin %></div>
-            </a><a id="commentt" href="javascript:void(0)" style="font-weight: bold; color: #221919;
-                text-decoration: none; outline: none;">
-                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
-                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
-                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
-                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 25px; background-image: url('http://cdn.pinjimu.com/img/pinjimu/commentIconDetailPage.png');
-                    background-repeat: no-repeat; background-position: left 4px;" align="left">
-                    <%=strings.Comment %></div>
-            </a>
-        </div>
-        <div style="clear: both; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
-            padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
-        </div>
-        <div style="display: block; position: relative; overflow: hidden; margin-top: 20px;
-            margin-right: 30px; margin-bottom: 30px; margin-left: 30px; padding-top: 0; padding-right: 0;
-            padding-bottom: 0; padding-left: 0; background-color: #fff;">
-            <a id="pinimgsource" target="_blank">
-                <img id="pinCloseupImage" style="display: block; margin-top: 0; margin-right: auto;
-                    margin-bottom: 0; margin-left: auto; border-top-width: 0; border-right-width: 0;
-                    border-bottom-width: 0; border-left-width: 0;" /></a></div>
-        <p id="pintitle" style="margin: 0px; color: #524D4D; font-size: 13px; font-weight: bold;
-            word-break: break-word; padding-top: 0; padding-right: 0; padding-bottom: 0;
-            padding-left: 0;">
-        </p>
-    </div>
+    <ctl:Pin runat="server"/>
     <div id="signUpWraper" class="signUpWraper">
         <div class="LogoHeader">
             <div style="margin: 0 auto; margin-left: 300px;">
@@ -1643,6 +1584,13 @@ rgba(255,255,255,0.35); -webkit-box-shadow: inset 0 1px rgba(255,255,255,0.35); 
                 </ul>
             </div>
         </div>
+    </div>
+    <div id="PinZoomBox" style="position: fixed; display: none; z-index: 10;">
+        <img border="0" id="PinZoomImage" style="display: block; width: 100%; height: 100%;">
+        <div id="PinZoomClose" style="position: absolute; width: 36px; right: -15px; top: -15px;
+            background-image: url(http://cdn.pinjimu.com/img/zoom_sprite.png); height: 36px;
+            z-index: 11; cursor: pointer; background-repeat: no-repeat;">
+        </div>      
     </div>
     <div id="topcontrol" class="topcontrol">
         <%=strings.Scroll_To_Top %></div>

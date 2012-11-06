@@ -90,6 +90,17 @@ function rcat(v) {
     params = ['cat=' + escape(v)];
     $(location).attr('href', '#' + params.join('&'));
 }
+function zoomClose(noEffects) {
+    var o = $('#PinZoomImage').prop('zoomout');
+    if (o) {
+        if (noEffects === true) {
+            $(o.img).show();
+            $('#PinZoomBox').hide();
+            $('#PinZoomImage').attr('src', '');
+        } else
+            $('#PinZoomBox').transition(o.to, 'fast', function () { $('#PinZoomImage').attr('src', ''); $(o.img).css({visibility:'visible'}); $('#PinZoomBox').hide(); });
+    }
+}
 function set() {
     FreshPin.constants.s = 50, FreshPin.constants.p = 0;
     FreshPin.constants.loading = false
@@ -100,6 +111,7 @@ function set() {
     $("#users").empty().hide();
     $(document).scrollTop(0);
     FreshPin.closeall();
+    zoomClose(true);
     FreshPin.emit('set');
 }
 function setsizeEl() {
@@ -240,27 +252,25 @@ function scrollTo(v) {
         set();
         cbusers(FreshPin.constants.data);
     }
-    function setpin() {      
-        var o = FreshPin.constants.pin
-        //var imgsrc = $('#pinCloseupImage');
-        //if (o.editable && FreshPin.authenticated()) {
-        //    $('#editpint').css('display', '');
-        //    $('#likepint').css('display', 'none');
-        //} else {
-        //    $('#editpint').css('display', 'none');
-        //    $('#likepint').css('display', '');
-        //}
-        //if (o.Contact && o.Address && o.Avatar && o.Phone && o.Website) {
-        //    imgsrc.height(280);
-        //} else {
-        //    $('#contactInfo').hide();
-        //    imgsrc.height(450);
-        //}
-        //imgsrc.attr('src', o.url).attr('alt', o.title);
-        //$('#pinimgsource').attr('href', o.imgsource);
-        //$('#pintitle').html(o.title).width(o.width + 60);
-        var html = templates.pin(o);
-        $('#pin').empty().attr('bimid', o.BIMID).html(html).css(cssCenterY('#pin')).jqmShow();
+    function setpin() {
+        var o = FreshPin.constants.pin;
+        var html = templates.pin(o);     
+        $('#pin').empty().html(html).attr('bimid', o.BIMID).css(cssCenterY('#pin')).jqmShow();
+        $('#pinCloseupImage').click(function () {
+            var me = $(this);
+            var winwr = $(window);
+            var width = winwr.width();
+            var height = winwr.height();
+            var pos = me.offset();
+            $('#PinZoomImage').attr('src', o.url).prop('zoomout', { to: { top: pos.top - $(document).scrollTop(), left: pos.left, width: me.width(), height: me.height() }, img: '#pinCloseupImage' });
+            me.css({visibility:'hidden'});
+            $('#PinZoomBox').css({ top: pos.top - $(document).scrollTop(), left: pos.left, width: me.width(), height: me.height(), display: 'block'}).transition({
+                left: width / 2 - o.width / 2,
+                top: height / 2 - o.height / 2,
+                height: o.height,
+                width: o.width
+            }, 'fast', function () { });
+        });
     }
     function reload(e) {
         _his.push(location.hash);
@@ -317,8 +327,10 @@ function scrollTo(v) {
         }
         if ((!h() || h('size') || h('style') || h('cat') || h('q') || h() == '')) {
             if (h('size')) rl = false;
-            if (FreshPin.constants.pinClosed && _his[_his.length - 1] == _his[_his.length - 3])
+            if (FreshPin.constants.pinClosed && _his[_his.length - 1] == _his[_his.length - 3]) {
+                zoomClose(true);
                 FreshPin.constants.pinClosed = false;
+            }
             else {
                 FreshPin.trackGACEvents('nails', 'Load', String.format('Query-{0},Cat-{1},Board-{2},Filter-{3},Page-{4}', h('q'), h('cat'), h('board'), h('filter'), FreshPin.constants.p));
                 FreshPin.constants.data = FreshPin.getState();
@@ -393,7 +405,7 @@ function scrollTo(v) {
     $s._his = _his;
 })(window);
 $(function () {
-    
+
     if (!$.support.transition)
         $.fn.transition = $.fn.animate;
     $.fx.interval = 1, _.templateSettings = {
@@ -401,6 +413,8 @@ $(function () {
         interpolate: /<#=([\s\S]+?)#>/g,
         escape: /<#-([\s\S]+?)#>/g
     };
+
+    $('#PinZoomClose').click(zoomClose);
     $('#topcontrol').click(function () { scrollTo(0); });
     templates.picTemplate = $("#picTemplate").template();
     templates.boards = $("#boards").template();
@@ -413,6 +427,7 @@ $(function () {
             hash.w.show();
         },
         forceclose: function (hash) {
+            FreshPin.constants.pinClosed = hash.w.css('display') != 'none';
             hash.w.hide();
             hash.o.css({ opacity: 0 }).hide();
             $(document.body).css({ overflow: 'auto' });
@@ -420,9 +435,9 @@ $(function () {
             $('#likepint div').removeClass('pinDisLike');
         },
         onHide: function (hash) {
+            FreshPin.constants.pinClosed = hash.w.css('display') != 'none';
             hash.w.hide();
             hash.o.css({ opacity: 0 }).hide();
-            FreshPin.constants.pinClosed = true;
             $(document.body).css({ overflow: 'auto' });
             $('#pinCloseupImage').attr('src', '');
             $('#likepint div').removeClass('pinDisLike');
@@ -473,7 +488,6 @@ $(function () {
         }
         if (!FreshPin.constants.loading && !FreshPin.constants.noscroll) {
             if (sp > 0 && (ch - ph - sp) < 500) {
-
                 if (h('stores')) {
                     if (FreshPin.constants.data && FreshPin.constants.s >= FreshPin.constants.data.length) {
                         FreshPin.constants.loading = true;
@@ -525,7 +539,6 @@ $(function () {
     function setRelative(menu, submenu) {
         var pos = $(menu).offset();
         var left = pos.left + "px";
-        //show the menu directly over the placeholder  
         $(submenu).css({
             left: left
         });
@@ -809,7 +822,6 @@ FreshPin.attach(function () {
             return;
         }
         $.post('POST?t=addprofile', { email: email, name: name, pass: pass2, fn: fn, first_name: first_name, about: about, location: loc, website: website, speciality: speciality }, function (dt, res, opts) {
-            //$(location).attr('hash', FreshPin.getru('settings'));
             $('#p_about').text(about);
             set();
             location.reload(true);

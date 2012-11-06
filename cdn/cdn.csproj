@@ -179,6 +179,7 @@
     <Content Include="img\nails\up.png" />
     <Content Include="img\pinjimu\bg-rp-wrapper-header.jpg" />
     <Content Include="img\pinjimu\closebox.png" />
+    <Content Include="img\zoom_sprite.png" />
     <Content Include="nails_IE7.css" />
     <Content Include="img\pinjimu\close-rw2.jpg" />
     <Content Include="pinjimu_IE9.css" />
@@ -2553,7 +2554,6 @@
     <Content Include="scripts\totop\ui.totop.css" />
     <Content Include="scripts\totop\ui.totop.png" />
     <Content Include="scripts\underscore-min.js" />
-    <Content Include="scripts\underscore.js" />
     <Content Include="scripts\Wolfy87-EventEmitter-b379edf\src\EventEmitter.js" />
     <Content Include="scripts\Wolfy87-EventEmitter-b379edf\src\EventEmitter.min.js" />
     <Content Include="scripts\Wolfy87-EventEmitter-b379edf\test\compatability.js" />
@@ -2589,6 +2589,8 @@
     <None Include="img\famfamfam_flag_icons\png\.DS_Store" />
     <None Include="img\famfamfam_flag_icons\__MACOSX\gif\._.DS_Store" />
     <None Include="img\famfamfam_flag_icons\__MACOSX\png\._.DS_Store" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile2.pubxml" />
     <None Include="scripts\andrewrjones-jquery-placeholder-plugin-76b7618\CHANGES" />
     <None Include="scripts\andrewrjones-jquery-placeholder-plugin-76b7618\LICENSE" />
     <None Include="scripts\andrewrjones-jquery-placeholder-plugin-76b7618\package.json" />

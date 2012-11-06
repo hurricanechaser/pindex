@@ -446,6 +446,13 @@ namespace Pinjimu.Data.dbml
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fn_diagramobjects", IsComposable=true)]
+		[return: global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")]
+		public System.Nullable<int> Fn_diagramobjects()
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FollowStatus", IsComposable=true)]
 		[return: global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")]
 		public System.Nullable<bool> FollowStatus([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FlID", DbType="Int")] System.Nullable<int> flID)
@@ -465,6 +472,13 @@ namespace Pinjimu.Data.dbml
 		public System.Xml.Linq.XElement ForXML_vw_UserComments([global::System.Data.Linq.Mapping.ParameterAttribute(Name="BIMID", DbType="Int")] System.Nullable<int> bIMID)
 		{
 			return ((System.Xml.Linq.XElement)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bIMID).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ForXML_vw_UserContacts", IsComposable=true)]
+		[return: global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Xml")]
+		public System.Xml.Linq.XElement ForXML_vw_UserContacts([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ImageID", DbType="Int")] System.Nullable<int> imageID)
+		{
+			return ((System.Xml.Linq.XElement)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), imageID).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ForXML_vw_UserPins", IsComposable=true)]
@@ -502,6 +516,52 @@ namespace Pinjimu.Data.dbml
 		public int SetTaggedFlag([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="Int")] System.Nullable<int> iD)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_alterdiagram")]
+		[return: global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")]
+		public int Sp_alterdiagram([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string diagramname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> owner_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> version, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarBinary(MAX)")] System.Data.Linq.Binary definition)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), diagramname, owner_id, version, definition);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_creatediagram")]
+		[return: global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")]
+		public int Sp_creatediagram([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string diagramname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> owner_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> version, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarBinary(MAX)")] System.Data.Linq.Binary definition)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), diagramname, owner_id, version, definition);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_dropdiagram")]
+		[return: global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")]
+		public int Sp_dropdiagram([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string diagramname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> owner_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), diagramname, owner_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_helpdiagramdefinition")]
+		public ISingleResult<Sp_helpdiagramdefinitionResult> Sp_helpdiagramdefinition([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string diagramname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> owner_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), diagramname, owner_id);
+			return ((ISingleResult<Sp_helpdiagramdefinitionResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_helpdiagrams")]
+		public ISingleResult<Sp_helpdiagramsResult> Sp_helpdiagrams([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string diagramname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> owner_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), diagramname, owner_id);
+			return ((ISingleResult<Sp_helpdiagramsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_renamediagram")]
+		[return: global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")]
+		public int Sp_renamediagram([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string diagramname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> owner_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(128)")] string new_diagramname)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), diagramname, owner_id, new_diagramname);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -2201,8 +2261,6 @@ namespace Pinjimu.Data.dbml
 		
 		private System.Nullable<int> _Rating;
 		
-		private EntityRef<Contacts> _Contacts;
-		
 		private EntityRef<AppUsers> _AppUsers;
 		
 		private EntityRef<Boards> _Boards;
@@ -2399,41 +2457,6 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK__Contacts__BIMID__02C769E9", Storage="_Contacts", ThisKey="ID", OtherKey="BIMID", IsUnique=true, IsForeignKey=false, DeleteRule="NO ACTION")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8, EmitDefaultValue=false)]
-		public Contacts Contacts
-		{
-			get
-			{
-				if ((this.serializing 
-							&& (this._Contacts.HasLoadedOrAssignedValue == false)))
-				{
-					return null;
-				}
-				return this._Contacts.Entity;
-			}
-			set
-			{
-				Contacts previousValue = this._Contacts.Entity;
-				if (((previousValue != value) 
-							|| (this._Contacts.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Contacts.Entity = null;
-						previousValue.BoardsImagesMapping = null;
-					}
-					this._Contacts.Entity = value;
-					if ((value != null))
-					{
-						value.BoardsImagesMapping = this;
-					}
-					this.SendPropertyChanged("Contacts");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_BoardsImagesMapping_AppUsers", Storage="_AppUsers", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
 		public AppUsers AppUsers
 		{
@@ -2537,7 +2560,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_Comments_BoardsImagesMapping", Storage="_Comments", ThisKey="ID", OtherKey="BoardsImagesMappingID", DeleteRule="NO ACTION")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9, EmitDefaultValue=false)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8, EmitDefaultValue=false)]
 		public EntitySet<Comments> Comments
 		{
 			get
@@ -2556,7 +2579,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_Likes_BoardsImagesMapping", Storage="_Likes", ThisKey="ID", OtherKey="BoardsImagesMappingID", DeleteRule="NO ACTION")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10, EmitDefaultValue=false)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9, EmitDefaultValue=false)]
 		public EntitySet<Likes> Likes
 		{
 			get
@@ -2620,7 +2643,6 @@ namespace Pinjimu.Data.dbml
 		
 		private void Initialize()
 		{
-			this._Contacts = default(EntityRef<Contacts>);
 			this._AppUsers = default(EntityRef<AppUsers>);
 			this._Boards = default(EntityRef<Boards>);
 			this._Images = default(EntityRef<Images>);
@@ -3109,6 +3131,8 @@ namespace Pinjimu.Data.dbml
 		
 		private int _UserID;
 		
+		private System.Nullable<System.DateTime> _Date;
+		
 		private EntityRef<AppUsers> _AppUsers;
 		
 		private EntityRef<BoardsImagesMapping> _BoardsImagesMapping;
@@ -3125,6 +3149,8 @@ namespace Pinjimu.Data.dbml
     partial void OnBoardsImagesMappingIDChanged();
     partial void OnUserIDChanging(int value);
     partial void OnUserIDChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
     #endregion
 		
 		public Comments()
@@ -3220,6 +3246,27 @@ namespace Pinjimu.Data.dbml
 					this._UserID = value;
 					this.SendPropertyChanged("UserID");
 					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
 				}
 			}
 		}
@@ -3334,7 +3381,7 @@ namespace Pinjimu.Data.dbml
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _BIMID;
+		private int _ImageID;
 		
 		private string _Contact;
 		
@@ -3348,14 +3395,20 @@ namespace Pinjimu.Data.dbml
 		
 		private string _Avatar;
 		
-		private EntityRef<BoardsImagesMapping> _BoardsImagesMapping;
+		private System.DateTime _Date;
+		
+		private string _Name;
+		
+		private int _ID;
+		
+		private EntityRef<Images> _Images;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnBIMIDChanging(int value);
-    partial void OnBIMIDChanged();
+    partial void OnImageIDChanging(int value);
+    partial void OnImageIDChanged();
     partial void OnContactChanging(string value);
     partial void OnContactChanged();
     partial void OnTypeChanging(string value);
@@ -3368,6 +3421,12 @@ namespace Pinjimu.Data.dbml
     partial void OnWebsiteChanged();
     partial void OnAvatarChanging(string value);
     partial void OnAvatarChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
     #endregion
 		
 		public Contacts()
@@ -3375,27 +3434,27 @@ namespace Pinjimu.Data.dbml
 			this.Initialize();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BIMID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageID", DbType="Int NOT NULL")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public int BIMID
+		public int ImageID
 		{
 			get
 			{
-				return this._BIMID;
+				return this._ImageID;
 			}
 			set
 			{
-				if ((this._BIMID != value))
+				if ((this._ImageID != value))
 				{
-					if (this._BoardsImagesMapping.HasLoadedOrAssignedValue)
+					if (this._Images.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnBIMIDChanging(value);
+					this.OnImageIDChanging(value);
 					this.SendPropertyChanging();
-					this._BIMID = value;
-					this.SendPropertyChanged("BIMID");
-					this.OnBIMIDChanged();
+					this._ImageID = value;
+					this.SendPropertyChanged("ImageID");
+					this.OnImageIDChanged();
 				}
 			}
 		}
@@ -3526,36 +3585,99 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK__Contacts__BIMID__02C769E9", Storage="_BoardsImagesMapping", ThisKey="BIMID", OtherKey="ID", IsForeignKey=true)]
-		public BoardsImagesMapping BoardsImagesMapping
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+		public System.DateTime Date
 		{
 			get
 			{
-				return this._BoardsImagesMapping.Entity;
+				return this._Date;
 			}
 			set
 			{
-				BoardsImagesMapping previousValue = this._BoardsImagesMapping.Entity;
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(64)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_Contacts_Images", Storage="_Images", ThisKey="ImageID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true)]
+		public Images Images
+		{
+			get
+			{
+				return this._Images.Entity;
+			}
+			set
+			{
+				Images previousValue = this._Images.Entity;
 				if (((previousValue != value) 
-							|| (this._BoardsImagesMapping.HasLoadedOrAssignedValue == false)))
+							|| (this._Images.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._BoardsImagesMapping.Entity = null;
-						previousValue.Contacts = null;
+						this._Images.Entity = null;
+						previousValue.Contacts.Remove(this);
 					}
-					this._BoardsImagesMapping.Entity = value;
+					this._Images.Entity = value;
 					if ((value != null))
 					{
-						value.Contacts = this;
-						this._BIMID = value.ID;
+						value.Contacts.Add(this);
+						this._ImageID = value.ID;
 					}
 					else
 					{
-						this._BIMID = default(int);
+						this._ImageID = default(int);
 					}
-					this.SendPropertyChanged("BoardsImagesMapping");
+					this.SendPropertyChanged("Images");
 				}
 			}
 		}
@@ -3582,7 +3704,7 @@ namespace Pinjimu.Data.dbml
 		
 		private void Initialize()
 		{
-			this._BoardsImagesMapping = default(EntityRef<BoardsImagesMapping>);
+			this._Images = default(EntityRef<Images>);
 			OnCreated();
 		}
 		
@@ -4186,6 +4308,8 @@ namespace Pinjimu.Data.dbml
 		
 		private EntitySet<CategoryImagesMapping> _CategoryImagesMapping;
 		
+		private EntitySet<Contacts> _Contacts;
+		
 		private EntityRef<Ratings> _Ratings;
 		
 		private bool serializing;
@@ -4492,8 +4616,27 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_Rating_Images", Storage="_Ratings", ThisKey="ID", OtherKey="ImageID", IsUnique=true, IsForeignKey=false, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_Contacts_Images", Storage="_Contacts", ThisKey="ID", OtherKey="ImageID", DeleteRule="CASCADE")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=14, EmitDefaultValue=false)]
+		public EntitySet<Contacts> Contacts
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._Contacts.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._Contacts;
+			}
+			set
+			{
+				this._Contacts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_Rating_Images", Storage="_Ratings", ThisKey="ID", OtherKey="ImageID", IsUnique=true, IsForeignKey=false, DeleteRule="CASCADE")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=15, EmitDefaultValue=false)]
 		public Ratings Ratings
 		{
 			get
@@ -4571,10 +4714,23 @@ namespace Pinjimu.Data.dbml
 			entity.Images = null;
 		}
 		
+		private void attach_Contacts(Contacts entity)
+		{
+			this.SendPropertyChanging();
+			entity.Images = this;
+		}
+		
+		private void detach_Contacts(Contacts entity)
+		{
+			this.SendPropertyChanging();
+			entity.Images = null;
+		}
+		
 		private void Initialize()
 		{
 			this._BoardsImagesMapping = new EntitySet<BoardsImagesMapping>(new Action<BoardsImagesMapping>(this.attach_BoardsImagesMapping), new Action<BoardsImagesMapping>(this.detach_BoardsImagesMapping));
 			this._CategoryImagesMapping = new EntitySet<CategoryImagesMapping>(new Action<CategoryImagesMapping>(this.attach_CategoryImagesMapping), new Action<CategoryImagesMapping>(this.detach_CategoryImagesMapping));
+			this._Contacts = new EntitySet<Contacts>(new Action<Contacts>(this.attach_Contacts), new Action<Contacts>(this.detach_Contacts));
 			this._Ratings = default(EntityRef<Ratings>);
 			OnCreated();
 		}
@@ -8625,16 +8781,6 @@ namespace Pinjimu.Data.dbml
 	public partial class Vw_Pin
 	{
 		
-		private string _Contact;
-		
-		private string _Address;
-		
-		private string _Type;
-		
-		private string _Phone;
-		
-		private string _Website;
-		
 		private System.Nullable<short> _Image_Height;
 		
 		private System.Nullable<short> _Image_Width;
@@ -8653,99 +8799,14 @@ namespace Pinjimu.Data.dbml
 		
 		private int _BIMID;
 		
-		private string _Avatar;
+		private System.Xml.Linq.XElement _Contacts;
 		
 		public Vw_Pin()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contact", DbType="VarChar(64)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-		public string Contact
-		{
-			get
-			{
-				return this._Contact;
-			}
-			set
-			{
-				if ((this._Contact != value))
-				{
-					this._Contact = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(1024)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this._Address = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(32)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-		public string Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this._Type = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(32)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-		public string Phone
-		{
-			get
-			{
-				return this._Phone;
-			}
-			set
-			{
-				if ((this._Phone != value))
-				{
-					this._Phone = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Website", DbType="VarChar(2048)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-		public string Website
-		{
-			get
-			{
-				return this._Website;
-			}
-			set
-			{
-				if ((this._Website != value))
-				{
-					this._Website = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image_Height", DbType="SmallInt")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
 		public System.Nullable<short> Image_Height
 		{
 			get
@@ -8762,7 +8823,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image_Width", DbType="SmallInt")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public System.Nullable<short> Image_Width
 		{
 			get
@@ -8779,7 +8840,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RelativeImage_Path", DbType="VarChar(2048)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public string RelativeImage_Path
 		{
 			get
@@ -8796,7 +8857,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Uploaded", DbType="Bit")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
 		public System.Nullable<bool> Uploaded
 		{
 			get
@@ -8813,7 +8874,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PinID", DbType="Decimal(29,0)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
 		public System.Nullable<decimal> PinID
 		{
 			get
@@ -8830,7 +8891,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image_Title", DbType="NVarChar(2048)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
 		public string Image_Title
 		{
 			get
@@ -8847,7 +8908,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Source", DbType="VarChar(2048)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
 		public string Source
 		{
 			get
@@ -8864,7 +8925,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
 		public System.Nullable<int> UserID
 		{
 			get
@@ -8881,7 +8942,7 @@ namespace Pinjimu.Data.dbml
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BIMID", DbType="Int NOT NULL")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
 		public int BIMID
 		{
 			get
@@ -8897,19 +8958,19 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Avatar", DbType="VarChar(2048)")]
-		[global::System.Runtime.Serialization.DataMemberAttribute(Order=15)]
-		public string Avatar
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contacts", DbType="Xml", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+		public System.Xml.Linq.XElement Contacts
 		{
 			get
 			{
-				return this._Avatar;
+				return this._Contacts;
 			}
 			set
 			{
-				if ((this._Avatar != value))
+				if ((this._Contacts != value))
 				{
-					this._Avatar = value;
+					this._Contacts = value;
 				}
 			}
 		}
@@ -9153,6 +9214,8 @@ namespace Pinjimu.Data.dbml
 		
 		private string _Speciality;
 		
+		private System.Nullable<System.DateTime> _Date;
+		
 		public Vw_UserComments()
 		{
 		}
@@ -9272,6 +9335,174 @@ namespace Pinjimu.Data.dbml
 				if ((this._Speciality != value))
 				{
 					this._Speciality = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Sp_helpdiagramdefinitionResult
+	{
+		
+		private System.Nullable<int> _Version;
+		
+		private System.Data.Linq.Binary _Definition;
+		
+		public Sp_helpdiagramdefinitionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="version", Storage="_Version", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public System.Nullable<int> Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this._Version = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="definition", Storage="_Definition", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public System.Data.Linq.Binary Definition
+		{
+			get
+			{
+				return this._Definition;
+			}
+			set
+			{
+				if ((this._Definition != value))
+				{
+					this._Definition = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Sp_helpdiagramsResult
+	{
+		
+		private string _Database;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _ID;
+		
+		private string _Owner;
+		
+		private System.Nullable<int> _OwnerID;
+		
+		public Sp_helpdiagramsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Database", DbType="NVarChar(128)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public string Database
+		{
+			get
+			{
+				return this._Database;
+			}
+			set
+			{
+				if ((this._Database != value))
+				{
+					this._Database = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(128)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public System.Nullable<int> ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Owner", DbType="NVarChar(128)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public string Owner
+		{
+			get
+			{
+				return this._Owner;
+			}
+			set
+			{
+				if ((this._Owner != value))
+				{
+					this._Owner = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OwnerID", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public System.Nullable<int> OwnerID
+		{
+			get
+			{
+				return this._OwnerID;
+			}
+			set
+			{
+				if ((this._OwnerID != value))
+				{
+					this._OwnerID = value;
 				}
 			}
 		}

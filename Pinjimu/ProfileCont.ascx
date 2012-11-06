@@ -1,14 +1,17 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" %>
 <%@ Import Namespace="Pinjimu" %>
 <script runat="server">
-    string img = "", img1 = "", pi = "profile-info",name="";
+    string img = "", img1 = "", pi = "profile-info", name = "";
     protected void Page_Load(object sender, EventArgs e)
     {
         Pinjimu.Data.Standalone.AppUsers user = null;
         if (Common.UserID.HasValue)
             user = Common.User;
         if (Common.VUserID.HasValue)
+        {
             user = Common.VUser;
+            editBtn.Visible = false;
+        }
         name = user.FirstName;
         if (user != null && !string.IsNullOrEmpty(user.Speciality))
         {
@@ -53,12 +56,12 @@
                 <img id="cLogo" src="<%=img1 %>" style="width: 221px; height: 45px;" alt="Logo" />
             </div>
             <div class="profile-Desc" id="aboutcont">
-                <textarea maxlength="200" id="jipeditable" style="display: none; width: 100%; overflow: visible;
-                    max-height: 70px; max-width: 450px">
+                <textarea maxlength="200" id="jipeditable" style="display: none; width: 100%; overflow: visible; max-height: 70px; max-width: 450px">
                     </textarea><span style="margin: 5px 0px 0px 0px; display: none;" id="EPCharCount">200</span>
-                <span id="p_about" style="width: 100%"></span>&nbsp&nbsp<img id="p_edit_icon" src="http://cdn.pinjimu.com/img/ProfileEditIcon.png" />
+                <span id="p_about" style="width: 100%"></span>&nbsp&nbsp
+                <%  if (Common.UserID.HasValue) { %><img id="p_edit_icon" src="http://cdn.pinjimu.com/img/ProfileEditIcon.png" /><% }%>
             </div>
-            <div class="editBtn">
+            <div class="editBtn" id="editBtn" runat="server">
                 <button type="button" class="p_btn" name="save" onclick="javascript:$(location).attr('href', '#settings');">
                     <img src="http://cdn.pinjimu.com/img/pinjimu/Edit-btn-small.png" />
                     <%=strings.Edit_Profile %>

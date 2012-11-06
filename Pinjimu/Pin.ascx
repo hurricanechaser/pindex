@@ -1,128 +1,60 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" %>
-<div id="pin" style="position: fixed; box-shadow: 0 1px 3px rgba(34,25,25,0.4); -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
-        display: none; -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4); margin-top: 0;
-        margin-right: auto; margin-bottom: 32px;  padding-top: 0; padding-right: 0;
-        padding-bottom: 0; padding-left: 0; background-color: #FFFFFF; text-align: center;
-        overflow-x: auto; overflow-y: scroll;top:104px;z-index:4; max-height:100%;"></div>
+<div id="pin" style="position: fixed; box-shadow: 0 1px 3px rgba(34,25,25,0.4); -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4); display: none; -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4); margin-top: 0; margin-right: auto; margin-bottom: 32px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: #FFFFFF; text-align: center; overflow: hidden; top: 104px; z-index: 4;">
+</div>
 <script id="pintmpl" type="text/template">
-     <# if(!(Contact && Address && Avatar && Phone && Website) && !(Comments && Comments.length>0)){ #>
-        <p id="pintitle" style="margin: 0px; color: #524D4D; font-size: 13px; font-weight: bold;
-            word-break: break-word; padding-top: 0; padding-right: 0; padding-bottom: 0;
-            padding-left: 0;width:<#=width+60 #> px;"><#= title #>
-        </p> 
-        <div style="clear: both; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
-            padding-top: 20px; padding-right: 0; padding-bottom: 0; padding-left: 0;">
-        </div>
-        <div id="PinActionButtons" style="height: 26px; width: 280px; float: left; overflow: hidden;
-            margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 30px; padding-top: 0;
-            padding-right: 0; padding-bottom: 0; padding-left: 13px; background-image: url('http://cdn.pinjimu.com/img/pinjimu/detailiconBg.jpg');
-            background-repeat: no-repeat; background-position: left top;">
-            <a <# if (FreshPin.authenticated()){ #>  id="likepint" <# } else {#>   name="buttons"<# } #> href="javascript:void(0)" style="font-weight: bold; color: #221919;
-                text-decoration: none; outline: none;">
-                <div class="pinLike" align="left">
-                    <#=strings.Like #></div>
-            </a><a  <# if (FreshPin.authenticated())
-                  { #>  id="editpint" <# } else { #>   name="buttons"
-                                                             <# } #>  href="javascript:void(0);" style="font-weight: bold; color: #221919;
-                text-decoration: none; outline: none;">
-                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
-                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
-                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
-                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 30px; background-image: url('http://cdn.pinjimu.com/img/pinjimu/repinIconDetailPage.png');
-                    background-repeat: no-repeat; background-position: left 5px;" align="left">
-                    <#=strings.Edit #></div>
-            </a><a  <#  if (FreshPin.authenticated())
-                  { #>  id="repint" <# } else {#>  name="buttons"
-                                                             <# } #>  href="javascript:void(0);" style="font-weight: bold; color: #221919;
-                text-decoration: none; outline: none;">
-                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
-                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
-                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
-                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 23px; background-image: url('http://cdn.pinjimu.com/img/pinjimu/repinIconDetailPage.png');
-                    background-repeat: no-repeat; background-position: left 4px;" align="left">
-                    <#=strings.Repin #></div>
-            </a><a id="commentt" href="javascript:void(0);" style="font-weight: bold; color: #221919;
-                text-decoration: none; outline: none;">
-                <div style="height: 26px; font-size: 12px; font-weight: bold; float: left; display: block;
-                    color: #777176; font-family: Helvetica, Arial, Sans-Serif; text-align: left;
-                    line-height: 26px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
-                    padding-top: 0; padding-right: 14px; padding-bottom: 0; padding-left: 25px; background-image: url('http://cdn.pinjimu.com/img/pinjimu/commentIconDetailPage.png');
-                    background-repeat: no-repeat; background-position: left 4px;" align="left">
-                    <#=strings.Comment #></div>
-            </a>
-        </div>
-        <div style="clear: both; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;
-            padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
-        </div>
-        <div style="display: block; position: relative; overflow: hidden; margin-top: 20px;
-            margin-right: 30px; margin-bottom: 30px; margin-left: 30px; padding-top: 0; padding-right: 0;
-            padding-bottom: 0; padding-left: 0; background-color: #fff;">
-            <a id="pinimgsource" target="_blank">
-                <img id="pinCloseupImage" src="<#=url #>"  style="display: block; margin-top: 0; margin-right: auto;
-                    margin-bottom: 0; margin-left: auto; border-top-width: 0; border-right-width: 0;
-                    border-bottom-width: 0; border-left-width: 0;width:<#=width #> px;" />
-           </a>
-        </div>
-       <div class="rightPanel">
-            <div class="rpWrapper">             
-                <div class="rpcontent floated">
-                    <div class="rpcuserImage">
-                        <img src="images/user-image1.jpg" alt="Image Not Loaded">
-                    </div>
-                    <div class="rpcPanelTriangle">
-                        <img src="images/left-user-triangle.png" />
-                    </div>
-                    <div class="rpcPanel">
-                        <div class="rpcPanelHeader">
-                            <!--<p>Lorem <span class="daySpan"> 12 </span>/<span class="monthSpan"> 09 </span>/<span class="yearSpan">2012 </span> | <span class="hrSpan">16 </span>: <span class="minSpan">45</span></p>-->
-                            <p>Lorem <span class="dateSpan">12 / 09/ 2012 </span>| <span class="timeSpan">16:45</span> </p>
-                            <div class="countUser">#1</div>
-
+    <div class="bodyContent"  style="z-index: 5; ">
+        <div class="leftPanel"> 
+    <#if(Contacts && Contacts.length>0) { var contact=Contacts[0] #>
+                        <div class="contactInfoImg">
+                            <%--<img src="<#=(contact.Avatar== null?FreshPin.constants.cdn + FreshPin.constants.userBlankImg:contact.Avatar) #>" alt="Contact Image" />--%>
+                            <img src="<#=FreshPin.constants.cdn + FreshPin.constants.userBlankImg #>" alt="Contact Image" />
+                            <p><#=(contact.Contact == null?'':contact.Contact) #></p>
+                        </div>                       
+                        <div class="contactInfoContent">
+                            <div class="mpcTitle">
+    <div style="display:block">    <label class="label">Contact:</label><p class="mpcTxt"><#=(contact.Contact == null?'N/A':contact.Contact) #></p>       </div>  <div style="clear:both;" />
+                             <div >      <label class="label">Address:</label><p class="mpcTxt"><#=(contact.Address == null?'N/A':contact.Address) #></p>    </div>    <div style="clear:both;" />
+                        <div >   <label class="label">Phone:</label><p class="mpcTxt"><#=(contact.Phone == null?'N/A':contact.Phone) #></p>      </div>    <div style="clear:both;" />
+                        <div >  <label class="label">Website:</label><a class="mpcTxt" target="_blank" href="http://<#=(contact.Website == null?'javascript:void(0);':contact.Website) #>"><#=(contact.Website == null?'N/A':contact.Website) #></a> </div>  
+                            </div>                           
                         </div>
-                        <div class="rpcPanelTxt">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
-                        </div>
-                        <div class="rpcPanelText">
-                            text
-                        </div>
-                    </div>
-                </div>               
-            </div>
-        </div>   
-    <# } else if((Comments && Comments.length>0) && !(Contact && Address && Avatar && Phone && Website)) { #>
-    <div class="bodyContent"  style="z-index: 5; position: fixed;">
-        <div class="leftPanel">      
-            <div class="photograph">
-                <a id="pinimgsource">
-                    <img id="pinCloseupImage" src="<#=url #>"  /></a>
-            </div>
-        </div>      
+                        <div class="contactInfoGlobe">
+                            <img src="img/globe.jpg" alt="World Globe" />
+                        </div>      
+     <# } #>             
+         <div class="clear" />
+            <div class="photograph">               
+                    <img id="pinCloseupImage" src="<#=url #>"  />
+                    <p style="margin: 0px; color: #524D4D; font-size: 13px; font-weight: bold;
+            word-break: break-word; padding-top: 0; padding-right: 0; padding-bottom: 0;max-width:<#=width +10 #>px;
+            padding-left: 0;"><#=title #></p>
+            </div> 
+    </div>
+       <# if(Comments){ #>
         <div class="rightPanel">
-            <div class="rpWrapper">             
+            <div class="rpWrapper">          
+               <# for(var i=0;i<Comments.length;i++){ var comment=Comments[i]; var date=new Date(comment.Date) #>   
                 <div class="rpcontent floated">
                     <div class="rpcuserImage">
-                        <img src="images/user-image1.jpg" alt="Image Not Loaded">
+                        <img src=" <#= ( comment.Avatar == null?FreshPin.constants.cdn + FreshPin.constants.userBlankImg:FreshPin.constants.upl+comment.Avatar+'?height=58&width=58') #>"  alt="Image Not Loaded">
                     </div>
                     <div class="rpcPanelTriangle">
-                        <img src="images/left-user-triangle.png" />
+                        <img src="img/left-user-triangle.png" />
                     </div>
                     <div class="rpcPanel">
-                        <div class="rpcPanelHeader">
-                            <!--<p>Lorem <span class="daySpan"> 12 </span>/<span class="monthSpan"> 09 </span>/<span class="yearSpan">2012 </span> | <span class="hrSpan">16 </span>: <span class="minSpan">45</span></p>-->
-                            <p>Lorem <span class="dateSpan">12 / 09/ 2012 </span>| <span class="timeSpan">16:45</span> </p>
-                            <div class="countUser">#1</div>
+                        <div class="rpcPanelHeader">                           
+                            <p><span style="margin:2px 15px;"><#= ( comment.Name == null?'': comment.Name) #></span> <span class="dateSpan" style="margin:2px 5px;"><#= String.format('{0}/{1}/{2}', date.getDate(),date.getMonth()+1,date.getFullYear()) #></span> <span class="timeSpan" style="margin:2px 5px;"><#=String.format('{0}:{1}:{2}', date.getHours(),date.getMinutes()+1,date.getSeconds())#></span> </p>
+                            
 
                         </div>
                         <div class="rpcPanelTxt">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
-                        </div>
-                        <div class="rpcPanelText">
-                            text
-                        </div>
+                            <p> <#= ( comment.Comment == null?'': comment.Comment) #></p>
+                        </div>                      
                     </div>
-                </div>               
-            </div>
-        </div>   
-    </div>   
-   <# } #>
+                </div>    
+             <#  }
+             }#>       
+            
+        </div>      
+  
 </script>
