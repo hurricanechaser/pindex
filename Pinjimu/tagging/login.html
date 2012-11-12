@@ -23,16 +23,13 @@
             }
         }
         $(function () {
-            FreshPin.imgMap('img[name="logo"]', 'img/freshPinLogo.jpg');
+           
             function post() {
-                $.post('../POST.ashx?t=login', {
+                $.post('../POST?t=login', {
                         user: $('#user').val(),
                         pass: $('#pass').val()
-                    }, function (data, res) {
-                        if (data)
-                            $(location).attr('href', 'home.html');
-                        else
-                            alert('Incorrect Credentials');
+                    }, function (data, res) {                      
+                            $(location).attr('href', 'manageads.html');                       
                     }, 'text');
             }
             $('#loginbutton').click(post);
@@ -55,7 +52,7 @@
 <body>
     <div id="content">
         <div class="u">
-            <img name="logo" />
+            <img name="logo" src="../logo.png" />
         </div>
         <div class="fc">
             <span class="label">User Name</span>

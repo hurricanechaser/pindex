@@ -132,9 +132,12 @@ namespace SubSonic.POCOS1
         public Query<BoardContributor> BoardContributors { get; set; }
         public Query<BoardsImagesMapping> BoardsImagesMappings { get; set; }
         public Query<Like> Likes { get; set; }
+        public Query<Contact> Contacts { get; set; }
         public Query<Prize> Prizes { get; set; }
         public Query<Roulette> Roulettes { get; set; }
         public Query<PrizeHistory> PrizeHistories { get; set; }
+        public Query<CategoryAdsMapping> CategoryAdsMappings { get; set; }
+        public Query<Ad> Ads { get; set; }
         public Query<FollowingUser> FollowingUsers { get; set; }
         public Query<Comment> Comments { get; set; }
         public Query<Rating> Ratings { get; set; }
@@ -142,7 +145,6 @@ namespace SubSonic.POCOS1
         public Query<Point> Points { get; set; }
         public Query<PointsHistory> PointsHistories { get; set; }
         public Query<Article> Articles { get; set; }
-        public Query<Contact> Contacts { get; set; }
         public Query<Category> Categories { get; set; }
 
 			
@@ -258,9 +260,12 @@ namespace SubSonic.POCOS1
             BoardContributors = new Query<BoardContributor>(provider);
             BoardsImagesMappings = new Query<BoardsImagesMapping>(provider);
             Likes = new Query<Like>(provider);
+            Contacts = new Query<Contact>(provider);
             Prizes = new Query<Prize>(provider);
             Roulettes = new Query<Roulette>(provider);
             PrizeHistories = new Query<PrizeHistory>(provider);
+            CategoryAdsMappings = new Query<CategoryAdsMapping>(provider);
+            Ads = new Query<Ad>(provider);
             FollowingUsers = new Query<FollowingUser>(provider);
             Comments = new Query<Comment>(provider);
             Ratings = new Query<Rating>(provider);
@@ -268,7 +273,6 @@ namespace SubSonic.POCOS1
             Points = new Query<Point>(provider);
             PointsHistories = new Query<PointsHistory>(provider);
             Articles = new Query<Article>(provider);
-            Contacts = new Query<Contact>(provider);
             Categories = new Query<Category>(provider);
             #endregion
 
@@ -287,9 +291,12 @@ namespace SubSonic.POCOS1
             	DataProvider.Schema.Tables.Add(new BoardContributorTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new BoardsImagesMappingTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new LikesTable(DataProvider));
+            	DataProvider.Schema.Tables.Add(new ContactsTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new PrizeTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new RouletteTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new PrizeHistoryTable(DataProvider));
+            	DataProvider.Schema.Tables.Add(new CategoryAdsMappingTable(DataProvider));
+            	DataProvider.Schema.Tables.Add(new AdsTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new FollowingUserTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new CommentsTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new RatingsTable(DataProvider));
@@ -297,7 +304,6 @@ namespace SubSonic.POCOS1
             	DataProvider.Schema.Tables.Add(new PointsTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new PointsHistoryTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new ArticlesTable(DataProvider));
-            	DataProvider.Schema.Tables.Add(new ContactsTable(DataProvider));
             	DataProvider.Schema.Tables.Add(new CategoryTable(DataProvider));
             }
             #endregion

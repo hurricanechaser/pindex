@@ -8,7 +8,7 @@ background-repeat: repeat; background-color: #f7f5f5;" xml:lang="en">
     <title>Clothes and Such / Pinjimu.</title>
     <meta name="medium" content="image" />
     <link rel="icon" href="favicon.ico" />
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="freshpin.js" type="text/javascript"></script>
     <!--[if (gt IE 6)&(lt IE 9)]><link rel="stylesheet" href="ie7-and-up_fa603afa.css" type="text/css" media="all" /><![endif]-->
 </head>

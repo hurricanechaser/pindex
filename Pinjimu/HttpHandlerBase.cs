@@ -54,12 +54,15 @@ namespace Pinjimu
                 return _GetDataContext4;
             }
         }
-        SqlConnection _SqlConnection;
+        List<SqlConnection> _connections = new List<SqlConnection>();
+        
         public SqlConnection SqlConnection
         {
             get
             {
-                if (_SqlConnection == null) (_SqlConnection = new SqlConnection(Common.DataConnectionString)).Open();
+                SqlConnection _SqlConnection = new SqlConnection(Common.DataConnectionString);
+                _connections.Add(_SqlConnection);
+                _SqlConnection.Open();
                 return _SqlConnection;
             }
         }
@@ -110,6 +113,7 @@ namespace Pinjimu
                 _GetDataContext1.Dispose();
                 _GetDataContext1 = null;
             }
+            _connections.ForEach(o => o.Close());
             Common.WriteCookieValues();
         }
 

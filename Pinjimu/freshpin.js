@@ -219,7 +219,7 @@ function diffArray(a, b) {
                 var split1 = split[i].split('=');
                 var key = split1[0];
                 var value = split1[1];
-                if ($.inArray( key, ignore))
+                if ($.inArray(key, ignore))
                     k[key] = value ? value : null;
             }
         }
@@ -299,7 +299,7 @@ var FreshPin = {
     server: {},
     closeall: function (hash) {
         $.each($.jqm.hash, function (ind, item) {
-            if (item != hash ) {
+            if (item != hash) {
                 item.w.jqmfClose();
             }
         });
@@ -559,7 +559,8 @@ $(function () {
         }
     });
     //$('#sautocomplete').css({ left: $('#query').offset().left });
-    $('input:text[placeholder], textarea[placeholder]').placeholder();
+    var ph = $('input:text[placeholder], textarea[placeholder]')
+    if (ph.placeholder) ph.placeholder();
     var contentpagesflg = $.grep(['about.aspx', 'faq.html'], function (i) {
         return $(location).attr('href')
             .toLowerCase()

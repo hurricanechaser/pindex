@@ -1,25 +1,21 @@
 ﻿
 
-  <li><a href="javascript:void(0);" catid="41"  name="sellist"><% =cat.Basement %></a></li>
-  <li><a href="javascript:void(0);" catid="42"  name="sellist"><% =cat.Bathroom %></a></li>
-  <li><a href="javascript:void(0);" catid="24"  name="sellist"><% =cat.Bedroom %></a></li>
-  <li><a href="javascript:void(0);" catid="43"  name="sellist"><% =cat.Closet %></a></li>
-  <li><a href="javascript:void(0);" catid="44"  name="sellist"><% =cat.Dining_Room %></a></li>
-  <li><a href="javascript:void(0);" catid="45"  name="sellist"><% =cat.Entry %></a></li>
-  <li><a href="javascript:void(0);" catid="46"  name="sellist"><% =cat.Exterior %></a></li>
-  <li><a href="javascript:void(0);" catid="47"  name="sellist"><% =cat.Family_Room %></a></li>
-  <li><a href="javascript:void(0);" catid="48"  name="sellist"><% =cat.Garage_and_Shed %></a></li>
-  <li><a href="javascript:void(0);" catid="49"  name="sellist"><% =cat.Hall %></a></li>
-  <li><a href="javascript:void(0);" catid="50"  name="sellist"><% =cat.Home_Gym %></a></li>
-  <li><a href="javascript:void(0);" catid="51"  name="sellist"><% =cat.Home_Office %></a></li>
-  <li><a href="javascript:void(0);" catid="52"  name="sellist"><% =cat.Kitchen %></a></li>
-  <li><a href="javascript:void(0);" catid="12"  name="sellist"><% =cat.Landscape %></a></li>
-  <li><a href="javascript:void(0);" catid="54"  name="sellist"><% =cat.Laundry_Room %></a></li>
-  <li><a href="javascript:void(0);" catid="55"  name="sellist"><% =cat.Living_Room %></a></li>
-  <li><a href="javascript:void(0);" catid="56"  name="sellist"><% =cat.Media_Room %></a></li>
-  <li><a href="javascript:void(0);" catid="57"  name="sellist"><% =cat.Patio %></a></li>
-  <li><a href="javascript:void(0);" catid="58"  name="sellist"><% =cat.Pool %></a></li>
-  <li><a href="javascript:void(0);" catid="59"  name="sellist"><% =cat.Porch %></a></li>
-  <li><a href="javascript:void(0);" catid="60"  name="sellist"><% =cat.Powder_Room %></a></li>
-  <li><a href="javascript:void(0);" catid="15"  name="sellist"><% =cat.Staircase %></a></li>
-  <li><a href="javascript:void(0);" catid="62"  name="sellist"><% =cat.Wine_Cellar %></a></li>
+<input type="checkbox" value="4"  name="sellist" /><label>Accessories and Decor</label> 
+<input type="checkbox" value="66"  name="sellist" /><label>Bath Products</label> 
+<input type="checkbox" value="5"  name="sellist" /><label>Bedroom Products</label> 
+<input type="checkbox" value="23"  name="sellist" /><label>Curtains</label> 
+<input type="checkbox" value="64"  name="sellist" /><label>Fabric</label> 
+<input type="checkbox" value="6"  name="sellist" /><label>Floors</label> 
+<input type="checkbox" value="7"  name="sellist" /><label>Furniture</label> 
+<input type="checkbox" value="8"  name="sellist" /><label>Hardware</label> 
+<input type="checkbox" value="9"  name="sellist" /><label>Home Office Products</label> 
+<input type="checkbox" value="65"  name="sellist" /><label>Housekeeping</label> 
+<input type="checkbox" value="10"  name="sellist" /><label>Kids Products</label> 
+<input type="checkbox" value="11"  name="sellist" /><label>Kitchen Products</label> 
+<input type="checkbox" value="13"  name="sellist" /><label>Lighting</label> 
+<input type="checkbox" value="22"  name="sellist" /><label>Lightining</label> 
+<input type="checkbox" value="14"  name="sellist" /><label>Outdoor Products</label> 
+<input type="checkbox" value="16"  name="sellist" /><label>Storage and Organization</label> 
+<input type="checkbox" value="17"  name="sellist" /><label>Tabletop</label> 
+<input type="checkbox" value="18"  name="sellist" /><label>Window Treatment</label> 
+<input type="checkbox" value="19"  name="sellist" /><label>Windows and Doors</label> 

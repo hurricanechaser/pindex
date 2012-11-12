@@ -22,6 +22,14 @@ namespace Pinjimu
 			}
 		}
 	
+		public static int  AdFreq
+		{
+			get
+			{
+				return    int.Parse(ConfigurationManager.AppSettings["AdFreq"]);
+			}
+		}
+	
 		public static string  AppCookies
 		{
 			get
@@ -123,6 +131,14 @@ namespace Pinjimu
 			get
 			{
 				return    ConfigurationManager.AppSettings["RelTemp"];
+			}
+		}
+	
+		public static string  ImageServer
+		{
+			get
+			{
+				return    ConfigurationManager.AppSettings["ImageServer"];
 			}
 		}
 	

@@ -1,0 +1,123 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Utilities.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ATDatabaseConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\App_Data\ATDatabase.mdf;Integrated Security=True;User Instance=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\App_Data\ATDatabase.mdf;Integrated Security=True;User Instance=True</Value>
+    </Setting>
+    <Setting Name="CustomerDatabaseConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\App_Data\CustomerDatabase.mdf;Integrated Security=True;User Instance=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\App_Data\CustomerDatabase.mdf;Integrated Security=True;User Instance=True</Value>
+    </Setting>
+    <Setting Name="ColumnGraphXaml" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;vc:Chart xmlns:vc="clr-namespace:Visifire.Charts;assembly=SLVisifire.Charts" Width="{0}" Height="{1}" BorderThickness="0" Theme="Theme3" View3D="True" AnimationEnabled="True" Watermark="True" LightingEnabled="True"  Bevel="True"  ShadowEnabled="True" &gt;
+    &lt;vc:Chart.Titles&gt;
+        &lt;vc:Title Text="{2}" /&gt;
+    &lt;/vc:Chart.Titles&gt;
+    &lt;vc:Chart.Legends&gt;
+        &lt;vc:Legend Enabled="True" HorizontalAlignment="Center" /&gt;
+    &lt;/vc:Chart.Legends&gt;
+    &lt;vc:Chart.AxesX&gt;
+        &lt;vc:Axis Title="{3}" /&gt;
+    &lt;/vc:Chart.AxesX&gt;
+    &lt;vc:Chart.AxesY&gt;
+        &lt;vc:Axis Title="{4}" AxisType="Primary" AxisMinimum="{5}" AxisMaximum="{6}" /&gt;
+    &lt;/vc:Chart.AxesY&gt;
+    &lt;vc:Chart.Series&gt;
+        &lt;vc:DataSeries RenderAs="Column" AxisYType="Primary"  &gt;
+            &lt;vc:DataSeries.DataPoints&gt;{7}&lt;/vc:DataSeries.DataPoints&gt;
+        &lt;/vc:DataSeries&gt;
+    &lt;/vc:Chart.Series&gt;
+&lt;/vc:Chart&gt;</Value>
+    </Setting>
+    <Setting Name="LineGraphXaml" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;vc:Chart xmlns:vc="clr-namespace:Visifire.Charts;assembly=SLVisifire.Charts"  Bevel="True"
+Width="{0}" Height="{1}" Theme="Theme3" AnimatedUpdate="true"&gt;
+
+&lt;vc:Chart.Titles&gt;
+&lt;vc:Title Text="{2}"/&gt;
+&lt;/vc:Chart.Titles&gt;
+
+&lt;vc:Chart.AxesX&gt;
+&lt;vc:Axis Title="{3}"  &gt;
+&lt;vc:Axis.AxisLabels&gt;
+&lt;vc:AxisLabels Angle="-30"/&gt;
+&lt;/vc:Axis.AxisLabels&gt;
+&lt;/vc:Axis&gt;
+&lt;/vc:Chart.AxesX&gt;
+
+&lt;vc:Chart.AxesY&gt;
+&lt;vc:Axis AxisMinimum="{4}" AxisMaximum="{5}" Title="{6}" /&gt;
+&lt;/vc:Chart.AxesY&gt;
+
+&lt;vc:Chart.Legends&gt;
+&lt;vc:Legend x:Name="Legend1" Background="Black" LightingEnabled="False" FontSize="10"/&gt;
+&lt;/vc:Chart.Legends&gt;
+
+&lt;vc:Chart.Series&gt;
+{7}
+&lt;/vc:Chart.Series&gt;
+&lt;/vc:Chart&gt;</Value>
+    </Setting>
+    <Setting Name="ColumnGraphXamlWithTrendLines" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;vc:Chart xmlns:vc="clr-namespace:Visifire.Charts;assembly=SLVisifire.Charts" Width="{0}" Height="{1}" BorderThickness="0" Theme="Theme3" View3D="True" AnimationEnabled="True" Watermark="True" LightingEnabled="True"  Bevel="True"  ShadowEnabled="True" &gt;
+    &lt;vc:Chart.Titles&gt;
+        &lt;vc:Title Text="{2}" /&gt;
+    &lt;/vc:Chart.Titles&gt;
+{3}
+    &lt;vc:Chart.Legends&gt;
+        &lt;vc:Legend Enabled="True" HorizontalAlignment="Center" /&gt;
+    &lt;/vc:Chart.Legends&gt;
+    &lt;vc:Chart.AxesX&gt;
+        &lt;vc:Axis Title="{4}" /&gt;
+    &lt;/vc:Chart.AxesX&gt;
+    &lt;vc:Chart.AxesY&gt;
+        &lt;vc:Axis Title="{5}" AxisType="Primary" AxisMinimum="{6}" AxisMaximum="{7}" /&gt;
+    &lt;/vc:Chart.AxesY&gt;
+    &lt;vc:Chart.Series&gt;
+        &lt;vc:DataSeries RenderAs="Column" AxisYType="Primary"  &gt;
+            &lt;vc:DataSeries.DataPoints&gt;{8}&lt;/vc:DataSeries.DataPoints&gt;
+        &lt;/vc:DataSeries&gt;
+    &lt;/vc:Chart.Series&gt;
+&lt;/vc:Chart&gt;</Value>
+    </Setting>
+    <Setting Name="LineGraphXamlWithTrendLines" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">&lt;vc:Chart xmlns:vc="clr-namespace:Visifire.Charts;assembly=SLVisifire.Charts"  Bevel="True"
+Width="{0}" Height="{1}" Theme="Theme3" AnimatedUpdate="true"&gt;
+
+&lt;vc:Chart.Titles&gt;
+&lt;vc:Title Text="{2}"/&gt;
+&lt;/vc:Chart.Titles&gt;
+{3}
+&lt;vc:Chart.AxesX&gt;
+&lt;vc:Axis Title="{4}"  &gt;
+&lt;vc:Axis.AxisLabels&gt;
+&lt;vc:AxisLabels Angle="-30"/&gt;
+&lt;/vc:Axis.AxisLabels&gt;
+&lt;/vc:Axis&gt;
+&lt;/vc:Chart.AxesX&gt;
+
+&lt;vc:Chart.AxesY&gt;
+&lt;vc:Axis AxisMinimum="{5}" AxisMaximum="{6}" Title="{7}" /&gt;
+&lt;/vc:Chart.AxesY&gt;
+
+&lt;vc:Chart.Legends&gt;
+&lt;vc:Legend x:Name="Legend1" Background="Black" LightingEnabled="False" FontSize="10"/&gt;
+&lt;/vc:Chart.Legends&gt;
+
+&lt;vc:Chart.Series&gt;
+{8}
+&lt;/vc:Chart.Series&gt;
+&lt;/vc:Chart&gt;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

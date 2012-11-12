@@ -183,6 +183,7 @@
     </ul>
     </script>
     <script id="picTemplate" type="text/x-jquery-tmpl">
+        {{if BIMID }}
         <ul class="box" name="box" bimid="${BIMID}" >
         {{if FreshPin.authenticated() == true  }}       
             <li class="buttons" style="width:180px;"   >
@@ -220,6 +221,15 @@
         </li>
         {{/if}}
     </ul>
+          {{else}}
+         <ul class="box"  name="box" bimid="${BIMID}" >           
+            <li class="img" style="height:${getHeight($data) + 7 }px;width:${getWidth()}px;" ><img  src="${url}?width=${getWidth()}" style="height:${getHeight($data)}px;width:${getWidth()}px;" alt="${title}" />
+            </li>      
+        <li class="name" style="width:${getWidth()}px;">           
+                <span>${title}</span>
+        </li>            
+     </ul>
+        {{/if}}
     </script>
     <script id="cats" type="text/x-jquery-tmpl">
    <a  href="#cat=${escape(getVal($data,'Name'))}" style="overflow:hidden;" >${Name}</a>   

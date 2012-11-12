@@ -67,8 +67,8 @@ function getWidth(add) {
     }
     return size + (add || 0);
 }
-function getHeight(o, w) {
-    return Math.round(w || getWidth() * o.height / o.width);
+function getHeight(w) {
+    return Math.round(w || getWidth() * height / width);
 }
 function getUrl(o, t) {
     var pin = String.format('{0}#{1}', $(location).attr('href'), o.BIMID);
@@ -413,7 +413,15 @@ $(function () {
         interpolate: /<#=([\s\S]+?)#>/g,
         escape: /<#-([\s\S]+?)#>/g
     };
-
+    $.extend( doT.templateSettings, {
+        evaluate: /\{\{([\s\S]+?)\}\}/g,
+        interpolate: /\{\{=([\s\S]+?)\}\}/g,
+        encode: /\{\{!([\s\S]+?)\}\}/g,
+        use: /\{\{#([\s\S]+?)\}\}/g,
+        define: /\{\{##\s*([\w\.$]+)\s*(\:|=)([\s\S]+?)#\}\}/g,
+        conditional: /\{\{\?(\?)?\s*([\s\S]*?)\s*\}\}/g,
+        iterate: /\{\{~\s*(?:\}\}|([\s\S]+?)\s*\:\s*([\w$]+)\s*(?:\:\s*([\w$]+))?\s*\}\})/g    
+    });
     $('#PinZoomClose').click(zoomClose);
     $('#topcontrol').click(function () { scrollTo(0); });
     templates.picTemplate = $("#picTemplate").template();
@@ -562,11 +570,11 @@ $(function () {
                 hash.w.show().transition(cssCenterX(hash.w), 'fast');
             },
             forceclose: function (hash) {
-                hash.o.css({ opacity: 0 }).hide();
+                hash.o.unbind().css({ opacity: 0 }).hide();
                 hash.w.css({ top: 0 }).hide();
             },
             onHide: function (hash) {
-                hash.o.css({ opacity: 0 }).hide();
+                hash.o.unbind().css({ opacity: 0 }).hide();
                 hash.w.css({ top: 0 }).hide();
             }
         });
@@ -590,7 +598,7 @@ $(function () {
             .jqm({
                 onShow: function (hash) {
                     hash.o.click(function () {
-                        $('#earnPointsCriteria').jqmHide();
+                        hash.w.jqmHide();
                     }).show().transition({
                         opacity: .98
                     }, 'fast');
@@ -612,17 +620,19 @@ $(function () {
     });
     $('#login').css(cssCenterY('#login')).jqm({
         onShow: function (hash) {
-            hash.o.show().transition({
+            hash.o.click(function () {
+                hash.w.jqmHide();
+            }).show().transition({
                 opacity: 1
             }, 'fast');
             hash.w.show().transition(cssCenterX('#login'), 'fast');
         },
         forceclose: function (hash) {
-            hash.o.css({ opacity: 0 }).hide();
+            hash.o.unbind().css({ opacity: 0 }).hide();
             hash.w.css({ top: 0 }).hide();
         },
         onHide: function (hash) {
-            hash.o.css({ opacity: 0 }).hide();
+            hash.o.unbind().css({ opacity: 0 }).hide();
             hash.w.css({ top: 0 }).hide();
         }
     });
@@ -635,17 +645,19 @@ $(function () {
         $('#signUpWraper').css(cssCenterY('#signUpWraper'))
             .jqm({
                 onShow: function (hash) {
-                    hash.o.show().transition({
+                    hash.o.click(function () {
+                        hash.w.jqmHide();
+                    }).show().transition({
                         opacity: 1
                     }, 'fast');
                     hash.w.show().transition(cssCenterX('#signUpWraper'), 'fast');
                 },
                 forceclose: function (hash) {
-                    hash.o.css({ opacity: 0 }).hide();
+                    hash.o.unbind().css({ opacity: 0 }).hide();
                     hash.w.css({ top: 0 }).hide();
                 },
                 onHide: function (hash) {
-                    hash.o.css({ opacity: 0 }).hide();
+                    hash.o.unbind().css({ opacity: 0 }).hide();
                     hash.w.css({ top: 0 }).hide();
                 }
             });

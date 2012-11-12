@@ -7,6 +7,7 @@ using System.Web;
 using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Data.SqlClient;
 
 namespace Pinjimu
 {
@@ -35,7 +36,18 @@ namespace Pinjimu
                 return _GetDataContext1;
             }
         }
+        List<SqlConnection> _connections = new List<SqlConnection>();
 
+        public SqlConnection SqlConnection
+        {
+            get
+            {
+                SqlConnection _SqlConnection = new SqlConnection(Common.DataConnectionString);
+                _connections.Add(_SqlConnection);
+                _SqlConnection.Open();
+                return _SqlConnection;
+            }
+        }
         //private static List<Nails.edmx.Category> _all;
 
         //public List<Nails.edmx.Category> all
@@ -66,7 +78,7 @@ namespace Pinjimu
         {
             if (_GetDataContext1 != null) _GetDataContext1.Dispose();
             if (_GetDataContext2 != null) _GetDataContext2.Dispose();
-
+            _connections.ForEach(o => o.Close());
             Common.WriteCookieValues();
         }
     }

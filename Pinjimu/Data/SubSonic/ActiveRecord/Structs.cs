@@ -1331,245 +1331,6 @@ namespace SubSonic.POCOS {
         }
         
         /// <summary>
-        /// Table: Contacts
-        /// Primary Key: ID
-        /// </summary>
-
-        public class ContactsTable: DatabaseTable {
-            
-            public ContactsTable(IDataProvider provider):base("Contacts",provider){
-                ClassName = "Contact";
-                SchemaName = "dbo";
-                
-
-                Columns.Add(new DatabaseColumn("ImageID", this)
-                {
-	                IsPrimaryKey = false,
-	                DataType = DbType.Int32,
-	                IsNullable = false,
-	                AutoIncrement = false,
-	                IsForeignKey = true,
-	                MaxLength = 0
-                });
-
-                Columns.Add(new DatabaseColumn("Contact", this)
-                {
-	                IsPrimaryKey = false,
-	                DataType = DbType.AnsiString,
-	                IsNullable = true,
-	                AutoIncrement = false,
-	                IsForeignKey = false,
-	                MaxLength = 64
-                });
-
-                Columns.Add(new DatabaseColumn("Type", this)
-                {
-	                IsPrimaryKey = false,
-	                DataType = DbType.AnsiString,
-	                IsNullable = true,
-	                AutoIncrement = false,
-	                IsForeignKey = false,
-	                MaxLength = 32
-                });
-
-                Columns.Add(new DatabaseColumn("Address", this)
-                {
-	                IsPrimaryKey = false,
-	                DataType = DbType.AnsiString,
-	                IsNullable = true,
-	                AutoIncrement = false,
-	                IsForeignKey = false,
-	                MaxLength = 1024
-                });
-
-                Columns.Add(new DatabaseColumn("Phone", this)
-                {
-	                IsPrimaryKey = false,
-	                DataType = DbType.AnsiString,
-	                IsNullable = true,
-	                AutoIncrement = false,
-	                IsForeignKey = false,
-	                MaxLength = 32
-                });
-
-                Columns.Add(new DatabaseColumn("Website", this)
-                {
-	                IsPrimaryKey = false,
-	                DataType = DbType.AnsiString,
-	                IsNullable = true,
-	                AutoIncrement = false,
-	                IsForeignKey = false,
-	                MaxLength = 2048
-                });
-
-                Columns.Add(new DatabaseColumn("Avatar", this)
-                {
-	                IsPrimaryKey = false,
-	                DataType = DbType.AnsiString,
-	                IsNullable = true,
-	                AutoIncrement = false,
-	                IsForeignKey = false,
-	                MaxLength = 2048
-                });
-
-                Columns.Add(new DatabaseColumn("Date", this)
-                {
-	                IsPrimaryKey = false,
-	                DataType = DbType.DateTime,
-	                IsNullable = false,
-	                AutoIncrement = false,
-	                IsForeignKey = false,
-	                MaxLength = 0
-                });
-
-                Columns.Add(new DatabaseColumn("Name", this)
-                {
-	                IsPrimaryKey = false,
-	                DataType = DbType.AnsiString,
-	                IsNullable = true,
-	                AutoIncrement = false,
-	                IsForeignKey = false,
-	                MaxLength = 64
-                });
-
-                Columns.Add(new DatabaseColumn("ID", this)
-                {
-	                IsPrimaryKey = true,
-	                DataType = DbType.Int32,
-	                IsNullable = false,
-	                AutoIncrement = false,
-	                IsForeignKey = false,
-	                MaxLength = 0
-                });
-                    
-                
-                
-            }
-
-            public IColumn ImageID{
-                get{
-                    return this.GetColumn("ImageID");
-                }
-            }
-				
-   			public static string ImageIDColumn{
-			      get{
-        			return "ImageID";
-      			}
-		    }
-            
-            public IColumn Contact{
-                get{
-                    return this.GetColumn("Contact");
-                }
-            }
-				
-   			public static string ContactColumn{
-			      get{
-        			return "Contact";
-      			}
-		    }
-            
-            public IColumn Type{
-                get{
-                    return this.GetColumn("Type");
-                }
-            }
-				
-   			public static string TypeColumn{
-			      get{
-        			return "Type";
-      			}
-		    }
-            
-            public IColumn Address{
-                get{
-                    return this.GetColumn("Address");
-                }
-            }
-				
-   			public static string AddressColumn{
-			      get{
-        			return "Address";
-      			}
-		    }
-            
-            public IColumn Phone{
-                get{
-                    return this.GetColumn("Phone");
-                }
-            }
-				
-   			public static string PhoneColumn{
-			      get{
-        			return "Phone";
-      			}
-		    }
-            
-            public IColumn Website{
-                get{
-                    return this.GetColumn("Website");
-                }
-            }
-				
-   			public static string WebsiteColumn{
-			      get{
-        			return "Website";
-      			}
-		    }
-            
-            public IColumn Avatar{
-                get{
-                    return this.GetColumn("Avatar");
-                }
-            }
-				
-   			public static string AvatarColumn{
-			      get{
-        			return "Avatar";
-      			}
-		    }
-            
-            public IColumn Date{
-                get{
-                    return this.GetColumn("Date");
-                }
-            }
-				
-   			public static string DateColumn{
-			      get{
-        			return "Date";
-      			}
-		    }
-            
-            public IColumn Name{
-                get{
-                    return this.GetColumn("Name");
-                }
-            }
-				
-   			public static string NameColumn{
-			      get{
-        			return "Name";
-      			}
-		    }
-            
-            public IColumn ID{
-                get{
-                    return this.GetColumn("ID");
-                }
-            }
-				
-   			public static string IDColumn{
-			      get{
-        			return "ID";
-      			}
-		    }
-            
-                    
-        }
-        
-        /// <summary>
         /// Table: Review
         /// Primary Key: ID
         /// </summary>
@@ -2064,6 +1825,245 @@ namespace SubSonic.POCOS {
         }
         
         /// <summary>
+        /// Table: Contacts
+        /// Primary Key: ID
+        /// </summary>
+
+        public class ContactsTable: DatabaseTable {
+            
+            public ContactsTable(IDataProvider provider):base("Contacts",provider){
+                ClassName = "Contact";
+                SchemaName = "dbo";
+                
+
+                Columns.Add(new DatabaseColumn("ImageID", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.Int32,
+	                IsNullable = false,
+	                AutoIncrement = false,
+	                IsForeignKey = true,
+	                MaxLength = 0
+                });
+
+                Columns.Add(new DatabaseColumn("Contact", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.AnsiString,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = -1
+                });
+
+                Columns.Add(new DatabaseColumn("Type", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.AnsiString,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = -1
+                });
+
+                Columns.Add(new DatabaseColumn("Address", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.AnsiString,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = -1
+                });
+
+                Columns.Add(new DatabaseColumn("Phone", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.AnsiString,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = -1
+                });
+
+                Columns.Add(new DatabaseColumn("Website", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.AnsiString,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = -1
+                });
+
+                Columns.Add(new DatabaseColumn("Avatar", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.AnsiString,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = -1
+                });
+
+                Columns.Add(new DatabaseColumn("Date", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.DateTime,
+	                IsNullable = false,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = 0
+                });
+
+                Columns.Add(new DatabaseColumn("Name", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.AnsiString,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = -1
+                });
+
+                Columns.Add(new DatabaseColumn("ID", this)
+                {
+	                IsPrimaryKey = true,
+	                DataType = DbType.Int32,
+	                IsNullable = false,
+	                AutoIncrement = true,
+	                IsForeignKey = false,
+	                MaxLength = 0
+                });
+                    
+                
+                
+            }
+
+            public IColumn ImageID{
+                get{
+                    return this.GetColumn("ImageID");
+                }
+            }
+				
+   			public static string ImageIDColumn{
+			      get{
+        			return "ImageID";
+      			}
+		    }
+            
+            public IColumn Contact{
+                get{
+                    return this.GetColumn("Contact");
+                }
+            }
+				
+   			public static string ContactColumn{
+			      get{
+        			return "Contact";
+      			}
+		    }
+            
+            public IColumn Type{
+                get{
+                    return this.GetColumn("Type");
+                }
+            }
+				
+   			public static string TypeColumn{
+			      get{
+        			return "Type";
+      			}
+		    }
+            
+            public IColumn Address{
+                get{
+                    return this.GetColumn("Address");
+                }
+            }
+				
+   			public static string AddressColumn{
+			      get{
+        			return "Address";
+      			}
+		    }
+            
+            public IColumn Phone{
+                get{
+                    return this.GetColumn("Phone");
+                }
+            }
+				
+   			public static string PhoneColumn{
+			      get{
+        			return "Phone";
+      			}
+		    }
+            
+            public IColumn Website{
+                get{
+                    return this.GetColumn("Website");
+                }
+            }
+				
+   			public static string WebsiteColumn{
+			      get{
+        			return "Website";
+      			}
+		    }
+            
+            public IColumn Avatar{
+                get{
+                    return this.GetColumn("Avatar");
+                }
+            }
+				
+   			public static string AvatarColumn{
+			      get{
+        			return "Avatar";
+      			}
+		    }
+            
+            public IColumn Date{
+                get{
+                    return this.GetColumn("Date");
+                }
+            }
+				
+   			public static string DateColumn{
+			      get{
+        			return "Date";
+      			}
+		    }
+            
+            public IColumn Name{
+                get{
+                    return this.GetColumn("Name");
+                }
+            }
+				
+   			public static string NameColumn{
+			      get{
+        			return "Name";
+      			}
+		    }
+            
+            public IColumn ID{
+                get{
+                    return this.GetColumn("ID");
+                }
+            }
+				
+   			public static string IDColumn{
+			      get{
+        			return "ID";
+      			}
+		    }
+            
+                    
+        }
+        
+        /// <summary>
         /// Table: Prize
         /// Primary Key: ID
         /// </summary>
@@ -2356,6 +2356,242 @@ namespace SubSonic.POCOS {
    			public static string Create_dateColumn{
 			      get{
         			return "Create_date";
+      			}
+		    }
+            
+                    
+        }
+        
+        /// <summary>
+        /// Table: CategoryAdsMapping
+        /// Primary Key: ID
+        /// </summary>
+
+        public class CategoryAdsMappingTable: DatabaseTable {
+            
+            public CategoryAdsMappingTable(IDataProvider provider):base("CategoryAdsMapping",provider){
+                ClassName = "CategoryAdsMapping";
+                SchemaName = "dbo";
+                
+
+                Columns.Add(new DatabaseColumn("CategoryID", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.Int32,
+	                IsNullable = false,
+	                AutoIncrement = false,
+	                IsForeignKey = true,
+	                MaxLength = 0
+                });
+
+                Columns.Add(new DatabaseColumn("AdID", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.Int32,
+	                IsNullable = false,
+	                AutoIncrement = false,
+	                IsForeignKey = true,
+	                MaxLength = 0
+                });
+
+                Columns.Add(new DatabaseColumn("ID", this)
+                {
+	                IsPrimaryKey = true,
+	                DataType = DbType.Int32,
+	                IsNullable = false,
+	                AutoIncrement = true,
+	                IsForeignKey = false,
+	                MaxLength = 0
+                });
+                    
+                
+                
+            }
+
+            public IColumn CategoryID{
+                get{
+                    return this.GetColumn("CategoryID");
+                }
+            }
+				
+   			public static string CategoryIDColumn{
+			      get{
+        			return "CategoryID";
+      			}
+		    }
+            
+            public IColumn AdID{
+                get{
+                    return this.GetColumn("AdID");
+                }
+            }
+				
+   			public static string AdIDColumn{
+			      get{
+        			return "AdID";
+      			}
+		    }
+            
+            public IColumn ID{
+                get{
+                    return this.GetColumn("ID");
+                }
+            }
+				
+   			public static string IDColumn{
+			      get{
+        			return "ID";
+      			}
+		    }
+            
+                    
+        }
+        
+        /// <summary>
+        /// Table: Ads
+        /// Primary Key: ID
+        /// </summary>
+
+        public class AdsTable: DatabaseTable {
+            
+            public AdsTable(IDataProvider provider):base("Ads",provider){
+                ClassName = "Ad";
+                SchemaName = "dbo";
+                
+
+                Columns.Add(new DatabaseColumn("Name", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.AnsiString,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = 64
+                });
+
+                Columns.Add(new DatabaseColumn("Url", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.AnsiString,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = 2048
+                });
+
+                Columns.Add(new DatabaseColumn("ID", this)
+                {
+	                IsPrimaryKey = true,
+	                DataType = DbType.Int32,
+	                IsNullable = false,
+	                AutoIncrement = true,
+	                IsForeignKey = true,
+	                MaxLength = 0
+                });
+
+                Columns.Add(new DatabaseColumn("Priority", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.Int32,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = 0
+                });
+
+                Columns.Add(new DatabaseColumn("Image_Height", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.Int32,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = 0
+                });
+
+                Columns.Add(new DatabaseColumn("Image_Width", this)
+                {
+	                IsPrimaryKey = false,
+	                DataType = DbType.Int32,
+	                IsNullable = true,
+	                AutoIncrement = false,
+	                IsForeignKey = false,
+	                MaxLength = 0
+                });
+                    
+                
+                
+            }
+
+            public IColumn Name{
+                get{
+                    return this.GetColumn("Name");
+                }
+            }
+				
+   			public static string NameColumn{
+			      get{
+        			return "Name";
+      			}
+		    }
+            
+            public IColumn Url{
+                get{
+                    return this.GetColumn("Url");
+                }
+            }
+				
+   			public static string UrlColumn{
+			      get{
+        			return "Url";
+      			}
+		    }
+            
+            public IColumn ID{
+                get{
+                    return this.GetColumn("ID");
+                }
+            }
+				
+   			public static string IDColumn{
+			      get{
+        			return "ID";
+      			}
+		    }
+            
+            public IColumn Priority{
+                get{
+                    return this.GetColumn("Priority");
+                }
+            }
+				
+   			public static string PriorityColumn{
+			      get{
+        			return "Priority";
+      			}
+		    }
+            
+            public IColumn Image_Height{
+                get{
+                    return this.GetColumn("Image_Height");
+                }
+            }
+				
+   			public static string Image_HeightColumn{
+			      get{
+        			return "Image_Height";
+      			}
+		    }
+            
+            public IColumn Image_Width{
+                get{
+                    return this.GetColumn("Image_Width");
+                }
+            }
+				
+   			public static string Image_WidthColumn{
+			      get{
+        			return "Image_Width";
       			}
 		    }
             

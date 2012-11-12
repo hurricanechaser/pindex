@@ -38,7 +38,7 @@
     System.Func<bool,string,string> infer=(nullable,type)=>{
         switch(type){
             case "numeric":
-                return nullable?"long?":"long";
+                return nullable?"decimal?":"decimal";
             case "datetime":
                 return nullable?"DateTime?":"DateTime";
              case "int":

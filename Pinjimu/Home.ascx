@@ -53,82 +53,92 @@
         type="text/javascript"></script>
     <script id="rank" type="text/x-jquery-tmpl">
     <ul class="box">
-        <li class="img"><a href="javascript:void(0)" name="${i}"></a>
+        <li class="img"><a href="javascript:void(0)" name="{{i}"></a>
         </li> 
-        <li style="display: block;font-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>${Name}</span></li>        
-        <li style="display: block;font-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>${type}:${count}</span></li>        
+        <li style="display: block;font-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>{{Name}</span></li>        
+        <li style="display: block;font-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>{{type}:{{count}</span></li>        
     </ul>
     </script>
     <script id="articles" type="text/x-jquery-tmpl">
     <div class="containerBox">
-        <a href="${source}" target="_blank" style="text-decoration: none;"><h2>${title} </h2></a>
-        <div class="desc">${desc}</div>
-        <div class="img-cont"><a href="${source}" target="_blank"><img src="${url}?width=380" style="width:380px;height:${height}px" /></a></div>
+        <a href="{{source}" target="_blank" style="text-decoration: none;"><h2>{{title} </h2></a>
+        <div class="desc">{{desc}</div>
+        <div class="img-cont"><a href="{{source}" target="_blank"><img src="{{url}?width=380" style="width:380px;height:{{height}px" /></a></div>
     </div>
     </script>
     <script id="stores" type="text/x-jquery-tmpl">
     <ul class="box" >
-        <li class="img"><a href="${source}" target="_blank">
-            <img src="${url}?width=${getWidth()}px" style="height:${getHeight($data)}px" alt="${title}" /></a>
+        <li class="img"><a href="{{source}" target="_blank">
+            <img/ src="{{url}?width={{getWidth()}px" style="height:{{getHeight($data)}px" alt="{{title}" /></a>
         </li>
-        <li><div class="name"><span>${title}</span></div></li>
+        <li><div class="name"><span>{{title}</span></div></li>
     </ul>
     </script>
-    <script id="picTemplate" type="text/x-jquery-tmpl">
-        <ul class="box"  name="box" bimid="${BIMID}" >
+    <script id="picTemplate" type="text/template">
+         {{ var height = getHeight(it),width=getWidth(); if (BIMID){   }}
+        <ul class="box"  name="box" bimid="{{=BIMID}}" >
             <li class="buttons">
-             <a name="buttons" class="buttonLike" href="javascript:void(0)">${strings.Like}</a>
-             <a class="buttonPin" name="buttons" href="javascript:void(0)">${strings.Repin}</a>
-             <a name="buttons" class="buttonComment" href="javascript:void(0)">${strings.Comment}</a>
+             <a name="buttons" class="buttonLike" href="javascript:void(0)">{{=strings.Like}}</a>
+             <a class="buttonPin" name="buttons" href="javascript:void(0)">{{=strings.Repin}}</a>
+             <a name="buttons" class="buttonComment" href="javascript:void(0)">{{=strings.Comment}}</a>
             </li>
-            <li class="img" style="height:${getHeight($data) + 7 }px;width:${getWidth()}px;" ><a href="#pin=${PinID}" ><img  src="${url}?width=${getWidth()}" style="height:${getHeight($data)}px;width:${getWidth()}px;" alt="${title}" /></a>
+            <li class="img" style="height:{{=(height + 7) }}px;width:{{=width}}px;" ><a href="#pin={{=PinID}}" ><img  src="{{=url}}?width={{=width}}" style="height:{{=height  }}px;width:{{=width}}px;" alt="{{=title}}" /></a>
             </li>
-       <li class="boardsPinBoards" style="top:${getHeight($data) - 15}px;">
+       <li class="boardsPinBoards" style="top:{{=(height - 15)}}px;">
            <div class="post-pin">
                 <div class="post-text"><%=strings.Post_This_To %></div>
                 <div class="post-icons">
-                   &nbsp <img style="cursor:pointer;" href="${getUrl($data,'w')}" name="social" src="http://cdn.pinjimu.com/img/pinjimu/sina-weibo.png" />
-                   &nbsp <img style="cursor:pointer;" href="${getUrl($data,'t')}" name="social" src="http://cdn.pinjimu.com/img/pinjimu/tecent.png" />
-                   &nbsp <img style="cursor:pointer;" href="${getUrl($data,'r')}" name="social" src="http://cdn.pinjimu.com/img/pinjimu/Renren.png" />
+                   &nbsp <img style="cursor:pointer;" href="{{getUrl($data,'w')}}" name="social" src="http://cdn.pinjimu.com/img/pinjimu/sina-weibo.png" />
+                   &nbsp <img style="cursor:pointer;" href="{{getUrl($data,'t')}}" name="social" src="http://cdn.pinjimu.com/img/pinjimu/tecent.png" />
+                   &nbsp <img style="cursor:pointer;" href="{{getUrl($data,'r')}}" name="social" src="http://cdn.pinjimu.com/img/pinjimu/Renren.png" />
                 </div>
            </div>
         </li>
-        <li class="name" style="width:${getWidth()}px;">           
-                <span>${title}</span>
+        <li class="name" style="width:{{=width}}px;">           
+                <span>{{=title}}</span>
         </li>   
           {{if comments != null}}
-        <li class="comments" style="width:${getWidth()}px;">
+        <li class="comments" style="width:{{=width}}px;">
         {{tmpl(comments) "#comments"}}       
-        </li>
+        </li>ubbhhhjjk   77uuujm /hjjh yggv
         {{/if}} 
      </ul>
+      {{else}}
+          <ul class="box"  name="box" bimid="{{BIMID}" >           
+            <li class="img" style="height:{{getHeight($data) + 7 }px;width:{{getWidth()}px;" ><img  src="{{url}?width={{getWidth()}" style="height:{{getHeight($data)}px;width:{{getWidth()}px;" alt="{{title}" />
+            </li>      
+        <li class="name" style="width:{{getWidth()}px;">           
+                <span>{{title}</span>
+        </li>            
+     </ul>
+      {{/if}} 
     </script>
     <script id="comments" type="text/x-jquery-tmpl">
      <div class="commentBox">
-     <a href="${Name}#boards" ><img src="${getUplUImg($data)}?height=20" />  </a>  <p> : <a href="${Name}#boards" style="float:left;text-align:left;" >${FirstName} {{if Speciality }} <img name="cSymbol" src="${getSpecialityImg($data)}" style="width: 15px; margin: -20px 0 0 0;float:right;"  alt="Symbol" /> {{/if}}</a> ${Comment}</p> 
+     <a href="{{Name}#boards" ><img src="{{getUplUImg($data)}?height=20" />  </a>  <p> : <a href="{{Name}#boards" style="float:left;text-align:left;" >{{FirstName} {{if Speciality }} <img name="cSymbol" src="{{getSpecialityImg($data)}" style="width: 15px; margin: -20px 0 0 0;float:right;"  alt="Symbol" /> {{/if}}</a> {{Comment}</p> 
      </div>
     </script>
     <script id="cats" type="text/x-jquery-tmpl">
-        <a href="#cat=${escape(getVal($data,'Name'))}" style="overflow:hidden;" >${Name}</a>   
+        <a href="#cat={{escape(getVal($data,'Name'))}" style="overflow:hidden;" >{{Name}</a>   
     </script>
     <script id="boards" type="text/x-jquery-tmpl">
     <div class="pinBoard">
         <h3>
-            <a href="#board=${name}" >${name}</a></h3>
+            <a href="#board={{name}" >{{name}</a></h3>
         <h4>
-            ${pins} pins</h4>
+            {{pins} pins</h4>
         <div class="board">          
           {{each images}}            
              {{if $index == 0}} 
-                <img src="${getVal($value,'url')}?width=222" style="height:${getHeight($value,222)}px" />
+                <img src="{{getVal($value,'url')}?width=222" style="height:{{getHeight($value,222)}px" />
              {{else}}
-                <span><img src="${getVal($value,'url')}?width=55"  /></span>
+                <span><img src="{{getVal($value,'url')}?width=55"  /></span>
              {{/if}}
           {{/each}}
             <div style="clear: both;">
             </div>
             {{if FreshPin.visited() == false  }}
-            <div class="boardfooter" style="cursor:pointer;" name="edit" boardid="${id}">
+            <div class="boardfooter" style="cursor:pointer;" name="edit" boardid="{{id}">
                 <strong><%=strings.Edit %></strong></div>
             {{/if}}
         </div>
@@ -136,20 +146,20 @@
     </script>
     <script id="usertpl" type="text/x-jquery-tmpl">
         <div id="following" class="Following_Container">
-            <div class="Profile-pict"> <img id="fbtn_img_p_${F_ID}" src="${getAvatar($data,'F_Avatar')}?width=100&height=100" /></div>
+            <div class="Profile-pict"> <img id="fbtn_img_p_{{F_ID}" src="{{getAvatar($data,'F_Avatar')}?width=100&height=100" /></div>
             <div style="border:0px solid red; width:320px; float:left;">
                 <div style="float:left">
-                    <h4 class="link" style="margin-top:10px;"><a href="${F_UserName}#boards">${F_FullName}</a></h4>
+                    <h4 class="link" style="margin-top:10px;"><a href="{{F_UserName}#boards">{{F_FullName}</a></h4>
                 </div>
                 <div style="float:right; margin-top:10px;">
                     <div class="unfolwBtn">                    
                     <button type="button" class="positive" name="logint"  >                     
                         {{if F_Status}}
-                            <img id="fbtn_img_${F_ID}" src=${GetFImage('Unfollow')} />
-                            <span id="fbtn_text_${F_ID}" ><%=strings.UnFollow %></span>
+                            <img id="fbtn_img_{{F_ID}" src={{GetFImage('Unfollow')} />
+                            <span id="fbtn_text_{{F_ID}" ><%=strings.UnFollow %></span>
                         {{else}}
-                            <img id="fbtn_img_${F_ID}"  src=${GetFImage('follow')} />
-                            <span id="fbtn_text_${F_ID}" ><%=strings.Follow %></span>
+                            <img id="fbtn_img_{{F_ID}"  src={{GetFImage('follow')} />
+                            <span id="fbtn_text_{{F_ID}" ><%=strings.Follow %></span>
                         {{/if}}                   
                     </button>                    
                 </div>
@@ -157,8 +167,8 @@
                 <div class="clear"></div>
                 <div style="float:left">
                 <h5>
-                    <a>${Fg_Count} <%=strings.Following %> </a>
-                    <a>${Fr_Count} <%=strings.Follower %> </a>
+                    <a>{{Fg_Count} <%=strings.Following %> </a>
+                    <a>{{Fr_Count} <%=strings.Follower %> </a>
                 </h5>
                 </div>
                 <div class="emptySpace"></div>
@@ -166,7 +176,7 @@
             <div> 
             <%--<a class="thumbnails" href="#" ><img src="HomeDecorCategory/Landscape/10344274114008028_0k7FTeUy_c.jpg" /></a> --%>
             {{each F_Pin}}
-                <a class="thumbnails"><img src="${getVal($value, 'RelativeImage_Path')}?height=60" /></a>
+                <a class="thumbnails"><img src="{{getVal($value, 'RelativeImage_Path')}?height=60" /></a>
             {{/each}}            
             </div>
         </div>

@@ -1595,232 +1595,6 @@ namespace SubSonic.POCOS1
     
     
     /// <summary>
-    /// A class which represents the Contacts table in the Pinjimu Database.
-    /// This class is queryable through PinjimuDB.Contact 
-    /// </summary>
-
-	public partial class Contact: INotifyPropertyChanging, INotifyPropertyChanged
-	{
-        partial void OnLoaded();
-        partial void OnValidate(System.Data.Linq.ChangeAction action);
-        partial void OnCreated();
-	    
-	    public Contact(){
-	        OnCreated();
-	    }
-	    
-	    #region Properties
-	    
-        partial void OnImageIDChanging(int value);
-        partial void OnImageIDChanged();
-		
-		private int _ImageID;
-		public int ImageID { 
-		    get{
-		        return _ImageID;
-		    } 
-		    set{
-		        this.OnImageIDChanging(value);
-                this.SendPropertyChanging();
-                this._ImageID = value;
-                this.SendPropertyChanged("ImageID");
-                this.OnImageIDChanged();
-		    }
-		}
-		
-        partial void OnContactXChanging(string value);
-        partial void OnContactXChanged();
-		
-		private string _ContactX;
-		public string ContactX { 
-		    get{
-		        return _ContactX;
-		    } 
-		    set{
-		        this.OnContactXChanging(value);
-                this.SendPropertyChanging();
-                this._ContactX = value;
-                this.SendPropertyChanged("ContactX");
-                this.OnContactXChanged();
-		    }
-		}
-		
-        partial void OnTypeChanging(string value);
-        partial void OnTypeChanged();
-		
-		private string _Type;
-		public string Type { 
-		    get{
-		        return _Type;
-		    } 
-		    set{
-		        this.OnTypeChanging(value);
-                this.SendPropertyChanging();
-                this._Type = value;
-                this.SendPropertyChanged("Type");
-                this.OnTypeChanged();
-		    }
-		}
-		
-        partial void OnAddressChanging(string value);
-        partial void OnAddressChanged();
-		
-		private string _Address;
-		public string Address { 
-		    get{
-		        return _Address;
-		    } 
-		    set{
-		        this.OnAddressChanging(value);
-                this.SendPropertyChanging();
-                this._Address = value;
-                this.SendPropertyChanged("Address");
-                this.OnAddressChanged();
-		    }
-		}
-		
-        partial void OnPhoneChanging(string value);
-        partial void OnPhoneChanged();
-		
-		private string _Phone;
-		public string Phone { 
-		    get{
-		        return _Phone;
-		    } 
-		    set{
-		        this.OnPhoneChanging(value);
-                this.SendPropertyChanging();
-                this._Phone = value;
-                this.SendPropertyChanged("Phone");
-                this.OnPhoneChanged();
-		    }
-		}
-		
-        partial void OnWebsiteChanging(string value);
-        partial void OnWebsiteChanged();
-		
-		private string _Website;
-		public string Website { 
-		    get{
-		        return _Website;
-		    } 
-		    set{
-		        this.OnWebsiteChanging(value);
-                this.SendPropertyChanging();
-                this._Website = value;
-                this.SendPropertyChanged("Website");
-                this.OnWebsiteChanged();
-		    }
-		}
-		
-        partial void OnAvatarChanging(string value);
-        partial void OnAvatarChanged();
-		
-		private string _Avatar;
-		public string Avatar { 
-		    get{
-		        return _Avatar;
-		    } 
-		    set{
-		        this.OnAvatarChanging(value);
-                this.SendPropertyChanging();
-                this._Avatar = value;
-                this.SendPropertyChanged("Avatar");
-                this.OnAvatarChanged();
-		    }
-		}
-		
-        partial void OnDateChanging(DateTime value);
-        partial void OnDateChanged();
-		
-		private DateTime _Date;
-		public DateTime Date { 
-		    get{
-		        return _Date;
-		    } 
-		    set{
-		        this.OnDateChanging(value);
-                this.SendPropertyChanging();
-                this._Date = value;
-                this.SendPropertyChanged("Date");
-                this.OnDateChanged();
-		    }
-		}
-		
-        partial void OnNameChanging(string value);
-        partial void OnNameChanged();
-		
-		private string _Name;
-		public string Name { 
-		    get{
-		        return _Name;
-		    } 
-		    set{
-		        this.OnNameChanging(value);
-                this.SendPropertyChanging();
-                this._Name = value;
-                this.SendPropertyChanged("Name");
-                this.OnNameChanged();
-		    }
-		}
-		
-        partial void OnIDChanging(int value);
-        partial void OnIDChanged();
-		
-		private int _ID;
-		public int ID { 
-		    get{
-		        return _ID;
-		    } 
-		    set{
-		        this.OnIDChanging(value);
-                this.SendPropertyChanging();
-                this._ID = value;
-                this.SendPropertyChanged("ID");
-                this.OnIDChanged();
-		    }
-		}
-		
-
-        #endregion
-
-        #region Foreign Keys
-        public IQueryable<Image> Images
-        {
-            get
-            {
-                  var db=new SubSonic.POCOS1.PinjimuDB();
-                  return from items in db.Images
-                       where items.ID == _ImageID
-                       select items;
-            }
-        }
-
-        #endregion
-
-
-        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-        public event PropertyChangingEventHandler PropertyChanging;
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void SendPropertyChanging()
-        {
-            var handler = PropertyChanging;
-            if (handler != null)
-               handler(this, emptyChangingEventArgs);
-        }
-
-        protected virtual void SendPropertyChanged(String propertyName)
-        {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-	}
-	
-    
-    
-    /// <summary>
     /// A class which represents the Review table in the Pinjimu Database.
     /// This class is queryable through PinjimuDB.Review 
     /// </summary>
@@ -2434,6 +2208,232 @@ namespace SubSonic.POCOS1
     
     
     /// <summary>
+    /// A class which represents the Contacts table in the Pinjimu Database.
+    /// This class is queryable through PinjimuDB.Contact 
+    /// </summary>
+
+	public partial class Contact: INotifyPropertyChanging, INotifyPropertyChanged
+	{
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+	    
+	    public Contact(){
+	        OnCreated();
+	    }
+	    
+	    #region Properties
+	    
+        partial void OnImageIDChanging(int value);
+        partial void OnImageIDChanged();
+		
+		private int _ImageID;
+		public int ImageID { 
+		    get{
+		        return _ImageID;
+		    } 
+		    set{
+		        this.OnImageIDChanging(value);
+                this.SendPropertyChanging();
+                this._ImageID = value;
+                this.SendPropertyChanged("ImageID");
+                this.OnImageIDChanged();
+		    }
+		}
+		
+        partial void OnContactXChanging(string value);
+        partial void OnContactXChanged();
+		
+		private string _ContactX;
+		public string ContactX { 
+		    get{
+		        return _ContactX;
+		    } 
+		    set{
+		        this.OnContactXChanging(value);
+                this.SendPropertyChanging();
+                this._ContactX = value;
+                this.SendPropertyChanged("ContactX");
+                this.OnContactXChanged();
+		    }
+		}
+		
+        partial void OnTypeChanging(string value);
+        partial void OnTypeChanged();
+		
+		private string _Type;
+		public string Type { 
+		    get{
+		        return _Type;
+		    } 
+		    set{
+		        this.OnTypeChanging(value);
+                this.SendPropertyChanging();
+                this._Type = value;
+                this.SendPropertyChanged("Type");
+                this.OnTypeChanged();
+		    }
+		}
+		
+        partial void OnAddressChanging(string value);
+        partial void OnAddressChanged();
+		
+		private string _Address;
+		public string Address { 
+		    get{
+		        return _Address;
+		    } 
+		    set{
+		        this.OnAddressChanging(value);
+                this.SendPropertyChanging();
+                this._Address = value;
+                this.SendPropertyChanged("Address");
+                this.OnAddressChanged();
+		    }
+		}
+		
+        partial void OnPhoneChanging(string value);
+        partial void OnPhoneChanged();
+		
+		private string _Phone;
+		public string Phone { 
+		    get{
+		        return _Phone;
+		    } 
+		    set{
+		        this.OnPhoneChanging(value);
+                this.SendPropertyChanging();
+                this._Phone = value;
+                this.SendPropertyChanged("Phone");
+                this.OnPhoneChanged();
+		    }
+		}
+		
+        partial void OnWebsiteChanging(string value);
+        partial void OnWebsiteChanged();
+		
+		private string _Website;
+		public string Website { 
+		    get{
+		        return _Website;
+		    } 
+		    set{
+		        this.OnWebsiteChanging(value);
+                this.SendPropertyChanging();
+                this._Website = value;
+                this.SendPropertyChanged("Website");
+                this.OnWebsiteChanged();
+		    }
+		}
+		
+        partial void OnAvatarChanging(string value);
+        partial void OnAvatarChanged();
+		
+		private string _Avatar;
+		public string Avatar { 
+		    get{
+		        return _Avatar;
+		    } 
+		    set{
+		        this.OnAvatarChanging(value);
+                this.SendPropertyChanging();
+                this._Avatar = value;
+                this.SendPropertyChanged("Avatar");
+                this.OnAvatarChanged();
+		    }
+		}
+		
+        partial void OnDateChanging(DateTime value);
+        partial void OnDateChanged();
+		
+		private DateTime _Date;
+		public DateTime Date { 
+		    get{
+		        return _Date;
+		    } 
+		    set{
+		        this.OnDateChanging(value);
+                this.SendPropertyChanging();
+                this._Date = value;
+                this.SendPropertyChanged("Date");
+                this.OnDateChanged();
+		    }
+		}
+		
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+		
+		private string _Name;
+		public string Name { 
+		    get{
+		        return _Name;
+		    } 
+		    set{
+		        this.OnNameChanging(value);
+                this.SendPropertyChanging();
+                this._Name = value;
+                this.SendPropertyChanged("Name");
+                this.OnNameChanged();
+		    }
+		}
+		
+        partial void OnIDChanging(int value);
+        partial void OnIDChanged();
+		
+		private int _ID;
+		public int ID { 
+		    get{
+		        return _ID;
+		    } 
+		    set{
+		        this.OnIDChanging(value);
+                this.SendPropertyChanging();
+                this._ID = value;
+                this.SendPropertyChanged("ID");
+                this.OnIDChanged();
+		    }
+		}
+		
+
+        #endregion
+
+        #region Foreign Keys
+        public IQueryable<Image> Images
+        {
+            get
+            {
+                  var db=new SubSonic.POCOS1.PinjimuDB();
+                  return from items in db.Images
+                       where items.ID == _ImageID
+                       select items;
+            }
+        }
+
+        #endregion
+
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+        public event PropertyChangingEventHandler PropertyChanging;
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void SendPropertyChanging()
+        {
+            var handler = PropertyChanging;
+            if (handler != null)
+               handler(this, emptyChangingEventArgs);
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+	}
+	
+    
+    
+    /// <summary>
     /// A class which represents the Prize table in the Pinjimu Database.
     /// This class is queryable through PinjimuDB.Prize 
     /// </summary>
@@ -2782,6 +2782,282 @@ namespace SubSonic.POCOS1
                   var db=new SubSonic.POCOS1.PinjimuDB();
                   return from items in db.AppUsers
                        where items.ID == _UserID
+                       select items;
+            }
+        }
+
+        #endregion
+
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+        public event PropertyChangingEventHandler PropertyChanging;
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void SendPropertyChanging()
+        {
+            var handler = PropertyChanging;
+            if (handler != null)
+               handler(this, emptyChangingEventArgs);
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+	}
+	
+    
+    
+    /// <summary>
+    /// A class which represents the CategoryAdsMapping table in the Pinjimu Database.
+    /// This class is queryable through PinjimuDB.CategoryAdsMapping 
+    /// </summary>
+
+	public partial class CategoryAdsMapping: INotifyPropertyChanging, INotifyPropertyChanged
+	{
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+	    
+	    public CategoryAdsMapping(){
+	        OnCreated();
+	    }
+	    
+	    #region Properties
+	    
+        partial void OnCategoryIDChanging(int value);
+        partial void OnCategoryIDChanged();
+		
+		private int _CategoryID;
+		public int CategoryID { 
+		    get{
+		        return _CategoryID;
+		    } 
+		    set{
+		        this.OnCategoryIDChanging(value);
+                this.SendPropertyChanging();
+                this._CategoryID = value;
+                this.SendPropertyChanged("CategoryID");
+                this.OnCategoryIDChanged();
+		    }
+		}
+		
+        partial void OnAdIDChanging(int value);
+        partial void OnAdIDChanged();
+		
+		private int _AdID;
+		public int AdID { 
+		    get{
+		        return _AdID;
+		    } 
+		    set{
+		        this.OnAdIDChanging(value);
+                this.SendPropertyChanging();
+                this._AdID = value;
+                this.SendPropertyChanged("AdID");
+                this.OnAdIDChanged();
+		    }
+		}
+		
+        partial void OnIDChanging(int value);
+        partial void OnIDChanged();
+		
+		private int _ID;
+		public int ID { 
+		    get{
+		        return _ID;
+		    } 
+		    set{
+		        this.OnIDChanging(value);
+                this.SendPropertyChanging();
+                this._ID = value;
+                this.SendPropertyChanged("ID");
+                this.OnIDChanged();
+		    }
+		}
+		
+
+        #endregion
+
+        #region Foreign Keys
+        public IQueryable<Ad> Ads
+        {
+            get
+            {
+                  var db=new SubSonic.POCOS1.PinjimuDB();
+                  return from items in db.Ads
+                       where items.ID == _AdID
+                       select items;
+            }
+        }
+
+        public IQueryable<Category> Categories
+        {
+            get
+            {
+                  var db=new SubSonic.POCOS1.PinjimuDB();
+                  return from items in db.Categories
+                       where items.ID == _CategoryID
+                       select items;
+            }
+        }
+
+        #endregion
+
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+        public event PropertyChangingEventHandler PropertyChanging;
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void SendPropertyChanging()
+        {
+            var handler = PropertyChanging;
+            if (handler != null)
+               handler(this, emptyChangingEventArgs);
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+	}
+	
+    
+    
+    /// <summary>
+    /// A class which represents the Ads table in the Pinjimu Database.
+    /// This class is queryable through PinjimuDB.Ad 
+    /// </summary>
+
+	public partial class Ad: INotifyPropertyChanging, INotifyPropertyChanged
+	{
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+	    
+	    public Ad(){
+	        OnCreated();
+	    }
+	    
+	    #region Properties
+	    
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+		
+		private string _Name;
+		public string Name { 
+		    get{
+		        return _Name;
+		    } 
+		    set{
+		        this.OnNameChanging(value);
+                this.SendPropertyChanging();
+                this._Name = value;
+                this.SendPropertyChanged("Name");
+                this.OnNameChanged();
+		    }
+		}
+		
+        partial void OnUrlChanging(string value);
+        partial void OnUrlChanged();
+		
+		private string _Url;
+		public string Url { 
+		    get{
+		        return _Url;
+		    } 
+		    set{
+		        this.OnUrlChanging(value);
+                this.SendPropertyChanging();
+                this._Url = value;
+                this.SendPropertyChanged("Url");
+                this.OnUrlChanged();
+		    }
+		}
+		
+        partial void OnIDChanging(int value);
+        partial void OnIDChanged();
+		
+		private int _ID;
+		public int ID { 
+		    get{
+		        return _ID;
+		    } 
+		    set{
+		        this.OnIDChanging(value);
+                this.SendPropertyChanging();
+                this._ID = value;
+                this.SendPropertyChanged("ID");
+                this.OnIDChanged();
+		    }
+		}
+		
+        partial void OnPriorityChanging(int? value);
+        partial void OnPriorityChanged();
+		
+		private int? _Priority;
+		public int? Priority { 
+		    get{
+		        return _Priority;
+		    } 
+		    set{
+		        this.OnPriorityChanging(value);
+                this.SendPropertyChanging();
+                this._Priority = value;
+                this.SendPropertyChanged("Priority");
+                this.OnPriorityChanged();
+		    }
+		}
+		
+        partial void OnImage_HeightChanging(int? value);
+        partial void OnImage_HeightChanged();
+		
+		private int? _Image_Height;
+		public int? Image_Height { 
+		    get{
+		        return _Image_Height;
+		    } 
+		    set{
+		        this.OnImage_HeightChanging(value);
+                this.SendPropertyChanging();
+                this._Image_Height = value;
+                this.SendPropertyChanged("Image_Height");
+                this.OnImage_HeightChanged();
+		    }
+		}
+		
+        partial void OnImage_WidthChanging(int? value);
+        partial void OnImage_WidthChanged();
+		
+		private int? _Image_Width;
+		public int? Image_Width { 
+		    get{
+		        return _Image_Width;
+		    } 
+		    set{
+		        this.OnImage_WidthChanging(value);
+                this.SendPropertyChanging();
+                this._Image_Width = value;
+                this.SendPropertyChanged("Image_Width");
+                this.OnImage_WidthChanged();
+		    }
+		}
+		
+
+        #endregion
+
+        #region Foreign Keys
+        public IQueryable<CategoryAdsMapping> CategoryAdsMappings
+        {
+            get
+            {
+                  var db=new SubSonic.POCOS1.PinjimuDB();
+                  return from items in db.CategoryAdsMappings
+                       where items.AdID == _ID
                        select items;
             }
         }
@@ -3965,6 +4241,17 @@ namespace SubSonic.POCOS1
                   var db=new SubSonic.POCOS1.PinjimuDB();
                   return from items in db.Boards
                        where items.CatID == _ID
+                       select items;
+            }
+        }
+
+        public IQueryable<CategoryAdsMapping> CategoryAdsMappings
+        {
+            get
+            {
+                  var db=new SubSonic.POCOS1.PinjimuDB();
+                  return from items in db.CategoryAdsMappings
+                       where items.CategoryID == _ID
                        select items;
             }
         }

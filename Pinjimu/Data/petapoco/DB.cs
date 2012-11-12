@@ -1395,163 +1395,6 @@ namespace Pinjimu.Data.POCOS
 
 	}
     
-	[TableName("Contacts")]
-	[PrimaryKey("ID", autoIncrement=false)]
-	[ExplicitColumns]
-    public partial class Contact : DB.Record<Contact>  
-    {
-        [Column] 
-		public int ImageID 
-		{ 
-			get
-			{
-				return _ImageID;
-			}
-			set
-			{
-				_ImageID = value;
-				MarkColumnModified("ImageID");
-			}
-		}
-		int _ImageID;
-
-        [Column("Contact")] 
-		public string _Contact 
-		{ 
-			get
-			{
-				return __Contact;
-			}
-			set
-			{
-				__Contact = value;
-				MarkColumnModified("Contact");
-			}
-		}
-		string __Contact;
-
-        [Column] 
-		public string Type 
-		{ 
-			get
-			{
-				return _Type;
-			}
-			set
-			{
-				_Type = value;
-				MarkColumnModified("Type");
-			}
-		}
-		string _Type;
-
-        [Column] 
-		public string Address 
-		{ 
-			get
-			{
-				return _Address;
-			}
-			set
-			{
-				_Address = value;
-				MarkColumnModified("Address");
-			}
-		}
-		string _Address;
-
-        [Column] 
-		public string Phone 
-		{ 
-			get
-			{
-				return _Phone;
-			}
-			set
-			{
-				_Phone = value;
-				MarkColumnModified("Phone");
-			}
-		}
-		string _Phone;
-
-        [Column] 
-		public string Website 
-		{ 
-			get
-			{
-				return _Website;
-			}
-			set
-			{
-				_Website = value;
-				MarkColumnModified("Website");
-			}
-		}
-		string _Website;
-
-        [Column] 
-		public string Avatar 
-		{ 
-			get
-			{
-				return _Avatar;
-			}
-			set
-			{
-				_Avatar = value;
-				MarkColumnModified("Avatar");
-			}
-		}
-		string _Avatar;
-
-        [Column] 
-		public DateTime Date 
-		{ 
-			get
-			{
-				return _Date;
-			}
-			set
-			{
-				_Date = value;
-				MarkColumnModified("Date");
-			}
-		}
-		DateTime _Date;
-
-        [Column] 
-		public string Name 
-		{ 
-			get
-			{
-				return _Name;
-			}
-			set
-			{
-				_Name = value;
-				MarkColumnModified("Name");
-			}
-		}
-		string _Name;
-
-        [Column] 
-		public int ID 
-		{ 
-			get
-			{
-				return _ID;
-			}
-			set
-			{
-				_ID = value;
-				MarkColumnModified("ID");
-			}
-		}
-		int _ID;
-
-	}
-    
 	[TableName("Review")]
 	[PrimaryKey("ID")]
 	[ExplicitColumns]
@@ -2258,6 +2101,163 @@ namespace Pinjimu.Data.POCOS
 
 	}
     
+	[TableName("Contacts")]
+	[PrimaryKey("ID")]
+	[ExplicitColumns]
+    public partial class Contact : DB.Record<Contact>  
+    {
+        [Column] 
+		public int ImageID 
+		{ 
+			get
+			{
+				return _ImageID;
+			}
+			set
+			{
+				_ImageID = value;
+				MarkColumnModified("ImageID");
+			}
+		}
+		int _ImageID;
+
+        [Column("Contact")] 
+		public string _Contact 
+		{ 
+			get
+			{
+				return __Contact;
+			}
+			set
+			{
+				__Contact = value;
+				MarkColumnModified("Contact");
+			}
+		}
+		string __Contact;
+
+        [Column] 
+		public string Type 
+		{ 
+			get
+			{
+				return _Type;
+			}
+			set
+			{
+				_Type = value;
+				MarkColumnModified("Type");
+			}
+		}
+		string _Type;
+
+        [Column] 
+		public string Address 
+		{ 
+			get
+			{
+				return _Address;
+			}
+			set
+			{
+				_Address = value;
+				MarkColumnModified("Address");
+			}
+		}
+		string _Address;
+
+        [Column] 
+		public string Phone 
+		{ 
+			get
+			{
+				return _Phone;
+			}
+			set
+			{
+				_Phone = value;
+				MarkColumnModified("Phone");
+			}
+		}
+		string _Phone;
+
+        [Column] 
+		public string Website 
+		{ 
+			get
+			{
+				return _Website;
+			}
+			set
+			{
+				_Website = value;
+				MarkColumnModified("Website");
+			}
+		}
+		string _Website;
+
+        [Column] 
+		public string Avatar 
+		{ 
+			get
+			{
+				return _Avatar;
+			}
+			set
+			{
+				_Avatar = value;
+				MarkColumnModified("Avatar");
+			}
+		}
+		string _Avatar;
+
+        [Column] 
+		public DateTime Date 
+		{ 
+			get
+			{
+				return _Date;
+			}
+			set
+			{
+				_Date = value;
+				MarkColumnModified("Date");
+			}
+		}
+		DateTime _Date;
+
+        [Column] 
+		public string Name 
+		{ 
+			get
+			{
+				return _Name;
+			}
+			set
+			{
+				_Name = value;
+				MarkColumnModified("Name");
+			}
+		}
+		string _Name;
+
+        [Column] 
+		public int ID 
+		{ 
+			get
+			{
+				return _ID;
+			}
+			set
+			{
+				_ID = value;
+				MarkColumnModified("ID");
+			}
+		}
+		int _ID;
+
+	}
+    
 	[TableName("Prize")]
 	[PrimaryKey("ID")]
 	[ExplicitColumns]
@@ -2441,6 +2441,155 @@ namespace Pinjimu.Data.POCOS
 			}
 		}
 		DateTime _Create_date;
+
+	}
+    
+	[TableName("CategoryAdsMapping")]
+	[PrimaryKey("ID")]
+	[ExplicitColumns]
+    public partial class CategoryAdsMapping : DB.Record<CategoryAdsMapping>  
+    {
+        [Column] 
+		public int CategoryID 
+		{ 
+			get
+			{
+				return _CategoryID;
+			}
+			set
+			{
+				_CategoryID = value;
+				MarkColumnModified("CategoryID");
+			}
+		}
+		int _CategoryID;
+
+        [Column] 
+		public int AdID 
+		{ 
+			get
+			{
+				return _AdID;
+			}
+			set
+			{
+				_AdID = value;
+				MarkColumnModified("AdID");
+			}
+		}
+		int _AdID;
+
+        [Column] 
+		public int ID 
+		{ 
+			get
+			{
+				return _ID;
+			}
+			set
+			{
+				_ID = value;
+				MarkColumnModified("ID");
+			}
+		}
+		int _ID;
+
+	}
+    
+	[TableName("Ads")]
+	[PrimaryKey("ID")]
+	[ExplicitColumns]
+    public partial class Ad : DB.Record<Ad>  
+    {
+        [Column] 
+		public string Name 
+		{ 
+			get
+			{
+				return _Name;
+			}
+			set
+			{
+				_Name = value;
+				MarkColumnModified("Name");
+			}
+		}
+		string _Name;
+
+        [Column] 
+		public string Url 
+		{ 
+			get
+			{
+				return _Url;
+			}
+			set
+			{
+				_Url = value;
+				MarkColumnModified("Url");
+			}
+		}
+		string _Url;
+
+        [Column] 
+		public int ID 
+		{ 
+			get
+			{
+				return _ID;
+			}
+			set
+			{
+				_ID = value;
+				MarkColumnModified("ID");
+			}
+		}
+		int _ID;
+
+        [Column] 
+		public int? Priority 
+		{ 
+			get
+			{
+				return _Priority;
+			}
+			set
+			{
+				_Priority = value;
+				MarkColumnModified("Priority");
+			}
+		}
+		int? _Priority;
+
+        [Column] 
+		public int? Image_Height 
+		{ 
+			get
+			{
+				return _Image_Height;
+			}
+			set
+			{
+				_Image_Height = value;
+				MarkColumnModified("Image_Height");
+			}
+		}
+		int? _Image_Height;
+
+        [Column] 
+		public int? Image_Width 
+		{ 
+			get
+			{
+				return _Image_Width;
+			}
+			set
+			{
+				_Image_Width = value;
+				MarkColumnModified("Image_Width");
+			}
+		}
+		int? _Image_Width;
 
 	}
     

@@ -43,8 +43,14 @@ namespace Pinjimu
                 case "getimagesandcategoriespaged":
                     GetImagesAndCategoriesPaged(context);
                     break;
+                case "getadimages":
+                    GetAdImages(context);
+                    break;
                 case "getpages":
                     GetPages(context);
+                    break;
+                case "getadpages":
+                    GetAdPages(context);
                     break;
                 case "getimagesinurl":
                     GetImagesinUrl2(context);
@@ -88,8 +94,46 @@ namespace Pinjimu
                 case "getqpeople":
                     GetQPeople(context);
                     break;
+                case "getverifiedcount":
+                    GetVerifiedCount(context);
+                    break;
             }
             base.EndRequest(context);
+        }
+        public void GetAdImages(HttpContext context)
+        {
+
+            var files = (from o in GetDataContext2.Ads
+                         orderby o.Priority
+                         select new
+                         {
+                             o.ID,
+                             o.Priority,
+                             o.Name,
+                             o.Image_Height,
+                             o.Image_Width,
+                             o.Url,
+                             cats = (from o1 in o.CategoryAdsMapping select new { o1.Category.Name, o1.Category.ID })
+                         }).AsEnumerable().Select((o, i) => new
+                         {
+                             index = i,
+                             o.Priority,
+                             o.ID,
+                             title = o.Name,
+                             height = Math.Ceiling(190.00 * (Convert.ToDouble(o.Image_Height) / Convert.ToDouble(o.Image_Width))),
+                             file = Common.UploadedImageRelPath + o.Url,
+                             o.cats
+                         });
+            context.WriteJsonP(Newtonsoft.Json.JsonConvert.SerializeObject(files, Formatting.Indented, Common.JsonSerializerSettings));
+        }
+        private void GetAdPages(HttpContext context)
+        {
+            context.Response.Write(GetDataContext2.Ads.Count());
+        }
+
+        private void GetVerifiedCount(HttpContext context)
+        {
+            context.Response.Write(SqlConnection.Count<Data.Standalone.Images>(Predicates.Field<Data.Standalone.Images>(f => f.Verified, Operator.Eq, true)));
         }
         private void GetContentinUrl(HttpContext context)
         {
@@ -138,32 +182,32 @@ namespace Pinjimu
             string pin = context.Request.Params["pin"];
             int? userID = Common.UserID;
             if (userID.HasValue)
-                context.WriteJsonP(JsonConvert.SerializeObject((from o in GetDataContext2.Vw_Pin                                                               
+                context.WriteJsonP(JsonConvert.SerializeObject((from o in GetDataContext2.Vw_Pin
                                                                 where o.PinID.Value.ToString() == pin
                                                                 select new
-                                                                {                                                                  
+                                                                {
                                                                     editable = o.UserID.HasValue && (o.UserID == userID),
                                                                     title = o.Image_Title,
                                                                     source = Common.GetAbsoluteUri(o.Source),
-                                                                    imgsource = o.Source,                                                                   
+                                                                    imgsource = o.Source,
                                                                     Comments = Common.XmlToJArray(GetDataContext2.ForXML_vw_UserComments(o.BIMID)),
                                                                     o.BIMID,
-                                                                    Contacts=Common.XmlToJArray(o.Contacts),                                                                                                                                 
+                                                                    Contacts = Common.XmlToJArray(o.Contacts),
                                                                     width = o.Image_Width,
-                                                                    height=o.Image_Height,
+                                                                    height = o.Image_Height,
                                                                     url = ((o.Uploaded ?? false) ? Common.UploadedImageRelPath : Common.ContentUrl) + o.RelativeImage_Path.Trim()
                                                                 }).First(), Formatting.Indented, Common.JsonSerializerSettings));
             else
                 context.WriteJsonP(JsonConvert.SerializeObject((from o in GetDataContext2.Vw_Pin
                                                                 where o.PinID.Value.ToString() == pin
                                                                 select new
-                                                                {                                                                 
+                                                                {
                                                                     title = o.Image_Title,
                                                                     source = Common.GetAbsoluteUri(o.Source),
                                                                     imgsource = o.Source,
                                                                     Comments = Common.XmlToJArray(GetDataContext2.ForXML_vw_UserComments(o.BIMID)),
                                                                     o.BIMID,
-                                                                    Contacts = Common.XmlToJArray(o.Contacts),         
+                                                                    Contacts = Common.XmlToJArray(o.Contacts),
                                                                     width = o.Image_Width,
                                                                     height = o.Image_Height,
                                                                     url = ((o.Uploaded ?? false) ? Common.UploadedImageRelPath : Common.ContentUrl) + o.RelativeImage_Path.Trim()
@@ -598,6 +642,9 @@ namespace Pinjimu
             string board = context.Request.QueryString["board"];
             int p = int.Parse(context.Request.QueryString["p"]);
             int ps = Common.PageSize;
+            int adFreq = Common.AdFreq;
+            int adps = ps / adFreq;
+            int count, tmp = 0;
             if (board != null)
             {
                 var imgs = Common.Compiled.BoardImages(this.GetDataContext2, p, ps, userId, board, vuserid.HasValue).Select((o, i) => new
@@ -635,7 +682,7 @@ namespace Pinjimu
                         o.liked,
                         width = o.Image_Width,
                         imgsource = o.Source,
-                       
+
                         comments = Common.XmlToJArray(o.Comments),
                         o.BIMID,
                         source = Common.GetAbsoluteUri(o.Source),
@@ -657,7 +704,7 @@ namespace Pinjimu
                         PinID = o.PinID.ToString(),
                         o.liked,
                         imgsource = o.Source,
-                       
+
                         comments = Common.XmlToJArray(o.Comments),
                         o.BIMID,
                         source = Common.GetAbsoluteUri(o.Source),
@@ -694,15 +741,38 @@ namespace Pinjimu
                         o.liked,
                         width = o.Image_Width,
                         imgsource = o.Source,
-                       
+
                         comments = Common.XmlToJArray(o.Comments),
                         o.BIMID,
                         source = Common.GetAbsoluteUri(o.Source),
                         url = ((o.Uploaded ?? false) ? Common.UploadedImageRelPath : Common.ContentUrl) + o.RelativeImage_Path.Trim()
-                    });
+                    }).ToList<object>();
+                    count = catimgs.Count;
+                    var catads = (from o in GetDataContext2.Ads
+                                  join o1 in GetDataContext2.CategoryAdsMapping on o.ID equals o1.AdID
+                                  where cats.Contains(o1.CategoryID)
+                                  select new
+                                  {
+                                      height = o.Image_Height,
+                                      width = o.Image_Width,
+                                      title = o.Name,
+                                      url = Common.UploadedImageRelPath + o.Url
+                                  }).Skip(p * adps).Take(adps);
+                    var catadsEnumerator = catads.GetEnumerator();
+                    while (tmp < count)
+                    {
+                        if ((++tmp) % adFreq != 0)
+                            continue;
+                        if (catadsEnumerator.MoveNext())
+                        {
+                            catimgs.Insert(tmp, catadsEnumerator.Current);
+                            adFreq = Common.AdFreq;
+                        }
+                    }
                     context.WriteJsonP(JsonConvert.SerializeObject(catimgs, Formatting.Indented, Common.JsonSerializerSettings));
-                   
-                } else  context.WriteJsonP("[]");
+
+                }
+                else context.WriteJsonP("[]");
                 return;
             }
             if (q != null)
@@ -717,7 +787,7 @@ namespace Pinjimu
                     source = Common.GetAbsoluteUri(o.Source),
                     imgsource = o.Source,
                     width = o.Image_Width,
-                   
+
                     comments = Common.XmlToJArray(o.Comments),
                     o.BIMID,
                     height = o.Image_Height,
@@ -737,7 +807,7 @@ namespace Pinjimu
                     o.liked,
                     o.BoardID,
                     imgsource = o.Source,
-                   
+
                     comments = Common.XmlToJArray(o.Comments),
                     o.BIMID,
                     width = o.Image_Width,
@@ -748,7 +818,7 @@ namespace Pinjimu
                 }).Randomize(), Formatting.Indented, Common.JsonSerializerSettings));
                 return;
             }
-            context.WriteJsonP(JsonConvert.SerializeObject(Common.Compiled.Images(this.GetDataContext2, p, ps).Randomize().Select((o, i) => new
+            var coll = Common.Compiled.Images(this.GetDataContext2, p, ps).Randomize().Select((o, i) => new
             {
                 o.ID,
                 editable = false,
@@ -756,7 +826,7 @@ namespace Pinjimu
                 o.liked,
                 o.BoardID,
                 imgsource = o.Source,
-               
+
                 comments = Common.XmlToJArray(o.Comments),
                 o.BIMID,
                 width = o.Image_Width,
@@ -765,7 +835,30 @@ namespace Pinjimu
                 PinID = o.PinID.ToString(),
                 url = ((o.Uploaded ?? false) ? Common.UploadedImageRelPath : Common.ContentUrl) + o.RelativeImage_Path.Trim()
                 //url = Common.GetBase64Image(Uri.UnescapeDataString(Path.Combine(Common.ImagePath,  o.RelativeImage_Path.Replace("/", "\\"))), (short)(190.00 * o.Image_Height / o.Image_Width))
-            }), Formatting.Indented, Common.JsonSerializerSettings));
+            }).ToList<object>();            
+            count = coll.Count;
+            var ads = (from o in GetDataContext2.Ads
+                       orderby o.Priority
+                       select new
+                       {
+                           height = o.Image_Height,
+                           width = o.Image_Width,
+                           title = o.Name,
+                           url = Common.UploadedImageRelPath + o.Url
+                       }).Skip(p * adps).Take(adps);
+
+            var adsEnumerator = ads.GetEnumerator();
+            while (tmp < count)
+            {
+                if ((++tmp) % adFreq != 0)
+                    continue;
+                if (adsEnumerator.MoveNext())
+                {
+                    coll.Insert(tmp, adsEnumerator.Current);
+                    adFreq = Common.AdFreq;
+                }
+            }
+            context.WriteJsonP(JsonConvert.SerializeObject(coll, Formatting.Indented, Common.JsonSerializerSettings));
         }
 
         private void Default(HttpContext context)
@@ -776,6 +869,9 @@ namespace Pinjimu
             int p = int.Parse(context.Request.QueryString["p"]);
             string style = context.Request.QueryString["style"];
             int ps = Common.PageSize;
+            int adFreq = Common.AdFreq;
+            int adps = ps / adFreq;
+            int count, tmp = 0;
             if (cat != null)
             {
                 List<int> cats = new List<int>();
@@ -790,6 +886,7 @@ namespace Pinjimu
                     }
                 };
                 addSubCats(all.Where(o => o.Name == cat));
+
                 if (cats.Any())
                 {
                     var catimgs = Common.Compiled.CategoryImages(GetDataContext2, p, ps, string.Join(",", cats.ToArray()), style).Select((o, i) => new
@@ -802,12 +899,33 @@ namespace Pinjimu
                         PinID = o.PinID.ToString(),
                         imgsource = o.Source,
                         width = o.Image_Width,
-                       
                         comments = Common.XmlToJArray(o.Comments),
-                        bimid = o.BIMID,
+                        o.BIMID,
                         source = Common.GetAbsoluteUri(o.Source),
                         url = ((o.Uploaded ?? false) ? Common.UploadedImageRelPath : Common.ContentUrl) + o.RelativeImage_Path.Trim()
-                    });
+                    }).ToList<object>();
+                    count = catimgs.Count;
+                    var catads = (from o in GetDataContext2.Ads
+                                  join o1 in GetDataContext2.CategoryAdsMapping on o.ID equals o1.AdID
+                                  where cats.Contains(o1.CategoryID)
+                                  select new
+                                  {
+                                      height = o.Image_Height,
+                                      width = o.Image_Width,
+                                      title = o.Name,
+                                      url = Common.UploadedImageRelPath + o.Url
+                                  }).Skip(p * adps).Take(adps);
+                    var catadsEnumerator = catads.GetEnumerator();
+                    while (tmp < count)
+                    {
+                        if ((++tmp) % adFreq != 0)
+                            continue;
+                        if (catadsEnumerator.MoveNext())
+                        {
+                            catimgs.Insert(tmp, catadsEnumerator.Current);
+                            adFreq = Common.AdFreq;
+                        }
+                    }
                     context.WriteJsonP(JsonConvert.SerializeObject(catimgs, Formatting.Indented, Common.JsonSerializerSettings));
                 }
                 else context.WriteJsonP("[]");
@@ -824,7 +942,6 @@ namespace Pinjimu
                     source = Common.GetAbsoluteUri(o.Source),
                     imgsource = o.Source,
                     width = o.Image_Width,
-                   
                     comments = Common.XmlToJArray(o.Comments),
                     o.BIMID,
                     height = o.Image_Height,
@@ -844,7 +961,6 @@ namespace Pinjimu
                     o.liked,
                     o.BoardID,
                     imgsource = o.Source,
-                   
                     comments = Common.XmlToJArray(o.Comments),
                     o.BIMID,
                     width = o.Image_Width,
@@ -855,7 +971,7 @@ namespace Pinjimu
                 }).Randomize(), Formatting.Indented, Common.JsonSerializerSettings));
                 return;
             }
-            context.WriteJsonP(JsonConvert.SerializeObject(Common.Compiled.Images(this.GetDataContext2, p, ps).Randomize().Select((o, i) => new
+            var coll = Common.Compiled.Images(this.GetDataContext2, p, ps).Randomize().Select((o, i) => new
             {
                 o.ID,
                 editable = false,
@@ -863,7 +979,6 @@ namespace Pinjimu
                 o.liked,
                 o.BoardID,
                 imgsource = o.Source,
-               
                 comments = Common.XmlToJArray(o.Comments),
                 o.BIMID,
                 width = o.Image_Width,
@@ -871,8 +986,31 @@ namespace Pinjimu
                 height = o.Image_Height,
                 PinID = o.PinID.ToString(),
                 url = ((o.Uploaded ?? false) ? Common.UploadedImageRelPath : Common.ContentUrl) + o.RelativeImage_Path.Trim()
-                //url = Common.GetBase64Image(Uri.UnescapeDataString(Path.Combine(Common.ImagePath,  o.RelativeImage_Path.Replace("/", "\\"))), (short)(190.00 * o.Image_Height / o.Image_Width))
-            }), Formatting.Indented, Common.JsonSerializerSettings));
+
+            }).ToList<object>();
+            count = coll.Count;
+            var ads = (from o in GetDataContext2.Ads
+                       orderby o.Priority
+                       select new
+                       {
+                           height = o.Image_Height,
+                           width = o.Image_Width,
+                           title = o.Name,
+                           url = Common.UploadedImageRelPath + o.Url
+                       }).Skip(p * adps).Take(adps);
+
+            var adsEnumerator = ads.GetEnumerator();
+            while (tmp < count)
+            {
+                if ((++tmp) % adFreq != 0)
+                    continue;
+                if (adsEnumerator.MoveNext())
+                {
+                    coll.Insert(tmp, adsEnumerator.Current);
+                    adFreq = Common.AdFreq;
+                }
+            }
+            context.WriteJsonP(JsonConvert.SerializeObject(coll, Formatting.Indented, Common.JsonSerializerSettings));
         }
 
         private void GetFollowing(HttpContext context)

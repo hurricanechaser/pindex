@@ -1300,7 +1300,7 @@ FreshPin.attach(function () {
         overlay: 100,
         onShow: function (hash) {
             hash.o.show().transition({
-                opacity: .5
+                opacity: .98
             }, 'fast');
             hash.w.show().transition(cssCenterX(hash.w), 'fast');
         },

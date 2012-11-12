@@ -17,9 +17,6 @@ var masonryOpts = {
 function getVal(o, p) {
     return p ? o[p] : o;
 }
-
-
-
 function q(v) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");
@@ -30,12 +27,10 @@ function q(v) {
         }
     }
 }
-
 function rcat(v) {
-    params = ['cat=' + escape(v)];
+   params = ['cat=' + escape(v)];
     $(location).attr('href', '?' + params.join('&'));
 }
-
 $.getJSON('GET?t=getboards', { cat: q('cat'), q: q('q'), p: p }, function (dt, status, res) {
     $.each(dt,function (i, ind, arr) {
         var l = i.images.length;
@@ -46,7 +41,6 @@ $.getJSON('GET?t=getboards', { cat: q('cat'), q: q('q'), p: p }, function (dt, s
 
     FreshPin.emit('loadboards');
 });
-
 FreshPin.attach(function () {
     function cb(dt, rl) {
         var tmpl = $("#picTemplate").tmpl(dt);
@@ -56,7 +50,7 @@ FreshPin.attach(function () {
         }
         else
             $(".gallery").masonry(masonryOpts);
-        tmpl.css('display', 'inline'); 
+       tmpl.css('display', 'inline'); 
     };
     $q = q('q')
     if ($q)

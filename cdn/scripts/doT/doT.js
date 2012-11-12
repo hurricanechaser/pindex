@@ -1,4 +1,4 @@
-// doT.js
+cb// doT.js
 // 2011, Laura Doktorova, https://github.com/olado/doT
 //
 // doT.js is an open source component of http://bebedo.com

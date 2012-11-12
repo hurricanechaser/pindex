@@ -99,15 +99,7 @@
             {{/if}}
         </div>
     </div>
-    </script>
-    <script id="rank" type="text/x-jquery-tmpl">
-    <ul class="box" >        
-        <li class="img"><a href="javascript:void(0)" name="${i}"></a>
-        </li>
-        <li style="display: block;paddingfont-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>${Name}</span></li>        
-        <li style="display: block;font-size: 11px;color: #211922;font-family: "helvetica neue" ,arial,sans-serif;text-align: left;list-style: none;"><span>${type}:${count}</span></li>        
-    </ul>
-    </script>
+    </script>   
     <script id="articles" type="text/x-jquery-tmpl">
      <div class="containerBox">
     <a href="${source}" target="_blank" style="text-decoration: none;"><h2>${title} </h2></a>
@@ -124,6 +116,7 @@
     </ul>
     </script>
     <script id="picTemplate" type="text/x-jquery-tmpl">
+        {{if BIMID }}
         <ul class="box" name="box" bimid="${BIMID}" >
         {{if FreshPin.authenticated() == true  }}       
             <li class="buttons" >
@@ -161,6 +154,15 @@
         </li>
         {{/if}}
     </ul>
+         {{else}}
+         <ul class="box"  name="box" bimid="${BIMID}" >           
+            <li class="img" style="height:${getHeight($data) + 7 }px;width:${getWidth()}px;" ><img  src="${url}?width=${getWidth()}" style="height:${getHeight($data)}px;width:${getWidth()}px;" alt="${title}" />
+            </li>      
+        <li class="name" style="width:${getWidth()}px;">           
+                <span>${title}</span>
+        </li>            
+     </ul>
+        {{/if}}
     </script>
     <script id="cats" type="text/x-jquery-tmpl">
    <a href="#cat=${escape(getVal($data,'Name'))}" style="overflow:hidden;" >${Name}</a>   

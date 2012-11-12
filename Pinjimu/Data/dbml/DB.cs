@@ -31,6 +31,9 @@ namespace Pinjimu.Data.dbml
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertAds(Ads instance);
+    partial void UpdateAds(Ads instance);
+    partial void DeleteAds(Ads instance);
     partial void InsertAppUsers(AppUsers instance);
     partial void UpdateAppUsers(AppUsers instance);
     partial void DeleteAppUsers(AppUsers instance);
@@ -49,6 +52,9 @@ namespace Pinjimu.Data.dbml
     partial void InsertCategory(Category instance);
     partial void UpdateCategory(Category instance);
     partial void DeleteCategory(Category instance);
+    partial void InsertCategoryAdsMapping(CategoryAdsMapping instance);
+    partial void UpdateCategoryAdsMapping(CategoryAdsMapping instance);
+    partial void DeleteCategoryAdsMapping(CategoryAdsMapping instance);
     partial void InsertCategoryImagesMapping(CategoryImagesMapping instance);
     partial void UpdateCategoryImagesMapping(CategoryImagesMapping instance);
     partial void DeleteCategoryImagesMapping(CategoryImagesMapping instance);
@@ -126,6 +132,14 @@ namespace Pinjimu.Data.dbml
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<Ads> Ads
+		{
+			get
+			{
+				return this.GetTable<Ads>();
+			}
+		}
+		
 		public System.Data.Linq.Table<AppUsers> AppUsers
 		{
 			get
@@ -171,6 +185,14 @@ namespace Pinjimu.Data.dbml
 			get
 			{
 				return this.GetTable<Category>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CategoryAdsMapping> CategoryAdsMapping
+		{
+			get
+			{
+				return this.GetTable<CategoryAdsMapping>();
 			}
 		}
 		
@@ -592,6 +614,257 @@ namespace Pinjimu.Data.dbml
 		public System.Nullable<bool> Valexists([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(4096)")] string query)
 		{
 			return ((System.Nullable<bool>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), query).ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Ads")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class Ads : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Name;
+		
+		private string _Url;
+		
+		private int _ID;
+		
+		private System.Nullable<int> _Priority;
+		
+		private System.Nullable<int> _Image_Height;
+		
+		private System.Nullable<int> _Image_Width;
+		
+		private EntitySet<CategoryAdsMapping> _CategoryAdsMapping;
+		
+		private bool serializing;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnUrlChanging(string value);
+    partial void OnUrlChanged();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnPriorityChanging(System.Nullable<int> value);
+    partial void OnPriorityChanged();
+    partial void OnImage_HeightChanging(System.Nullable<int> value);
+    partial void OnImage_HeightChanged();
+    partial void OnImage_WidthChanging(System.Nullable<int> value);
+    partial void OnImage_WidthChanged();
+    #endregion
+		
+		public Ads()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(64)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="VarChar(2048)")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public string Url
+		{
+			get
+			{
+				return this._Url;
+			}
+			set
+			{
+				if ((this._Url != value))
+				{
+					this.OnUrlChanging(value);
+					this.SendPropertyChanging();
+					this._Url = value;
+					this.SendPropertyChanged("Url");
+					this.OnUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Priority", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+		public System.Nullable<int> Priority
+		{
+			get
+			{
+				return this._Priority;
+			}
+			set
+			{
+				if ((this._Priority != value))
+				{
+					this.OnPriorityChanging(value);
+					this.SendPropertyChanging();
+					this._Priority = value;
+					this.SendPropertyChanged("Priority");
+					this.OnPriorityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image_Height", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+		public System.Nullable<int> Image_Height
+		{
+			get
+			{
+				return this._Image_Height;
+			}
+			set
+			{
+				if ((this._Image_Height != value))
+				{
+					this.OnImage_HeightChanging(value);
+					this.SendPropertyChanging();
+					this._Image_Height = value;
+					this.SendPropertyChanged("Image_Height");
+					this.OnImage_HeightChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image_Width", DbType="Int")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+		public System.Nullable<int> Image_Width
+		{
+			get
+			{
+				return this._Image_Width;
+			}
+			set
+			{
+				if ((this._Image_Width != value))
+				{
+					this.OnImage_WidthChanging(value);
+					this.SendPropertyChanging();
+					this._Image_Width = value;
+					this.SendPropertyChanged("Image_Width");
+					this.OnImage_WidthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_CategoryAdsMapping_Ads", Storage="_CategoryAdsMapping", ThisKey="ID", OtherKey="AdID", DeleteRule="CASCADE")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7, EmitDefaultValue=false)]
+		public EntitySet<CategoryAdsMapping> CategoryAdsMapping
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._CategoryAdsMapping.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._CategoryAdsMapping;
+			}
+			set
+			{
+				this._CategoryAdsMapping.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CategoryAdsMapping(CategoryAdsMapping entity)
+		{
+			this.SendPropertyChanging();
+			entity.Ads = this;
+		}
+		
+		private void detach_CategoryAdsMapping(CategoryAdsMapping entity)
+		{
+			this.SendPropertyChanging();
+			entity.Ads = null;
+		}
+		
+		private void Initialize()
+		{
+			this._CategoryAdsMapping = new EntitySet<CategoryAdsMapping>(new Action<CategoryAdsMapping>(this.attach_CategoryAdsMapping), new Action<CategoryAdsMapping>(this.detach_CategoryAdsMapping));
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerializing(StreamingContext context)
+		{
+			this.serializing = true;
+		}
+		
+		[global::System.Runtime.Serialization.OnSerializedAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnSerialized(StreamingContext context)
+		{
+			this.serializing = false;
 		}
 	}
 	
@@ -2688,6 +2961,8 @@ namespace Pinjimu.Data.dbml
 		
 		private EntitySet<Boards> _Boards;
 		
+		private EntitySet<CategoryAdsMapping> _CategoryAdsMapping;
+		
 		private EntitySet<CategoryImagesMapping> _CategoryImagesMapping;
 		
 		private bool serializing;
@@ -2791,8 +3066,27 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_CategoryImagesMapping_Category", Storage="_CategoryImagesMapping", ThisKey="ID", OtherKey="CategoryID", DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_CategoryAdsMapping_Category", Storage="_CategoryAdsMapping", ThisKey="ID", OtherKey="CategoryID", DeleteRule="CASCADE")]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5, EmitDefaultValue=false)]
+		public EntitySet<CategoryAdsMapping> CategoryAdsMapping
+		{
+			get
+			{
+				if ((this.serializing 
+							&& (this._CategoryAdsMapping.HasLoadedOrAssignedValues == false)))
+				{
+					return null;
+				}
+				return this._CategoryAdsMapping;
+			}
+			set
+			{
+				this._CategoryAdsMapping.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_CategoryImagesMapping_Category", Storage="_CategoryImagesMapping", ThisKey="ID", OtherKey="CategoryID", DeleteRule="CASCADE")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6, EmitDefaultValue=false)]
 		public EntitySet<CategoryImagesMapping> CategoryImagesMapping
 		{
 			get
@@ -2842,6 +3136,18 @@ namespace Pinjimu.Data.dbml
 			entity.Category = null;
 		}
 		
+		private void attach_CategoryAdsMapping(CategoryAdsMapping entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category = this;
+		}
+		
+		private void detach_CategoryAdsMapping(CategoryAdsMapping entity)
+		{
+			this.SendPropertyChanging();
+			entity.Category = null;
+		}
+		
 		private void attach_CategoryImagesMapping(CategoryImagesMapping entity)
 		{
 			this.SendPropertyChanging();
@@ -2857,6 +3163,7 @@ namespace Pinjimu.Data.dbml
 		private void Initialize()
 		{
 			this._Boards = new EntitySet<Boards>(new Action<Boards>(this.attach_Boards), new Action<Boards>(this.detach_Boards));
+			this._CategoryAdsMapping = new EntitySet<CategoryAdsMapping>(new Action<CategoryAdsMapping>(this.attach_CategoryAdsMapping), new Action<CategoryAdsMapping>(this.detach_CategoryAdsMapping));
 			this._CategoryImagesMapping = new EntitySet<CategoryImagesMapping>(new Action<CategoryImagesMapping>(this.attach_CategoryImagesMapping), new Action<CategoryImagesMapping>(this.detach_CategoryImagesMapping));
 			OnCreated();
 		}
@@ -2880,6 +3187,214 @@ namespace Pinjimu.Data.dbml
 		public void OnSerialized(StreamingContext context)
 		{
 			this.serializing = false;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CategoryAdsMapping")]
+	[global::System.Runtime.Serialization.DataContractAttribute()]
+	public partial class CategoryAdsMapping : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CategoryID;
+		
+		private int _AdID;
+		
+		private int _ID;
+		
+		private EntityRef<Ads> _Ads;
+		
+		private EntityRef<Category> _Category;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCategoryIDChanging(int value);
+    partial void OnCategoryIDChanged();
+    partial void OnAdIDChanging(int value);
+    partial void OnAdIDChanged();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    #endregion
+		
+		public CategoryAdsMapping()
+		{
+			this.Initialize();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+		public int CategoryID
+		{
+			get
+			{
+				return this._CategoryID;
+			}
+			set
+			{
+				if ((this._CategoryID != value))
+				{
+					if (this._Category.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCategoryIDChanging(value);
+					this.SendPropertyChanging();
+					this._CategoryID = value;
+					this.SendPropertyChanged("CategoryID");
+					this.OnCategoryIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdID", DbType="Int NOT NULL")]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+		public int AdID
+		{
+			get
+			{
+				return this._AdID;
+			}
+			set
+			{
+				if ((this._AdID != value))
+				{
+					if (this._Ads.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAdIDChanging(value);
+					this.SendPropertyChanging();
+					this._AdID = value;
+					this.SendPropertyChanged("AdID");
+					this.OnAdIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_CategoryAdsMapping_Ads", Storage="_Ads", ThisKey="AdID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true)]
+		public Ads Ads
+		{
+			get
+			{
+				return this._Ads.Entity;
+			}
+			set
+			{
+				Ads previousValue = this._Ads.Entity;
+				if (((previousValue != value) 
+							|| (this._Ads.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Ads.Entity = null;
+						previousValue.CategoryAdsMapping.Remove(this);
+					}
+					this._Ads.Entity = value;
+					if ((value != null))
+					{
+						value.CategoryAdsMapping.Add(this);
+						this._AdID = value.ID;
+					}
+					else
+					{
+						this._AdID = default(int);
+					}
+					this.SendPropertyChanged("Ads");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FK_CategoryAdsMapping_Category", Storage="_Category", ThisKey="CategoryID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true)]
+		public Category Category
+		{
+			get
+			{
+				return this._Category.Entity;
+			}
+			set
+			{
+				Category previousValue = this._Category.Entity;
+				if (((previousValue != value) 
+							|| (this._Category.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Category.Entity = null;
+						previousValue.CategoryAdsMapping.Remove(this);
+					}
+					this._Category.Entity = value;
+					if ((value != null))
+					{
+						value.CategoryAdsMapping.Add(this);
+						this._CategoryID = value.ID;
+					}
+					else
+					{
+						this._CategoryID = default(int);
+					}
+					this.SendPropertyChanged("Category");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void Initialize()
+		{
+			this._Ads = default(EntityRef<Ads>);
+			this._Category = default(EntityRef<Category>);
+			OnCreated();
+		}
+		
+		[global::System.Runtime.Serialization.OnDeserializingAttribute()]
+		[global::System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)]
+		public void OnDeserializing(StreamingContext context)
+		{
+			this.Initialize();
 		}
 	}
 	
@@ -3459,7 +3974,7 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contact", DbType="VarChar(64)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contact", DbType="VarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=2)]
 		public string Contact
 		{
@@ -3480,7 +3995,7 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(32)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=3)]
 		public string Type
 		{
@@ -3501,7 +4016,7 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(1024)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=4)]
 		public string Address
 		{
@@ -3522,7 +4037,7 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(32)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=5)]
 		public string Phone
 		{
@@ -3543,7 +4058,7 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Website", DbType="VarChar(2048)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Website", DbType="VarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=6)]
 		public string Website
 		{
@@ -3564,7 +4079,7 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Avatar", DbType="VarChar(2048)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Avatar", DbType="VarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=7)]
 		public string Avatar
 		{
@@ -3606,7 +4121,7 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(64)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(MAX)", UpdateCheck=UpdateCheck.Never)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=9)]
 		public string Name
 		{
@@ -3627,7 +4142,7 @@ namespace Pinjimu.Data.dbml
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		[global::System.Runtime.Serialization.DataMemberAttribute(Order=10)]
 		public int ID
 		{

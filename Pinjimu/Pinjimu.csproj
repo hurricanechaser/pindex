@@ -99,6 +99,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="SmartThreadPool, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\SmartThreadPool.dll</HintPath>
+    </Reference>
     <Reference Include="SQLinq">
       <HintPath>..\..\..\..\Users\Administrator\Documents\Visual Studio 2010\Projects\photogallery\packages\SQLinq.2.0\lib\net\SQLinq.dll</HintPath>
     </Reference>
@@ -111,6 +115,10 @@
     </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.FtpClient, Version=1.0.4637.25395, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\System.Net.FtpClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
@@ -163,6 +171,9 @@
     <Content Include="img\prof-Contractor-icon.jpg" />
     <Content Include="img\prof-designer-icon.jpg" />
     <Content Include="img\prof-FurnManu-icon.jpg" />
+    <Content Include="lib\System.Net.FtpClient.dll" />
+    <Content Include="lib\System.Net.FtpClient.pdb" />
+    <Content Include="lib\System.Net.FtpClient.XML" />
     <Content Include="Pin.ascx" />
     <Content Include="Professional-Users\img\bottom.jpg" />
     <Content Include="Professional-Users\img\C-Icon.jpg" />
@@ -210,6 +221,15 @@
     <Content Include="style_select\images\_notes\dwsync.xml" />
     <Content Include="style_select\jquery.js" />
     <Content Include="style_select\select-box.html" />
+    <Content Include="tagging\form\blank.gif" />
+    <Content Include="tagging\form\bottom.png" />
+    <Content Include="tagging\form\form.html" />
+    <Content Include="tagging\form\iepngfix.htc" />
+    <Content Include="tagging\form\shadow.gif" />
+    <Content Include="tagging\form\top.png" />
+    <Content Include="tagging\form\view.css" />
+    <Content Include="tagging\form\view.js" />
+    <Content Include="tagging\manageads.html" />
     <Content Include="User.aspx" />
     <Content Include="default.aspx" />
     <Content Include="editboard.aspx" />
@@ -331,6 +351,54 @@
     </Compile>
     <Compile Include="Common.cs" />
     <Compile Include="CookieUtil.cs" />
+    <Compile Include="Data\SubSonic\ActiveRecord\ActiveRecord.cs">
+      <DependentUpon>ActiveRecord.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\SubSonic\ActiveRecord\Context.cs">
+      <DependentUpon>Context.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\SubSonic\ActiveRecord\StoredProcedures.cs">
+      <DependentUpon>StoredProcedures.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\SubSonic\ActiveRecord\Structs.cs">
+      <DependentUpon>Structs.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\SubSonic\LinqTemplates\Classes.cs">
+      <DependentUpon>Classes.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\SubSonic\LinqTemplates\Context.cs">
+      <DependentUpon>Context.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\SubSonic\LinqTemplates\StoredProcedures.cs">
+      <DependentUpon>StoredProcedures.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\SubSonic\LinqTemplates\Structs.cs">
+      <DependentUpon>Structs.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="HttpModule.cs" />
     <Compile Include="signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>
@@ -358,46 +426,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\SubSonic\ActiveRecord\ActiveRecord.cs">
-      <DependentUpon>ActiveRecord.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Data\SubSonic\ActiveRecord\Context.cs">
-      <DependentUpon>Context.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Data\SubSonic\ActiveRecord\StoredProcedures.cs">
-      <DependentUpon>StoredProcedures.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Data\SubSonic\ActiveRecord\Structs.cs">
-      <DependentUpon>Structs.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Data\SubSonic\LinqTemplates\Classes.cs">
-      <DependentUpon>Classes.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Data\SubSonic\LinqTemplates\Context.cs">
-      <DependentUpon>Context.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Data\SubSonic\LinqTemplates\StoredProcedures.cs">
-      <DependentUpon>StoredProcedures.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Data\SubSonic\LinqTemplates\Structs.cs">
-      <DependentUpon>Structs.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="editboard.aspx.cs">
       <DependentUpon>editboard.aspx</DependentUpon>
@@ -471,40 +499,32 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Poco.cs</LastGenOutput>
     </None>
-    <None Include="Data\SubSonic\ActiveRecord\ActiveRecord.tt">
+    <Content Include="Data\SubSonic\ActiveRecord\ActiveRecord.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ActiveRecord.cs</LastGenOutput>
-    </None>
-    <None Include="Data\SubSonic\ActiveRecord\Context.tt">
+    </Content>
+    <Content Include="Data\SubSonic\ActiveRecord\Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Context.cs</LastGenOutput>
-    </None>
-    <None Include="Data\SubSonic\ActiveRecord\StoredProcedures.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>StoredProcedures.cs</LastGenOutput>
-    </None>
-    <None Include="Data\SubSonic\ActiveRecord\Structs.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Structs.cs</LastGenOutput>
-    </None>
+    </Content>
     <None Include="Data\SubSonic\ActiveRecord\Settings.ttinclude" />
     <None Include="Data\SubSonic\ActiveRecord\SQLServer.ttinclude" />
-    <None Include="Data\SubSonic\LinqTemplates\Classes.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Classes.cs</LastGenOutput>
-    </None>
-    <None Include="Data\SubSonic\LinqTemplates\Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Context.cs</LastGenOutput>
-    </None>
-    <None Include="Data\SubSonic\LinqTemplates\StoredProcedures.tt">
+    <Content Include="Data\SubSonic\ActiveRecord\StoredProcedures.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>StoredProcedures.cs</LastGenOutput>
-    </None>
-    <None Include="Data\SubSonic\LinqTemplates\Structs.tt">
+    </Content>
+    <Content Include="Data\SubSonic\ActiveRecord\Structs.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Structs.cs</LastGenOutput>
-    </None>
+    </Content>
+    <Content Include="Data\SubSonic\LinqTemplates\Classes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Classes.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\SubSonic\LinqTemplates\Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Context.cs</LastGenOutput>
+    </Content>
     <None Include="Data\SubSonic\LinqTemplates\Settings.ttinclude" />
     <None Include="Data\SubSonic\LinqTemplates\SQLServer.ttinclude" />
     <Content Include="home.ashx" />
@@ -513,6 +533,14 @@
       <LastGenOutput>menu.txt</LastGenOutput>
     </None>
     <Content Include="details-page-HTML\images\Thumbs.db" />
+    <Content Include="Data\SubSonic\LinqTemplates\StoredProcedures.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StoredProcedures.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\SubSonic\LinqTemplates\Structs.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Structs.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\Profile1.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

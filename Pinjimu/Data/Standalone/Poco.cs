@@ -15,9 +15,9 @@ public int ID { get;set; }
 public string Url { get;set; }
 public short? Image_Height { get;set; }
 public short? Image_Width { get;set; }
-public long? FNV1a { get;set; }
-public long? MURMUR2 { get;set; }
-public long? CRC64 { get;set; }
+public decimal? FNV1a { get;set; }
+public decimal? MURMUR2 { get;set; }
+public decimal? CRC64 { get;set; }
 public string Title { get;set; }
 public string RelImagePath { get;set; }
 }public class vw_Pin {
@@ -28,7 +28,7 @@ public short? Image_Height { get;set; }
 public short? Image_Width { get;set; }
 public string RelativeImage_Path { get;set; }
 public bool? Uploaded { get;set; }
-public long? PinID { get;set; }
+public decimal? PinID { get;set; }
 public string Image_Title { get;set; }
 public string Source { get;set; }
 public int? UserID { get;set; }
@@ -40,9 +40,9 @@ public short? Image_Width { get;set; }
 public string RelativeImage_Path { get;set; }
 public DateTime? Date { get;set; }
 public bool? Tagged { get;set; }
-public long? CRC64 { get;set; }
-public long? FNV1a { get;set; }
-public long? MURMUR2 { get;set; }
+public decimal? CRC64 { get;set; }
+public decimal? FNV1a { get;set; }
+public decimal? MURMUR2 { get;set; }
 public bool? Uploaded { get;set; }
 public bool? Verified { get;set; }
 }public class sysdiagrams {
@@ -54,7 +54,7 @@ public int? version { get;set; }
 public string definition { get;set; }
 }public class Facebook {
 
-public long id { get;set; }
+public decimal id { get;set; }
 public string last_name { get;set; }
 public string link { get;set; }
 public string locale { get;set; }
@@ -95,7 +95,7 @@ public string About { get;set; }
 public string Location { get;set; }
 public string Website { get;set; }
 public string Invite { get;set; }
-public long? facebookid { get;set; }
+public decimal? facebookid { get;set; }
 public int? Points { get;set; }
 }public class vw_ImgCategory {
 
@@ -107,18 +107,6 @@ public string Name { get;set; }
 public int ID { get;set; }
 public int CategoryID { get;set; }
 public string Name { get;set; }
-}public class Contacts {
-
-public int ImageID { get;set; }
-public DateTime Date { get;set; }
-public int ID { get;set; }
-public string Name { get;set; }
-public string Contact { get;set; }
-public string Type { get;set; }
-public string Address { get;set; }
-public string Phone { get;set; }
-public string Website { get;set; }
-public string Avatar { get;set; }
 }public class Review {
 
 public int ID { get;set; }
@@ -158,9 +146,9 @@ public int UserID { get;set; }
 public int ID { get;set; }
 public string RelativeImage_Path { get;set; }
 public bool? Tagged { get;set; }
-public long? CRC64 { get;set; }
-public long? FNV1a { get;set; }
-public long? MURMUR2 { get;set; }
+public decimal? CRC64 { get;set; }
+public decimal? FNV1a { get;set; }
+public decimal? MURMUR2 { get;set; }
 public short? Image_Height { get;set; }
 public short? Image_Width { get;set; }
 public int? CategoryID { get;set; }
@@ -177,6 +165,18 @@ public string Name { get;set; }
 public string Avatar { get;set; }
 public string FirstName { get;set; }
 public string Speciality { get;set; }
+}public class Contacts {
+
+public int ImageID { get;set; }
+public DateTime Date { get;set; }
+public int ID { get;set; }
+public string Name { get;set; }
+public string Contact { get;set; }
+public string Type { get;set; }
+public string Address { get;set; }
+public string Phone { get;set; }
+public string Website { get;set; }
+public string Avatar { get;set; }
 }public class Prize {
 
 public int ID { get;set; }
@@ -194,6 +194,19 @@ public int ID { get;set; }
 public int PrizeID { get;set; }
 public int UserID { get;set; }
 public DateTime Create_date { get;set; }
+}public class CategoryAdsMapping {
+
+public int CategoryID { get;set; }
+public int AdID { get;set; }
+public int ID { get;set; }
+}public class Ads {
+
+public int ID { get;set; }
+public int? Priority { get;set; }
+public int? Image_Height { get;set; }
+public int? Image_Width { get;set; }
+public string Name { get;set; }
+public string Url { get;set; }
 }public class vw_FollowingUser {
 
 public int FollowingID { get;set; }
@@ -262,11 +275,11 @@ public int? Rating { get;set; }
 public short? Image_Height { get;set; }
 public short? Image_Width { get;set; }
 public string RelativeImage_Path { get;set; }
-public long? CRC64 { get;set; }
-public long? FNV1a { get;set; }
-public long? MURMUR2 { get;set; }
+public decimal? CRC64 { get;set; }
+public decimal? FNV1a { get;set; }
+public decimal? MURMUR2 { get;set; }
 public bool? Uploaded { get;set; }
-public long? PinID { get;set; }
+public decimal? PinID { get;set; }
 public string Image_Title { get;set; }
 public string BoardName { get;set; }
 public int? UserID { get;set; }
@@ -287,11 +300,11 @@ public int? Rating { get;set; }
 public short? Image_Height { get;set; }
 public short? Image_Width { get;set; }
 public string RelativeImage_Path { get;set; }
-public long? CRC64 { get;set; }
-public long? FNV1a { get;set; }
-public long? MURMUR2 { get;set; }
+public decimal? CRC64 { get;set; }
+public decimal? FNV1a { get;set; }
+public decimal? MURMUR2 { get;set; }
 public bool? Uploaded { get;set; }
-public long? PinID { get;set; }
+public decimal? PinID { get;set; }
 public string Image_Title { get;set; }
 public string BoardName { get;set; }
 public int? UserID { get;set; }
@@ -315,9 +328,9 @@ public int ID { get;set; }
 public string Url { get;set; }
 public short? Image_Height { get;set; }
 public short? Image_Width { get;set; }
-public long? FNV1a { get;set; }
-public long? MURMUR2 { get;set; }
-public long? CRC64 { get;set; }
+public decimal? FNV1a { get;set; }
+public decimal? MURMUR2 { get;set; }
+public decimal? CRC64 { get;set; }
 public string ArticleContent { get;set; }
 public string Description { get;set; }
 public string Title { get;set; }

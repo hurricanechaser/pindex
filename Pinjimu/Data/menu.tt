@@ -16,16 +16,16 @@
 
 <#
    
-    string cs=  "Data Source=botcodesql.cloudapp.net;Initial Catalog=Pinjimu;Persist Security Info=True;User ID=pinadmin;Password=Fresh123!@#;connection timeout=60;Max Pool Size = 1000;Min Pool Size = 100;";
+    string cs=  "Data Source=(local);Initial Catalog=Pinjimu;Persist Security Info=True;User ID=sa;Password=password123!@#;connection timeout=60;Max Pool Size = 1000;Min Pool Size = 100;";
     SqlConnection conn =new  SqlConnection(cs); 
     conn.Open();
-    IEnumerable<Category> categories =conn.Query<Category>("Select * from Category where ParentId =21 order by Name"); 
+    IEnumerable<Category> categories =conn.Query<Category>("Select * from Category where ParentId =20 order by Name"); 
     Temp.cats=categories;  
     //WriteLine(@"<ul class=""pureCssMenu"">");
     IEnumerable<Category> nulls=categories.Where<Category>(o=>!o.ParentID.HasValue);
     foreach(Category o in categories){       
         bool hc=haschild(o.ID);             
-        WriteLine(string.Format(@"  <li><a href=""javascript:void(0);"" catid=""{0}""  name=""sellist""><% =cat.{1} %></a></li>",o.ID, o.Name.Replace(" ","_")));
+        WriteLine(string.Format(@"<input type=""checkbox"" value=""{0}""  name=""sellist"" /><label>{1}</label> ",o.ID, o.Name));
         //if(hc)
             //writesub(o.ID);
        

@@ -18,10 +18,14 @@ using System.Drawing.Imaging;
 using Microsoft.ApplicationBlocks.Data;
 using Dapper;
 using DapperExtensions;
+using Amib.Threading;
+using System.Net.FtpClient;
+using System.Threading;
 
 namespace Pinjimu
 {
-    /// <summary>
+    /// <summary>pinjimu.com
+    /// pin
     /// Summary description for GET
     /// </summary>
 
@@ -55,6 +59,9 @@ namespace Pinjimu
                     break;
                 case "up":
                     Upload(context);
+                    break;
+                case "upad":
+                    UploadAd(context);
                     break;
                 case "saveuploadedpin":
                     SaveUploadedPin(context);
@@ -131,21 +138,109 @@ namespace Pinjimu
                 case "verify":
                     Verify(context);
                     break;
+                case "savead":
+                    SaveAd(context);
+                    break;
+                case "delad":
+                    DelAd(context);
+                    break;
             }
             base.EndRequest(context);
         }
 
+        private void SaveAd(HttpContext context)
+        {
+            int ID = int.Parse(context.Request.Params["ID"]);
+            string Name = context.Request.Params["Name"];
+            int Priority = int.Parse(context.Request.Params["Priority"]);
+            Data.POCOS.Ad ad = GetDataContext1.Single<Data.POCOS.Ad>(ID);
+            ad.Name = Name;
+            ad.Priority = Priority;
+            ad.Update();
+            string scats = context.Request.Params["cats"];
+            if (!string.IsNullOrEmpty(scats))
+            {
+                JArray cats = JArray.Parse(scats);
+                SqlConnection conn = SqlConnection;
+                conn.Execute(string.Format("Delete from CategoryAdsMapping where AdID={0}", ad.ID));
+                foreach (JToken tok in cats)
+                    GetDataContext1.Insert(new Data.POCOS.CategoryAdsMapping() { AdID = ad.ID, CategoryID = (int)tok });
+            }
+        }
+        private void DelAd(HttpContext context)
+        {
+            int ID = int.Parse(context.Request.Params["ID"]);
+
+            GetDataContext1.Delete<Data.POCOS.Ad>(ID);
+        }
+        private void UploadAd(HttpContext context)
+        {
+            string tpath = Common.UploadedImagePath;
+            if (!Directory.Exists(tpath))
+                Directory.CreateDirectory(tpath);
+            foreach (string name in context.Request.Files)
+            {
+                HttpPostedFile file = context.Request.Files[name];
+                string nfn = Guid.NewGuid().ToString() + "." + file.FileName.Split('.')[1];
+                using (Image image = Image.FromStream(file.InputStream))
+                {
+                    GetDataContext2.Ads.InsertOnSubmit(new Data.dbml.Ads() { Name = file.FileName, Image_Height = image.Height, Image_Width = image.Width, Url = nfn });
+                    file.SaveAs(tpath + nfn);
+                }
+            }
+            GetDataContext2.SubmitChanges();
+        }
+
         private void Verify(HttpContext context)
         {
-            var Images = GetDataContext1.Query<Data.POCOS.Image>("Select * from Images where (verified is null) or (verified = 1)");
-            int count = GetDataContext1.Single<int>("Select count(*) from Images where (verified is null) or (verified = 1)");
+            STPStartInfo si = new STPStartInfo();
+            si.MaxWorkerThreads = 50;
+            si.MinWorkerThreads = 10;
+            si.IdleTimeout = 6000;
+            SmartThreadPool smartThreadPool = new SmartThreadPool(si);
+            JObject obj = JObject.Parse(Common.ImageServer);
+            string username = (string)obj["user"];
+            string password = (string)obj["pass"];
+            string server = (string)obj["server"];
+            string path = (string)obj["path"];
+            var Images = GetDataContext1.Query<Data.POCOS.Image>("Select * from Images where (verified is null) or (verified = 0)");
+            ThreadLocal<FtpClient> clients = new ThreadLocal<FtpClient>();
             foreach (var image in Images)
             {
-                image.Verified = File.Exists(Path.Combine(((image.Uploaded ?? false) ? Common.UploadedImagePath : Common.ImagePath), image.RelativeImage_Path.Replace('/', '\\')));
-                image.Update();
-                context.Response.Write(count--);
-                context.Response.Flush();
+                if (!string.IsNullOrEmpty(image.RelativeImage_Path))
+                {
+                    string imagepath = image.RelativeImage_Path;
+                    if (!string.IsNullOrWhiteSpace(imagepath))
+                    {
+                        Amib.Threading.Action<string, string, Data.POCOS.Image> save = (imageStr, relpath, o1) =>
+                        {
+                            if (!clients.IsValueCreated)
+                                clients.Value = new FtpClient(username, password, server);
+                            FtpClient client = clients.Value;
+                            MemoryStream stream = new MemoryStream();
+                            if (File.Exists(imageStr))
+                            {
+                                o1.Verified = true;
+                                o1.Update();
+                            }
+                            else if (client.FileExists(relpath))
+                            {
+                                client.Download(relpath, stream);
+                                File.WriteAllBytes(imageStr, stream.ToArray());
+                                o1.Verified = true;
+                                o1.Update();
+                            }
+
+                        };
+                        string imageStr1 = Path.Combine(((image.Uploaded ?? false) ? Common.UploadedImagePath : Common.ImagePath), image.RelativeImage_Path.Replace('/', '\\'));
+                        smartThreadPool.QueueWorkItem<string, string, Data.POCOS.Image>(save, imageStr1, imagepath, image);
+                    }
+
+                }
+
             }
+            while (smartThreadPool.InUseThreads > 0)
+                Thread.Sleep(60000);
         }
 
         private void UpdateAbout(HttpContext context)
@@ -939,10 +1034,10 @@ WHERE  (BoardContributor.BoardID = {0}) AND (AppUsers.Name = '{1}')", id, un));
             Data.dbml.User obj = this.GetDataContext2.User.FirstOrDefault(o => o.Name == user && o.Password == pass);
             if (obj != null)
             {
-                Common.WriteValue(Common.AuthCookie, obj.ID.ToString());
-                Common.WriteValue(Common.InfoCookie, JObject.FromObject(new { obj.Name }));
-                context.Response.Write("success");
+                Common.WriteValue("tagging", obj.ID.ToString());
+
             }
+            else context.Response.WriteError("Invalid Credentials");
         }
         private void Cat(HttpContext context)
         {
